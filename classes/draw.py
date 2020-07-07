@@ -27,3 +27,41 @@ class Draw():
     
     ani=animation.FuncAnimation(fig, animate, interval=1000)
     plt.show()
+    
+    
+# WHITE=(255,255,255)
+# BLUE=(0,0,255)
+
+# pygame.init()
+# gameDisplay = pygame.display.set_mode((500,500))
+# pygame.display.set_caption("BLOCK WORLD")
+# x=0
+# y=0
+
+# clock=pygame.time.Clock()
+
+# crashed=False
+
+
+# while not crashed:
+    
+#     pygame.draw.rect(gameDisplay,WHITE,(y,x,100,50))
+    
+    
+#     for event in pygame.event.get():
+#         if event.type == pygame.QUIT:
+#             crashed = True
+            
+#         if event.type == pygame.K_RIGHT:
+#             x=x+20
+            
+#         if event.type == pygame.K_DOWN:
+#             y=y+20
+            
+#         print(event)
+    
+#     pygame.display.update()
+#     clock.tick(60)
+
+# pygame.quit()
+# quit()
