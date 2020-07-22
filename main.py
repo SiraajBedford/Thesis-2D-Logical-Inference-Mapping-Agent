@@ -16,10 +16,10 @@ cnt=0
 my_map_1, previous=agent.place_agent_in_env(my_map_1,rd.randint(0, 4),rd.randint(0, 4))
 
 for i in range(0,5):
-    print("Hello")
+    print("Merge")
 
 
-
+env.print_try()
 # try:
 #     while True:
 #
@@ -28,8 +28,8 @@ for i in range(0,5):
 #
 #         num1=rd.randint(0, 4)
 #         num2=rd.randint(0, 4)
-#
-#         num3=rd.randint(0, 4)
+
+##         num3=rd.randint(0, 4)
 #         num4=rd.randint(0, 4)
 #
 #         if cnt==0: my_map_1,prev_num=agent.update(my_map_1, previous,num3,num4,num1,num2)
@@ -40,3 +40,18 @@ for i in range(0,5):
 #
 # except KeyboardInterrupt:
 #     pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
