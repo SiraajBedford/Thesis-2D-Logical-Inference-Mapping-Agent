@@ -1,0 +1,34 @@
+\contentsline {chapter}{Declaration}{i}{chapter*.1}%
+\contentsline {chapter}{Abstract}{ii}{chapter*.2}%
+\contentsline {chapter}{Opsomming}{iii}{chapter*.3}%
+\contentsline {chapter}{Acknowledgements}{iv}{chapter*.4}%
+\contentsline {chapter}{Contents}{v}{section*.6}%
+\contentsline {chapter}{Nomenclature}{vii}{chapter*.7}%
+\contentsline {chapter}{List of Figures}{viii}{section*.9}%
+\contentsline {chapter}{List of Tables}{ix}{section*.11}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {chapter}{\numberline {2}Literature Study}{2}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Agent and Environment representation}{2}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Logic-Based Agent}{2}{section.2.2}%
+\contentsline {section}{\numberline {2.3}Propositional Logic}{2}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Propositional Logic Laws}{2}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Atomic and Complex sentences representations}{2}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Backus-Naur Form}{2}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.4}Conjunctive normal form}{2}{subsection.2.3.4}%
+\contentsline {subsection}{\numberline {2.3.5}Inference}{2}{subsection.2.3.5}%
+\contentsline {subsection}{\numberline {2.3.6}Entailment}{2}{subsection.2.3.6}%
+\contentsline {section}{\numberline {2.4}Representation of a Knowledge Base}{2}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Solution checking using set Laws}{2}{subsection.2.4.1}%
+\contentsline {section}{\numberline {2.5}Using the learnt representation}{2}{section.2.5}%
+\contentsline {subsection}{\numberline {2.5.1}Depth First Search}{2}{subsection.2.5.1}%
+\contentsline {subsection}{\numberline {2.5.2}Heuristic Search}{2}{subsection.2.5.2}%
+\contentsline {chapter}{\numberline {3}Design}{3}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Agent-environment Design}{3}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Code Structure}{3}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Implementation}{4}{chapter.4}%
+\contentsline {chapter}{\numberline {5}Testing}{5}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Extended implementation}{6}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Case implementation for agent action noise}{6}{section.6.1}%
+\contentsline {chapter}{\numberline {7}Conclusion}{7}{chapter.7}%
+\contentsline {chapter}{Appendix A: Project Planning Schedule}{8}{appendix*.12}%
+\contentsline {chapter}{Appendix B: Outcomes Compliance}{9}{appendix*.14}%
