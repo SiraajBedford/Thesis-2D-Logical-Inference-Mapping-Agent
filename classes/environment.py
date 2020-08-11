@@ -8,5 +8,9 @@ class Environment():
         return genfromtxt(path , delimiter=',')
 
 
-    def print_try(self):
-        print("Rick Rolled!!")
+    def simple_environment(self):
+        pass
+    
+    
+    def normal_environment(self):
+        pass
