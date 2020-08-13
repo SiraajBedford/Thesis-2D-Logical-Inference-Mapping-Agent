@@ -21,8 +21,11 @@ class Agent():
         return self.x
     
     def move_right(self):
+        self.val_prev=self.val
+        self.x_prev=self.x
+        self.y_prev=self.y
         self.x=self.x+1
-        return self.x
+        
   
     def return_x(self):
         return self.x
