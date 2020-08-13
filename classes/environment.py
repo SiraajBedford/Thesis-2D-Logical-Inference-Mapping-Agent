@@ -9,7 +9,8 @@ import copy
 
 class Environment():
     
-    structure=np.array([[1,0,0,0,1]])
+    def __init__(self):
+        self.structure=np.array([[1,0,0,0,1]])
 
     def environment_one(self):
         return self.structure
@@ -21,8 +22,7 @@ class Environment():
         return self.structure[agent_coord_y][agent_coord_x-1], self.structure[agent_coord_y][agent_coord_x+1]
     
     def agent_in_map(self, agent_coord_y, agent_coord_x):
-        new = copy.copy(self.structure)
-        new[agent_coord_y][agent_coord_x]=2
-        return new
+        self.structure[agent_coord_y][agent_coord_x]=7
     
-    
+    def copy(self):
+        return copy.deepcopy(self)

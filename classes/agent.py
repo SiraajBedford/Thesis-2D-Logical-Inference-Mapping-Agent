@@ -6,10 +6,15 @@
 
 class Agent():
     
-    def __init__(self, y, x, obs):
-        self.x=x
+    def __init__(self, y, x, val, obs, y_prev, x_prev, val_prev):
         self.y=y
+        self.x=x
+        self.val=val
         self.obs=obs
+        self.y_prev=y_prev
+        self.x_prev=x_prev
+        self.val_prev=val_prev
+        
         
     def move_left(self):
         self.x=self.x-1
