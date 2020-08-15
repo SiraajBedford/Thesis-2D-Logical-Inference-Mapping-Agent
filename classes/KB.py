@@ -13,3 +13,7 @@ class KBase():
         
     def add(self):
         pass
+    
+    def state_1():
+        #
+        pass
