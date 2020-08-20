@@ -3,6 +3,7 @@ import numpy as np # For manipulating arrays
 import time as tm # To control simulation time
 from numpy import genfromtxt # To import a map from as a numpy array
 import csv # To import a csv file
+import pyswip
 
 # Import user defined libraries
 from classes.environment import Environment
@@ -12,7 +13,17 @@ from classes.agent import Agent
 
 # from classes.KB import KBase
 # from classes.inference import Inference
+from pyswip import Prolog
+prolog = Prolog()
+prolog.assertz("father(michael,john)")
 
+# prolog = Prolog()
+# prolog.assertz("father(michael,john)")
+# prolog.assertz("father(michael,gina)")
+# bool(list(prolog.query("father(michael,john)")))
+# bool(list(prolog.query("father(michael,olivia)")))
+# print(sorted(prolog.query("father(michael,X)")))
+        
 ## Initial state
 
 # Create environment
