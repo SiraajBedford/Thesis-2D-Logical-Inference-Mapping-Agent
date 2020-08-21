@@ -6,10 +6,16 @@
 
 class Inference():
     
-    def __init__(self):
-        pass
+    def __init__(self, state):
+        self.state=state
         
-    def add(self):
+    def gen_worlds(self):
+        #from given state, must determine all possible worlds for that state
+        print("State:")
+        print(self.state)
+        print("Generated possible worlds:")
+        # Do something general here to get possible worlds
+        print(self.state)
         pass
     
     def imply_TT():
