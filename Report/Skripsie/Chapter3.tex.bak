@@ -1,17 +1,2 @@
-\chapter{Inference}
-
-
-\section{Entailment}
-Definition  of logical entailment between sentences (idea that a sentence follows logically from another sentence):
-$$\alpha \vDash \beta \textit{ if and only if } M(\alpha) \subseteq M(\beta)$$ 
-
-
-\section{Representation of a Knowledge Base}
-\subsection{Solution checking using set Laws}
-
-
-
-\section{Using the learnt representation}
-\subsection{Depth First Search}
-\subsection{Heuristic Search}
+\chapter{Inference by elimination}
 

@@ -14,7 +14,6 @@ from classes.agent import Agent
 
 # To implement
 from classes.inference import Inference
-from classes.KB import Knowledge_Base
  
         
 ## Initial state
@@ -29,9 +28,8 @@ draw = 0 # 1-yes, 0-no
 loop_timeout = tm.time() + 1 * 60  # While-loop timeout
 sleep_time = 1 # In seconds, how often debugging information is reported
 print_debug_info = 0 # 1-yes, 0-no
-agent_moving = 0 # 1-yes, 0-no
+agent_moving = 1 # 1-yes, 0-no
 inference_development_mode = 1 # 1-yes, 0-no
-KB_development_mode = 1 # 1-yes, 0-no
 
 if sim_mode == 1: sim_env=np.array([[1,0,0,0,1]]) 
 if sim_mode == 2: sim_env=np.array([[1,0,0,0,0,0,1]]) 
@@ -87,8 +85,7 @@ if agent_moving == 1:
 if inference_development_mode == 1:
     #print(inference.state)
     inference.gen_worlds() 
-
-# Knowledge base implemented in Prolog using pyswip    
+ 
 
 try:
     while True:  

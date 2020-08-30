@@ -1,3 +1,16 @@
 \chapter{Abstract}
 
-This project set out to find out a method for finding a low cost method for an AI agent to map an environment without relying on big sets of data as used in Re-inforcement learning.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Planning for abstract
+%
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+This research project is aimed at developing a new solution to map a 2-dimensional environment using propositional logical. This problem uses an agent placed in an environment, which subsequently tries to rebuild the environment over time. This problem is normally solved using reinforcement learning, but it requires large sets of data, is computationally expensive and for optimal results requires the use of a relatively expensive GPU.
+
+The method we propose is to let the agent roam in the 2-dimensional environment over discrete time and discover the environment for itself.
+The agent makes use of observations, actions it takes and historical knowledge in the lifetime of the agent to build a base of knowledge that entails the information required to recreate the original map. 
+
+The initial part of the report focusses on necessary knowledge to understand the logical representation, agent-environment interface and inference techniques for solving this problem. 
+
+% With this foundational knowledge....
