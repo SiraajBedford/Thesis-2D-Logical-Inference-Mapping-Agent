@@ -8,9 +8,17 @@
 \contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}% 
 \contentsline {chapter}{\numberline {2}Architecture and Representations}{2}{chapter.2}% 
 \contentsline {section}{\numberline {2.1}Architecture}{2}{section.2.1}% 
+\contentsline {subsection}{\numberline {2.1.1}Requirements of the agent}{2}{subsection.2.1.1}% 
+\contentsline {subsection}{\numberline {2.1.2}Requirements of the environment}{2}{subsection.2.1.2}% 
 \contentsline {section}{\numberline {2.2}Agent and Environment representation}{2}{section.2.2}% 
-\contentsline {section}{\numberline {2.3}Logic-Based Agent}{2}{section.2.3}% 
-\contentsline {section}{\numberline {2.4}Propositional Logic}{2}{section.2.4}% 
-\contentsline {section}{\numberline {2.5}Atomic and Complex sentences representations}{2}{section.2.5}% 
-\contentsline {chapter}{Appendix A: Project Planning Schedule}{3}{appendix*.11}% 
-\contentsline {chapter}{Appendix B: Outcomes Compliance}{4}{appendix*.13}% 
+\contentsline {subsection}{\numberline {2.2.1}Why use a Logic-Based Agent?}{2}{subsection.2.2.1}% 
+\contentsline {subsection}{\numberline {2.2.2}Propositional Logic usage}{2}{subsection.2.2.2}% 
+\contentsline {subsection}{\numberline {2.2.3}Atomic and Complex sentences representations}{2}{subsection.2.2.3}% 
+\contentsline {subsection}{\numberline {2.2.4}Usage of a Knowledge Base}{2}{subsection.2.2.4}% 
+\contentsline {chapter}{\numberline {3}Inference}{3}{chapter.3}% 
+\contentsline {chapter}{\numberline {4}Learning}{4}{chapter.4}% 
+\contentsline {section}{\numberline {4.1}Forming groups of states}{4}{section.4.1}% 
+\contentsline {subsection}{\numberline {4.1.1}Split state definitions using AND}{4}{subsection.4.1.1}% 
+\contentsline {subsection}{\numberline {4.1.2}Merge state definitions using OR}{4}{subsection.4.1.2}% 
+\contentsline {chapter}{Appendix A: Project Planning Schedule}{5}{appendix*.11}% 
+\contentsline {chapter}{Appendix B: Outcomes Compliance}{6}{appendix*.13}% 

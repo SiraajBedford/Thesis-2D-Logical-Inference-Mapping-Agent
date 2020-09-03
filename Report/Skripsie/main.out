@@ -8,9 +8,17 @@
 \BOOKMARK [0][-]{chapter.1}{Introduction}{}% 8
 \BOOKMARK [0][-]{chapter.2}{Architecture and Representations}{}% 9
 \BOOKMARK [1][-]{section.2.1}{Architecture}{chapter.2}% 10
-\BOOKMARK [1][-]{section.2.2}{Agent and Environment representation}{chapter.2}% 11
-\BOOKMARK [1][-]{section.2.3}{Logic-Based Agent}{chapter.2}% 12
-\BOOKMARK [1][-]{section.2.4}{Propositional Logic}{chapter.2}% 13
-\BOOKMARK [1][-]{section.2.5}{Atomic and Complex sentences representations}{chapter.2}% 14
-\BOOKMARK [0][-]{appendix*.11}{Appendix A: Project Planning Schedule}{}% 15
-\BOOKMARK [0][-]{appendix*.13}{Appendix B: Outcomes Compliance}{}% 16
+\BOOKMARK [2][-]{subsection.2.1.1}{Requirements of the agent}{section.2.1}% 11
+\BOOKMARK [2][-]{subsection.2.1.2}{Requirements of the environment}{section.2.1}% 12
+\BOOKMARK [1][-]{section.2.2}{Agent and Environment representation}{chapter.2}% 13
+\BOOKMARK [2][-]{subsection.2.2.1}{Why use a Logic-Based Agent?}{section.2.2}% 14
+\BOOKMARK [2][-]{subsection.2.2.2}{Propositional Logic usage}{section.2.2}% 15
+\BOOKMARK [2][-]{subsection.2.2.3}{Atomic and Complex sentences representations}{section.2.2}% 16
+\BOOKMARK [2][-]{subsection.2.2.4}{Usage of a Knowledge Base}{section.2.2}% 17
+\BOOKMARK [0][-]{chapter.3}{Inference}{}% 18
+\BOOKMARK [0][-]{chapter.4}{Learning}{}% 19
+\BOOKMARK [1][-]{section.4.1}{Forming groups of states}{chapter.4}% 20
+\BOOKMARK [2][-]{subsection.4.1.1}{Split state definitions using AND}{section.4.1}% 21
+\BOOKMARK [2][-]{subsection.4.1.2}{Merge state definitions using OR}{section.4.1}% 22
+\BOOKMARK [0][-]{appendix*.11}{Appendix A: Project Planning Schedule}{}% 23
+\BOOKMARK [0][-]{appendix*.13}{Appendix B: Outcomes Compliance}{}% 24

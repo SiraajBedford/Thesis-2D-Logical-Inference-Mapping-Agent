@@ -15,13 +15,14 @@ class Agent():
         self.val_prev=val_prev
         self.x_max=x_max
         self.x_min=x_min
+        self.random_move=0
             
     def move(self):
         
-        random=np.random.randint(2) #1-right, 0-left
-        print("Random next move= %d" %(random))
+        self.random_move=np.random.randint(2) #1-right, 0-left
+        print("Random next move= %d" %(self.random_move))
         
-        if(random == 1):#right
+        if(self.random_move == 1):#right
             
             if self.x == self.x_max: # If space to left is not open
                self.x_prev=self.x
@@ -33,7 +34,7 @@ class Agent():
                 self.y_prev=self.y
                 self.x=self.x+1
         
-        if(random == 0):#left
+        if(self.random_move == 0):#left
            
             if self.x == self.x_min: # If space to left is not open
                 self.x_prev=self.x
@@ -44,3 +45,6 @@ class Agent():
                 self.x_prev=self.x
                 self.y_prev=self.y
                 self.x=self.x-1
+                
+    def random_return(self):
+        return self.random_move

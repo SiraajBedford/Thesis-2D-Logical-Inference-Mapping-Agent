@@ -14,20 +14,21 @@ from classes.agent import Agent
 
 # To implement
 from classes.inference import Inference
+from classes.inference import Knowledge_Base
  
         
 ## Initial state
 
 #Inferencer
-inference=Inference(np.array([[1,2,0,0,1]]))
+#inference=Inference(np.array([[1,2,0,0,1]]))
 
 # Create environment
 
 sim_mode = 1 # Scale from 1 to 10 on the length of the map
 draw = 0 # 1-yes, 0-no
-loop_timeout = tm.time() + 1 * 60  # While-loop timeout
+loop_timeout = tm.time() + 1 * 6000  # While-loop timeout
 sleep_time = 1 # In seconds, how often debugging information is reported
-print_debug_info = 0 # 1-yes, 0-no
+print_debug_info = 1 # 1-yes, 0-no
 agent_moving = 1 # 1-yes, 0-no
 inference_development_mode = 1 # 1-yes, 0-no
 
@@ -81,10 +82,8 @@ if agent_moving == 1:
     print(env.structure)
     if draw == 1: env.plot()
     
-# Inference
-if inference_development_mode == 1:
-    #print(inference.state)
-    inference.gen_worlds() 
+    # Initialize knowledge base
+    KB=Knowledge_Base()
  
 
 try:
@@ -112,6 +111,27 @@ try:
             print("Agent previous position: y=%d, x=%d, prev_val=%d" %(agent.y_prev, agent.x_prev, agent.val_prev))
         if draw == 1: env.plot()
         
+        # Inference
+        if inference_development_mode == 1:
+            
+            # Update Knowledge base
+            # Give the KB the observations and actions 
+            # Convert observations and actions to propositional variables
+            # Only later after we have infered the state, we can include previous state as 'T_t_min_1', 'U_t_min_1', 'V_t_min_1'
+            
+            # Sumarrize [ Left Observation, Right Observation ] + [ Right_Move=1 or 0, Left_Move=1 or 0 ] + [State 1 Prev, State 2 Prev, State 3 Prev]
+            # in a numoy array and print 
+            KB.add_sentences(env.agent_observations(agent.y, agent.x), agent.random_move)
+            
+            print("---------------------------------------------------------------------------------------------------------------")
+            KB.print_KB()
+            print("---------------------------------------------------------------------------------------------------------------")
+
+            
+            inference=Inference(0, 0)
+            inference.print_prop(env.agent_observations(agent.y, agent.x), agent.random_move)
+            
+
            
         
 except KeyboardInterrupt:
