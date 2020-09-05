@@ -1,26 +1,32 @@
-\chapter{System design} 
+\chapter{System Design} 
 \label{chapter:sys_design}
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=.7]{Figures/main_architecture.png}
-    \caption{Block diagram overview \cite{russell2016artificial}} 
+    \caption{Block diagram overview }
     \label{fig:sysdiag}
 \end{figure}
 
-This chapter goes over in detail how and why the agent interacts with the environment. g
+This chapter goes over in detail how and why the agent interacts with the environment. 
 
 
 \begin{figure}[H]
     \centering
     \includegraphics[scale=.7]{Figures/General_learning_agent.PNG}
-    \caption{General learning agent Figure 2.15 from} 
+    \caption{General learning agent Figure 2.15 from \cite{russell2016artificial}} 
     \label{fig:agent}
 \end{figure}
 
-\section{Architecture}
+Fill the functional blocks with more "color"
+
+Also put interfaces between blocks using arrows.
+
+\section{Program Architecture}
 
 Show agent in environment with robot in environment, actuators, remember agent controls the robot and the robot is in the physical environment.
+
+Show all possible choices you could have made for reach of the functional blocks.
 
 \subsection{Agent}
 		
@@ -39,6 +45,15 @@ Inference in general: conclusion reached on the basis of evidence and reasoning.
 
 Inference in machine learning: Inference refers to the process of using a trained machine learning algorithm to make a prediction.
 
+\section{Metrics}
 
+I want to measure whether I meet the of the objects.
+This section says how and what I am going to measure.
 
+List what you intend to measure and how do you intend to measure it.
 
+You can match the metrics up to the objectives.
+
+\section{Method}
+
+Explain the experimental setup.

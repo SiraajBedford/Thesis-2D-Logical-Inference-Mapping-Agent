@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.6.29)  5 SEP 2020 01:41
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (MiKTeX 2.9.7050 64-bit) (preloaded format=pdflatex 2019.6.29)  5 SEP 2020 23:43
 entering extended mode
 **./main.tex
 (main.tex
@@ -1008,11 +1008,11 @@ Chapter 2.
 
  (Chapter3.tex
 Chapter 3.
-<Figures/main_architecture.png, id=53, 613.29124pt x 462.72874pt>
+<Figures/main_architecture.png, id=53, 614.295pt x 493.845pt>
 File: Figures/main_architecture.png Graphic file (type png)
 <use Figures/main_architecture.png>
 Package pdftex.def Info: Figures/main_architecture.png  used on input line 6.
-(pdftex.def)             Requested size: 429.30093pt x 323.90791pt.
+(pdftex.def)             Requested size: 430.00356pt x 345.68913pt.
 <Figures/General_learning_agent.PNG, id=55, 550.30594pt x 383.18156pt>
 File: Figures/General_learning_agent.PNG Graphic file (type png)
 <use Figures/General_learning_agent.PNG>
@@ -1142,7 +1142,7 @@ MiKTeX 2.9/fonts/type1/public/cm-super/sfrm1728.pfb><C:/Program Files/MiKTeX 2.
 9/fonts/type1/public/cm-super/sfsl1440.pfb><C:/Program Files/MiKTeX 2.9/fonts/t
 ype1/public/cm-super/sfti1095.pfb><C:/Program Files/MiKTeX 2.9/fonts/type1/publ
 ic/cm-super/sfti1200.pfb>
-Output written on main.pdf (20 pages, 296443 bytes).
+Output written on main.pdf (20 pages, 300002 bytes).
 PDF statistics:
  134 PDF objects out of 1000 (max. 8388607)
  0 named destinations out of 1000 (max. 500000)

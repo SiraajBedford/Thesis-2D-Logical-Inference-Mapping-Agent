@@ -13,4 +13,7 @@ The agent makes use of observations, actions it takes and historical knowledge i
 
 The initial part of the report focusses on necessary knowledge to understand the logical representation, agent-environment interface and inference techniques for solving this problem. 
 
+The report goes onto explain the methodology for solving the problem.
+Finally, a discussion of the results and conclusion are drafted from the findings.
+
 % With this foundational knowledge....

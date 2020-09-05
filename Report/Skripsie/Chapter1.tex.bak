@@ -22,15 +22,47 @@
 
 Young children discover how the world works mostly through experience, despite not initially knowing the meaning of what they see, hear, feel, etc. The goal of this project is to do this, but for a simulated agent in a simple block‐world environment. The agent observes the blocks surrounding it as it moves through the environment, but it does not know anything about the world, where the observations come from, or what they mean. The agent should discover the structure of the environment (i.e. learn a map of the environment) from these observations using only general operations such as comparisons and logical operations.
 
-\section{Problem Statement}
+Mention expert systems.
+
+Explain the bigger picture to allow the user to understand what you have done really matters
+
+What is going on in the world.region/in gereneral that maes this problem worthwhile
+
+\section{Problem Statement/Research Question}
+
+What you are addrssing
+
+In the bigger problem this is what we want to adress
+
+Says exactly in one sentence what you supposed to do to answer the question (Sentence or two)
+
+\section{Objectives/Requirements}
+
+If I meet the following things
+
+Objective 1
+	Sub-objectives
+Objective 2
+
+Objective 3
+
+which are observable, we should have achieved the objective / part thereof
+
+In conclusion you must measure yourself against these
+
+\section{Summary of work / contribution}
 
 
 
-
-\section{Objectives}
 \section{Scope}
+
+The scope of this project is limited to a single agent in an environment.
+The environment will be 2-dimensional. A 3-dimensional environment was not considered due to time-constraints of the project.
+
+Theoreom proving not used, rather passible worlds
+
 \section{Roadmap}
 
-Mention expert systems.
+
 
 
