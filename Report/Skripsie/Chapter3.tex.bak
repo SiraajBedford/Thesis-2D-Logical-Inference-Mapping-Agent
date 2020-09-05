@@ -1,2 +1,44 @@
-\chapter{Inference by elimination}
+\chapter{System design} 
+\label{chapter:sys_design}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.7]{Figures/main_architecture.png}
+    \caption{Block diagram overview \cite{russell2016artificial}} 
+    \label{fig:sysdiag}
+\end{figure}
+
+This chapter goes over in detail how and why the agent interacts with the environment. g
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.7]{Figures/General_learning_agent.PNG}
+    \caption{General learning agent Figure 2.15 from} 
+    \label{fig:agent}
+\end{figure}
+
+\section{Architecture}
+
+Show agent in environment with robot in environment, actuators, remember agent controls the robot and the robot is in the physical environment.
+
+\subsection{Agent}
+		
+	
+\subsection{Environment}
+
+
+
+\subsection{Knowledge Base}
+
+
+
+\subsection{Inferencer}
+
+Inference in general: conclusion reached on the basis of evidence and reasoning.
+
+Inference in machine learning: Inference refers to the process of using a trained machine learning algorithm to make a prediction.
+
+
+
 

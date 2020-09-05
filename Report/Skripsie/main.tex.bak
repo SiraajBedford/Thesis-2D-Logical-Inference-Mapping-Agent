@@ -6,7 +6,7 @@
                ]{usthesis}
 \usepackage[margin=2.5cm]{geometry}
 \usepackage{siunitx}
-\usepackage{lipsum} 
+\usepackage{lipsum}
 \usepackage{graphicx}% http://ctan.org/pkg/graphicx
 \usepackage{multirow}% http://ctan.org/pkg/multirow
 \usepackage{booktabs}% http://ctan.org/pkg/booktab
@@ -14,6 +14,8 @@
 \usepackage{subcaption}
 \usepackage{fancyhdr}
 \usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[ruled,vlined]{algorithm2e}
 %
 % PLEASE read the USthesis documentation for the class options
 % and how to set line and paragraph spacing
@@ -37,7 +39,7 @@
     %% For usmeg-a, the bib is a list of references. If you
     %% are using usmeg-n comment out the following lines
 
-    \renewcommand{\bibname}{References} 
+    \renewcommand{\bibname}{References}
 
 %==== Graphics and Color ============================================
 \usepackage{graphicx}%........................... Graphicx loaded in usthesis
@@ -49,20 +51,20 @@
 
 
 
-\iftrue
-\usepackage[    colorlinks=false,
-    linkcolor=black,
-    filecolor=magenta,      
-    urlcolor=cyan,]{hyperref}%... Hyperlinks & backreferences
-%\usepackage{memhfixc} %........... Memoir fix (hyperref>6.75g autoloads it)
-\else
-\usepackage{nohyperref}%............ Disable hyperlinks
-\usepackage{url}
-\fi
-\hypersetup{    colorlinks=false,
-    linkcolor=black,
-    filecolor=magenta,      
-    urlcolor=cyan,}
+%\iftrue
+%\usepackage[    colorlinks=false,
+%    linkcolor=black,
+%    filecolor=magenta,
+%    urlcolor=cyan,]{hyperref}%... Hyperlinks & backreferences
+%%\usepackage{memhfixc} %........... Memoir fix (hyperref>6.75g autoloads it)
+%\else
+%\usepackage{nohyperref}%............ Disable hyperlinks
+%\usepackage{url}
+%\fi
+%\hypersetup{    colorlinks=false,
+%    linkcolor=black,
+%    filecolor=magenta,
+%    urlcolor=cyan,}
 
 %==== Local Defs ====================================================
 \makeatletter
@@ -96,7 +98,7 @@ Engineering at the University of Stellenbosch}
 \address{Departement of Electrical and Electronic Engineering,\\
          Universiteit van Stellenbosch,\\
          Privaatsak X1, Matieland 7602.}
-         
+
 
 
 \studyleader{Dr. CE van Daalen}
@@ -131,11 +133,11 @@ Engineering at the University of Stellenbosch}
 
 \include{Chapter1}
 \include{Chapter2}
-%\include{Chapter3}
-%\include{Chapter4}
-%\include{Chapter5}
-%\include{Chapter6}
-%\include{Chapter7}
+\include{Chapter3}
+\include{Chapter4}
+\include{Chapter5}
+\include{Chapter6}
+\include{Chapter7}
 
 \appendix%===========================================================
 

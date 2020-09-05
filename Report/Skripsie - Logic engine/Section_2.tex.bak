@@ -1,0 +1,5 @@
+\section*{Knowledge base design}
+
+\begin{itemize}
+	\item Must show at which time step the observations were added.
+\end{itemize}

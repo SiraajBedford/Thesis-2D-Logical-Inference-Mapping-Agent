@@ -1,0 +1,314 @@
+\documentclass{article}
+\usepackage[utf8]{inputenc}
+\usepackage{graphicx}
+\usepackage{float}
+\usepackage{listings}
+\usepackage{xcolor}
+
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
+
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\footnotesize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=b,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=false,                  
+    tabsize=2
+}
+
+\lstset{style=mystyle}
+
+\usepackage[
+top    = 1cm,
+bottom = 2cm,
+left   = 1cm,
+right  = 1cm]{geometry}
+
+\title{Skripsie sub-problem:  The three state environment}
+\author{21093741 }
+\date{August 2020}
+
+\begin{document}
+
+\maketitle
+
+\centerline{\rule{8in}{0.01in}}
+
+\section*{Introduction}
+
+This document aims to solve the problem for a simple 3 block environment for a logical agent to learn using inference by model checking.
+
+\section{Definition of Atomic Sentences}
+
+$\mathcal{P}_t$-To left is open at time $t$\\
+$\neg \mathcal{P}_t$-To left is not open at time $t$\\
+$\mathcal{Q}_t$-To right is open at time $t$\\
+$\neg \mathcal{Q}_t$-To right is not open at time $t$\\
+$\mathcal{R}_t$-Agent chose to move right at time $t$\\
+$\mathcal{S}_t$-Agent chose to move left at time $t$\\
+$\mathcal{T}_t$-In state 1 (In the left most block) at time $t$\\
+$\mathcal{U}_t$-In state 2 (The middle block) at time $t$\\
+$\mathcal{V}_t$-In state 3 (In the right most block) at time $t$\\
+
+
+
+
+\section{Logical Connectives}
+ 
+
+
+$\neg$ - not\\
+$\wedge$ - and\\
+$\vee$ - or\\
+$\Rightarrow$ - implies\\
+$\Leftrightarrow$ - if and only if\\
+
+Operator precedence - $\neg$, $\wedge$, $\vee$, $\Rightarrow$, $\Leftrightarrow$
+
+These can be used to connect atomic sentences to form complex sentences. The complex sentences can be used as prior knowledge in the initial knowledge base.
+
+
+\section{State definition in the Knowledge Base}
+
+
+\subsection{State 1}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{Figures/Simple Agent.png}
+    \caption{Agent in State 1}
+    \label{fig:S1}
+\end{figure}
+
+\begin{itemize}
+    \item Option 1: $ \mathcal{T}_{t-1} \wedge S_t \Rightarrow \mathcal{T}_t $, If in state 1 initially and agent moves left, agent stays in state 1.
+    \item Option 2: $ \mathcal{U}_{t-1} \wedge S_t \Rightarrow \mathcal{T}_t $, If in state 2 initially and agent moves left, agent is in state 1.
+    \item $\neg \mathcal{P}_t \wedge \mathcal{Q}_t \Rightarrow \mathcal{T}_t$. At the current time step, if the agent observes a closed space to the left and open space to the right as a result of performing options 1 or 2 then agent is in state 1.   
+\end{itemize}
+
+
+
+
+\subsection{State 2}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{Figures/Simple Agent (1).png}
+    \caption{Agent in State 2}
+    \label{fig:S2}
+\end{figure}
+
+\begin{itemize}
+    \item Option 1: $ \mathcal{T}_{t-1} \wedge R_t \Rightarrow \mathcal{U}_t $, If in state 1 initially and agent moves right, agent is in state 2.
+    \item Option 2: $ \mathcal{V}_{t-1} \wedge S_t \Rightarrow \mathcal{U}_t $, If in state 3 initially and agent moves left, agent is in state 2.
+    \item $ \mathcal{P}_t \wedge \mathcal{U}_t \Rightarrow \mathcal{T}_t$. At the current time step, if the agent observes an open space to the left and open space to the right as a result of performing options 1 or 2 then agent is in state 2.   
+\end{itemize}
+
+
+
+\subsection{State 3}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.4]{Figures/Simple Agent (2).png}
+    \caption{Agent in State 3}
+    \label{fig:S3}
+\end{figure}
+
+\begin{itemize}
+    \item Option 1: $ \mathcal{V}_{t-1} \wedge R_t \Rightarrow \mathcal{V}_t $, If in state 3 initially and agent moves right, agent stays in state 3.
+    \item Option 2: $ \mathcal{U}_{t-1} \wedge R_t \Rightarrow \mathcal{V}_t $, If in state 2 initially and agent moves right, agent is in state 3.
+    \item $\neg \mathcal{Q}_t \wedge \mathcal{P}_t \Rightarrow \mathcal{V}_t$. At the current time step, if the agent observes an open space to the left and closed space to the right as a result of performing options 1 or 2 then agent is in state 3.   
+\end{itemize}
+
+\section{Inference by Model Checking of possible worlds}
+
+The point of inference is to find out which state the agent is in. We can do this by referencing rules in the KB. 
+
+
+
+
+
+
+
+
+
+
+\section{Design of agent, environment, inference engine and knowledge base}
+
+\subsection{Agent requirements}
+
+\begin{itemize}
+    \item AR1: Should be able to observe the blocks to the left and right of the agent at time $t$.
+    \item AR2: Should be able to know if the blocks to the left or right is a wall (1) or an open space (0).
+    \item AR3: Should be able to move right.
+    \item AR4: Should be able to move left.
+    \item AR5: Should be able to move randomly for inference.
+\end{itemize}
+
+
+\subsection{Environment requirements}
+
+\begin{itemize}
+    \item ER1: Should have open blocks for 3 states. (left, middle, right)
+    \item ER2: Should have boundary blocks to prevent indexing errors.
+    \item ER3: Read in the map as CSV or generate map using a function.
+\end{itemize}
+
+
+\subsection{Knowledge base requirements}
+
+\begin{itemize}
+    \item KR1: Should be able to store logic rules. (Will probably use strings to accomplish this).
+    \item KR2: Should be able to add new logic rules if not in the KB.
+    \item KR3: Should interpret logic the same way the logic and inference engine performs logical operations.
+\end{itemize}
+
+\subsection{Inference engine requirements}
+
+\begin{itemize}
+    \item IR1: Should be able to generate all possible worlds
+    \item IR2: Check whether the facts in the KB agree with possible worlds by querying the KB.
+    \item IR3: Should be able to execute the following logical operations:  $\neg$, $\wedge$ , $\vee$, $\Rightarrow$, $\Leftrightarrow$
+    \item IR4: Use recursion operation from one time step to the next.
+\end{itemize}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Implementing code in python using the design requirements}
+
+\subsection{Agent}
+
+\begin{itemize}
+    \item AR1 and AR2: method that takes in current position of agent in environment and returns left and right squares and if these squares are walls (1) or open spaces (0).
+    \item AR3 and AR4: The agent has \textit{self} attribute that has an $x$ coordinate. This can be increased or decreased by 1 to let the agent move itself.
+    \item AR5: Use random module in python for choosing right or left.
+\end{itemize}
+
+
+\begin{lstlisting}[language=Python, caption=Agent class outline]
+#Agent
+
+import random # for choosing left or right action
+import numpy # for interpreting maps as numpy arrays
+import environment #design this library for getting
+    
+class Simple_Agent():
+    
+    def __init__(self, x, obs):
+        # initial x position will be given for prototyping phase
+        # get left and right observations from environment module.
+        
+    def move_left(self):
+        # decrease horizontal agent position by 1.
+    
+    def move_right(self):
+        # increment horizontal agent position by 1.
+        
+    def random_move(self):
+        # choose to move right or left randomly.
+        
+    #def observe(self):
+        #get left and right blocks from environment module. Give this to the agent
+\end{lstlisting}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\subsection{Environment}
+
+\begin{itemize}
+    \item ER1: Environment matrix has three zero elements.
+    \item ER2: Environment matrix has a 'one' element on borders.
+    \item ER3: Have functions to read in .csv or return numpy array from function
+\end{itemize}
+
+\begin{lstlisting}[language=Python, caption=Environment class outline]
+#Environment
+
+import numpy as np
+from numpy import genfromtxt
+
+class Environment():
+
+    def gen_env_from_csv(self, path):
+        # read in .csv file (1, 0 ,0, 0, 1) as a numpy array.
+
+    def horizontal_environment(self):
+        # return array in the form [1, 0 ,0, 0, 1]
+    
+\end{lstlisting}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Knowledge base (I'm not sure how to store things in a KB yet)} 
+
+\begin{itemize}
+    \item KR1: Should be able to store logic rules. (Will probably use strings to accomplish this).
+ operations.
+\end{itemize}
+
+
+\begin{lstlisting}[language=Python, caption=Knowledge base class outline]
+#Knowledge base
+
+class KB():
+
+    def add_rule(self):
+        # add rule to KB
+
+\end{lstlisting}
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\subsection{Inference engine (Not completely sure how to implement this yet)}
+
+\begin{itemize}
+    \item IR1: Should be able to generate all possible worlds
+    \item IR2: Check whether the facts in the KB agree with possible worlds by querying the KB.
+    \item IR3: Should be able to execute the following logical operations:  $\neg$, $\wedge$ , $\vee$, $\Rightarrow$, $\Leftrightarrow$
+    \item IR4: Use recursion operation from one time step to the next.
+\end{itemize}
+
+
+
+\begin{lstlisting}[language=Python, caption=Inference engine class outline]
+#Inference engine
+
+class Inference()
+
+    def gen_worlds(self):
+        #return possible worlds
+        
+    def infer(self):
+        #check facts in KB against possible worlds
+
+\end{lstlisting}
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\end{document}

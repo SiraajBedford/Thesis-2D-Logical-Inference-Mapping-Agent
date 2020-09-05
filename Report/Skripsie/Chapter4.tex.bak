@@ -1,7 +1,44 @@
-\chapter{Design}
+\chapter{Detailed design} 
+
+\section{Detailed sub-systems descriptions}
+
+\subsection{Agent}
+		
+	
+\subsection{Environment}
 
 
 
+\subsection{Knowledge Base}
 
 
 
+\subsection{Inferencer}
+
+
+
+\section{Learning Algorithms} 
+
+\section{Forming groups of states}
+Using Regex?
+
+\begin{algorithm}[H]
+\SetAlgoLined
+\KwResult{Write here the result}
+ initialization\;
+ \While{While condition}{
+  instructions\;
+  \eIf{condition}{
+   $\mathcal{\neg P_t \vee Q_t}$\;
+   instructions2\;
+   }{
+   instructions3\;
+  }
+ }
+ \caption{How to write algorithms}
+\end{algorithm}
+
+
+\subsection{Split state definitions using AND}
+	
+\subsection{Merge state definitions using OR}

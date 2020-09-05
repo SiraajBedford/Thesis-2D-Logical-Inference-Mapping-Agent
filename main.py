@@ -25,14 +25,14 @@ from classes.inference import Knowledge_Base
 # Create environment
 
 sim_mode = 1 # Scale from 1 to 10 on the length of the map
-draw = 0 # 1-yes, 0-no
+draw = 1 # 1-yes, 0-no
 loop_timeout = tm.time() + 1 * 6000  # While-loop timeout
 sleep_time = 1 # In seconds, how often debugging information is reported
 print_debug_info = 1 # 1-yes, 0-no
 agent_moving = 1 # 1-yes, 0-no
 inference_development_mode = 1 # 1-yes, 0-no
 
-if sim_mode == 1: sim_env=np.array([[1,0,0,0,1]]) 
+if sim_mode == 1: sim_env=np.array([[1,0,0,0,0,1]]) 
 if sim_mode == 2: sim_env=np.array([[1,0,0,0,0,0,1]]) 
 if sim_mode == 3: sim_env=np.array([[1,0,0,0,0,0,0,0,1]]) 
 if sim_mode == 4: sim_env=np.array([[1,0,0,0,0,0,0,0,0,0,1]]) 

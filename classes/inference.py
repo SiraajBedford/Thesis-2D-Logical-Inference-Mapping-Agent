@@ -26,9 +26,11 @@ from classes.logic import vars, truth_table_rows
 
 # Initialization
 
-P_t,Q_t=vars('P_t','Q_t')
+P_t,Q_t, R_t, S_t=vars('P_t','Q_t','R_t', 'S_t')
 P_t_check = Constant(True)
 Q_t_check = Constant(True)
+R_t_check = Constant(True)
+S_t_check = Constant(True)
 
 
 def my_func(params):
@@ -90,21 +92,32 @@ class Inference():
         
     def print_prop(self, observations, actions):
         
-        if observations == (1, 0):
+        if observations == (1, 0) and actions == 0:
             P_t_check=False
             Q_t_check=True
             
-        if observations == (0, 0):
+        if observations == (1, 0) and actions == 1:
+            P_t_check=True
+            Q_t_check=True
+            
+        if observations == (0, 0) and actions:# Must check previous state here
             P_t_check=True
             Q_t_check=True
             
  
-        if observations == (0, 1):
+        if observations == (0, 1) and actions == 1:
             P_t_check=True
             Q_t_check=False
             
+            
+        if observations == (0, 1) and actions == 0:
+            P_t_check=True
+            Q_t_check=True
+            
         print("P_t_check: %r" %(P_t_check))
         print("Q_t_check: %r" %(Q_t_check))
+        print("R_t_check: %r" %(R_t_check))
+        print("S_t_check: %r" %(S_t_check))
         print()
         
         state_1= ~P_t & Q_t

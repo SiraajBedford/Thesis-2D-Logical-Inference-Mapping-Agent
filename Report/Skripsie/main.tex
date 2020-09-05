@@ -14,6 +14,8 @@
 \usepackage{subcaption}
 \usepackage{fancyhdr}
 \usepackage{float}
+\usepackage[normalem]{ulem}
+\usepackage[ruled,vlined]{algorithm2e}
 %
 % PLEASE read the USthesis documentation for the class options
 % and how to set line and paragraph spacing
@@ -49,20 +51,20 @@
 
 
 
-\iftrue
-\usepackage[    colorlinks=false,
-    linkcolor=black,
-    filecolor=magenta,
-    urlcolor=cyan,]{hyperref}%... Hyperlinks & backreferences
-%\usepackage{memhfixc} %........... Memoir fix (hyperref>6.75g autoloads it)
-\else
-\usepackage{nohyperref}%............ Disable hyperlinks
-\usepackage{url}
-\fi
-\hypersetup{    colorlinks=false,
-    linkcolor=black,
-    filecolor=magenta,
-    urlcolor=cyan,}
+%\iftrue
+%\usepackage[    colorlinks=false,
+%    linkcolor=black,
+%    filecolor=magenta,
+%    urlcolor=cyan,]{hyperref}%... Hyperlinks & backreferences
+%%\usepackage{memhfixc} %........... Memoir fix (hyperref>6.75g autoloads it)
+%\else
+%\usepackage{nohyperref}%............ Disable hyperlinks
+%\usepackage{url}
+%\fi
+%\hypersetup{    colorlinks=false,
+%    linkcolor=black,
+%    filecolor=magenta,
+%    urlcolor=cyan,}
 
 %==== Local Defs ====================================================
 \makeatletter
@@ -133,9 +135,9 @@ Engineering at the University of Stellenbosch}
 \include{Chapter2}
 \include{Chapter3}
 \include{Chapter4}
-%\include{Chapter5}
-%\include{Chapter6}
-%\include{Chapter7}
+\include{Chapter5}
+\include{Chapter6}
+\include{Chapter7}
 
 \appendix%===========================================================
 

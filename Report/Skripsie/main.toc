@@ -1,26 +1,42 @@
-\contentsline {chapter}{Declaration}{i}{chapter*.1}% 
-\contentsline {chapter}{Abstract}{ii}{chapter*.2}% 
-\contentsline {chapter}{Acknowledgements}{iii}{chapter*.3}% 
-\contentsline {chapter}{Contents}{iv}{section*.5}% 
-\contentsline {chapter}{Nomenclature}{v}{chapter*.6}% 
-\contentsline {chapter}{List of Figures}{vi}{section*.8}% 
-\contentsline {chapter}{List of Tables}{vii}{section*.10}% 
-\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}% 
-\contentsline {chapter}{\numberline {2}Architecture and Representations}{2}{chapter.2}% 
-\contentsline {section}{\numberline {2.1}Architecture}{2}{section.2.1}% 
-\contentsline {subsection}{\numberline {2.1.1}Requirements of the agent}{2}{subsection.2.1.1}% 
-\contentsline {subsection}{\numberline {2.1.2}Requirements of the environment}{2}{subsection.2.1.2}% 
-\contentsline {section}{\numberline {2.2}Agent and Environment representation}{2}{section.2.2}% 
-\contentsline {subsection}{\numberline {2.2.1}Why use a Logic-Based Agent?}{2}{subsection.2.2.1}% 
-\contentsline {subsection}{\numberline {2.2.2}Propositional Logic usage}{2}{subsection.2.2.2}% 
-\contentsline {subsection}{\numberline {2.2.3}Atomic and Complex sentences representations}{2}{subsection.2.2.3}% 
-\contentsline {subsection}{\numberline {2.2.4}Usage of a Knowledge Base}{2}{subsection.2.2.4}% 
-\contentsline {chapter}{\numberline {3}Inference}{3}{chapter.3}% 
-\contentsline {section}{\numberline {3.1}Knowledge Base}{3}{section.3.1}% 
-\contentsline {chapter}{\numberline {4}Learning}{4}{chapter.4}% 
-\contentsline {section}{\numberline {4.1}Forming groups of states}{4}{section.4.1}% 
-\contentsline {subsection}{\numberline {4.1.1}Split state definitions using AND}{4}{subsection.4.1.1}% 
-\contentsline {subsection}{\numberline {4.1.2}Merge state definitions using OR}{4}{subsection.4.1.2}% 
-\contentsline {chapter}{References}{5}{section*.12}% 
-\contentsline {chapter}{Appendix A: Project Planning Schedule}{6}{appendix*.13}% 
-\contentsline {chapter}{Appendix B: Outcomes Compliance}{7}{appendix*.15}% 
+\contentsline {chapter}{Declaration}{i}% 
+\contentsline {chapter}{Abstract}{ii}% 
+\contentsline {chapter}{Acknowledgements}{iii}% 
+\contentsline {chapter}{Contents}{iv}% 
+\contentsline {chapter}{Nomenclature}{vi}% 
+\contentsline {chapter}{List of Figures}{vii}% 
+\contentsline {chapter}{List of Tables}{viii}% 
+\contentsline {chapter}{\numberline {1}Introduction}{1}% 
+\contentsline {section}{\numberline {1.1}Background}{1}% 
+\contentsline {section}{\numberline {1.2}Problem Statement}{1}% 
+\contentsline {section}{\numberline {1.3}Objectives}{1}% 
+\contentsline {section}{\numberline {1.4}Scope}{1}% 
+\contentsline {section}{\numberline {1.5}Roadmap}{1}% 
+\contentsline {chapter}{\numberline {2}Literature}{2}% 
+\contentsline {section}{\numberline {2.1}Related work}{2}% 
+\contentsline {subsection}{\numberline {2.1.1}Objectives}{2}% 
+\contentsline {subsection}{\numberline {2.1.2}Methods}{2}% 
+\contentsline {subsection}{\numberline {2.1.3}Their results}{2}% 
+\contentsline {subsection}{\numberline {2.1.4}Their shortcomings/remaining challenges}{2}% 
+\contentsline {section}{\numberline {2.2}Required knowledge}{2}% 
+\contentsline {chapter}{\numberline {3}System design}{3}% 
+\contentsline {section}{\numberline {3.1}Architecture}{4}% 
+\contentsline {subsection}{\numberline {3.1.1}Agent}{4}% 
+\contentsline {subsection}{\numberline {3.1.2}Environment}{4}% 
+\contentsline {subsection}{\numberline {3.1.3}Knowledge Base}{4}% 
+\contentsline {subsection}{\numberline {3.1.4}Inferencer}{4}% 
+\contentsline {chapter}{\numberline {4}Detailed design}{5}% 
+\contentsline {section}{\numberline {4.1}Detailed sub-systems descriptions}{5}% 
+\contentsline {subsection}{\numberline {4.1.1}Agent}{5}% 
+\contentsline {subsection}{\numberline {4.1.2}Environment}{5}% 
+\contentsline {subsection}{\numberline {4.1.3}Knowledge Base}{5}% 
+\contentsline {subsection}{\numberline {4.1.4}Inferencer}{5}% 
+\contentsline {section}{\numberline {4.2}Learning Algorithms}{5}% 
+\contentsline {section}{\numberline {4.3}Forming groups of states}{5}% 
+\contentsline {subsection}{\numberline {4.3.1}Split state definitions using AND}{5}% 
+\contentsline {subsection}{\numberline {4.3.2}Merge state definitions using OR}{5}% 
+\contentsline {chapter}{\numberline {5}Results}{6}% 
+\contentsline {chapter}{\numberline {6}Discussion}{7}% 
+\contentsline {chapter}{\numberline {7}Conclusion}{8}% 
+\contentsline {chapter}{References}{9}% 
+\contentsline {chapter}{Appendix A: Project Planning Schedule}{10}% 
+\contentsline {chapter}{Appendix B: Outcomes Compliance}{11}% 
