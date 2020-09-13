@@ -11,10 +11,254 @@
 
 \section{Required knowledge}
 
-Did not learn this material in EE engineering
+%Did not learn this material in EE engineering
+
+\subsection{Entailment}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/entailment.png}
+    \caption{Figure describing entialment}
+    \label{fig:entailment}
+\end{figure}
+
+$\alpha \models \beta$  if and only if, in every model in which $\alpha$ is true, $\beta$ is also true.
+
+$\alpha \models \beta$  if and only if $M (\alpha) \subseteq M (\beta)$ .
+(Note the direction of the $\subseteq$ here: if $\alpha \models \beta$ , then $\alpha$ is a stronger assertion than $\beta$: it rules out more possible worlds.)
+
+The preceding example not only illustrates entailment but also shows how the definition of entailment can be applied to derive conclusions—that is, to carry out logical inference.
+
+
+\subsection{Inference}
+
+The inference algorithm illustrated in Figure 7.5 is called model checking, because it enu-
+merates all possible models to check that $\alpha$ is true in all models in which KB is true, that is,
+that  $M (KB) \subseteq M (\alpha)$ .
+
+This distinction is embodied in some formal notation: if
+an inference algorithm $i$ can derive $\alpha$ from KB, we write
+$KB \models_i \alpha$
+
+An inference algorithm that derives only entailed sentences is called sound or truth-
+preserving. Soundness is a highly desirable property. An unsound inference procedure es-
+sentially makes things up as it goes along—it announces the discovery of nonexistent needles.
+It is easy to see that model checking, when it is applicable, 4 is a sound procedure
+
+
+
+The property of completeness is also desirable: an inference algorithm is complete if
+it can derive any sentence that is entailed. For real haystacks, which are finite in extent,
+it seems obvious that a systematic examination can always decide whether the needle is in
+the haystack. For many knowledge bases, however, the haystack of consequences is infinite,
+and completeness becomes an important issue. 5
+
+Fortunately, there are complete inference
+procedures for logics that are sufficiently expressive to handle many knowledge bases.
+
+
+(4) Model checking works if the space of models is finite—for example, in wumpus worlds of fixed size. For
+arithmetic, on the other hand, the space of models is infinite: even if we restrict ourselves to the integers, there
+are infinitely many pairs of values for x and y in the sentence x + y = 4.
+(5) Compare with the case of infinite search spaces in Chapter 3, where depth-first search is not compl
+
+We have described a reasoning process whose conclusions are guaranteed to be true
+in any world in which the premises are true; in particular, \textbf{if KB is true in the real world,
+then any sentence $\alpha$ derived from KB by a sound inference procedure is also true in the real world.}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/World_and_sematics.png}
+    \caption{Figure describing entialment}
+    \label{fig:entailment}
+\end{figure}
 
 \subsection{Propositional logic}
 
-\section{Agent-environment interaction}
 
-\section{Inference}
+We now present a simple but powerful logic called propositional logic. We cover the syntax
+of propositional logic and its semantics—the way in which the truth of sentences is deter-
+mined. Then we look at entailment—the relation between a sentence and another sentence
+that follows from it—and see how this leads to a simple algorithm for logical inference. Ev-
+erything takes place, of course, in the wumpus world.
+
+\subsubsection{Syntax}
+
+% Add truth tables for each logical connective
+
+The syntax of propositional logic defines the allowable sentences. The atomic sentences
+consist of a single proposition symbol. Each such symbol stands for a proposition that can
+be true or false. We use symbols that start with an uppercase letter and may contain other
+letters or subscripts, for example: P , Q, R, W 1,3 and North. The names are arbitrary but
+are often chosen to have some mnemonic value—we use W 1,3 to stand for the proposition
+that the wumpus is in [1,3]. (Remember that symbols such as W 1,3 are atomic, i.e., W , 1,
+and 3 are not meaningful parts of the symbol.) There are two proposition symbols with fixed
+meanings: True is the always-true proposition and False is the always-false proposition.
+Complex sentences are constructed from simpler sentences, using parentheses and logical
+connectives. There are five connectives in common use:
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/propositional_logic_connectives.png}
+    \caption{Propositional logicl atomic sentence connectives}
+    \label{fig:connectives}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/propositional_logic_syntax.png}
+    \caption{A BNF (Backus–Naur Form) grammar of sentences in propositional logic,
+along with operator precedences, from highest to lowest.}
+    \label{fig:connectives}
+\end{figure}
+
+\subsubsection{Semantics}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/propositional_logic_semantics_1.png}
+    \caption{Semantcis 1}
+    \label{fig:S1}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/propositional_logic_semantics_2.png}
+    \caption{Semantcis 2}
+    \label{fig:S2}
+\end{figure}
+
+\subsubsection{Simple knowledge bases}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/propositional_logic_KB_1.png}
+    \caption{KB 1}
+    \label{fig:KB1}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/propositional_logic_KB_2.png}
+    \caption{KB 2}
+    \label{fig:KB2}
+\end{figure}
+
+
+\subsubsection{Simple Infernce procedure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/propositional_logic_simple_inference_1.png}
+    \caption{Simple inference 1}
+    \label{fig:SI 1}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/propositional_logic_simple_inference_2.png}
+    \caption{Simple inference 2}
+    \label{fig:SI 2}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/propositional_logic_simple_inference_3.png}
+    \caption{Simple inference 3}
+    \label{fig:SI 3}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/propositional_logic_simple_inference_backtrack.png}
+    \caption{Backtrack}
+    \label{fig:SI backtrack}
+\end{figure}
+
+
+\subsubsection{Effective propositional model checking}
+
+
+In this section, we describe two families of efficient algorithms for general propositional
+inference based on model checking: One approach based on backtracking search, and one
+on local hill-climbing search. These algorithms are part of the “technology” of propositional
+logic. This section can be skimmed on a first reading of the chapter.
+
+
+The algorithms we describe are for checking satisfiability: the SAT problem. (As noted
+earlier, testing entailment,$\alpha \models \beta$, can be done by testing unsatisfiability of $\alpha \wedge \neg \beta$). We
+have already noted the connection between finding a satisfying model for a logical sentence
+and finding a solution for a constraint satisfaction problem, so it is perhaps not surprising that
+the two families of algorithms closely resemble the backtracking algorithms of Section 6.3
+and the local search algorithms of Section 6.4. They are, however, extremely important in
+their own right because so many combinatorial problems in computer science can be reduced
+to checking the satisfiability of a propositional sentence. Any improvement in satisfiability
+algorithms has huge consequences for our ability to handle complexity in general.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/effective_propositional_model_checkinh_CNF.png}
+    \caption{CNF semantics}
+    \label{fig:CNF}
+\end{figure}
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/effective_propositional_model_checking_1.png}
+    \caption{CNF semantics}
+    \label{fig:CNF}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/effective_propositional_model_checking_2.png}
+    \caption{CNF semantics}
+    \label{fig:CNF}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/effective_propositional_model_checking_3.png}
+    \caption{CNF semantics}
+    \label{fig:CNF}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/effective_propositional_model_checking_4.png}
+    \caption{CNF semantics}
+    \label{fig:CNF}
+\end{figure}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/effective_propositional_model_checking_5.png}
+    \caption{CNF semantics}
+    \label{fig:CNF}
+\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

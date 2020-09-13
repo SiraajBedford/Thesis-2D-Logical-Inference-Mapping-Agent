@@ -16,7 +16,6 @@ from classes.agent import Agent
 from classes.inference import Inference
 from classes.inference import Knowledge_Base
 
-
 ## Initial state
 
 #Inferencer
