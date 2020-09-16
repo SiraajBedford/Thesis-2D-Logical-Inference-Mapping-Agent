@@ -342,8 +342,8 @@ def pl_true(exp, model={}):
         return pt == qt
     elif op == '^':
         return pt != qt
-    else:
-        raise ValueError, "illegal operator in logic expression" + str(exp)
+    # else:
+    #     raise ValueError, "illegal operator in logic expression" + str(exp)
 
 #______________________________________________________________________________
 

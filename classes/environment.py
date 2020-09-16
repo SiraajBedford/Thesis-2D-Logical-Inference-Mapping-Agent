@@ -19,12 +19,23 @@ class Environment():
         return genfromtxt(path , delimiter=',')
 
     def agent_observations(self, agent_coord_y, agent_coord_x):
-        return self.structure[agent_coord_y][agent_coord_x-1], self.structure[agent_coord_y][agent_coord_x+1]
+        return self.ref_array[agent_coord_y][agent_coord_x-1], self.ref_array[agent_coord_y][agent_coord_x+1]
     
     def agent_in_map(self, agent_coord_y, agent_coord_x, agent_val, agent_coord_y_prev, agent_coord_x_prev, agent_val_prev):
 
         self.structure[agent_coord_y_prev][agent_coord_x_prev]=self.ref_array[agent_coord_y_prev][agent_coord_x_prev]
         self.structure[agent_coord_y][agent_coord_x]=agent_val
+        
+        
+    def agent_in_map_static(self, agent_coord_y, agent_coord_x, agent_val, agent_coord_y_prev, agent_coord_x_prev, agent_val_prev):
+
+        self.structure[agent_coord_y_prev][agent_coord_x_prev]=0
+        self.structure[agent_coord_y][agent_coord_x]=agent_val
+        
+    def print_env_structure(self):
+        print("Current World: %s" %( np.array2string(self.structure, separator=',') ))
+
+
     
     def copy(self):
         return copy.deepcopy(self)
@@ -34,5 +45,5 @@ class Environment():
         
     def plot(self):
         plt.rcParams['figure.figsize']=(0.1,0.1)
-        plt.matshow(self.structure, cmap='inferno')
+        plt.matshow(self.structure, cmap='gray')
         plt.show()
