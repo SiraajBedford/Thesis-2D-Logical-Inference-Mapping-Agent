@@ -34,8 +34,6 @@ class Environment():
         
     def print_env_structure(self):
         print("Current World: %s" %( np.array2string(self.structure, separator=',') ))
-
-
     
     def copy(self):
         return copy.deepcopy(self)
