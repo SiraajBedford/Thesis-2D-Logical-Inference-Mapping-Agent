@@ -15,20 +15,18 @@ import numpy as np # For manipulating arrays
 import time as tm # To control simulation time
 
 # Import user defined libraries
-from classes.agent import Agent, KB
+from classes.logic import KBAgentProgram, PropKB
 from classes.environment import Environment
 from classes.agent_physical import Agent_physical
 
 # Initial state
 t_global=0
 
-# # Create a knowledge base for the agent
-# kb=KB()
+# Create a knowledge base for the agent
+kb=PropKB()
 
-# # Create mapping agent
-# agent_1=Agent()
-
-
+# Create mapping agent
+agent_1=KBAgentProgram()
 
 # Create environment
 sim_mode = 1 # Scale from 1 to 10 on the length of the map
@@ -136,6 +134,46 @@ if agent_moving_given == 1:
                 
     except KeyboardInterrupt:
         pass
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 if agent_moving_random == 1:
     

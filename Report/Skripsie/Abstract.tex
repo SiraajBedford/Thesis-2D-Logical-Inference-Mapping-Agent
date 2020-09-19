@@ -6,14 +6,13 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-This research project is aimed at developing a new solution to map a 2-dimensional environment using propositional logical. This problem uses an agent placed in an environment, which subsequently tries to rebuild the environment over time. This problem is normally solved using reinforcement learning, but it requires large sets of data, is computationally expensive and for optimal results requires the use of a relatively expensive GPU.
+This project is aimed at developing a new solution to map a 2-dimensional environment using an agent that works using propositional logical that has no knowledge of its reference with respect to the environment. The agent is placed in the environment and overtime moves through the environment and tries to create informational links between states of the environment. The agent experiences different states at different timesteps and subsequently try to group or split these states based on information in a knowledge base to expand on states definitions when required and contract state definitions when needed.
+The process does not require the use of a coordinate system. This problem can be solved using reinforcement learning, but that would require large sets of pre-recored data, is computationally expensive and for optimal results requires the use of a relatively expensive GPUs.
 
 The method we propose is to let the agent roam in the 2-dimensional environment over discrete time and discover the environment for itself.
-The agent makes use of observations, actions it takes and historical knowledge in the lifetime of the agent to build a base of knowledge that entails the information required to recreate the original map. 
-
-The initial part of the report focusses on necessary knowledge to understand the logical representation, agent-environment interface and inference techniques for solving this problem. 
+The agent makes use of observations, actions it takes and historical knowledge in the lifetime of the agent to build a base of knowledge that entails the information required to recreate the original map abstractly. The initial part of the report focusses on necessary knowledge to understand the logical representation, agent-environment interface and inference techniques for solving this problem. 
 
 The report goes onto explain the methodology for solving the problem.
-Finally, a discussion of the results and conclusion are drafted from the findings.
+Finally, a discussion of the results and conclusion are made from the findings.
 
 % With this foundational knowledge....

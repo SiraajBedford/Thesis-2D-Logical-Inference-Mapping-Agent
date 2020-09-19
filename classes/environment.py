@@ -2,15 +2,20 @@
 import numpy as np
 from numpy import genfromtxt
 import copy
+import random
 import matplotlib.pyplot as plt
 
 # Import user defined libraries
+
+
 
 class Environment():
     
     def __init__(self, input_env):
         self.structure=input_env
         self.ref_array=copy.deepcopy(input_env)#Constant reference array
+        list_cmap=['gray','nipy_spectral','inferno','magma','pink','hot','copper','bone']
+        self.cmap=random.choice(list_cmap)
 
     def environment_one(self):
         return self.structure   
@@ -43,5 +48,6 @@ class Environment():
         
     def plot(self):
         plt.rcParams['figure.figsize']=(0.1,0.1)
-        plt.matshow(self.structure, cmap='gray')
+        
+        plt.matshow(self.structure, cmap=self.cmap)
         plt.show()
