@@ -1,81 +1,47 @@
-\chapter{Research and Associated Literature} 
-\label{chapter:Lit}
+\chapter{Literature} 
+\label{chapter:Literature}
 
-\section{Related Work}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ELO 1, 6, 8, 9
+% Planning for Literature
 
-%\subsection{Objectives}
-%\subsection{Methods}
-%\subsection{Their results}
-%\subsection{Their shortcomings/remaining challenges}
+% Chapter 2: Literature
 
+% 2.1  Related Work - Their opbjective (Similar to yours), their method, their results, short comings wrt YOUR objective. Highlight their downfall/problems/remianing challenges
 
-\section{Required knowledge}
+% 2.2 Literature - What information did you need to learn, to be able to solve the problem and do the design. This must be evident to the examiner.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-%Did not learn this material in EE engineering
-
-\subsection{Entailment}
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=.6]{Figures/entailment.png}
-    \caption{Figure describing entialment}
-    \label{fig:entailment}
-\end{figure}
-
-$\alpha \models \beta$  if and only if, in every model in which $\alpha$ is true, $\beta$ is also true.
-
-$\alpha \models \beta$  if and only if $M (\alpha) \subseteq M (\beta)$ .
-(Note the direction of the $\subseteq$ here: if $\alpha \models \beta$ , then $\alpha$ is a stronger assertion than $\beta$: it rules out more possible worlds.)
-
-The preceding example not only illustrates entailment but also shows how the definition of entailment can be applied to derive conclusions—that is, to carry out logical inference.
-
-
-\subsection{Inference}
-
-The inference algorithm illustrated in Figure 7.5 is called model checking, because it enu-
-merates all possible models to check that $\alpha$ is true in all models in which KB is true, that is,
-that  $M (KB) \subseteq M (\alpha)$ .
-
-This distinction is embodied in some formal notation: if
-an inference algorithm $i$ can derive $\alpha$ from KB, we write
-$KB \models_i \alpha$
-
-An inference algorithm that derives only entailed sentences is called sound or truth-
-preserving. Soundness is a highly desirable property. An unsound inference procedure es-
-sentially makes things up as it goes along—it announces the discovery of nonexistent needles.
-It is easy to see that model checking, when it is applicable, 4 is a sound procedure
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Related Work}
+%
+%\subsection{Paper 1}
+%\subsubsection{Objectives}
+%\subsubsection{Methods}
+%\subsubsection{Their results}
+%\subsubsection{Their shortcomings/remaining challenges}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
-The property of completeness is also desirable: an inference algorithm is complete if
-it can derive any sentence that is entailed. For real haystacks, which are finite in extent,
-it seems obvious that a systematic examination can always decide whether the needle is in
-the haystack. For many knowledge bases, however, the haystack of consequences is infinite,
-and completeness becomes an important issue. 5
-
-Fortunately, there are complete inference
-procedures for logics that are sufficiently expressive to handle many knowledge bases.
 
 
-(4) Model checking works if the space of models is finite—for example, in wumpus worlds of fixed size. For
-arithmetic, on the other hand, the space of models is infinite: even if we restrict ourselves to the integers, there
-are infinitely many pairs of values for x and y in the sentence x + y = 4.
-(5) Compare with the case of infinite search spaces in Chapter 3, where depth-first search is not compl
-
-We have described a reasoning process whose conclusions are guaranteed to be true
-in any world in which the premises are true; in particular, \textbf{if KB is true in the real world,
-then any sentence $\alpha$ derived from KB by a sound inference procedure is also true in the real world.}
 
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=.6]{Figures/World_and_sematics.png}
-    \caption{Figure describing entialment}
-    \label{fig:entailment}
-\end{figure}
 
-\subsection{Propositional logic}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Literature}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Propositional Logic}
 
 
 We now present a simple but powerful logic called propositional logic. We cover the syntax
@@ -84,7 +50,9 @@ mined. Then we look at entailment—the relation between a sentence and another 
 that follows from it—and see how this leads to a simple algorithm for logical inference. Ev-
 erything takes place, of course, in the wumpus world.
 
-\subsubsection{Syntax}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Syntax}
 
 % Add truth tables for each logical connective
 
@@ -115,8 +83,9 @@ connectives. There are five connectives in common use:
 along with operator precedences, from highest to lowest.}
     \label{fig:connectives}
 \end{figure}
-
-\subsubsection{Semantics}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Semantics}
 
 \begin{figure}[H]
     \centering
@@ -131,8 +100,130 @@ along with operator precedences, from highest to lowest.}
     \caption{Semantcis 2}
     \label{fig:S2}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Simple knowledge bases}
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\section{Inference}
+\subsection{Model Checking}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/entailment.png}
+    \caption{Figure describing entailment 1}
+    \label{fig:entailment}
+\end{figure}
+
+$\alpha \models \beta$  if and only if, in every model in which $\alpha$ is true, $\beta$ is also true.
+
+$\alpha \models \beta$  if and only if $M (\alpha) \subseteq M (\beta)$ .
+(Note the direction of the $\subseteq$ here: if $\alpha \models \beta$ , then $\alpha$ is a stronger assertion than $\beta$: it rules out more possible worlds.)
+
+The preceding example not only illustrates entailment but also shows how the definition of entailment can be applied to derive conclusions—that is, to carry out logical inference.
+
+The inference algorithm illustrated in Figure 7.5 is called model checking, because it enu-
+merates all possible models to check that $\alpha$ is true in all models in which KB is true, that is,
+that  $M (KB) \subseteq M (\alpha)$ .
+
+This distinction is embodied in some formal notation: if
+an inference algorithm $i$ can derive $\alpha$ from KB, we write
+$KB \models_i \alpha$
+
+An inference algorithm that derives only entailed sentences is called sound or truth-
+preserving. Soundness is a highly desirable property. An unsound inference procedure es-
+sentially makes things up as it goes along—it announces the discovery of nonexistent needles.
+It is easy to see that model checking, when it is applicable, 4 is a sound procedure
+The property of completeness is also desirable: an inference algorithm is complete if
+it can derive any sentence that is entailed. For real haystacks, which are finite in extent,
+it seems obvious that a systematic examination can always decide whether the needle is in
+the haystack. For many knowledge bases, however, the haystack of consequences is infinite,
+and completeness becomes an important issue. 5
+
+Fortunately, there are complete inference
+procedures for logics that are sufficiently expressive to handle many knowledge bases.
+
+
+(4) Model checking works if the space of models is finite—for example, in wumpus worlds of fixed size. For
+arithmetic, on the other hand, the space of models is infinite: even if we restrict ourselves to the integers, there
+are infinitely many pairs of values for x and y in the sentence x + y = 4.
+(5) Compare with the case of infinite search spaces in Chapter 3, where depth-first search is not compl
+
+We have described a reasoning process whose conclusions are guaranteed to be true
+in any world in which the premises are true; in particular, \textbf{if KB is true in the real world,
+then any sentence $\alpha$ derived from KB by a sound inference procedure is also true in the real world.}
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/World_and_sematics.png}
+    \caption{Figure describing entailment 2}
+    \label{fig:entailment}
+\end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Simple knowledge bases}
 
 \begin{figure}[H]
     \centering
@@ -148,8 +239,27 @@ along with operator precedences, from highest to lowest.}
     \caption{KB 2}
     \label{fig:KB2}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Simple Infernce procedure}
 
 \begin{figure}[H]
@@ -180,8 +290,27 @@ along with operator precedences, from highest to lowest.}
     \caption{Backtrack}
     \label{fig:SI backtrack}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsubsection{Effective propositional model checking}
 
 
@@ -246,13 +375,15 @@ algorithms has huge consequences for our ability to handle complexity in general
     \caption{CNF semantics}
     \label{fig:CNF}
 \end{figure}
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 
 
-
-
+%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Graph Theory}
+%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 

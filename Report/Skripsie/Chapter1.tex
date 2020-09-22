@@ -1,68 +1,119 @@
-\chapter{Introduction} \label{chapter:Intro}
+\chapter{Introduction} 
+\label{chapter:Introduction}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% ELO 1, 6, 8, 9
 % Planning for introduction
-% 
-% The need and use of mapping today
-% example use cases
-% Why putting an agent in an environment with no knowledge of it is important
 
-%Computer science;Systems and signals;Engineering and applied mathematics
-%
-%Machine learning and pattern recognition; Probabilistic systems and inference; Robotics and autonomous vehicles
-%
-%Algorithm design; Software development; System design/simulation
-%
-%Learning the structure of an agent'senvironment from experience
-%
 %Young children discover how the world works mostly through experience, despite not initially knowing the meaning of what they see, hear, feel, etc. The goal of this project is to do this, but for a simulated agent in a simple block‐world environment. The agent observes the blocks surrounding it as it moves through the environment, but it does not know anything about the world,where the observations come from, or what they mean. The agent should discover the structure of the environment (i.e. learn a map of the environment)from these observations using only general operations such as comparisons and logical operations. This very challenging topic is suitable for someone interested in logic and the foundations of learning
+
+% Chapter 1: Introduction
+
+% 1.1 Background: Why does this problem matter, why should it be done, hiow many issues people have issues that this problem can solve. Reader must understand why your problem really matters. Whats going on ingeneral that makes the project worthwile
+
+% 1.2 Problem statement: What is the problem hat you are adressing. In the bigger picture, we want to solve problem x. Says exactly what you have done. "This was what was supposed to be done" nothing more, nothing less.
+
+% 1.3 Objectives: If I meet the following things, which are observale, then I have meet the problem statement or at least a part of the problem statement. You can have anumber of  objectives with/without sub-objectives or requiremnts. In conclusion, you must refer back to these.
+
+% 1.4 Summary of Work/Contribution: What you claim to have achieved. See you did not lie.
+
+
+% 1.5 Scope: What and what you did not take into account. Want to show to examiner that you did think about other things that you thought were important but did not implement.
+
+% 1.5 Roadmap: In Chapter (n), I did the following...
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Background}
 
-Young children discover how the world works mostly through experience, despite not initially knowing the meaning of what they see, hear, feel, etc. The goal of this project is to do this, but for a simulated agent in a simple block‐world environment. The agent observes the blocks surrounding it as it moves through the environment, but it does not know anything about the world, where the observations come from, or what they mean. The agent should discover the structure of the environment (i.e. learn a map of the environment) from these observations using only general operations such as comparisons and logical operations.
+% 1.1 Background: Why does this problem matter, why should it be done, hiow many issues people have issues that this problem can solve. Reader must understand why your problem really matters. Whats going on ingeneral that makes the project worthwile
 
-Mention expert systems.
+%Young children discover how the world works mostly through experience, despite not initially knowing the meaning of what they see, hear, feel, etc. The goal of this project is to do this, but for a simulated agent in a simple block‐world environment. The agent observes the blocks surrounding it as it moves through the environment, but it does not know anything about the world, where the observations come from, or what they mean. The agent should discover the structure of the environment (i.e. learn a map of the environment) from these observations using only general operations such as comparisons and logical operations. Mention expert systems.
+%Explain the bigger picture to allow the user to understand what you have done really matters
+%What is going on in the world.region/in gereneral that maes this problem worthwhile
 
-Explain the bigger picture to allow the user to understand what you have done really matters
-
-What is going on in the world.region/in gereneral that maes this problem worthwhile
-
-\section{Problem Statement/Research Question}
-
-What you are addrssing
-
-In the bigger problem this is what we want to adress
-
-Says exactly in one sentence what you supposed to do to answer the question (Sentence or two)
-
-\section{Objectives/Requirements}
-
-If I meet the following things
-
-Objective 1
-	Sub-objectives
-Objective 2
-
-Objective 3
-
-which are observable, we should have achieved the objective / part thereof
-
-In conclusion you must measure yourself against these
-
-\section{Summary of work / contribution}
+Humans, or more generally agents in an environment, without experience of an environment they are placed in, cannot navigate the environment effectively without an understanding of what they perceive via sensors for example with vision, hearing, smell, taste or touch.
+It is difficult to navigate the environment effectively because of the fact that the meaning of such percepts with respect to the environment do not have a general or standard way of being interpreted discretely. 
+Thus, there needs to be a general architecture for representing states of the agent in the environment in time and a link between the states where the links acquired over time are learned from percepts the agent observes over time. 
+There must be a mathematical architecture of representing knowledge without understanding it. This could be, in discrete mathematics, a dependency graph that is built and interpreted using logical operations over time since logic in an abstracted manner can be implemented independent of context. When slight context is given, the agent should be able to understand the representative data in terms of the environment it is in.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Problem Statement}
 
+%What you are addrssing
+%In the bigger problem this is what we want to adress.
+%Says exactly in one sentence what you supposed to do to answer the question (Sentence or two)
+
+To develop agents that map environments using logic in general, an agent will be placed in a 2-dimensional environment and use logical processes to learn the environment representation without understanding what the propositions it acquires through the lifetime of the simulation mean.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Objectives}
+
+%If I meet the following things
+%Objective 1
+%	Sub-objectives
+%Objective 2
+%Objective 3
+%Which are observable, we should have achieved the objective / part thereof
+%In conclusion you must measure yourself against these
+
+\subsection{Logical inference}
+The agent must use logical inference to determine which state it is in from percept and action propositions acquired over time by model checking. 
+	
+\subsection{State definition grouping and splitting}
+The state definitions learned throughout the simulation and represented as logic in the knowledge base must be compared as to group and split the state definitions to generalize and compress the knowledge contained in the knowledge base using well-known logical laws. 
+
+\subsection{Knowledge base (KB) truth maximization}
+The value of the knowledge base must be maximized from one time step to the next. The value of the knowledge base is maximized when there are far more true facts about the mapped environment than contradictions and tautologies in the knowledge base. 
+	
+\subsection{Representative knowledge graphing}
+The states and links between the states as stored in the knowledge based must be represented as a discrete mathematical graph for interpretability of the knowledge the agent acquired over time. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Write later \section{Summary of work}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Scope}
 
-The scope of this project is limited to a single agent in an environment.
-The environment will be 2-dimensional. A 3-dimensional environment was not considered due to time-constraints of the project.
+%The scope of this project is limited to a single agent in an environment.
+%The environment will be 2-dimensional. A 3-dimensional environment was not considered due to time-constraints of the project.
+%Theoreom proving not used, rather passible worlds
 
-Theoreom proving not used, rather passible worlds
+The scope of this project was limited to a single agent in an a 2-dimensional environment. A single agent was used to simplify what the agent perceives, i.e., not another agent, although this could easily be implemented. A 3-dimensional environment was not considered since this project only aimed at providing a base for future projects which could extend on the 2-dimensional case. Theorem proving not used for logical inference, rather a simpler model checking approach was implemented.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Roadmap}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Report Structure}
+
+\begin{itemize}
+	\item \textit{Chapter 1 - Introduction}, explains why the idea is important in the context of mapping environments without knowing the meaning of knowledge the agent acquires. The relevant objectives and scope for the project is also discussed. 
+	\item \textit{Chapter 2 -  Literature}, focuses on previous work based on the objectives of the project, but since this concept is fairly new there is no literature that puts the idea in definite context and perspective. Relevant knowledge for understanding the project is also stated here.
+	
+	\item \textit{Chapter 3: System Design}, focuses on the higher level architecture design and also the metrics to measure the success of the project against.
+	
+	\item \textit{Chapter 4: Detailed Design}, explains the design behind the functional components in the environment mapping system.
+	
+	
+	\item \textit{Chapter 5: Results and Discussion}, explains the observed outcomes in conjunction with the objective metrics of the designed experiments of unit testing and overall system testing.
+	
+	\item \textit{Chapter 6: Conclusion}, goes on to summarize if this idea is feasible based on found evidence and if the architecture is suitable enough for further implementation to other mapping scenarios. Possible extensions and improvements are mentioned here.
+	
+\end{itemize}
 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
