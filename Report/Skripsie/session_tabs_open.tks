@@ -1,17 +1,16 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <TexmakerSession quickmode="3">
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/Acknowledgements.tex" line="0" bookmark2="0" master="false" hasfocus="false" bookmark1="0" bookmark3="0"/>
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/declaration.tex" line="0" bookmark2="0" master="false" hasfocus="false" bookmark1="0" bookmark3="0"/>
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/Chapter2.tex" line="363" bookmark2="0" master="false" hasfocus="false" bookmark1="0" bookmark3="0"/>
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/nomenclature.tex" line="15" bookmark2="0" master="false" hasfocus="false" bookmark1="0" bookmark3="0"/>
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/References.bib" line="0" bookmark2="0" master="false" hasfocus="false" bookmark1="0" bookmark3="0"/>
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/Chapter4.tex" line="0" bookmark2="0" master="false" hasfocus="false" bookmark1="0" bookmark3="0"/>
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/21093741_Bedford_S_skripsie2020.tex" line="121" bookmark2="0" master="true" hasfocus="false" bookmark1="0" bookmark3="0"/>
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/Abstract.tex" line="0" bookmark2="0" master="false" hasfocus="false" bookmark1="0" bookmark3="0"/>
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/Chapter1.tex" line="100" bookmark2="0" master="false" hasfocus="true" bookmark1="0" bookmark3="0"/>
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/Chapter3.tex" line="0" bookmark2="0" master="false" hasfocus="false" bookmark1="0" bookmark3="0"/>
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/Chapter5.tex" line="0" bookmark2="0" master="false" hasfocus="false" bookmark1="0" bookmark3="0"/>
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/Chapter6.tex" line="0" bookmark2="0" master="false" hasfocus="false" bookmark1="0" bookmark3="0"/>
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/App-A.tex" line="0" bookmark2="0" master="false" hasfocus="false" bookmark1="0" bookmark3="0"/>
-    <document file="/home/siraaj/github/skripsie_project/Report/Skripsie/App-B.tex" line="52" bookmark2="0" master="false" hasfocus="false" bookmark1="0" bookmark3="0"/>
+    <document hasfocus="false" bookmark1="0" bookmark3="0" line="0" file="/home/siraaj/github/skripsie_project/Report/Skripsie/declaration.tex" bookmark2="0" master="false"/>
+    <document hasfocus="false" bookmark1="0" bookmark3="0" line="0" file="/home/siraaj/github/skripsie_project/Report/Skripsie/Abstract.tex" bookmark2="0" master="false"/>
+    <document hasfocus="false" bookmark1="0" bookmark3="0" line="0" file="/home/siraaj/github/skripsie_project/Report/Skripsie/Chapter1.tex" bookmark2="0" master="false"/>
+    <document hasfocus="false" bookmark1="0" bookmark3="0" line="0" file="/home/siraaj/github/skripsie_project/Report/Skripsie/Chapter2.tex" bookmark2="0" master="false"/>
+    <document hasfocus="true" bookmark1="0" bookmark3="0" line="38" file="/home/siraaj/github/skripsie_project/Report/Skripsie/Chapter4.tex" bookmark2="0" master="false"/>
+    <document hasfocus="false" bookmark1="0" bookmark3="0" line="0" file="/home/siraaj/github/skripsie_project/Report/Skripsie/nomenclature.tex" bookmark2="0" master="false"/>
+    <document hasfocus="false" bookmark1="0" bookmark3="0" line="0" file="/home/siraaj/github/skripsie_project/Report/Skripsie/Chapter3.tex" bookmark2="0" master="false"/>
+    <document hasfocus="false" bookmark1="0" bookmark3="0" line="0" file="/home/siraaj/github/skripsie_project/Report/Skripsie/Chapter5.tex" bookmark2="0" master="false"/>
+    <document hasfocus="false" bookmark1="0" bookmark3="0" line="0" file="/home/siraaj/github/skripsie_project/Report/Skripsie/Chapter6.tex" bookmark2="0" master="false"/>
+    <document hasfocus="false" bookmark1="0" bookmark3="0" line="0" file="/home/siraaj/github/skripsie_project/Report/Skripsie/References.bib" bookmark2="0" master="false"/>
+    <document hasfocus="false" bookmark1="0" bookmark3="0" line="0" file="/home/siraaj/github/skripsie_project/Report/Skripsie/App-A.tex" bookmark2="0" master="false"/>
+    <document hasfocus="false" bookmark1="0" bookmark3="0" line="20" file="/home/siraaj/github/skripsie_project/Report/Skripsie/App-B.tex" bookmark2="0" master="false"/>
+    <document hasfocus="false" bookmark1="0" bookmark3="0" line="17" file="/home/siraaj/github/skripsie_project/Report/Skripsie/21093741_Bedford_S_skripsie2020.tex" bookmark2="0" master="true"/>
 </TexmakerSession>
