@@ -4,7 +4,6 @@ The top-level auxiliary file: 21093741_Bedford_S_skripsie2020.aux
 The style file: usmeg-n.bst
 A level-1 auxiliary file: declaration.aux
 A level-1 auxiliary file: Abstract.aux
-A level-1 auxiliary file: Acknowledgements.aux
 A level-1 auxiliary file: nomenclature.aux
 A level-1 auxiliary file: Chapter1.aux
 A level-1 auxiliary file: Chapter2.aux
@@ -17,44 +16,44 @@ A level-1 auxiliary file: App-B.aux
 Database file #1: References.bib
 Reallocated wiz_functions (elt_size=4) to 6000 items from 3000.
 Reallocated singl_function (elt_size=4) to 100 items from 50.
-You've used 1 entry,
+You've used 2 entries,
             3338 wiz_defined-function locations,
-            672 strings with 5366 characters,
-and the built_in function-call counts, 793 in all, are:
-= -- 60
-> -- 14
-< -- 2
-+ -- 6
-- -- 4
-* -- 71
-:= -- 98
-add.period$ -- 3
-call.type$ -- 1
-change.case$ -- 6
-chr.to.int$ -- 4
-cite$ -- 1
-duplicate$ -- 75
-empty$ -- 75
-format.name$ -- 13
-if$ -- 157
+            678 strings with 5569 characters,
+and the built_in function-call counts, 1267 in all, are:
+= -- 99
+> -- 21
+< -- 3
++ -- 10
+- -- 6
+* -- 108
+:= -- 165
+add.period$ -- 6
+call.type$ -- 2
+change.case$ -- 12
+chr.to.int$ -- 5
+cite$ -- 2
+duplicate$ -- 123
+empty$ -- 120
+format.name$ -- 18
+if$ -- 251
 int.to.chr$ -- 1
-int.to.str$ -- 2
-missing$ -- 10
-newline$ -- 26
-num.names$ -- 3
-pop$ -- 26
+int.to.str$ -- 3
+missing$ -- 16
+newline$ -- 32
+num.names$ -- 6
+pop$ -- 40
 preamble$ -- 1
-purify$ -- 4
+purify$ -- 8
 quote$ -- 0
-skip$ -- 21
+skip$ -- 36
 stack$ -- 0
-substring$ -- 35
-swap$ -- 31
+substring$ -- 60
+swap$ -- 47
 text.length$ -- 0
 text.prefix$ -- 0
 top$ -- 0
-type$ -- 4
+type$ -- 10
 warning$ -- 0
-while$ -- 6
+while$ -- 10
 width$ -- 0
-write$ -- 33
+write$ -- 46

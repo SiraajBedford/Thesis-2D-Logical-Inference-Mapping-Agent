@@ -1,4 +1,4 @@
-\begin{thebibliography}{1}
+\begin{thebibliography}{2}
 \expandafter\ifx\csname natexlab\endcsname\relax\def\natexlab#1{#1}\fi
 \expandafter\ifx\csname bibnamefont\endcsname\relax
   \def\bibnamefont#1{#1}\fi
@@ -25,5 +25,12 @@
   \bibnamefont{Norvig}, \bibfnamefont{P.}: \emph{Artificial Intelligence: a
   modern approach}.
 \newblock \bblthirdo{} \bbledn{}. Pearson, 2009.
+
+\bibitem[{\citenamefont{KUMAR}(2019)}]{Logic}
+\bibnamefont{KUMAR}, \bibfnamefont{N.}: Differentiation between propositional
+  logic and first-order logic.
+\newblock 2019.
+\newblock Accessed: 2020-09-26.
+\newline\bblurlpre\url{$https://medium.com/@nitishbih14/differentiation-between-propositional-logic-and-first-order-logic-b50062c06684$}
 
 \end{thebibliography}
