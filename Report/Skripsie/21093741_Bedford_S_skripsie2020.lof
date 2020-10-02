@@ -3,16 +3,16 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Propositional logicl atomic sentence connectives\relax }}{4}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces A BNF (Backus–Naur Form) grammar of sentences in propositional logic, along with operator precedences, from highest to lowest.\relax }}{4}%
-\contentsline {figure}{\numberline {2.3}{\ignorespaces Semantcis 1\relax }}{5}%
-\contentsline {figure}{\numberline {2.4}{\ignorespaces Semantcis 2\relax }}{6}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces Block diagram overview \relax }}{3}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Logical inference in context\relax }}{5}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces Block diagram overview \relax }}{7}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces General learning agent Figure 2.15 from \cite {russell2016artificial}\relax }}{8}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces General learning agent Figure 2.15 from \cite {russell2016artificial}\relax }}{6}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Logical inference in context\relax }}{7}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Knowledge-based agent design algorithm from \cite {russell2016artificial}\relax }}{10}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Knowledge-based agent design algorithm from \cite {russell2016artificial}\relax }}{9}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Knowledge-based agent design algorithm from \cite {russell2016artificial}\relax }}{10}%
 \addvspace {10\p@ }
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Measuring runtime vs clause-to-symbol ratio\relax }}{11}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

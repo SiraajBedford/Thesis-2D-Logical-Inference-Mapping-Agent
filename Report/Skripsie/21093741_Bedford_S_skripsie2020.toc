@@ -15,38 +15,44 @@
 \contentsline {section}{\numberline {1.4}Scope}{2}%
 \contentsline {section}{\numberline {1.5}Report Structure}{2}%
 \contentsline {chapter}{\numberline {2}Literature}{3}%
-\contentsline {section}{\numberline {2.1}Propositional Logic}{3}%
-\contentsline {subsection}{\numberline {2.1.1}Syntax}{3}%
-\contentsline {subsection}{\numberline {2.1.2}Semantics}{5}%
-\contentsline {section}{\numberline {2.2}Inference}{6}%
-\contentsline {subsection}{\numberline {2.2.1}Model Checking}{6}%
-\contentsline {subsection}{\numberline {2.2.2}Theorem proving}{6}%
-\contentsline {section}{\numberline {2.3}Graph Theory}{6}%
-\contentsline {chapter}{\numberline {3}System Design}{7}%
-\contentsline {section}{\numberline {3.1}Program Architecture}{8}%
-\contentsline {subsection}{\numberline {3.1.1}Agent}{8}%
-\contentsline {subsection}{\numberline {3.1.2}Environment}{8}%
-\contentsline {subsection}{\numberline {3.1.3}Knowledge Base}{8}%
-\contentsline {subsection}{\numberline {3.1.4}Inferencer}{8}%
-\contentsline {section}{\numberline {3.2}Metrics}{8}%
-\contentsline {section}{\numberline {3.3}Method}{9}%
-\contentsline {subsection}{\numberline {3.3.1}Program Flow}{9}%
-\contentsline {chapter}{\numberline {4}Detailed design}{10}%
-\contentsline {section}{\numberline {4.1}Detailed sub-systems descriptions}{10}%
-\contentsline {subsection}{\numberline {4.1.1}Agent}{10}%
-\contentsline {subsection}{\numberline {4.1.2}Environment}{11}%
-\contentsline {subsection}{\numberline {4.1.3}Knowledge Base}{11}%
-\contentsline {subsection}{\numberline {4.1.4}Inferencer}{11}%
-\contentsline {section}{\numberline {4.2}Learning Algorithms}{11}%
-\contentsline {section}{\numberline {4.3}Forming groups of states}{11}%
-\contentsline {subsection}{\numberline {4.3.1}Split state definitions using AND}{11}%
-\contentsline {subsection}{\numberline {4.3.2}Merge state definitions using OR}{11}%
-\contentsline {chapter}{\numberline {5}Results and Discussion}{12}%
-\contentsline {section}{\numberline {5.1}Results}{12}%
-\contentsline {section}{\numberline {5.2}Discussion}{12}%
-\contentsline {chapter}{\numberline {6}Conclusion}{13}%
-\contentsline {section}{\numberline {6.1}Objective and Results Comparison}{13}%
-\contentsline {section}{\numberline {6.2}Recommendations and Future Work}{13}%
-\contentsline {chapter}{References}{14}%
-\contentsline {chapter}{Appendix A: Project Planning Schedule}{15}%
-\contentsline {chapter}{Appendix B: Outcomes Compliance}{16}%
+\contentsline {section}{\numberline {2.1}Knowledge-based Agents and Environments}{3}%
+\contentsline {section}{\numberline {2.2}Propositional Logic}{3}%
+\contentsline {subsection}{\numberline {2.2.1}Syntax}{4}%
+\contentsline {subsection}{\numberline {2.2.2}Semantics.}{4}%
+\contentsline {section}{\numberline {2.3}Inference}{4}%
+\contentsline {subsection}{\numberline {2.3.1}Model Checking}{5}%
+\contentsline {subsection}{\numberline {2.3.2}Theorem proving}{5}%
+\contentsline {subsubsection}{\numberline {2.3.2.1}Proof by Resolution}{5}%
+\contentsline {subsubsection}{\numberline {2.3.2.2}Proof by Unsatisfiability}{5}%
+\contentsline {section}{\numberline {2.4}Graph Theory}{5}%
+\contentsline {chapter}{\numberline {3}System Design}{6}%
+\contentsline {section}{\numberline {3.1}Program Architecture}{6}%
+\contentsline {subsection}{\numberline {3.1.1}Knowledge-based Agent}{7}%
+\contentsline {subsection}{\numberline {3.1.2}Environment}{7}%
+\contentsline {subsection}{\numberline {3.1.3}Knowledge Base}{7}%
+\contentsline {subsection}{\numberline {3.1.4}Inferencer}{7}%
+\contentsline {section}{\numberline {3.2}Metrics}{7}%
+\contentsline {section}{\numberline {3.3}Method}{7}%
+\contentsline {subsection}{\numberline {3.3.1}Program Flow}{8}%
+\contentsline {chapter}{\numberline {4} Detailed Design and Testing methods }{9}%
+\contentsline {section}{\numberline {4.1}Detailed sub-systems descriptions}{9}%
+\contentsline {subsection}{\numberline {4.1.1}Agent}{9}%
+\contentsline {subsection}{\numberline {4.1.2}Environment}{10}%
+\contentsline {subsection}{\numberline {4.1.3}Knowledge Base}{10}%
+\contentsline {subsection}{\numberline {4.1.4}Inference Engine}{10}%
+\contentsline {section}{\numberline {4.2}Learning Algorithms}{10}%
+\contentsline {section}{\numberline {4.3}Forming groups of states}{10}%
+\contentsline {subsection}{\numberline {4.3.1}Split state definitions using AND}{10}%
+\contentsline {subsection}{\numberline {4.3.2}Merge state definitions using OR}{10}%
+\contentsline {chapter}{\numberline {5}Results and Discussion}{11}%
+\contentsline {section}{\numberline {5.1}Results}{11}%
+\contentsline {section}{\numberline {5.2}Discussion}{11}%
+\contentsline {chapter}{\numberline {6}Conclusion}{12}%
+\contentsline {section}{\numberline {6.1}Objective and Results Comparison}{12}%
+\contentsline {section}{\numberline {6.2}Recommendations and Future Work}{12}%
+\contentsline {subsection}{\numberline {6.2.1}Map learning agent for 3-dimensional environments}{12}%
+\contentsline {subsection}{\numberline {6.2.2}Karnaugh Map solver for minimum logic hardware}{12}%
+\contentsline {subsection}{\numberline {6.2.3}Improving the inference engine with FOL}{12}%
+\contentsline {chapter}{References}{13}%
+\contentsline {chapter}{Appendix A: Project Planning Schedule}{14}%
+\contentsline {chapter}{Appendix B: Outcomes Compliance}{15}%
