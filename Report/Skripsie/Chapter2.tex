@@ -20,20 +20,62 @@
 %\subsubsection{Methods}
 %\subsubsection{Their results}
 %\subsubsection{Their shortcomings/remaining challenges}
+
+%\textit{learn}
+%\textsc{learn}
+%\textsf{learn}
+%\textsl{learn}
+%\texttt{learn}
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Knowledge-based Agents and Environments}
+\section{Agents and Environments}
+\label{sec:agents_and_environments}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=.7]{Figures/General_learning_agent.png}
-    \caption{Block diagram overview }
-    \label{fig:sysdiag}
+    \includegraphics[scale=.5]{Figures/General_learning_agent.png}
+    \caption{A general learning agent as in \citep{russell2016artificial}}
+    \label{fig:agent_environment}
 \end{figure}
 
+An agent is anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actions \citep{russell2016artificial}. Agents in environments have a main purpose to \textit{learn} things about the environment or to formulate plans that have certain objectives in the context of the environment. This can, to a large extent be influenced by the nature of the environment and internal processes of the agent. Figure \ref{fig:agent_environment} shows the relationship between the agent and the environment. 
+
+The general learning agent comprises of four main conceptual components: a performance element, a learning element, a critic and a problem generator. The most crucial difference is between the \textbf{learning element} which makes improvements and the \textbf{performance element} which is responsible for responsible for selecting external actions (that may aim to make the agent learn its function in the environment or just to build a representation of the environment). The performance element takes in sensor information and decides on which action to take by consulting the learning element. The learning elemment uses informaton from the criric to see how good the agent the agent is doiung in reference to a performance measure so that the performabce element should be modified or not because. 
+
+
+% Talk about nauture of environments
+
+
+
+% Say the connections between subcomponents are related by logic (to lead into the next sexction)
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
@@ -69,7 +111,7 @@ There are two common types of logic representations used for agents that use kno
 
 Sentences written in propositional logic can be atomic, i.e. consist of one logical variable or a complex sentences consisting of atomic variables joined by logical connectives shown in Table \ref{table: BNF_Syntax}.
 
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{lc}
     \toprule
@@ -104,7 +146,7 @@ Sentences written in propositional logic can be atomic, i.e. consist of one logi
 
 
 
-\begin{table}
+\begin{table}[H]
   \centering
   \begin{tabular}{lc}
     \toprule
@@ -141,7 +183,7 @@ Sentences written in propositional logic can be atomic, i.e. consist of one logi
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Semantics.}
+\subsection{Semantics}
 
 %\begin{figure}[H]
 %    \centering
@@ -167,7 +209,7 @@ Sentences written in propositional logic can be atomic, i.e. consist of one logi
 
 
 
-\section{Inference}
+\section{Logical Inference}
 Goal of inference is to prove entailment of a sentence in a knowledge base. Computational complexity is $\mathcal{O}(2^n)$
 
 \begin{figure}[H]
@@ -182,8 +224,30 @@ Goal of inference is to prove entailment of a sentence in a knowledge base. Comp
 
 \subsection{Model Checking}
 Enumeration of models.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.5]{Figures/model_checking.png}
+    \caption{Logical inference in context}
+    \label{fig:entailment}
+\end{figure}
+
 \subsection{Theorem proving}
+
+In many practical cases finding a proof can be more efficient because the proof can ignore irrelevant propositions, no
+matter how many of them there are \citep{russell2016artificial}.
+
+
+
 \subsubsection{Proof by Resolution}
+
+
+
+\begin{equation}
+\dfrac{ l_1 \vee \cdots \vee l_k,\hspace{1cm}  m_1 \vee \cdots \vee m_n}{    l_1 \vee \cdots \vee l_{i-1} \vee l_{i+1} \vee \cdots \vee l_k  \vee m_1 \vee \cdots \vee m_{j-1} \vee m_{j+1} \vee \cdots \vee m_n }
+\label{eq:resolution}
+\end{equation}
+
 \subsubsection{Proof by Unsatisfiability}
 
 
@@ -198,9 +262,10 @@ Enumeration of models.
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Graph Theory}
-%%%%%%%%%%%%%%%%%%%%%%%%%
+%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\section{Graph Theory}
+%\subsection{Directed Graphs}
+%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 

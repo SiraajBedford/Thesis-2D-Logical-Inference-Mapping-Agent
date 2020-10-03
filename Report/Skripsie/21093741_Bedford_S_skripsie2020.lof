@@ -3,16 +3,17 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {2.1}{\ignorespaces Block diagram overview \relax }}{3}%
+\contentsline {figure}{\numberline {2.1}{\ignorespaces A general learning agent as in \citep {russell2016artificial}\relax }}{3}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Logical inference in context\relax }}{5}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Logical inference in context\relax }}{6}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces General learning agent Figure 2.15 from \cite {russell2016artificial}\relax }}{6}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Logical inference in context\relax }}{7}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces General learning agent Figure 2.15 from \cite {russell2016artificial}\relax }}{7}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Logical inference in context\relax }}{8}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Knowledge-based agent design algorithm from \cite {russell2016artificial}\relax }}{9}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Knowledge-based agent design algorithm from \cite {russell2016artificial}\relax }}{10}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Knowledge-based agent design algorithm from \cite {russell2016artificial}\relax }}{10}%
+\contentsline {figure}{\numberline {4.2}{\ignorespaces Knowledge-based agent design algorithm from \cite {russell2016artificial}\relax }}{11}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Measuring runtime vs clause-to-symbol ratio\relax }}{11}%
+\contentsline {figure}{\numberline {5.1}{\ignorespaces Measuring runtime vs clause-to-symbol ratio\relax }}{12}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
