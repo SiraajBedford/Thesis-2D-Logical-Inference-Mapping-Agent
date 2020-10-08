@@ -15,15 +15,42 @@
 \usepackage{fancyhdr}
 \usepackage{float}
 \usepackage[normalem]{ulem}
-\usepackage[ruled,vlined]{algorithm2e}
+\usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage{soul}
 \setcounter{secnumdepth}{3}
 
 \usepackage{booktabs}% http://ctan.org/pkg/booktabs
 \newcommand{\tabitem}{~~\llap{\textbullet}~~}
 
+\usepackage{multicol}
+\usepackage{listings}
+\usepackage{xcolor}
 
+\definecolor{codegreen}{rgb}{0,0.6,0}
+\definecolor{codegray}{rgb}{0.5,0.5,0.5}
+\definecolor{codepurple}{rgb}{0.58,0,0.82}
+\definecolor{backcolour}{rgb}{0.95,0.95,0.92}
 
+\lstdefinestyle{mystyle}{
+    backgroundcolor=\color{backcolour},   
+    commentstyle=\color{codegreen},
+    keywordstyle=\color{magenta},
+    numberstyle=\tiny\color{codegray},
+    stringstyle=\color{codepurple},
+    basicstyle=\ttfamily\scriptsize,
+    breakatwhitespace=false,         
+    breaklines=true,                 
+    captionpos=t,                    
+    keepspaces=true,                 
+    numbers=left,                    
+    numbersep=5pt,                  
+    showspaces=false,                
+    showstringspaces=false,
+    showtabs=true,                  
+    tabsize=1
+}
+
+\lstset{style=mystyle}
 %
 % PLEASE read the USthesis documentation for the class options
 % and how to set line and paragraph spacing
@@ -32,7 +59,7 @@
    
 %==== Math setup ====================================================
  \usepackage{amsmath}%............................ Advanced math (before fonts)
- %\usepackage{amssymb}%............................ AMS Symbol fonts
+ \usepackage{amssymb}%............................ AMS Symbol fonts
 
 %==== Font setup (default is Computer Modern) =======================
  \usepackage[T1]{fontenc}%........................ Type 1 fonts
@@ -57,8 +84,14 @@
 %==== Additional USthesis packages ==================================
 
 \usepackage{ussummary}%.......................... Mech Eng summary page (in usthesis pack)
+%\usepackage{bookmark}
 
+\usepackage[hidelinks]{hyperref}
+\usepackage[numbered]{bookmark}
+\SetKwInOut{Parameter}{Parameters}
 
+\newcommand\mycommfont[1]{\footnotesize\ttfamily\textcolor{black}{#1}}
+\SetCommentSty{mycommfont}
 
 %\iftrue
 %\usepackage[    colorlinks=false,
@@ -137,6 +170,7 @@ Engineering at the University of Stellenbosch}
 \cleardoublepage}
 \include{nomenclature}
 \listoffigures
+%\listofalgorithms
 \listoftables
 
 
@@ -161,6 +195,6 @@ Engineering at the University of Stellenbosch}
 
 \include{App-A}
 \include{App-B}
-% \include{App-C}
+\include{App-C}
 \end{appendix}
 \end{document}

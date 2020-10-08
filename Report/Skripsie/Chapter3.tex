@@ -1,6 +1,3 @@
-\chapter{System Design} 
-\label{chapter:System_Design}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ELO 3, 6
 % Planning for System Design
@@ -10,7 +7,7 @@
 % System Diagram with functional blocks 
 
 % 3.1.1 Knowledge Base
-% To store knowledge I could have used option 1,2 or 3, (List options at disposal) No indepth level. It isporetant you introduced the examiner tio the concepts in Chapter 2 to see the requirements for such a functional block. 
+% To store knowledge I could have used option 1,2 or 3, (List options at disposal) No indepth level. It is important you introduced the examiner to the concepts in Chapter 2 to see the requirements for such a functional block. 
 
 % 3.1.2 Functional Block 2 ...
 
@@ -20,66 +17,100 @@
 % I want to measure whether I meet the objectives 1,2,3. This will say how/what I will measure. What can actualy be masued and what cannot be measured. Each metrics must prove that you can reach the requirement.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\chapter{High-Level System Design} 
+\label{chapter:System_Design}
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.35]{Figures/main_architecture.PNG}
+    \caption{High level mapping agent and environment design} 
+    \label{fig:agent_and_environment_design}
+\end{figure}
+
+%Fill the functional blocks with more "color"
+%Also put interfaces between blocks using arrows.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\section{System Architecture}
+%Show agent in environment with robot in environment, actuators, remember agent controls the robot and the robot is in the physical environment.
+%Show all possible choices you could have made for reach of the functional blocks.
 
-This chapter goes over in detail how and why the agent interacts with the environment. 
+This chapter goes over in detail how the agent-environment interaction is to be designed on a high level. Figure \ref{fig:agent_and_environment_design} shows the high-level design of the agent with respect to the environment.
+It is obvious that the environment is minimalistic in defined structure since it is the purpose of the agent to map the environment without knowing anything about the environment. The only narrative the agent can build of the environment is from the measurements it \textit{perceives} with its sensors. The agent is based on logic and thus it needs a logic engine, which underpins most of the operation of the agent due to the agent needing a \textit{knowledge representation language} mentioned in section \ref{sec:kb_agents} to convey knowledge.
+It must also be conveyed that the agent in Figure \ref{fig:agent_and_environment_design} does not necessarily mirror the general learning agent in section \ref{sec:agents_and_environments}. This is because the project captured in this report builds on the concepts describing agents based on knowledge bases in section \ref{sec:kb_agents}. The purpose of section \ref{sec:agents_and_environments} was to introduce the reader to the concept of \textit{an agent in an environment}. The mapping agent 
 
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% reference objectives: Logical inference, KB memory management, learning state definitions, representative knowledge graphing 
+
+\section{Mapping Agent}		
+
+\subsection{Logic Engine}
+The logic engine is what allows the agent's internal processes to communicate. Thus, it had to have the the ability to handle two processes quickly and efficiently, namely \textit{sentence management} as well as the ability to \textit{perform logic operations and equivalences} on those sentences. There were two options to implement a logic engine: either write one from scratch, or use an existing logic engine with known performance, i.e., if it is suitable for the context of this project. Since the aim of this project is not to build a logic engine, source code written with an MIT license was used. This code base was based on direct examples written in \citep{russell2016artificial} and as such, was highly suitable and implementable.
+
+\subsection{Inference Engine}
+The inferential component of the system is the core component we need to design as it will allow the agent to come to conclusions about the environment as the agent moves through the environment. There are three algorithms that were considered when formulating an inference plan, namely, model checking, proof by resolution and the use of the DPLL algorithm to prove unsatisfiability. All three of these inference methods are detailed in section \ref{sec:logical_inference}. All three algorithms will be experimented with as described in section \ref{sec:experimental_method}
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=.7]{Figures/main_architecture.PNG}
-    \caption{General learning agent Figure 2.15 from \cite{russell2016artificial}} 
-    \label{fig:agent}
+    \includegraphics[scale=.6]{Figures/Inference_HL.PNG}
+    \caption{Inference Engine} 
+    \label{fig:inference_engine}
 \end{figure}
-
-Fill the functional blocks with more "color"
-
-Also put interfaces between blocks using arrows.
-
-\section{Program Architecture}
-
-Show agent in environment with robot in environment, actuators, remember agent controls the robot and the robot is in the physical environment.
-
-Show all possible choices you could have made for reach of the functional blocks.
-
-\subsection{Knowledge-based Agent}
-		
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=1]{Figures/Goal4.png}
-    \caption{Logical inference in context}
-    \label{fig:inference_logic}
-\end{figure}
-	
-\subsection{Environment}
-
-
 
 \subsection{Knowledge Base}
+%Procedural vs Declarative
+%List vs numpy for environment and agent percepts
+
+When deciding how the knowledge base had to be implemented, there were three options to consider: Using a procedural programming language and store logic in defined data structure in that program language, or to use a declarative programming language such as \textit{Prolog} to declare links between facts in the KB, or to use a combination of procedural (for main execution) and declarative languages (for storing logic). The procedural nature of this project needed the use of a programming language with easily implementable data structures, as such \textit{Python 3} was used as it provides flexibility for procedural processes and potential for implementing declarative principles using \textit{lists}. The use of Python also makes it possible to integrate a GUI for agent operation. The knowledge  base was implemented as a list and the code base of \citep{russell2016artificial} was used to implent the KB. As mentioned in Chapter \ref{chapter:Introduction}, we also need to manage the size of the KB as it affects the performance of inference. A Python list can easily be managed and as such is a good choice for implementation.
+
+\subsection{Agent-environment boundary rules}
+
+Restricting the agent to move within the environment is important because the propositions the agents adds to the KB should not come from sensor measurements the do not make sense in terms of how the environment "physics" works and as such, program-defined rules based on the sensor measurements were used to restrict the agent to only perceive percepts while present on "open" blocks described in \ref{sec:environment}.
 
 
 
-\subsection{Inferencer}
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-Inference in general: conclusion reached on the basis of evidence and reasoning.
+\section{Environment}
+\label{sec:environment}
 
-Inference in machine learning: Inference refers to the process of using a trained machine learning algorithm to make a prediction.
+There were two things to consider for implementation of the environment, namely, a change in environment variables per time step as well as fast update times that does not limit the simulation in any way. There were two considerations for this: using \textit{NumPy}, also known as Numerical Python to represent the environment and agent as integer variables in an array, or using a Python list, where the same scheme is required. NumPy does not allow for multiple data types in the array, while Python lists do. NumPy was used since we do not are about data types for representing the environment, and NumPy is more scalable than Python lists. An agent was represented as the integer '2', an open block that the agent could explore and receive sensor measurements on was represented as the integer '0' and blocks that bounded the agent to the environment were set to '1'. Thus, the 2-dimensional arrays only consisted of integers '0','1' or '2'. 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Experimental Setup}
+\label{sec:experimental_method}
+%Explain the experimental setup.
 
+The experiment steps can be considered as:
 
+\begin{enumerate}
+	\item Initialize agent and environment variables.
+	\item Place the agent in the environment.
+	\item Let the agent roam the environment for a defined time by either controlling the agent with keyboard inputs or by letting the agent select random left,right, up or down actions.
+	\item Use the model checking, proof by resolution or DPLL algorithm to let the agent map a representation of the environment as a directed graph.
+	\item Measure how long inference takes for each of the 3 methods while the Knowledge Base grows in size per time step.
+	\item Once the agent has met the performance standard of discovering the same number of states as the number of open blocks for the agent to roam,the simulation should end.
+	\item The agent should be able to use search algorithms to find paths from one reference in the representative directed graph to another by using common search algorithms.
+\end{enumerate}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Metrics}
+%I want to measure whether I meet the of the objects.
+%This section says how and what I am going to measure.
+%List what you intend to measure and how do you intend to measure it.
+%You can match the metrics up to the objectives.
+Relating to the objectives defined in Chapter \ref{chapter:Introduction}, the following are the metrics to reach those objectives
 
-I want to measure whether I meet the of the objects.
-This section says how and what I am going to measure.
+\begin{itemize}
+ \item Logical inference, 
+ \item KB memory management, l
+ \item Learning state definitions, 
+ \item Representative knowledge graphing 
+\end{itemize}
 
-List what you intend to measure and how do you intend to measure it.
-
-You can match the metrics up to the objectives.
-
-\section{Method}
-
-Explain the experimental setup.
-\subsection{Program Flow}

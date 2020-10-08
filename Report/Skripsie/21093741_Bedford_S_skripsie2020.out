@@ -1,0 +1,59 @@
+\BOOKMARK [0][-]{chapter*.1}{Declaration}{}% 1
+\BOOKMARK [0][-]{chapter*.2}{Abstract}{}% 2
+\BOOKMARK [0][-]{section*.4}{Contents}{}% 3
+\BOOKMARK [0][-]{chapter*.5}{Nomenclature}{}% 4
+\BOOKMARK [0][-]{section*.7}{List of Figures}{}% 5
+\BOOKMARK [0][-]{section*.9}{List of Tables}{}% 6
+\BOOKMARK [0][-]{chapter.1}{Introduction}{}% 7
+\BOOKMARK [1][-]{section.1.1}{Background}{chapter.1}% 8
+\BOOKMARK [1][-]{section.1.2}{Problem Statement}{chapter.1}% 9
+\BOOKMARK [1][-]{section.1.3}{Objectives}{chapter.1}% 10
+\BOOKMARK [2][-]{subsection.1.3.1}{Logical inference}{section.1.3}% 11
+\BOOKMARK [2][-]{subsection.1.3.2}{Knowledge base memory management}{section.1.3}% 12
+\BOOKMARK [2][-]{subsection.1.3.3}{Learning state definitions}{section.1.3}% 13
+\BOOKMARK [2][-]{subsection.1.3.4}{Representative knowledge graphing}{section.1.3}% 14
+\BOOKMARK [1][-]{section.1.4}{Scope}{chapter.1}% 15
+\BOOKMARK [1][-]{section.1.5}{Report Structure}{chapter.1}% 16
+\BOOKMARK [0][-]{chapter.2}{Literature}{}% 17
+\BOOKMARK [1][-]{section.2.1}{Agents and Environments}{chapter.2}% 18
+\BOOKMARK [1][-]{section.2.2}{Logic}{chapter.2}% 19
+\BOOKMARK [2][-]{subsection.2.2.1}{Syntax, Semantics and Entailment}{section.2.2}% 20
+\BOOKMARK [2][-]{subsection.2.2.2}{Propositional Logic}{section.2.2}% 21
+\BOOKMARK [1][-]{section.2.3}{Knowledge-based agents}{chapter.2}% 22
+\BOOKMARK [1][-]{section.2.4}{Logical Inference}{chapter.2}% 23
+\BOOKMARK [2][-]{subsection.2.4.1}{Model Checking}{section.2.4}% 24
+\BOOKMARK [2][-]{subsection.2.4.2}{Theorem proving}{section.2.4}% 25
+\BOOKMARK [0][-]{chapter.3}{System Design}{}% 26
+\BOOKMARK [1][-]{section.3.1}{Program Architecture}{chapter.3}% 27
+\BOOKMARK [2][-]{subsection.3.1.1}{Knowledge-based Agent}{section.3.1}% 28
+\BOOKMARK [2][-]{subsection.3.1.2}{Environment}{section.3.1}% 29
+\BOOKMARK [2][-]{subsection.3.1.3}{Knowledge Base}{section.3.1}% 30
+\BOOKMARK [2][-]{subsection.3.1.4}{Inferencer}{section.3.1}% 31
+\BOOKMARK [1][-]{section.3.2}{Metrics}{chapter.3}% 32
+\BOOKMARK [1][-]{section.3.3}{Method}{chapter.3}% 33
+\BOOKMARK [2][-]{subsection.3.3.1}{Program Flow}{section.3.3}% 34
+\BOOKMARK [0][-]{chapter.4}{ Detailed Design and Testing methods }{}% 35
+\BOOKMARK [1][-]{section.4.1}{Implementation considerations}{chapter.4}% 36
+\BOOKMARK [1][-]{section.4.2}{Detailed sub-systems descriptions}{chapter.4}% 37
+\BOOKMARK [2][-]{subsection.4.2.1}{Agent}{section.4.2}% 38
+\BOOKMARK [2][-]{subsection.4.2.2}{Environment}{section.4.2}% 39
+\BOOKMARK [2][-]{subsection.4.2.3}{Knowledge Base}{section.4.2}% 40
+\BOOKMARK [2][-]{subsection.4.2.4}{Inference Engine}{section.4.2}% 41
+\BOOKMARK [1][-]{section.4.3}{Learning Algorithms}{chapter.4}% 42
+\BOOKMARK [1][-]{section.4.4}{Forming groups of states}{chapter.4}% 43
+\BOOKMARK [2][-]{subsection.4.4.1}{Split state definitions using AND}{section.4.4}% 44
+\BOOKMARK [2][-]{subsection.4.4.2}{Merge state definitions using OR}{section.4.4}% 45
+\BOOKMARK [0][-]{chapter.5}{Results and Discussion}{}% 46
+\BOOKMARK [1][-]{section.5.1}{Results}{chapter.5}% 47
+\BOOKMARK [1][-]{section.5.2}{Discussion}{chapter.5}% 48
+\BOOKMARK [0][-]{chapter.6}{Conclusion}{}% 49
+\BOOKMARK [1][-]{section.6.1}{Objective and Results Comparison}{chapter.6}% 50
+\BOOKMARK [1][-]{section.6.2}{Improvements}{chapter.6}% 51
+\BOOKMARK [1][-]{section.6.3}{Recommendations and Future Work}{chapter.6}% 52
+\BOOKMARK [2][-]{subsection.6.3.1}{Multiple agents for faster learning in the environment}{section.6.3}% 53
+\BOOKMARK [2][-]{subsection.6.3.2}{Map learning agent for 3-dimensional environments}{section.6.3}% 54
+\BOOKMARK [2][-]{subsection.6.3.3}{Karnaugh Map solver for minimum logic hardware}{section.6.3}% 55
+\BOOKMARK [2][-]{subsection.6.3.4}{Improving the inference engine with FOL}{section.6.3}% 56
+\BOOKMARK [0][-]{section*.22}{References}{}% 57
+\BOOKMARK [0][-]{appendix*.23}{Appendix A: Project Planning Schedule}{}% 58
+\BOOKMARK [0][-]{appendix*.25}{Appendix B: Outcomes Compliance}{}% 59

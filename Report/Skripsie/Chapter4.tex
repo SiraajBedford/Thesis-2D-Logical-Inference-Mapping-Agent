@@ -1,6 +1,3 @@
-\chapter{  Detailed Design and Testing methods } 
-\label{Detailed_design}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ELO 2,3,5,6
 % Planning for Detailed Design
@@ -20,77 +17,53 @@
 % 4.4 Detailed design of component 4v
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\chapter{Low-Level System Design} 
+\label{Detailed_design}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[scale=1]{Figures/Goal4.png}
+%    \caption{Logical inference in context}
+%    \label{fig:python_implment}
+%\end{figure}	
+
+
 \section{Detailed sub-systems descriptions}
-
 %In my case this will be code design like in E-Design.
 %Mirror the functional blocks.
 %In depth calculations or mathematical representation.
-
-\subsection{Agent}
-
-\begin{algorithm}[H]
-\SetAlgoLined
-\KwResult{Add states and actions to knowledge base}
-	\Indp
-	\textbf{Begin} Executor class \\
-	$\phi(x)=\pi$\\
-	$\int_{a}^{b} \phi(x) dx=\pi[b-a]$\\
-	\textbf{End} Executor class
-  
-  \Indm adasd 
- \caption{Agent Algorithm}
-\end{algorithm}
-
-
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=.5]{Figures/KB-Agent.png}
-    \caption{Knowledge-based agent design algorithm from \cite{russell2016artificial}}
-    \label{fig:sysdiag}
-\end{figure}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\subsection{Agent}
+%\begin{algorithm}[H]
+%\SetAlgoLined
+%\KwResult{Add states and actions to knowledge base}
+%	\Indp
+%	\textbf{Begin} Executor class \\
+%	$\phi(x)=\pi$\\
+%	$\int_{a}^{b} \phi(x) dx=\pi[b-a]$\\
+%	\textbf{End} Executor class
+%  \Indm adasd 
+% \caption{Agent Algorithm}
+%\end{algorithm}
 
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%	
 \subsection{Environment}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \subsection{Knowledge Base}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Inference Procedure}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Inference Engine}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+\section{Learning Algorithms} 
+\section{Forming groups of states}
+\subsection{Split state definitions using AND}
+\subsection{Merge state definitions using OR}
+%\citep{Discrete_Maths}
+\newpage
+\subsection{Program Flow}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=.5]{Figures/DPLL_Algorithm.png}
-    \caption{Knowledge-based agent design algorithm from \cite{russell2016artificial}}
-    \label{fig:sysdiag}
+    \includegraphics[scale=.4]{Figures/new_program_flow.jpg}
+    \caption{Program Flow for full system} 
+    \label{fig:program_flow}
 \end{figure}
-
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Learning Algorithms} 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Forming groups of states}
-Using Regex?
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Split state definitions using AND}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\subsection{Merge state definitions using OR}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%

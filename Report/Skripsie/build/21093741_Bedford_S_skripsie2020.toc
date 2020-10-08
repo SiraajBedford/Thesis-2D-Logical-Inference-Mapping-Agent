@@ -1,0 +1,62 @@
+\contentsline {chapter}{Declaration}{i}{chapter*.1}%
+\contentsline {chapter}{Abstract}{ii}{chapter*.2}%
+\contentsline {chapter}{Contents}{iii}{section*.4}%
+\contentsline {chapter}{Nomenclature}{v}{chapter*.5}%
+\contentsline {chapter}{List of Figures}{vi}{section*.7}%
+\contentsline {chapter}{List of Tables}{vii}{section*.9}%
+\contentsline {chapter}{\numberline {1}Introduction}{1}{chapter.1}%
+\contentsline {section}{\numberline {1.1}Background}{1}{section.1.1}%
+\contentsline {section}{\numberline {1.2}Problem Statement}{1}{section.1.2}%
+\contentsline {section}{\numberline {1.3}Objectives}{1}{section.1.3}%
+\contentsline {subsection}{\numberline {1.3.1}Logical inference}{1}{subsection.1.3.1}%
+\contentsline {subsection}{\numberline {1.3.2}Knowledge base memory management}{2}{subsection.1.3.2}%
+\contentsline {subsection}{\numberline {1.3.3}Learning state definitions}{2}{subsection.1.3.3}%
+\contentsline {subsection}{\numberline {1.3.4}Representative knowledge graphing}{2}{subsection.1.3.4}%
+\contentsline {section}{\numberline {1.4}Scope}{2}{section.1.4}%
+\contentsline {section}{\numberline {1.5}Report Structure}{2}{section.1.5}%
+\contentsline {chapter}{\numberline {2}Literature}{3}{chapter.2}%
+\contentsline {section}{\numberline {2.1}Agents and Environments}{3}{section.2.1}%
+\contentsline {section}{\numberline {2.2}Logic}{4}{section.2.2}%
+\contentsline {subsection}{\numberline {2.2.1}Syntax, Semantics and Entailment}{4}{subsection.2.2.1}%
+\contentsline {subsection}{\numberline {2.2.2}Propositional Logic}{5}{subsection.2.2.2}%
+\contentsline {subsubsection}{\numberline {2.2.2.1}Backus-Naur Form}{5}{subsubsection.2.2.2.1}%
+\contentsline {subsubsection}{\numberline {2.2.2.2}Conjunctive Normal Form}{6}{subsubsection.2.2.2.2}%
+\contentsline {section}{\numberline {2.3}Knowledge-based agents}{7}{section.2.3}%
+\contentsline {section}{\numberline {2.4}Logical Inference}{8}{section.2.4}%
+\contentsline {subsection}{\numberline {2.4.1}Model Checking}{8}{subsection.2.4.1}%
+\contentsline {subsection}{\numberline {2.4.2}Propositional Theorem Proving}{10}{subsection.2.4.2}%
+\contentsline {subsubsection}{\numberline {2.4.2.1}Proof by Resolution}{12}{subsubsection.2.4.2.1}%
+\contentsline {subsubsection}{\numberline {2.4.2.2}The DPLL Algorithm: proof by refutation, the SAT problem, and a complete backtracking algorithm}{13}{subsubsection.2.4.2.2}%
+\contentsline {chapter}{\numberline {3}High-Level System Design}{15}{chapter.3}%
+\contentsline {section}{\numberline {3.1}System Architecture}{15}{section.3.1}%
+\contentsline {section}{\numberline {3.2}Mapping Agent}{16}{section.3.2}%
+\contentsline {subsection}{\numberline {3.2.1}Logic Engine}{16}{subsection.3.2.1}%
+\contentsline {subsection}{\numberline {3.2.2}Inference Engine}{16}{subsection.3.2.2}%
+\contentsline {subsection}{\numberline {3.2.3}Knowledge Base}{16}{subsection.3.2.3}%
+\contentsline {subsection}{\numberline {3.2.4}Agent-environment boundary rules}{17}{subsection.3.2.4}%
+\contentsline {section}{\numberline {3.3}Environment}{17}{section.3.3}%
+\contentsline {section}{\numberline {3.4}Experimental Setup}{17}{section.3.4}%
+\contentsline {section}{\numberline {3.5}Metrics}{18}{section.3.5}%
+\contentsline {chapter}{\numberline {4}Low-Level System Design}{19}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Detailed sub-systems descriptions}{19}{section.4.1}%
+\contentsline {subsection}{\numberline {4.1.1}Environment}{19}{subsection.4.1.1}%
+\contentsline {subsection}{\numberline {4.1.2}Knowledge Base}{19}{subsection.4.1.2}%
+\contentsline {subsection}{\numberline {4.1.3}Inference Procedure}{19}{subsection.4.1.3}%
+\contentsline {section}{\numberline {4.2}Learning Algorithms}{19}{section.4.2}%
+\contentsline {section}{\numberline {4.3}Forming groups of states}{19}{section.4.3}%
+\contentsline {subsection}{\numberline {4.3.1}Split state definitions using AND}{19}{subsection.4.3.1}%
+\contentsline {subsection}{\numberline {4.3.2}Merge state definitions using OR}{19}{subsection.4.3.2}%
+\contentsline {subsection}{\numberline {4.3.3}Program Flow}{20}{subsection.4.3.3}%
+\contentsline {chapter}{\numberline {5}Results and Discussion}{21}{chapter.5}%
+\contentsline {chapter}{\numberline {6}Conclusion}{22}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Objective and Results Comparison}{22}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Improvements}{22}{section.6.2}%
+\contentsline {section}{\numberline {6.3}Recommendations and Future Work}{22}{section.6.3}%
+\contentsline {subsection}{\numberline {6.3.1}Multiple agents for faster learning in the environment}{22}{subsection.6.3.1}%
+\contentsline {subsection}{\numberline {6.3.2}Map learning agent for 3-dimensional environments}{22}{subsection.6.3.2}%
+\contentsline {subsection}{\numberline {6.3.3}Karnaugh Map solver for minimum logic hardware}{22}{subsection.6.3.3}%
+\contentsline {subsection}{\numberline {6.3.4}Improving the inference engine with FOL}{22}{subsection.6.3.4}%
+\contentsline {chapter}{References}{23}{section*.21}%
+\contentsline {chapter}{Appendix A: Project Planning Schedule}{24}{appendix*.22}%
+\contentsline {chapter}{Appendix B: Outcomes Compliance}{25}{appendix*.24}%
+\contentsline {chapter}{Appendix C: Code}{26}{appendix*.26}%

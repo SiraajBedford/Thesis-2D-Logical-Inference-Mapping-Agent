@@ -1,6 +1,3 @@
-\chapter{Introduction} 
-\label{chapter:Introduction}
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % ELO 1, 6, 8, 9
 % Planning for introduction
@@ -23,40 +20,33 @@
 % 1.5 Roadmap: In Chapter (n), I did the following...
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\chapter{Introduction} 
+\label{chapter:Introduction}
 
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Background}
 
 % 1.1 Background: Why does this problem matter, why should it be done, hiow many issues people have issues that this problem can solve. Reader must understand why your problem really matters. Whats going on ingeneral that makes the project worthwile
-
-%Young children discover how the world works mostly through experience, despite not initially knowing the meaning of what they see, hear, feel, etc. The goal of this project is to do this, but for a simulated agent in a simple block‐world environment. The agent observes the blocks surrounding it as it moves through the environment, but it does not know anything about the world, where the observations come from, or what they mean. The agent should discover the structure of the environment (i.e. learn a map of the environment) from these observations using only general operations such as comparisons and logical operations. Mention expert systems.
-%Explain the bigger picture to allow the user to understand what you have done really matters
-%What is going on in the world.region/in gereneral that maes this problem worthwhile
-
-Humans, or more generally agents in an environment, without navigation experience of the environment they are placed in, cannot navigate the environment effectively without an understanding of what they perceive via sensors for example with vision, hearing, smell, taste or touch.
-It is difficult to navigate the environment effectively because of the fact that the meaning of such percepts with respect to the environment do not have a general or standard way of being interpreted. 
-A general architecture for representing states of the agent in the environment and a link between the states where the links acquired over time are learned from percepts the agent observes over time can be designed to obtain representative knowledge the agent acquired. 
+Agents in an environment (detailed in section \ref{sec:agents_and_environments}), without navigation experience of the environment they are placed in, cannot navigate the environment effectively without an understanding of what they perceive via sensors for example though vision, hearing, smell, taste or touch.
+It is difficult to navigate the environment effectively because of the fact that the meaning of such percepts with respect to the environment do not have a general or standard way of being logically interpreted. 
+A general architecture for representing states of the agent in the environment and a link between the states where the links acquired over time are learned from percepts the agent observes over time can be designed to obtain representative knowledge the agent acquires. 
 The representative knowledge can be shown as a directed dependency graph that is built and interpreted using logical operations over time since logic in an abstracted manner can be implemented independent of context. When slight context is given, the agent should be able to understand the representative data in terms of the environment it is in.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Problem Statement}
-
 %What you are addrssing
 %In the bigger problem this is what we want to adress.
 %Says exactly in one sentence what you supposed to do to answer the question (Sentence or two)
-
-%To develop agents that map environments using logic in general, an agent can be placed in a 2-dimensional environment and use logical processes to learn the environment representation without understanding what the propositions it acquires through the lifetime of the simulation mean.
-
-An agent (restricted to moving left, right, up and down) must be placed in a 2-dimensional environment and use logical processes to learn the environment representation without understanding the knowledge it acquires through the lifetime of the simulation mean. The context must removed such that the architecture can be implemented in a variety of environments where mapping is needed.  
-
+An agent restricted to moving left, right, up and down must be placed in a 2-dimensional environment and use logical processes to gain information about the environment which must be stored in a KB. While adding knowledge to a KB, a KR must be simultaneously built up without understanding what the knowledge in the KB means. The context of the environment (a 2D grid with coordinates) must removed from the agent's design such that the solution can be implemented in a variety of environments where mapping is needed.  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\textit{learn}
+%\textsc{learn}
+%\textsf{learn}
+%\textsl{learn}
+%\texttt{learn}
 \section{Objectives}
-
 %If I meet the following things
 %Objective 1
 %	Sub-objectives
@@ -64,61 +54,44 @@ An agent (restricted to moving left, right, up and down) must be placed in a 2-d
 %Objective 3
 %Which are observable, we should have achieved the objective / part thereof
 %In conclusion you must measure yourself against these
-
 \subsection{Logical inference}
-The agent must use logical inference to determine which state it is in from percept and action propositions acquired over time by theorem proving or explicit model checking. 
-	
+The agent must use logical inference to determine which state it is in from percept and action propositions acquired over time (percept history) which are stored in a KB. It must be accomplished by using theorem proving, SAT or explicit model checking algorithms. The inference procedure must be efficient enough to be executed at least every second.
 \subsection{Knowledge base memory management}
-The knowledge base memory must be managed in such a way that the amount of information in the knowledgeable is sizable enough for logical inference to be efficiently carried out without tending to the maximum time complexity.
-	
-\subsection{Learning}
-The state definitions learned throughout the simulation and represented as logic in the knowledge base must be compared as to group and split the state definitions to differentiate experienced states with similar observations. 	
-	
+The knowledge base size must be managed from one time step to the next in such a way that the amount of information in the KB is contextual enough for logical inference to be carried out efficiently without tending to the maximum time complexity.
+\subsection{Learning state definitions}
+The state definitions learned throughout the simulation and represented as propositional logic in the knowledge base must be compared as to group and split the state definitions to differentiate experienced states with similar observations.
 \subsection{Representative knowledge graphing}
-The states and links between the states as stored in the knowledge based must be represented as a discrete mathematical graph for interpretability of the knowledge the agent acquired over time since the agent does not know its co-ordinates in the environment. 
+The states and links between the states as stored in the knowledge based must be represented as a discrete mathematical graph for interpretability of the knowledge the agent acquires over time since the agent does not know its co-ordinates in the environment, we (the agent designers) have to have some way of knowing what the agent learns.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Write later \section{Summary of work}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Scope}
-
 %The scope of this project is limited to a single agent in an environment.
 %The environment will be 2-dimensional. A 3-dimensional environment was not considered due to time-constraints of the project.
 %Theoreom proving not used, rather passible worlds
-
-The scope was limited to a single agent in an a 2-dimensional environment. A single agent was used to simplify what the agent perceives to the percepts it sees around itself as open or closed space, i.e., not seeing another agent. Theorem proving  and explicit model checking  was considered for logical inference.
+The scope was limited to a single agent in an a 2-dimensional environment. A single agent was used to constrain what the agent perceives to only be blocks it sees around itself as open or closed spaces, i.e., not seeing another agent to reduce complexity. Theorem proving, SAT and explicit model checking  was considered for logical inference. PL is used instead of FOL because no propositions need quantification in this project.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Report Structure}
-
 \begin{itemize}
-	\item \textbf{\textit{Chapter 1 - Introduction}}, explains why the idea is important in the context of mapping environments without knowing the meaning of knowledge the agent acquires. The relevant objectives and scope for the project is also discussed. 
+	\item \textbf{\textit{Chapter 1 - Introduction}}, explains the importance of the agent in the context of mapping environments. Objectives and scope for the project is also discussed. 
 	
 %	\item \textbf{\textit{Chapter 2 -  Literature}}, focuses on previous work based on the objectives of the project, but since this concept is fairly new there is no literature that puts the idea in definite context and perspective. Relevant knowledge for understanding the project is also stated here.
 
 	\item \textbf{\textit{Chapter 2 -  Literature}}, focuses on relevant logic and formulation knowledge forming the basis of the structure of the program architecture and the solution of the project.
 
-	\item \textbf{\textit{Chapter 3: System Design}}, focuses on the higher level architecture design and also the metrics to measure the success of the project against.
+	\item \textbf{\textit{Chapter 3: System Design}}, focuses on the higher level architecture design and also the metrics used to measure the success of the project.
 	
-	\item \textbf{\textit{Chapter 4: Detailed Design}}, explains the design behind the functional components in the environment mapping system and also focuses on designing experiments to tests the validity of the solution.
+	\item \textbf{\textit{Chapter 4: Detailed Design}}, explains the design behind the functional components in the environment mapping system and also focuses on designing experiments to test the validity of the solution.
 	
 	\item \textbf{\textit{Chapter 5: Results and Discussion}}, explains the observed outcomes in conjunction with the objective metrics of the designed experiments of unit testing and overall system testing.
 	
 	\item \textbf{\textit{Chapter 6: Conclusion}}, goes on to summarize if this idea is feasible based on found evidence and if the architecture is suitable enough for further implementation to other scenarios. Possible extensions and improvements are mentioned as well.
-	
 \end{itemize}
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-

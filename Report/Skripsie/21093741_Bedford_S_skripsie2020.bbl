@@ -26,11 +26,10 @@
   modern approach}.
 \newblock \bblthirdo{} \bbledn{}. Pearson, 2009.
 
-\bibitem[{\citenamefont{KUMAR}(2019)}]{Logic}
-\bibnamefont{KUMAR}, \bibfnamefont{N.}: Differentiation between propositional
-  logic and first-order logic.
-\newblock 2019.
-\newblock Accessed: 2020-09-26.
-\newline\bblurlpre\url{$https://medium.com/@nitishbih14/differentiation-between-propositional-logic-and-first-order-logic-b50062c06684$}
+\bibitem[{\citenamefont{Rosen}(2019)}]{Discrete_Maths}
+\bibnamefont{Rosen}, \bibfnamefont{K.H.}: \emph{Discrete Mathematics and Its
+  Applications}.
+\newblock 8\bblth{} \bbledn{}. McGraw-Hill Higher Education, 2019.
+\newblock ISBN 978-1-259-67651-2.
 
 \end{thebibliography}
