@@ -4,15 +4,13 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces A general learning agent as in \citep {russell2016artificial} to provide context\relax }}{3}{figure.caption.10}%
-\contentsline {figure}{\numberline {2.2}{\ignorespaces Logical inference in a use-case context using CNF grammar, with random symbols $p,q,r,s$ and assigned facts $R_1$ and $R_2$\relax }}{8}{figure.caption.14}%
+\contentsline {figure}{\numberline {2.2}{\ignorespaces Logical inference in a use-case context using CNF grammar, with random symbols $p,q,r,s$. Adapted from \cite {10.1007/978-3-030-21077-9_32}\relax }}{8}{figure.caption.14}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces General learning agent Figure 2.15 from \cite {russell2016artificial}\relax }}{11}{figure.caption.16}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces General learning agent Figure 2.15 from \cite {russell2016artificial}\relax }}{13}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces High level mapping agent and environment design diagram\relax }}{15}{figure.caption.17}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Inference Engine\relax }}{16}{figure.caption.18}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {4.1}{\ignorespaces Logical inference in context\relax }}{14}{figure.caption.18}%
-\contentsline {figure}{\numberline {4.2}{\ignorespaces Knowledge-based agent design algorithm from \cite {russell2016artificial}\relax }}{15}{figure.caption.19}%
+\contentsline {figure}{\numberline {4.1}{\ignorespaces Program Flow for full system\relax }}{19}{figure.caption.19}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {5.1}{\ignorespaces Measuring runtime vs clause-to-symbol ratio\relax }}{16}{figure.caption.20}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

@@ -25,7 +25,7 @@
 \begin{figure}[H]
     \centering
     \includegraphics[scale=.35]{Figures/main_architecture.PNG}
-    \caption{High level mapping agent and environment design} 
+    \caption{High level mapping agent and environment design diagram} 
     \label{fig:agent_and_environment_design}
 \end{figure}
 
@@ -69,7 +69,7 @@ The inferential component of the system is the core component we need to design 
 
 When deciding how the knowledge base had to be implemented, there were three options to consider: Using a procedural programming language and store logic in defined data structure in that program language, or to use a declarative programming language such as \textit{Prolog} to declare links between facts in the KB, or to use a combination of procedural (for main execution) and declarative languages (for storing logic). The procedural nature of this project needed the use of a programming language with easily implementable data structures, as such \textit{Python 3} was used as it provides flexibility for procedural processes and potential for implementing declarative principles using \textit{lists}. The use of Python also makes it possible to integrate a GUI for agent operation. The knowledge  base was implemented as a list and the code base of \citep{russell2016artificial} was used to implent the KB. As mentioned in Chapter \ref{chapter:Introduction}, we also need to manage the size of the KB as it affects the performance of inference. A Python list can easily be managed and as such is a good choice for implementation.
 
-\subsection{Agent-environment boundary rules}
+\subsection{Agent-Environment Boundary Rules}
 
 Restricting the agent to move within the environment is important because the propositions the agents adds to the KB should not come from sensor measurements the do not make sense in terms of how the environment "physics" works and as such, program-defined rules based on the sensor measurements were used to restrict the agent to only perceive percepts while present on "open" blocks described in \ref{sec:environment}.
 
@@ -80,9 +80,9 @@ Restricting the agent to move within the environment is important because the pr
 \section{Environment}
 \label{sec:environment}
 
-There were two things to consider for implementation of the environment, namely, a change in environment variables per time step as well as fast update times that does not limit the simulation in any way. There were two considerations for this: using \textit{NumPy}, also known as Numerical Python to represent the environment and agent as integer variables in an array, or using a Python list, where the same scheme is required. NumPy does not allow for multiple data types in the array, while Python lists do. NumPy was used since we do not are about data types for representing the environment, and NumPy is more scalable than Python lists. An agent was represented as the integer '2', an open block that the agent could explore and receive sensor measurements on was represented as the integer '0' and blocks that bounded the agent to the environment were set to '1'. Thus, the 2-dimensional arrays only consisted of integers '0','1' or '2'. 
+There were two things to consider for implementation of the environment, namely, a change in environment variables per time step as well as fast update times that does not limit the simulation in any way. There were two considerations for this: using \textit{NumPy}, also known as Numerical Python to represent the environment and agent as integer variables in an array, or using a Python list, where the same scheme is required. NumPy does not allow for multiple data types in the array, while Python lists do. NumPy was used since we do not are about data types for representing the environment, and NumPy is more scalable than Python lists. The agent, open blocks, and close blocks are arbitrarily selected integers in the array.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Experimental Setup}
+\section{Methodology}
 \label{sec:experimental_method}
 %Explain the experimental setup.
 
@@ -105,12 +105,12 @@ The experiment steps can be considered as:
 %This section says how and what I am going to measure.
 %List what you intend to measure and how do you intend to measure it.
 %You can match the metrics up to the objectives.
-Relating to the objectives defined in Chapter \ref{chapter:Introduction}, the following are the metrics to reach those objectives
+Relating to the objectives defined in Chapter \ref{chapter:Introduction}, the following are the metrics to reach those objectives:
 
 \begin{itemize}
- \item Logical inference, 
- \item KB memory management, l
- \item Learning state definitions, 
- \item Representative knowledge graphing 
+ \item Logical inference - The inference algorithm with fastest inference time will be chosen if it can perform that inference in less than 1 second.
+ \item KB memory management - The KB size must be kept at some relatively constant size from one time step to the next so that inference time does not take longer than in the previous time step.
+ \item Learning state definitions - The number of learnt state definition should be within 10\% of the number of open blocks that the agent can roam on.
+ \item Representative knowledge graphing - If we can clearly see that the representative graph matches the way we (the designers) see the environment, this objective is met.
 \end{itemize}
 

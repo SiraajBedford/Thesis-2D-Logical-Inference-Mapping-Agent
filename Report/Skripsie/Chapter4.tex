@@ -20,50 +20,47 @@
 \chapter{Low-Level System Design} 
 \label{Detailed_design}
 
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[scale=1]{Figures/Goal4.png}
-%    \caption{Logical inference in context}
-%    \label{fig:python_implment}
-%\end{figure}	
-
-
-\section{Detailed sub-systems descriptions}
-%In my case this will be code design like in E-Design.
-%Mirror the functional blocks.
-%In depth calculations or mathematical representation.
-%\subsection{Agent}
-%\begin{algorithm}[H]
-%\SetAlgoLined
-%\KwResult{Add states and actions to knowledge base}
-%	\Indp
-%	\textbf{Begin} Executor class \\
-%	$\phi(x)=\pi$\\
-%	$\int_{a}^{b} \phi(x) dx=\pi[b-a]$\\
-%	\textbf{End} Executor class
-%  \Indm adasd 
-% \caption{Agent Algorithm}
-%\end{algorithm}
-
-
-
-\subsection{Environment}
-\subsection{Knowledge Base}
-\subsection{Inference Procedure}
-
-
-
-
-\section{Learning Algorithms} 
-\section{Forming groups of states}
-\subsection{Split state definitions using AND}
-\subsection{Merge state definitions using OR}
-%\citep{Discrete_Maths}
-\newpage
-\subsection{Program Flow}
+\section{Program Flow}
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=.4]{Figures/new_program_flow.jpg}
+    \includegraphics[scale=.3]{Figures/new_program_flow.jpg}
     \caption{Program Flow for full system} 
     \label{fig:program_flow}
 \end{figure}
+
+\section{Knowledge Base Agent}
+
+The agent only receives percepts as inputs and action as outputs to map a representation of the environment. Thus, a percept vector (equation \ref{eq:percept_vector}) and action vector (equation \ref{eq:action_vector}) was defined. We also define a state vector (equation \ref{eq:state_vector}) using these vectors.
+
+
+\begin{subequations}
+\begin{align}
+    \mathbf{P_t}=
+\begin{bmatrix}
+L_t & R_t & U_t & UL_t & UR_t & B_t & BL_t & BR_t
+\end{bmatrix} 
+ \label{eq:percept_vector}\\
+\mathbf{A_t}=
+\begin{bmatrix}
+ML_t & MR_t & MU_t & MD_t & MB_t 
+\end{bmatrix} 
+ \label{eq:action_vector}\\
+       \mathbf{S_t}=
+\begin{bmatrix}
+P_t & A_t  
+\end{bmatrix}
+ \label{eq:state_vector}
+\end{align}
+\end{subequations}
+
+
+\section{Detailed Sub-Systems Descriptions}
+\subsection{Environment}
+\subsection{Knowledge Base}
+\subsection{Inference Procedure}
+\section{Learning Algorithms} 
+\section{Forming Groups of States}
+\subsection{Split State Definitions Using AND}
+\subsection{Merge State Definitions Using OR}
+%\citep{Discrete_Maths}
+\newpage

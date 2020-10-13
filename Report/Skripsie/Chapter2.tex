@@ -26,7 +26,7 @@
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Literature} 
+\chapter{Literature Review} 
 \label{chapter:Literature}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -245,7 +245,7 @@ The process to convert from BNF to CNF (using an arbitrary sentences $\alpha$ an
 %\textsl{learn}
 %\texttt{learn}
 
-\section{Knowledge-based agents}
+\section{Knowledge-Based Agents}
 \label{sec:kb_agents}
 
 BNF and CNF represent syntax and semantics needed for conveying logic in knowledge-based agents and PL is the \textit{knowledge representation language}. Algorithm \ref{algorithm:general_KB_Agent} represents the general structure for a KB agent. The central component of this type of agent is a Knowledge Base which is a set of sentences acquired over time. The KB might contain initial information before the agent executes its function, but the aim is to get the KB agent to not need this background knowledge. A KB should be \textit{readable} to check sentence entailment and \textit{writable} to add sentences, which is represented by the methods \textsc{TELL} and \textsc{ASK} repectively in Algorithm \ref{algorithm:general_KB_Agent}.
@@ -294,7 +294,7 @@ Figure \ref{fig:entailment} shows the general process of logical inference, wher
 \begin{figure}[H]
     \centering
     \includegraphics[scale=.77]{Figures/Inference_Gears.png}
-    \caption{Logical inference in a use-case context using CNF grammar, with random symbols $p,q,r,s$ and assigned facts $R_1$ and $R_2$}
+    \caption{Logical inference in a use-case context using CNF grammar, with random symbols $p,q,r,s$. Adapted from \cite{10.1007/978-3-030-21077-9_32}}
     \label{fig:entailment}
 \end{figure}
 
