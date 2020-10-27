@@ -38,20 +38,27 @@
 \contentsline {section}{\numberline {3.4}Methodology}{17}{section.3.4}%
 \contentsline {section}{\numberline {3.5}Metrics}{18}{section.3.5}%
 \contentsline {chapter}{\numberline {4}Low-Level System Design}{19}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Program Flow}{19}{section.4.1}%
-\contentsline {section}{\numberline {4.2}Knowledge Base Agent}{20}{section.4.2}%
-\contentsline {section}{\numberline {4.3}Detailed Sub-Systems Descriptions}{20}{section.4.3}%
-\contentsline {subsection}{\numberline {4.3.1}Environment}{20}{subsection.4.3.1}%
-\contentsline {subsection}{\numberline {4.3.2}Knowledge Base}{20}{subsection.4.3.2}%
-\contentsline {subsection}{\numberline {4.3.3}Inference Procedure}{20}{subsection.4.3.3}%
-\contentsline {section}{\numberline {4.4}Learning Algorithms}{20}{section.4.4}%
-\contentsline {section}{\numberline {4.5}Forming Groups of States}{20}{section.4.5}%
-\contentsline {subsection}{\numberline {4.5.1}Split State Definitions Using AND}{20}{subsection.4.5.1}%
-\contentsline {subsection}{\numberline {4.5.2}Merge State Definitions Using OR}{20}{subsection.4.5.2}%
-\contentsline {chapter}{\numberline {5}Results and Discussion}{21}{chapter.5}%
-\contentsline {chapter}{\numberline {6}Conclusion}{22}{chapter.6}%
-\contentsline {section}{\numberline {6.1}Results and Objectives Comparison}{22}{section.6.1}%
-\contentsline {section}{\numberline {6.2}Improvements and Future Work}{22}{section.6.2}%
-\contentsline {chapter}{References}{23}{section*.21}%
-\contentsline {chapter}{Appendix A: Project Planning Schedule}{24}{appendix*.22}%
-\contentsline {chapter}{Appendix B: Outcomes Compliance}{25}{appendix*.24}%
+\contentsline {section}{\numberline {4.1}Agent-Environment Interface}{19}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Knowledge Based Agent}{20}{section.4.2}%
+\contentsline {subsection}{\numberline {4.2.1}Sensor Input and Reference Propositional Symbols}{21}{subsection.4.2.1}%
+\contentsline {subsection}{\numberline {4.2.2}Inference Procedure}{22}{subsection.4.2.2}%
+\contentsline {subsection}{\numberline {4.2.3}State Formation and Generation}{22}{subsection.4.2.3}%
+\contentsline {subsection}{\numberline {4.2.4}Knowledge Segmentation}{22}{subsection.4.2.4}%
+\contentsline {subsubsection}{\numberline {4.2.4.1}Action and Percept KB}{22}{subsubsection.4.2.4.1}%
+\contentsline {subsubsection}{\numberline {4.2.4.2}Experienced States and Actions KB}{22}{subsubsection.4.2.4.2}%
+\contentsline {subsubsection}{\numberline {4.2.4.3}Environment Representation as a KB}{22}{subsubsection.4.2.4.3}%
+\contentsline {section}{\numberline {4.3}Environment Representation Creation}{22}{section.4.3}%
+\contentsline {chapter}{\numberline {5}Results and Discussion}{24}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Results}{24}{section.5.1}%
+\contentsline {subsection}{\numberline {5.1.1}Time for Percepts and Actions}{24}{subsection.5.1.1}%
+\contentsline {subsection}{\numberline {5.1.2}Knowledge Base and State Diagram Inspection}{24}{subsection.5.1.2}%
+\contentsline {subsection}{\numberline {5.1.3}Average Iterations to Fully Represent the Environment}{24}{subsection.5.1.3}%
+\contentsline {subsection}{\numberline {5.1.4}Inference Time for Identifying Agent State from Environment Representation}{24}{subsection.5.1.4}%
+\contentsline {subsection}{\numberline {5.1.5}Agent State Prediction}{24}{subsection.5.1.5}%
+\contentsline {section}{\numberline {5.2}Discussion of Results}{24}{section.5.2}%
+\contentsline {chapter}{\numberline {6}Conclusion}{25}{chapter.6}%
+\contentsline {section}{\numberline {6.1}Results and Objectives Comparison}{25}{section.6.1}%
+\contentsline {section}{\numberline {6.2}Improvements and Project Extensions}{25}{section.6.2}%
+\contentsline {chapter}{References}{26}{section*.24}%
+\contentsline {chapter}{Appendix A: Project Planning Schedule}{27}{appendix*.25}%
+\contentsline {chapter}{Appendix B: Outcomes Compliance}{28}{appendix*.27}%

@@ -4,24 +4,37 @@
 \@writefile{lof}{\addvspace {10\p@ }}
 \@writefile{lot}{\addvspace {10\p@ }}
 \@writefile{loa}{\addvspace {10\p@ }}
-\newlabel{Detailed_design}{{4}{19}{Low-Level System Design}{chapter.4}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.1}Program Flow}{19}{section.4.1}\protected@file@percent }
-\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Program Flow for full system\relax }}{19}{figure.caption.19}\protected@file@percent }
-\newlabel{fig:program_flow}{{4.1}{19}{Program Flow for full system\relax }{figure.caption.19}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.2}Knowledge Base Agent}{20}{section.4.2}\protected@file@percent }
-\newlabel{eq:percept_vector}{{4.1a}{20}{Knowledge Base Agent}{equation.4.2.1a}{}}
-\newlabel{eq:action_vector}{{4.1b}{20}{Knowledge Base Agent}{equation.4.2.1b}{}}
-\newlabel{eq:state_vector}{{4.1c}{20}{Knowledge Base Agent}{equation.4.2.1c}{}}
-\@writefile{toc}{\contentsline {section}{\numberline {4.3}Detailed Sub-Systems Descriptions}{20}{section.4.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.1}Environment}{20}{subsection.4.3.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.2}Knowledge Base}{20}{subsection.4.3.2}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.3.3}Inference Procedure}{20}{subsection.4.3.3}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.4}Learning Algorithms}{20}{section.4.4}\protected@file@percent }
-\@writefile{toc}{\contentsline {section}{\numberline {4.5}Forming Groups of States}{20}{section.4.5}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.1}Split State Definitions Using AND}{20}{subsection.4.5.1}\protected@file@percent }
-\@writefile{toc}{\contentsline {subsection}{\numberline {4.5.2}Merge State Definitions Using OR}{20}{subsection.4.5.2}\protected@file@percent }
+\newlabel{LL_design}{{4}{19}{Low-Level System Design}{chapter.4}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.1}Agent-Environment Interface}{19}{section.4.1}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.1}{\ignorespaces Example Simulation of Agent in an Environment\relax }}{19}{figure.caption.19}\protected@file@percent }
+\newlabel{fig:agent_in_env_low_level}{{4.1}{19}{Example Simulation of Agent in an Environment\relax }{figure.caption.19}{}}
+\@writefile{toc}{\contentsline {section}{\numberline {4.2}Knowledge Based Agent}{20}{section.4.2}\protected@file@percent }
+\@writefile{lof}{\contentsline {figure}{\numberline {4.2}{\ignorespaces Agent Execution Flow\relax }}{20}{figure.caption.20}\protected@file@percent }
+\newlabel{fig:agent_in_env_low_level}{{4.2}{20}{Agent Execution Flow\relax }{figure.caption.20}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.1}Sensor Input and Reference Propositional Symbols}{21}{subsection.4.2.1}\protected@file@percent }
+\newlabel{fig:agent_in_env_low_level_percepts}{{4.3a}{21}{Reference for agent percepts proposition symbols \newline at time \textit {t}\relax }{figure.caption.21}{}}
+\newlabel{sub@fig:agent_in_env_low_level_percepts}{{a}{21}{Reference for agent percepts proposition symbols \newline at time \textit {t}\relax }{figure.caption.21}{}}
+\newlabel{fig:agent_in_env_low_level_action}{{4.3b}{21}{Reference for agent action proposition symbols at time \textit {t}\relax }{figure.caption.21}{}}
+\newlabel{sub@fig:agent_in_env_low_level_action}{{b}{21}{Reference for agent action proposition symbols at time \textit {t}\relax }{figure.caption.21}{}}
+\@writefile{lof}{\contentsline {figure}{\numberline {4.3}{\ignorespaces Reference for propositional symbols used\relax }}{21}{figure.caption.21}\protected@file@percent }
+\newlabel{fig:test}{{4.3}{21}{Reference for propositional symbols used\relax }{figure.caption.21}{}}
+\newlabel{tab:table1}{{\caption@xref {tab:table1}{ on input line 77}}{21}{Sensor Input and Reference Propositional Symbols}{table.caption.22}{}}
+\@writefile{lot}{\contentsline {table}{\numberline {4.1}{\ignorespaces Description of the meanings of propositional symbols used for logical sentence design.\relax }}{21}{table.caption.22}\protected@file@percent }
+\newlabel{subsubsec: sensor}{{4.2.1}{21}{Sensor Input and Reference Propositional Symbols}{table.caption.22}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.2}Inference Procedure}{22}{subsection.4.2.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.3}State Formation and Generation}{22}{subsection.4.2.3}\protected@file@percent }
+\newlabel{eq:percept_vector}{{4.1a}{22}{State Formation and Generation}{equation.4.2.1a}{}}
+\newlabel{eq:action_vector}{{4.1b}{22}{State Formation and Generation}{equation.4.2.1b}{}}
+\newlabel{eq:state_vector}{{4.1c}{22}{State Formation and Generation}{equation.4.2.1c}{}}
+\@writefile{toc}{\contentsline {subsection}{\numberline {4.2.4}Knowledge Segmentation}{22}{subsection.4.2.4}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.1}Action and Percept KB}{22}{subsubsection.4.2.4.1}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.2}Experienced States and Actions KB}{22}{subsubsection.4.2.4.2}\protected@file@percent }
+\@writefile{toc}{\contentsline {subsubsection}{\numberline {4.2.4.3}Environment Representation as a KB}{22}{subsubsection.4.2.4.3}\protected@file@percent }
+\@writefile{toc}{\contentsline {section}{\numberline {4.3}Environment Representation Creation}{22}{section.4.3}\protected@file@percent }
+\newlabel{algorithm:Directed_Graph_building_algorithm}{{7}{23}{Environment Representation Creation}{algocfline.7}{}}
+\@writefile{loa}{\contentsline {algocf}{\numberline {7}{\ignorespaces \textsc  {Directed Graph Building Algorithm}\relax }}{23}{algocf.7}\protected@file@percent }
 \@setckpt{Chapter4}{
-\setcounter{page}{21}
+\setcounter{page}{24}
 \setcounter{equation}{1}
 \setcounter{enumi}{7}
 \setcounter{enumii}{0}
@@ -31,24 +44,24 @@
 \setcounter{mpfootnote}{0}
 \setcounter{part}{0}
 \setcounter{chapter}{4}
-\setcounter{section}{5}
-\setcounter{subsection}{2}
+\setcounter{section}{3}
+\setcounter{subsection}{0}
 \setcounter{subsubsection}{0}
 \setcounter{paragraph}{0}
 \setcounter{subparagraph}{0}
-\setcounter{figure}{1}
-\setcounter{table}{0}
+\setcounter{figure}{3}
+\setcounter{table}{1}
 \setcounter{US@tcnta}{40}
 \setcounter{US@tcntb}{950272}
-\setcounter{caption@flags}{0}
+\setcounter{caption@flags}{2}
 \setcounter{continuedfloat}{0}
-\setcounter{subfigure}{0}
+\setcounter{subfigure}{2}
 \setcounter{subtable}{0}
 \setcounter{float@type}{8}
-\setcounter{AlgoLine}{10}
-\setcounter{algocfline}{6}
-\setcounter{algocfproc}{6}
-\setcounter{algocf}{6}
+\setcounter{AlgoLine}{20}
+\setcounter{algocfline}{7}
+\setcounter{algocfproc}{7}
+\setcounter{algocf}{7}
 \setcounter{lstnumber}{1}
 \setcounter{parentequation}{1}
 \setcounter{NAT@ctr}{0}
@@ -58,5 +71,5 @@
 \setcounter{Hfootnote}{0}
 \setcounter{bookmark@seq@number}{0}
 \setcounter{lstlisting}{0}
-\setcounter{section@level}{2}
+\setcounter{section@level}{1}
 }

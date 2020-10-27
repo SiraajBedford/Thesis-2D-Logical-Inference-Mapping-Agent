@@ -18,20 +18,93 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \chapter{Low-Level System Design} 
-\label{Detailed_design}
+\label{LL_design}
 
-\section{Program Flow}
+
+\section{Agent-Environment Interface}
+
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=.3]{Figures/new_program_flow.jpg}
-    \caption{Program Flow for full system} 
-    \label{fig:program_flow}
+    \includegraphics[scale=0.73]{Figures/Goal2.png}
+    \caption{Example Simulation of Agent in an Environment} 
+    \label{fig:agent_in_env_low_level}
 \end{figure}
 
-\section{Knowledge Base Agent}
+
+The environment is represented as a 2D grid world as shown in Figure \ref{fig:agent_in_env_low_level} and the agent is represented as one block (the white block) in the environment. The environment consists of open blocks and closed blocks. The agent is allowed to roam on open blocks (shown as black blocks) and not allowed to move onto closed blocks (shown as grey blocks). The different simulation environments used in this project bound the agent to ensure that the agent's next position is known and not random, which would not be the case if rules were implemented in an unbounded environment that made the agent's next position unknown if the agent moved out of bounds.
+The environment is partially observable since the agent sensor only measures the surrounding blocks of the agent and is further discussed in Subsection \ref{subsubsec: sensor}. The environment is deterministic since the agent can move from one state to another by means of an action or series of actions. The environment is further defined to be a single-agent environment as only one agent occupies the environment in this project. The environment is static because the environment does not change as the agent moves through it, i.e., the blocks in the environment are fixed. Finally, the environment is discrete since there are a finite number of actions that the agent can do in the environment.
+
+
+\section{Knowledge Based Agent}
+
+The agent we use in this project is a KB Agent. This agent allows us to implement the inference algorithms in Sections \ref{subsubsec: Inference_model_checking} and   The agent takes in sensor input,
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.66]{Figures/low_level_state_gen.png}
+    \caption{Agent Execution Flow} 
+    \label{fig:agent_in_env_low_level}
+\end{figure}
+
+
+
+\subsection{Sensor Input and Reference Propositional Symbols}
+
+
+
+\begin{figure}[H]
+\captionsetup[subfigure]{justification=centering}
+\centering
+\begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.73]{Figures/Low_level_design_percepts.png}
+    \caption{Reference for agent percepts proposition symbols \newline at time \textit{t}} 
+    \label{fig:agent_in_env_low_level_percepts}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[scale=0.46]{Figures/Low_level_design_actions.png}
+    \caption{Reference for agent action proposition symbols at time \textit{t}} 
+    \label{fig:agent_in_env_low_level_action}
+\end{subfigure}
+\caption{Reference for propositional symbols used}
+\label{fig:test}
+\end{figure}
+
+
+\begin{table}[H]
+  \begin{center}
+    \label{tab:table1}
+    \begin{tabular}{c|l}
+      \textbf{Symbol} & \textbf{Description} \\ 
+      \hline
+      $L_t$ & What the agent perceives to the left of the block it occupies at time \textit{t}. \\ 
+      $R_t$ & What the agent perceives to the right of the block it occupies at time \textit{t}. \\  
+      $U_t$ & What the agent perceives to the top of the block it occupies at time \textit{t}. \\ 
+      ${UL}_t$ & What the agent perceives to top left of the block it occupies at time \textit{t}. \\ 
+      ${UR}_t$ & What the agent perceives to the top right of the block it occupies at time \textit{t}. \\
+      $B_t$ & What the agent perceives to the bottom of the block it occupies at time \textit{t}. \\
+      ${BL}_t$ & What the agent perceives to the bottom left of the block it occupies at time \textit{t}. \\ 
+      ${BR}_t$ & What the agent perceives to the bottom right of the block it occupies at time \textit{t}. \\  
+      ${ML}_t$ & Expresses that the agent moved left to occupy a certain block at time \textit{t}.\\ 
+      ${MR}_t$ & Expresses that the agent moved right to occupy a certain block at time \textit{t}.\\ 
+      ${MU}_t$ & Expresses that the agent moved up to occupy a certain block at time \textit{t}.\\  
+      ${MD}_t$ & Expresses that the agent moved down to occupy a certain block at time \textit{t}.\\  
+      ${MB}_t$ & Expresses that the agent bumped against a closed block at time \textit{t}.\\ 
+    \end{tabular}
+  \end{center}
+  \caption{Description of the meanings of propositional symbols used for logical sentence design.}
+\end{table}
+
+
+\label{subsubsec: sensor}
+
+The Senor input consists of sensing the actions the agent took as well as the value of the immediate blocks surrounding an agent at 
+
+\subsection{Inference Procedure}
+\subsection{State Formation and Generation}
 
 The agent only receives percepts as inputs and action as outputs to map a representation of the environment. Thus, a percept vector (equation \ref{eq:percept_vector}) and action vector (equation \ref{eq:action_vector}) was defined. We also define a state vector (equation \ref{eq:state_vector}) using these vectors.
-
 
 \begin{subequations}
 \begin{align}
@@ -53,14 +126,85 @@ P_t & A_t
 \end{align}
 \end{subequations}
 
+\subsection{Knowledge Segmentation}
 
-\section{Detailed Sub-Systems Descriptions}
-\subsection{Environment}
-\subsection{Knowledge Base}
-\subsection{Inference Procedure}
-\section{Learning Algorithms} 
-\section{Forming Groups of States}
-\subsection{Split State Definitions Using AND}
-\subsection{Merge State Definitions Using OR}
+\subsubsection{Action and Percept KB}
+
+\subsubsection{Experienced States and Actions KB}
+
+
+\subsubsection{Environment Representation as a KB}
+
+
+\section{Environment Representation Creation}
+
+The structural nature of a directed graphs, i.e., that they contain nodes and links were suitable to represent the environment. States could be represented as vertices and arrows between vertices could represent action to get from one state to another. The vertex has a label and a descrition, the state name is stored as the label and the description is stored in vertex memory.
+
+
+\vspace{0.5cm}
+\begin{algorithm}[H]
+\label{algorithm:Directed_Graph_building_algorithm}
+\caption{\textsc{Directed Graph Building Algorithm}}
+\SetAlgoLined
+\DontPrintSemicolon
+\KwIn{$S_t \xrightarrow[\text{}]{\mathcal{A}} S_{t+1}$, A State Transition expressed in a string,  \newline $\mathcal{A}$, A sequence of actions between $S_t$ and $S_{t+1}$ \newline $\mathcal{B} = \{\}$, An empty list to store move history}
+\KwOut{A Directed Graph Representation of the Environment}
+\textbf{Begin} \\
+\Indp{
+	\vspace{0.5cm}
+	\lIf{$\mathcal{A}$ contains $MB_t$ and ($ML_t$ or $MR_t$ or $MU_t$ or $MD_t$) }{\\
+		\hspace{1cm} $S_t = S_{t+1}$ 		\\
+		\hspace{1cm} Create vertex with label $S_{t}$ if not already created	\\
+		\hspace{1cm} Create an edge looping from $S_t$ to $S_{t+1}$ (Same vertex) with action label\\
+		\hspace{1cm} Store state definition in vertex memory\\
+	}	
+	
+	\lIf{$\mathcal{A}$ contains only ($ML_t$ or $MR_t$ or $MU_t$ or $MD_t$)}{\\
+		\hspace{1cm} Create vertex with label $S_{t}$ if not already created	\\		
+		\hspace{1cm} Create vertex with label $S_{t+1}$	\\	
+		\hspace{1cm} Create an edge from $S_t$ to $S_{t+1}$ with action label\\
+		\hspace{1cm} Store state definition in vertex $S_{t+1}$ memory\\
+		\hspace{1cm} $\mathcal{B} \leftarrow \{\mathcal{B}, \mathcal{A} \}$\\
+	}	
+	
+	\lIf{$\mathcal{B}$ has a move sequence showing the agent is in an discovered state}{\\
+		\hspace{1cm} Backtrack to the original vertex\\
+		\hspace{1cm} Create an edge from $S_t$ to the backtracked vertex with action label\\
+		\hspace{1cm} Store state definition in backtracked vertex memory\\
+		
+		
+	}	
+	
+	}
+\Indm 
+\textbf{End}   \\
+\end{algorithm}
+\vspace{0.5cm}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 %\citep{Discrete_Maths}
 \newpage

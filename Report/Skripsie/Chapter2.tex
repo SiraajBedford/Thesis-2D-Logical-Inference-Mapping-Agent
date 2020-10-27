@@ -302,6 +302,7 @@ Figure \ref{fig:entailment} shows the general process of logical inference, wher
 
 
 \subsection{Model Checking}
+\label{subsubsec: Inference_model_checking}
 
 The first inference algorithm we consider is called the model-checking approach. It follows the definition of entailment, i.e, first enumerate all the models, then secondly see if $\alpha_n$ is true in every model in which KB is true. As mentioned before, models are all possible assignments of \textit{true} or \textit{false} to every proposition symbol \citep{russell2016artificial}. Model checking typically uses BNF grammar. With $n$ symbols, there are $2^n$ possible models, thus the time complexity of model checking scales with $\mathcal{O}(2^n)$. \textit{So every known inference algorithm for propositional logic has a worst-case complexity that is exponential in the size of the input} \citep{russell2016artificial}.\\
 
@@ -387,6 +388,7 @@ The algorithm is \textbf{sound} because it directly implements entailment. An al
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \subsection{Propositional Theorem Proving}
+\label{subsubsec: Inference_PL_theorem_proving}
 
 Now that we we have looked at the model checking approach, we would like to find some way to carry out inference more quickly and efficiently. In many practical cases, \textit{finding a proof can be more efficient because the proof can ignore irrelevant propositions, no matter how many of them there are} \citep{russell2016artificial}. In short, we apply inference rules directly to the sentences in our KB so that we can construct a proof for a query sentence without enumerating or even referencing models. The advantage of theorem proving that is even if the number of models for a KB is huge, the proof to derive a query sentence may be short to improve inference time compared to model checking. Theorem proving uses CNF grammar structured in \ref{subsubsec:CNF}.
 Three things to consider when using theorem for inference relating to entailment ais:
