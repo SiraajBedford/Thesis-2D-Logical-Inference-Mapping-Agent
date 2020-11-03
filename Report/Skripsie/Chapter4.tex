@@ -32,7 +32,7 @@
 
 
 The environment is represented as a 2D grid world as shown in Figure \ref{fig:agent_in_env_low_level} and the agent is represented as one block (the white block) in the environment. The environment consists of open blocks and closed blocks. The agent is allowed to roam on open blocks (shown as black blocks) and not allowed to move onto closed blocks (shown as grey blocks). The different simulation environments used in this project bound the agent to ensure that the agent's next position is known and not random, which would not be the case if rules were implemented in an unbounded environment that made the agent's next position unknown if the agent moved out of bounds.
-The environment is partially observable since the agent sensor only measures the surrounding blocks of the agent and is further discussed in Subsection \ref{subsubsec: sensor}. The environment is deterministic since the agent can move from one state to another by means of an action or series of actions. The environment is further defined to be a single-agent environment as only one agent occupies the environment in this project. The environment is static because the environment does not change as the agent moves through it, i.e., the blocks in the environment are fixed. Finally, the environment is discrete since there are a finite number of actions that the agent can do in the environment.
+The environment is partially observable since the agent sensor only measures the surrounding blocks of the agent and is further discussed in Subsection \ref{subsec: sensor_prop_symbols}. The environment is deterministic since the agent can move from one state to another by means of an action or series of actions. The environment is further defined to be a single-agent environment as only one agent occupies the environment in this project. The environment is static because the environment does not change as the agent moves through it, i.e., the blocks in the environment are fixed. Finally, the environment is discrete since there are a finite number of actions that the agent can do in the environment.
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
@@ -217,9 +217,6 @@ Algorithm \ref{algorithm:Directed_Graph_building_algorithm} is used by the agent
 As the agent moves through the environment, it builds the directed graph $G$. There are 3 cases the agent considers which are shown as if-statements in lines 3, 9, and 16 and are explained in subsequent lines according to the meaning of the percepts in Table \ref{table:symbol_description}. 
 
 Once the graph has been fully built by the agent using Algorithm \ref{algorithm:Directed_Graph_building_algorithm} (the number of vertices must equal the number of blocks the agent can freely roam on since each of these blocks represent a different state the agent can be in), each vertex in $G$ will contain a state description that can fully define a particular state of the agent in the environment. As stated before, each vertex is joined to another by means of edges representing actions for state state transitions. The agent must uses the state definitions to perform inference to identify where itis in the environment.
-
-sdfsdfdsf
-
 
 
 

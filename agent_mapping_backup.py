@@ -564,8 +564,9 @@ class MappingAgent():
             if self.ask_if_true_dpll( ~percept_open_bottom_right_block(self.t) ) == False: 
                 self.map.tell(~percept_open_bottom_right_block(self.t)) # For moving bump
                 percept_chain = percept_chain & ~percept_open_bottom_right_block(self.t)  
-                
+         
             
+
             ############################
             
         # print(action_chain)

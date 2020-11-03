@@ -54,6 +54,6 @@
 \contentsline {chapter}{\numberline {6}Conclusion}{26}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Results and Objectives Comparison}{26}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Improvements and Project Extensions}{26}{section.6.2}%
-\contentsline {chapter}{References}{27}{section*.25}%
-\contentsline {chapter}{Appendix A: Project Planning Schedule}{28}{appendix*.26}%
-\contentsline {chapter}{Appendix B: Outcomes Compliance}{29}{appendix*.28}%
+\contentsline {chapter}{References}{28}{section*.25}%
+\contentsline {chapter}{Appendix A: Project Planning Schedule}{29}{appendix*.26}%
+\contentsline {chapter}{Appendix B: Outcomes Compliance}{30}{appendix*.28}%

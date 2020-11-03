@@ -6,17 +6,11 @@
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-This project is aimed at developing a new solution to map a 2-dimensional environment using an agent that works using propositional logic. The agent has no knowledge of its reference with respect to the environment and also has no knowledge of the meaning of percepts or actions it perceives while moving through the environment, other than that are input and output commands.  The agent is placed in the environment and over time moves through the environment and tries to create informational links between states of the environment. 
-The process does not require the agent to use a coordinate system. This problem can be solved using reinforcement learning, but that would require large sets of pre-recored data, is computationally expensive and for optimal results requires the use of relatively expensive GPUs.
+This project is aimed at developing a new solution to map a 2-dimensional environment using an agent that works using propositional logic. The agent has no knowledge of its reference with respect to the environment and also has no knowledge of the meaning of observations (percepts or actions) it receives while moving through the environment, other than that they are inputs and outputs of the agent. This problem could tried to be solved using reinforcement learning, but that would require large sets of pre-recored data, is computationally expensive and for optimal results requires the use of relatively expensive Graphics Processing Units (GPUs).
 
 The method we propose is to let the agent roam in the 2-dimensional environment over discrete time and discover the environment for itself.
-The agent makes use of observations, actions it takes and historical knowledge in the lifetime of the agent to build a knowledge that entails the information required to recreate the original map abstractly via logical inference. 
-The agent experiences different states at different time steps and subsequently tries to group or split these states based on information in a knowledge base to expand on states definitions when required and contract state definitions when needed.
+The agent makes use of inputs and outputs it receives and adds them to a knowledge base which stores the information for the agent to query later. The agent moves through the environment to collect these inputs and outputs which together form state definitions. Once the agent has acquired state definitions, the agent again moves through the environment and makes use of logical inference to query the knowledge it collected to build a representation of the environment it moves through.
 
-
-The initial part of the report focusses on necessary knowledge to understand the logical representation, agent-environment interface and inference techniques for solving this problem. 
-
-The report goes onto explain the methodology for solving the problem.
-Finally, a discussion of the results and conclusion are made from the findings.
+The initial part of the report focusses on necessary knowledge to understand the logical representation, agent-environment interface and inference techniques for solving this problem. The report goes onto explain the high-level and low-level system design for solving the problem. The methodology for the experimental setup is then explained. Finally, a discussion of the results and conclusion were made from the findings.
 
 % With this foundational knowledge....
