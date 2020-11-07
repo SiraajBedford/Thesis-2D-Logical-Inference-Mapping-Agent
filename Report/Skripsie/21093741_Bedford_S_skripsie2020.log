@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.25)  7 NOV 2020 16:57
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.25)  7 NOV 2020 23:08
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -940,7 +940,7 @@ Chapter 1.
 
  (./Chapter2.tex
 Chapter 2.
-<Figures/General_learning_agent.png, id=283, 550.30594pt x 383.18156pt>
+<Figures/General_learning_agent.png, id=281, 550.30594pt x 383.18156pt>
 File: Figures/General_learning_agent.png Graphic file (type png)
 <use Figures/General_learning_agent.png>
 Package pdftex.def Info: Figures/General_learning_agent.png  used on input line
@@ -951,7 +951,7 @@ Package pdftex.def Info: Figures/General_learning_agent.png  used on input line
 
 
  <./Figures/General_learning_agent.PNG>] [6] [7] [8] [9] [10] [11] [12]
-<Figures/Inference_Gears.png, id=367, 794.97pt x 523.9575pt>
+<Figures/Inference_Gears.png, id=365, 794.97pt x 523.9575pt>
 File: Figures/Inference_Gears.png Graphic file (type png)
 <use Figures/Inference_Gears.png>
 Package pdftex.def Info: Figures/Inference_Gears.png  used on input line 335.
@@ -963,26 +963,28 @@ LaTeX Font Info:    Trying to load font information for T1+cmtt on input line 4
 
 (/usr/share/texlive/texmf-dist/tex/latex/base/t1cmtt.fd
 File: t1cmtt.fd 2019/12/16 v2.5j Standard LaTeX font definitions
-) [14]
-
-LaTeX Warning: Reference `subsec' on page 15 undefined on input line 457.
-
-[15]
+) [14] [15]
+<Figures/resolution_diag.png, id=422, 473.77pt x 313.17pt>
+File: Figures/resolution_diag.png Graphic file (type png)
+<use Figures/resolution_diag.png>
+Package pdftex.def Info: Figures/resolution_diag.png  used on input line 643.
+(pdftex.def)             Requested size: 360.0617pt x 238.00688pt.
+ [16 <./Figures/resolution_diag.png>]
 
 LaTeX Font Warning: Font shape `T1/cmr/m/scit' undefined
-(Font)              using `T1/cmr/m/sc' instead on input line 665.
+(Font)              using `T1/cmr/m/sc' instead on input line 669.
 
-[16]
+[17]
 
-LaTeX Warning: Reference `algorithm:TT_entails' on page 17 undefined on input l
-ine 714.
+LaTeX Warning: Reference `algorithm:TT_entails' on page 18 undefined on input l
+ine 767.
 
-[17]) [18] [19]
+[18]) [19]
 \openout2 = `Chapter3.aux'.
 
  (./Chapter3.tex
 Chapter 3.
-<Figures/main_architecture.PNG, id=486, 1178.4025pt x 708.6475pt>
+<Figures/main_architecture.PNG, id=485, 1178.4025pt x 708.6475pt>
 File: Figures/main_architecture.PNG Graphic file (type png)
 <use Figures/main_architecture.PNG>
 Package pdftex.def Info: Figures/main_architecture.PNG  used on input line 25.
@@ -1004,13 +1006,13 @@ LaTeX Warning: Reference `sec:kb_agents' on page 20 undefined on input line 41.
 LaTeX Warning: Reference `sec:logical_inference' on page 21 undefined on input 
 line 55.
 
-<Figures/Inference_HL.PNG, id=499, 606.265pt x 201.75375pt>
+<Figures/Inference_HL.PNG, id=497, 606.265pt x 201.75375pt>
 File: Figures/Inference_HL.PNG Graphic file (type png)
 <use Figures/Inference_HL.PNG>
 Package pdftex.def Info: Figures/Inference_HL.PNG  used on input line 59.
 (pdftex.def)             Requested size: 363.76181pt x 121.05318pt.
 [21 <./Figures/Inference_HL.png>] [22]
-<Figures/Goal2.png, id=522, 250.9375pt x 258.9675pt>
+<Figures/Goal2.png, id=520, 250.9375pt x 258.9675pt>
 File: Figures/Goal2.png Graphic file (type png)
 <use Figures/Goal2.png>
 Package pdftex.def Info: Figures/Goal2.png  used on input line 120.
@@ -1020,21 +1022,25 @@ Package pdftex.def Info: Figures/Goal2.png  used on input line 120.
 LaTeX Warning: Reference `subsubsec: Inference_model_checking' on page 23 undef
 ined on input line 134.
 
+
+LaTeX Warning: Reference `subsubsec: Inference_PL_theorem_proving' on page 23 u
+ndefined on input line 134.
+
 [23 <./Figures/Goal2.png>]
-<Figures/low_level_state_gen.png, id=531, 654.445pt x 498.86375pt>
+<Figures/low_level_state_gen.png, id=528, 654.445pt x 498.86375pt>
 File: Figures/low_level_state_gen.png Graphic file (type png)
 <use Figures/low_level_state_gen.png>
 Package pdftex.def Info: Figures/low_level_state_gen.png  used on input line 13
 8.
 (pdftex.def)             Requested size: 405.75171pt x 309.29233pt.
  [24 <./Figures/low_level_state_gen.png>]
-<Figures/Low_level_design_percepts.png, id=544, 241.90375pt x 241.90375pt>
+<Figures/Low_level_design_percepts.png, id=541, 241.90375pt x 241.90375pt>
 File: Figures/Low_level_design_percepts.png Graphic file (type png)
 <use Figures/Low_level_design_percepts.png>
 Package pdftex.def Info: Figures/Low_level_design_percepts.png  used on input l
 ine 156.
 (pdftex.def)             Requested size: 145.14336pt x 145.14336pt.
-<Figures/Low_level_design_actions.png, id=545, 392.46625pt x 392.46625pt>
+<Figures/Low_level_design_actions.png, id=542, 392.46625pt x 392.46625pt>
 File: Figures/Low_level_design_actions.png Graphic file (type png)
 <use Figures/Low_level_design_actions.png>
 Package pdftex.def Info: Figures/Low_level_design_actions.png  used on input li
@@ -1057,7 +1063,7 @@ Underfull \hbox (badness 10000) in paragraph at lines 218--219
  []
 
 [26]
-<Figures/Low_level_design_directed_graph.png, id=570, 522.95375pt x 180.675pt>
+<Figures/Low_level_design_directed_graph.png, id=566, 522.95375pt x 180.675pt>
 File: Figures/Low_level_design_directed_graph.png Graphic file (type png)
 <use Figures/Low_level_design_directed_graph.png>
 Package pdftex.def Info: Figures/Low_level_design_directed_graph.png  used on i
@@ -1158,51 +1164,18 @@ LaTeX Warning: There were multiply-defined labels.
 Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 205.
  ) 
 Here is how much of TeX's memory you used:
- 16353 strings out of 481239
- 280712 string characters out of 5920377
- 655533 words of memory out of 5000000
- 30965 multiletter control sequences out of 15000+600000
+ 16337 strings out of 481239
+ 280445 string characters out of 5920377
+ 654843 words of memory out of 5000000
+ 30960 multiletter control sequences out of 15000+600000
  562578 words of font info for 99 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,18n,46p,1516b,800s stack positions out of 5000i,500n,10000p,200000b,80000s
-pdfTeX warning (dest): name{equation.2.3.13} has been referenced but does not
- exist, replaced by a fixed one
+ 48i,18n,46p,1516b,797s stack positions out of 5000i,500n,10000p,200000b,80000s
+pdfTeX warning (dest): name{algocfline.5} has been referenced but does not ex
+ist, replaced by a fixed one
 
-pdfTeX warning (dest): name{equation.2.3.11} has been referenced but does not e
-xist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.35} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.33} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.28} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{table.caption.22} has been referenced but does not 
-exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.29} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{figure.caption.27} has been referenced but does not
- exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix*.34} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{appendix*.32} has been referenced but does not exis
-t, replaced by a fixed one
-
-pdfTeX warning (dest): name{section*.31} has been referenced but does not exist
-, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.2.3.2.2} has been referenced but does
- not exist, replaced by a fixed one
-
-pdfTeX warning (dest): name{subsubsection.2.3.2.1} has been referenced but does
- not exist, replaced by a fixed one
+pdfTeX warning (dest): name{algocf.5} has been referenced but does not exist, r
+eplaced by a fixed one
 
 {/usr/share/texmf/fonts/enc/dvips/cm-super/cm-super-t1.enc}{/usr/share/texmf/fo
 nts/enc/dvips/cm-super/cm-super-ts1.enc}</usr/share/texlive/texmf-dist/fonts/ty
@@ -1224,11 +1197,11 @@ m1728.pfb></usr/share/texmf/fonts/type1/public/cm-super/sfsl1440.pfb></usr/shar
 e/texmf/fonts/type1/public/cm-super/sfti1095.pfb></usr/share/texmf/fonts/type1/
 public/cm-super/sfti1200.pfb></usr/share/texmf/fonts/type1/public/cm-super/sftt
 1000.pfb>
-Output written on 21093741_Bedford_S_skripsie2020.pdf (44 pages, 810763 bytes).
+Output written on 21093741_Bedford_S_skripsie2020.pdf (44 pages, 821005 bytes).
 
 PDF statistics:
- 948 PDF objects out of 1000 (max. 8388607)
- 848 compressed objects within 9 object streams
- 238 named destinations out of 1000 (max. 500000)
- 528 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 937 PDF objects out of 1000 (max. 8388607)
+ 835 compressed objects within 9 object streams
+ 226 named destinations out of 1000 (max. 500000)
+ 533 words of extra memory for PDF output out of 10000 (max. 10000000)
 

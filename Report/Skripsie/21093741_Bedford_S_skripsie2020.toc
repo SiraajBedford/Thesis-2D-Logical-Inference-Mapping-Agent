@@ -25,7 +25,7 @@
 \contentsline {section}{\numberline {2.3}Knowledge-Based Agents and Logical Inference}{13}{section.2.3}%
 \contentsline {subsection}{\numberline {2.3.1}Logical Inference by using a Model Checking Algorithm}{14}{subsection.2.3.1}%
 \contentsline {subsection}{\numberline {2.3.2}Logical Inference by using a Resolution Algorithm}{16}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Logical Inference by using the DPLL Algorithm}{17}{subsection.2.3.3}%
+\contentsline {subsection}{\numberline {2.3.3}Logical Inference by using the DPLL Algorithm}{18}{subsection.2.3.3}%
 \contentsline {subsection}{\numberline {2.3.4}Logical Inference using a First-Order Logic}{19}{subsection.2.3.4}%
 \contentsline {chapter}{\numberline {3}Agent Design}{20}{chapter.3}%
 \contentsline {section}{\numberline {3.1}System Architecture}{20}{section.3.1}%
@@ -54,6 +54,6 @@
 \contentsline {chapter}{\numberline {6}Conclusion}{31}{chapter.6}%
 \contentsline {section}{\numberline {6.1}Results and Objectives Comparison}{31}{section.6.1}%
 \contentsline {section}{\numberline {6.2}Improvements and Project Extensions}{31}{section.6.2}%
-\contentsline {chapter}{References}{32}{section*.30}%
-\contentsline {chapter}{Appendix A: Project Planning Schedule}{33}{appendix*.31}%
-\contentsline {chapter}{Appendix B: Outcomes Compliance}{34}{appendix*.33}%
+\contentsline {chapter}{References}{32}{section*.31}%
+\contentsline {chapter}{Appendix A: Project Planning Schedule}{33}{appendix*.32}%
+\contentsline {chapter}{Appendix B: Outcomes Compliance}{34}{appendix*.34}%

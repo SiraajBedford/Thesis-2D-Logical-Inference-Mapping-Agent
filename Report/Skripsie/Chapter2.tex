@@ -353,7 +353,7 @@ Logical inference is the process of asking the agent a question in terms of logi
 
 The query sentence normally asks which action is the best for an agent to execute in its environment based on knowledge in its KB, but this aspect of a knowledge-based agent is not considered in the design of the agent in Chapter \ref{chapter:Agent_Design}. The link between the output of the inference engine and the actuator in Figure \ref{fig:kb_agent} is shown in this section to show how a knowledge-based agent is related to a general learning agent in Figure  \ref{fig:agent_environment} in Section \ref{sec:agents_and_environments}. When compared to a general learning agent, a knowledge-based agent uses a sensor, actuator and learning element. A knowledge-based agent is not limited to these components of a general learning agent though. In general, a knowledge-based agent queries its KB by inputting questions to an inference engine in the form of logic in a specific logic representation, which means the nature of the input queries to an inference engine does not have to specifically address the action an agent should take. 
 
-For an agent to perform logical inference, it has to make use of an inference algorithm. Many inference algorithms exist that can be used in this project, but only three suitable propositional logical inference algorithms are considered that can be used for learning, which can be compared when evaluating the design of an agent. These three inference algorithms are a model-checking algorithm in Section \ref{subsubsec:Inference_Model_Checking}, a resolution algorithm in Section \ref{subsubsec:Inference_Resolution} and the Davis, Putnam, Logemann, and Loveland (DPLL) algorithm in Section \ref{subsubsec:Inference_DPLL}. A first-order logic inference  algorithm is also considered in Section \ref{subsubsec: fol_inference} to represent an agent's learnt representation of its environment.
+For an agent to perform logical inference, it has to make use of an inference algorithm. Many inference algorithms exist that can be used in this project, but only three suitable propositional logical inference algorithms are considered that can be used for learning, which can be compared when evaluating the design of an agent. These three inference algorithms are a model-checking algorithm in Section \ref{subsec:Inference_Model_Checking}, a resolution algorithm in Section \ref{subsec:Inference_Resolution} and the Davis, Putnam, Logemann, and Loveland (DPLL) algorithm in Section \ref{subsec:Inference_DPLL}. A first-order logic inference  algorithm is also considered in Section \ref{subsubsec: fol_inference} to represent an agent's learnt representation of its environment.
 
 %The two latter algorithms are based on theorem proving which is also reviewed in this section. One inference algorithm using first-order logic is also discussed for representing an agent's learnt knowledge.
 %\vspace{0.5cm}
@@ -391,12 +391,12 @@ For an agent to perform logical inference, it has to make use of an inference al
 %Figure \ref{fig:entailment} shows the general process of logical inference, where $\varphi$ refers to query sentences in the inference process, but we use $\alpha_n$ in equation \ref{eq:KB_entailment} to denote $\varphi$ in the diagram. As can be seen, the \textbf{inference algorithm} is the main functional process in inference. The way we design the inference algorithm can strongly affect how fast and efficiently inference can be carried out. 
 
 
-
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 
 \subsection{Logical Inference by using a Model Checking Algorithm}
-\label{subsubsec:Inference_Model_Checking}
+\label{subsec:Inference_Model_Checking}
 
 The first logical inference algorithm we consider is called the model-checking approach. This algorithm is shown in Algorithm \ref{algorithm:tt_check_all}.
 
@@ -406,7 +406,7 @@ The first logical inference algorithm we consider is called the model-checking a
 \caption{\textsc{Model-Checking} (adapted from Russel and Norvig \citep{russell2016artificial})}
 \SetAlgoLined
 \DontPrintSemicolon
-\KwIn{\textit{KB} -- a knowledge base as a sentence written in propositional logic, \newline $\alpha$ -- a query sentence we want to know is entailed by the KB,\newline \textit{symbols} -- a list of all proposition symbols in $\alpha$ and \textit{KB},\newline \textit{model} - A partial model assigning true or false to only some symbols}
+\KwIn{\textit{KB} -- a knowledge base as a sentence written in propositional logic, \newline $\alpha$ -- a query sentence we want to know is entailed by the KB,\newline \textit{symbols} -- a list of all proposition symbols in $\alpha$ and \textit{KB},\newline \textit{model} - a partial model assigning true or false to only some symbols}
 %\Parameter{\textit{KB} (Knowledge Base, a sentence in PL), $\alpha$ (the query sentence)}
 \KwOut{\textbf{returns} true or false}
 \textbf{Begin} \\
@@ -454,7 +454,7 @@ If the list of given symbols is not empty, we then assign the first symbol in th
 
 \end{enumerate}
 
-In cases with many propositional symbols, model-checking can be computationally expensive because model-checking enumerates all models consisting of all the symbols in a query sentence and a KB. After model enumeration, the algorithm still needs to check that a query sentence is entailed by a KB by evaluating true or false values for each proposition in that model. As such, the model-checking approach for inference may not always be reasonable to accomplish inference. With $n$ propositional symbols, there are $2^n$ possible models to evaluate. Thus the time complexity of model checking scales by $\mathcal{O}(2^n)$. This is not only the case for the model checking approach. It is known that every logical inference algorithm has a worst-case time complexity of $\mathcal{O}(2^n)$. Therefore, in Section \ref{subsec}, we discuss inference algorithms that use theorem proving which provides a better approach to logical inference.
+In cases with many propositional symbols, model-checking can be computationally expensive because model-checking enumerates all models consisting of all the symbols in a query sentence and a KB. After model enumeration, the algorithm still needs to check that a query sentence is entailed by a KB by evaluating true or false values for each proposition in that model. As such, the model-checking approach for inference may not always be reasonable to accomplish inference. With $n$ propositional symbols, there are $2^n$ possible models to evaluate. Thus the time complexity of model checking scales by $\mathcal{O}(2^n)$. This is not only the case for the model checking approach. It is known that every logical inference algorithm has a worst-case time complexity of $\mathcal{O}(2^n)$. In Sections \ref{subsec:Inference_Resolution} and \ref{subsec:Inference_DPLL}, we discuss inference algorithms that use propositional theorem proving which have the aim to reduce inference time when compared to a model-checking approach.
 
 
 %It follows the definition of entailment, i.e, first enumerate all the models, then secondly see if $\alpha_n$ is true in every model in which KB is true. As mentioned before, models are all possible assignments of \textit{true} or \textit{false} to every proposition symbol \citep{russell2016artificial}. Model checking typically uses BNF grammar. With $n$ symbols, there are $2^n$ possible models, thus the time complexity of model checking scales with $\mathcal{O}(2^n)$. \textit{So every known inference algorithm for propositional logic has a worst-case complexity that is exponential in the size of the input} \citep{russell2016artificial}.\\
@@ -623,35 +623,39 @@ In cases with many propositional symbols, model-checking can be computationally 
 
 
 \subsection{Logical Inference by using a Resolution Algorithm}
-\label{sub:Inference_Resolution}
+\label{subsec:Inference_Resolution}
 
-The first procedure for logical inference by theorem proving we look at is \textit{proof by resolution}. This proof yields a complete inference algorithm when used in combination with any \textbf{complete search algorithm}. The idea of resolution is that we take the logical \textsc{OR} of two facts. One of the two facts consists of a positive literal and the other sentence the negation of that literal such that when the sentences are logically \textsc{OR}d together, they \textbf{resolve}.
-For example using example literals $l_1$ and $l_2$, with $l_1: \neg P$ and $l_2: Q \vee P \vee R$. Applying \textbf{unit resolution} on $l_1$ and $l_2$ yields $Q \vee R$, i.e., $P \vee \neg P$ is \textit{resolved} and $Q \vee R$ are called \textit{resolvents}.
-We can generalize the unit resolution inference rule as the following:
+Propositional theorem proving is useful when trying to perform logical inference. Propositional theorem proving allows us to find a proof for inference that can ignore irrelevant propositions, and as such, logical inference done by theorem proving generally performs inference quicker than when using a model-checking approach which considers all propositions. When using theorem proving, we apply inference rules directly to the knowledge base (KB) we consider so that we can formulate a proof for a query sentence without enumerating models.
 
-\begin{equation}
-	\dfrac{l_1 \vee \cdots \vee l_k,\hspace{1cm}  m}{l_1 \vee \cdots l_{i-1} \vee l_{i+1} \vee \cdots l_k}
-	\label{eq:unit_resolution}
-\end{equation}
-
-Each $l$ is a literal and $l_i$ and $m$ are \textbf{complimentary literals} in equation \ref{eq:unit_resolution}, i.e., one is the negation of the other. Therefore we can say that unit resolution takes a disjunction of clauses, i.e., a \textbf{clause} as well as a literal to produce a new clause. A single literal can be viewed as a disjunction or a logical \textsc{OR} of one literal which is also known as a \textbf{unit clause}. We use equation \ref{eq:unit_resolution} to generalize to the full resolution rule:
+Theorem proving uses conjunctive normal form (CNF) grammar formulated in Section \ref{subsubsec:CNF}. One type of theorem proof is called a ``proof by resolution''. Proof by resolution aims to prove a query sentence is entailed by a knowledge base by using the concept of resolution.
+The idea of resolution is that if we combine two clauses, each consisting a positive and negative literal attached to the same symbol, we know that one of the literals must evaluate to true and the other to false. When logically combining the clauses using disjunction, these positive and negative literals in each clause will result in a true logical value and therefore we can remove the literals from consideration. This concept is called unit resolution. If we repeatedly apply unit resolution, we may end up with no clauses to resolve for a proof. When no clauses are left to resolve we are left with an empty clause. This is called proof by ``proof by refutation'' from repeated unit resolution. Generally, to prove a query sentence, $\alpha$, is entailed by a KB, we have to resolve the following expression to an empty clause:
 
 \begin{equation}
-\dfrac{ l_1 \vee \cdots \vee l_k,\hspace{1cm}  m_1 \vee \cdots \vee m_n}{    l_1 \vee \cdots \vee l_{i-1} \vee l_{i+1} \vee \cdots \vee l_k  \vee m_1 \vee \cdots \vee m_{j-1} \vee m_{j+1} \vee \cdots \vee m_n }
-\label{eq:full_resolution}
+	KB \wedge \neg \alpha.
+	\label{eq:proof_refutation}
 \end{equation}
 
-Each $l_i$ and $m_j$ are complimentary literals. This says that resolution takes two clauses and
-produces a new clause containing all the literals of the two original clauses except the two
-complementary literals \citep{russell2016artificial}. For example, $\frac{P \vee Q, \hspace{1cm} \neg P \vee R}{Q\vee R}$ shows this. The resolution rule is \textit{sound} because by considering the literal $l_i$ that is complementary to the literal $m_j$ in the other clause. If $l_i$ is \textit{true} then $m_j$ is false and therefore  $m_1 \vee \cdots \vee m_{j-1} \vee m_{j+1} \vee \cdots \vee m_n $ must be true, since $m_1\vee\cdots\vee m_n$ is given. If $l_i$ is false, then $l_1 \vee \cdots \vee l_{i-1} \vee l_{i+1} \vee \cdots \vee l_k$ must be true because $l_1 \vee \cdots \vee l_k$ is given. Therefore $l_i$ is either true or false, so one or other of these conclusion holds, i.e., exactly what the resolution rule states.
+An example of proof by refutation using resolution is shown in Figure \ref{fig:resolution_diag}. In this figure, a KB written using BNF grammar is converted to CNF grammar using the conversion process described in Section \ref{subsubsec:CNF}. Then the proof aims to prove the proposition `r'. Using logical expressions from the KB written in CNF, resolution is repeatedly applied and the result is an empty clause. We can therefore say that `r' is entailed by the KB.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.76]{Figures/resolution_diag.png}
+    \caption{Example of proof by resolution using example propositions $p,q,r,s$ and $t$}
+    \label{fig:resolution_diag}
+\end{figure}
+
+An algorithm that
+ uses the principle of resolution to prove a query is shown in Algorithm \ref{algorithm:resolution}.
 
 \vspace{0.5cm}
 \begin{algorithm}[H]
 \label{algorithm:resolution}
-\caption{\textsc{PL-Resolution} as in \citep{russell2016artificial}}
+\caption{\textsc{Resolution} (adapted from Russel and Norvig \citep{russell2016artificial}}
 \SetAlgoLined
 \DontPrintSemicolon
-\KwIn{\textit{KB} (Knowledge Base, a sentence in PL), \newline $\alpha$ (the query sentence)}
+\KwIn{\textit{KB} -- a knowledge base represented as a sentence in propositional logic, \newline $\alpha$ -- a query sentence}
+\KwOut{\textbf{returns} true or false}
 %\Parameter{\textit{KB} (Knowledge Base, a sentence in PL), $\alpha$ (the query sentence)}
 %\KwOut{\textit{action}}
 \textbf{Begin} \\
@@ -677,16 +681,65 @@ complementary literals \citep{russell2016artificial}. For example, $\frac{P \vee
 \end{algorithm}
 \vspace{0.5cm}
 
-Algorithm \ref{algorithm:resolution} shows a simple resolution algorithm for propositional logic. The function \textsc{PL-Resolve} returns the set of all possible clauses obtained by resolving its two inputs. First, $KB\wedge\neg\alpha$ is converted to CNF as described in \ref{subsubsec:CNF}. Then resolution is applied to the resulting clauses. Each pair of clauses containing complementary literals is resolved to obtain the new clause and that new clause is added to the KB if not already contained therein. This process continues until one of the following occurs:
-\begin{itemize}
-	\item There are no new clauses to be added and therefor the KB does not entail $\alpha$
-	\item Two clauses resolve to yield an \textit{empty clause}, meaning that the KB entails $\alpha$
-\end{itemize}
+The description of Algorithm \ref{algorithm:resolution} is as follows:
+\begin{enumerate}
+\item The algorithm takes as inputs, a query sentence, and a KB as a propositional logic sentence. The query sentence and KB sentence must be written in CNF grammar. This means that both the query sentence and KB sentence consist of clauses.
+\item The KB and query sentence then form the expression in Equation \ref{eq:proof_refutation}. Then the clauses of that expression are stored in a variable called \textit{clauses} written in CNF grammar. 
 
-The empty clause, which is a disjunct of no disjuncts, is equivalent to \textit{false} since a disjunction is only true if at least one of its disjunts is true. 
-The resolution rule is \textit{complete}. A resolution-based theorem prover can, for any sentences
-$\alpha$ and $\beta$ in propositional logic, decide whether $\alpha \models \beta$ \citep{russell2016artificial}. We introduce the \textbf{resolution closure} $RC(S)$ of a set of clauses, $S$, which is the set of all clauses derivable by repeated application of the resolution clauses in $S$ or their derivatives \citep{russell2016artificial}. Algorithm \ref{algorithm:resolution} uses  $RC(S)$ to calculate final value of the \textit{clauses}. We can see that $RC(S)$ must be finite because there are only finitely many distinct clauses that can be constructed out of the symplos $P_1, \cdots, P_k$ in $S$. Therefore \textsc{PL-Resolution} always terminates. The completeness theorem for resolution in PL is also known as the \textbf{ground resolution theorem}: \textit{If a set of clauses is unsatisfiable, then the resolution closure of those clauses
-contains the empty clause.}
+\item An iterative \textbf{for each} loop then compares all possible pairs of clauses, $C_i$ and $C_j$ in \textit{claueses} to see if they resolve. The function \textsc{Pl-Resolve} takes inputs, two clauses. \\ \textsc{Pl-Resolve} either returns:
+
+\begin{enumerate}
+\item An empty clause. For example \textsc{Pl-Resolve}( ($P$) , ($\neg P$) ) results in an empty clause being returned.
+\item A clause containing the resolvents of a resolution process.\\ For example, \textsc{Pl-Resolve}( ($P \vee Q$), ($\neg P \vee R$) ) results in a resolvent clause ($Q \vee R$).
+\end{enumerate}
+
+If the result of \textsc{Pl-Resolve} is an empty clause then the query is entailed by the knowledge base and the program returns true.
+If the result of \textsc{Pl-Resolve} is not true, the iterative loop continues and the resolvents of the resolution process is stored in an empty list variable called \textit{new}. The \textbf{for each} loop repeats until it has gone through each pair of clauses in \textit{clauses}. Based on the result of \textsc{Pl-resolve} for each iteration of the \textbf{for each} loop, the list variable \textit{new} might or might not increase in resolvent clauses mentioned in case (b).
+\item When exiting the \textbf{for each} loop, if the list variable \textit{new} does contain unresolved clauses, the query is not entailed by the KB. The program then returns false.
+\end{enumerate}
+
+The resolution algorithm shown in Algorithm \ref{algorithm:resolution} provides an improvement over the model-checking approach discussed in Section \ref{subsec:Inference_Model_Checking} because it does not consider irrelevamt propositions for accomplishing inference. Although this is an improvement, it still has to compare all pairs of clauses in the expression shown in Equation \ref{eq:proof_refutation}. In Section \ref{subsec:Inference_DPLL}, we consider an algorithm that immediately terminates when it knows a query sentence is false for a given KB.
+
+%One of the two facts consists of a positive literal and the other sentence the negation of that literal such that when the sentences are logically \textsc{OR}d together, they \textbf{resolve}.
+%For example using example literals $l_1$ and $l_2$, with $l_1: \neg P$ and $l_2: Q \vee P \vee R$. Applying \textbf{unit resolution} on $l_1$ and $l_2$ yields $Q \vee R$, i.e., $P \vee \neg P$ is \textit{resolved} and $Q \vee R$ are called \textit{resolvents}.
+%We can generalize the unit resolution inference rule as the following:
+%
+%\begin{equation}
+%	\dfrac{l_1 \vee \cdots \vee l_k,\hspace{1cm}  m}{l_1 \vee \cdots l_{i-1} \vee l_{i+1} \vee \cdots l_k}
+%	\label{eq:unit_resolution}
+%\end{equation}
+%
+%Each $l$ is a literal and $l_i$ and $m$ are \textbf{complimentary literals} in equation \ref{eq:unit_resolution}, i.e., one is the negation of the other. Therefore we can say that unit resolution takes a disjunction of clauses, i.e., a \textbf{clause} as well as a literal to produce a new clause. A single literal can be viewed as a disjunction or a logical \textsc{OR} of one literal which is also known as a \textbf{unit clause}. We use equation \ref{eq:unit_resolution} to generalize to the full resolution rule:
+%
+%\begin{equation}
+%\dfrac{ l_1 \vee \cdots \vee l_k,\hspace{1cm}  m_1 \vee \cdots \vee m_n}{    l_1 \vee \cdots \vee l_{i-1} \vee l_{i+1} \vee \cdots \vee l_k  \vee m_1 \vee \cdots \vee m_{j-1} \vee m_{j+1} \vee \cdots \vee m_n }
+%\label{eq:full_resolution}
+%\end{equation}
+%
+%Each $l_i$ and $m_j$ are complimentary literals. This says that resolution takes two clauses and
+%produces a new clause containing all the literals of the two original clauses except the two
+%complementary literals \citep{russell2016artificial}. For example, $\frac{P \vee Q, \hspace{1cm} \neg P \vee R}{Q\vee R}$ shows this. The resolution rule is \textit{sound} because by considering the literal $l_i$ that is complementary to the literal $m_j$ in the other clause. If $l_i$ is \textit{true} then $m_j$ is false and therefore  $m_1 \vee \cdots \vee m_{j-1} \vee m_{j+1} \vee \cdots \vee m_n $ must be true, since $m_1\vee\cdots\vee m_n$ is given. If $l_i$ is false, then $l_1 \vee \cdots \vee l_{i-1} \vee l_{i+1} \vee \cdots \vee l_k$ must be true because $l_1 \vee \cdots \vee l_k$ is given. Therefore $l_i$ is either true or false, so one or other of these conclusion holds, i.e., exactly what the resolution rule states.
+
+
+
+%Algorithm \ref{algorithm:resolution} shows a simple resolution algorithm for propositional logic. The function \textsc{PL-Resolve} returns the set of all possible clauses obtained by resolving its two inputs. First, $KB\wedge\neg\alpha$ is converted to CNF as described in \ref{subsubsec:CNF}. Then resolution is applied to the resulting clauses. Each pair of clauses containing complementary literals is resolved to obtain the new clause and that new clause is added to the KB if not already contained therein. This process continues until one of the following occurs:
+%\begin{itemize}
+%	\item There are no new clauses to be added and therefor the KB does not entail $\alpha$
+%	\item Two clauses resolve to yield an \textit{empty clause}, meaning that the KB entails $\alpha$
+%\end{itemize}
+%
+%The empty clause, which is a disjunct of no disjuncts, is equivalent to \textit{false} since a disjunction is only true if at least one of its disjunts is true. 
+%The resolution rule is \textit{complete}. A resolution-based theorem prover can, for any sentences
+%$\alpha$ and $\beta$ in propositional logic, decide whether $\alpha \models \beta$ \citep{russell2016artificial}. We introduce the \textbf{resolution closure} $RC(S)$ of a set of clauses, $S$, which is the set of all clauses derivable by repeated application of the resolution clauses in $S$ or their derivatives \citep{russell2016artificial}. Algorithm \ref{algorithm:resolution} uses  $RC(S)$ to calculate final value of the \textit{clauses}. We can see that $RC(S)$ must be finite because there are only finitely many distinct clauses that can be constructed out of the symplos $P_1, \cdots, P_k$ in $S$. Therefore \textsc{PL-Resolution} always terminates. The completeness theorem for resolution in PL is also known as the \textbf{ground resolution theorem}: \textit{If a set of clauses is unsatisfiable, then the resolution closure of those clauses
+%contains the empty clause.}
+
+
+
+
+
+
+
+
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -726,24 +779,24 @@ The DPLL algorithm, i.e., Algorithm \ref{algorithm:DPLL} takes in a sentence in 
 
 The DPLL algorithm is shown in Algorithm \ref{algorithm:DPLL}, provides the basis of the search process, while Algorithm \ref{algorithm:DPLL_satisfiable} allows us to pass a sentence and see if the sentence is satisfiable or not. If the sentence is unsatisfiable, we can conclude the sentence is entailed by the KB and inference is carried out. 
 
-\vspace{0.5cm}
-\begin{algorithm}[H]
-\label{algorithm:DPLL_satisfiable}
-\caption{\textsc{DPLL-Satisfiable?} as in \citep{russell2016artificial}}
-\SetAlgoLined
-\DontPrintSemicolon
-\KwIn{\textit{s}, a sentence in propositional logic}
-\KwOut{\textit{true} or \textit{false}}
-\textbf{Begin} \\
-\Indp{
-	\textit{clauses} $\leftarrow$ the set of clauses in the CNF representation of $s$\\
-	\textit{symbols} $\leftarrow$ a list of the proposition symbols in $s$\\
-	\textbf{return} \textsc{DPLL}(\textit{clauses},\textit{symbols},\{ \})\\
-	}
-\Indm 
-\textbf{End}   \\
-\end{algorithm}
-\vspace{0.5cm}
+%\vspace{0.5cm}
+%\begin{algorithm}[H]
+%\label{algorithm:DPLL_satisfiable}
+%\caption{\textsc{DPLL-Satisfiable?} as in \citep{russell2016artificial}}
+%\SetAlgoLined
+%\DontPrintSemicolon
+%\KwIn{\textit{s}, a sentence in propositional logic}
+%\KwOut{\textit{true} or \textit{false}}
+%\textbf{Begin} \\
+%\Indp{
+%	\textit{clauses} $\leftarrow$ the set of clauses in the CNF representation of $s$\\
+%	\textit{symbols} $\leftarrow$ a list of the proposition symbols in $s$\\
+%	\textbf{return} \textsc{DPLL}(\textit{clauses},\textit{symbols},\{ \})\\
+%	}
+%\Indm 
+%\textbf{End}   \\
+%\end{algorithm}
+%\vspace{0.5cm}
 
 
 \vspace{0.5cm}

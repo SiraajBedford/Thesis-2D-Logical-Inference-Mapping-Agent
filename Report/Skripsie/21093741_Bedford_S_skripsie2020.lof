@@ -6,13 +6,14 @@
 \addvspace {10\p@ }
 \contentsline {figure}{\numberline {2.1}{\ignorespaces A general architecture for a learning agent interfacing with an environment with sensors and actuators.\relax }}{5}{figure.caption.13}%
 \contentsline {figure}{\numberline {2.2}{\ignorespaces Knowledge-based Agent that uses Logical Inference\relax }}{13}{figure.caption.21}%
+\contentsline {figure}{\numberline {2.3}{\ignorespaces Example of proof by resolution using example propositions $p,q,r,s$ and $t$\relax }}{16}{figure.caption.22}%
 \addvspace {10\p@ }
-\contentsline {figure}{\numberline {3.1}{\ignorespaces High level mapping agent and environment design diagram\relax }}{20}{figure.caption.22}%
-\contentsline {figure}{\numberline {3.2}{\ignorespaces Inference Engine\relax }}{21}{figure.caption.23}%
-\contentsline {figure}{\numberline {3.3}{\ignorespaces Example Simulation of Agent in an Environment\relax }}{23}{figure.caption.24}%
-\contentsline {figure}{\numberline {3.4}{\ignorespaces Agent Execution Flow\relax }}{24}{figure.caption.25}%
-\contentsline {figure}{\numberline {3.5}{\ignorespaces Reference for propositional symbols used\relax }}{25}{figure.caption.26}%
-\contentsline {figure}{\numberline {3.6}{\ignorespaces Possible state transitions in terms of a directed graph\relax }}{27}{figure.caption.28}%
+\contentsline {figure}{\numberline {3.1}{\ignorespaces High level mapping agent and environment design diagram\relax }}{20}{figure.caption.23}%
+\contentsline {figure}{\numberline {3.2}{\ignorespaces Inference Engine\relax }}{21}{figure.caption.24}%
+\contentsline {figure}{\numberline {3.3}{\ignorespaces Example Simulation of Agent in an Environment\relax }}{23}{figure.caption.25}%
+\contentsline {figure}{\numberline {3.4}{\ignorespaces Agent Execution Flow\relax }}{24}{figure.caption.26}%
+\contentsline {figure}{\numberline {3.5}{\ignorespaces Reference for propositional symbols used\relax }}{25}{figure.caption.27}%
+\contentsline {figure}{\numberline {3.6}{\ignorespaces Possible state transitions in terms of a directed graph\relax }}{27}{figure.caption.29}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
