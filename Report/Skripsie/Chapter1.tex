@@ -2,7 +2,7 @@
 % ELO 1, 6, 8, 9
 % Planning for introduction
 
-%Young children discover how the world works mostly through experience, despite not initially knowing the meaning of what they see, hear, feel, etc. The goal of this project is to do this, but for a simulated agent in a simple block‐world environment. The agent observes the blocks surrounding it as it moves through the environment, but it does not know anything about the world,where the observations come from, or what they mean. The agent should discover the structure of the environment (i.e. learn a map of the environment)from these observations using only general operations such as comparisons and logical operations. This very challenging topic is suitable for someone interested in logic and the foundations of learning
+%Young children discover how the world works mostly through experience, despite not initially knowing the meaning of what they see, hear, feel, etc. The goal of this project is to do this, but for a simulated agent in a simple block‐world environment. The agent observes the blocks surrounding it as it moves through the environment, but it does not know anything about the world,where the observations come from, or what they mean. The agent should discover the structure of the environment (i.e. learn a map of the environment)from these observations using only general operations such as comparisons and logical operations. This very challenging topic is suitable for someone interested in logic and the foundations of learning.
 
 % Chapter 1: Introduction
 
@@ -25,73 +25,177 @@
 
 \section{Background}
 
-% 1.1 Background: Why does this problem matter, why should it be done, hiow many issues people have issues that this problem can solve. Reader must understand why your problem really matters. Whats going on ingeneral that makes the project worthwile
-Agents in an environment (detailed in section \ref{sec:agents_and_environments}), without navigation experience of the environment they are placed in, cannot navigate the environment effectively without an understanding of what they perceive via sensors for example though vision, hearing, smell, taste or touch.
-It is difficult to navigate the environment effectively because of the fact that the meaning of such percepts with respect to the environment do not have a general or standard way of being logically interpreted. 
-A general architecture for representing states of the agent in the environment and a link between the states where the links acquired over time are learned from percepts the agent observes over time can be designed to obtain representative knowledge the agent acquires. 
-The representative knowledge can be shown as a directed dependency graph that is built and interpreted using logical operations over time since logic in an abstracted manner can be implemented independent of context. When slight context is given, the agent should be able to understand the representative data in terms of the environment it is in.
+% 1.1 Background: Why does this problem matter, why should it be done, hiow many issues people have issues that this problem can solve. Reader must understand why your problem really matters. Whats going on in general that makes the project worthwile
+%Agents in an environment (detailed in section \ref{sec:agents_and_environments}), without navigation experience of the environment they are placed in, cannot navigate the environment effectively without an understanding of what they perceive via sensors for example though vision, hearing, smell, taste or touch.
+%It is difficult to navigate the environment effectively because of the fact that the meaning of such percepts with respect to the environment do not have a general or standard way of being logically interpreted. 
+%A general architecture for representing states of the agent in the environment and a link between the states where the links acquired over time are learned from percepts the agent observes over time can be designed to obtain representative knowledge the agent acquires. 
+
+An agent does not have the ability to effectively navigate an environment without understanding its percepts. A percept is what the agent perceives from its environment using sensor measurements. If the agent has the ability has the ability to learn the meaning of its percepts from experience, then it could use what it has learnt to navigate the environment effectively. The advantage of this approach is that the agent does not need need any prior knowledge to be able to navigate the environment, but can rather use what it has learnt to navigate effectively. If the percepts modelled from measurements contain no uncertainty, then logic can be used to represent knowledge which in turn can be used for learning.
+
+%The knowledge the agent learns can be represented as a data structure that is built from the learnt knowledge stored in a knowledge base. The data structure can be interpreted using a graphical model since logic in an abstracted manner can be shown graphically independent of context. When slight context is given, the agent should be able to understand the representative data in terms of the knowledge of environment it learnt. An agent that has the ability to map an environment by learning what it perceives is desirable since it can be implemented in different environments where a human wants to gain information about the environment.
+
+%An agent cannot navigate effectively without understanding its percepts. If an agent can learn the meaning of its percepts from experience, then it could use this knowledge for effective navigation
+%This means that the agent does not need built-in knowledge to be able to navigate, but can learn to navigate from experience. If the percepts do not contain uncertainty/errors, then logic could possibly be used to learn the meaning of the precepts.  
+
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Problem Statement}
-%What you are addrssing
-%In the bigger problem this is what we want to adress.
-%Says exactly in one sentence what you supposed to do to answer the question (Sentence or two)
-An agent restricted to moving left, right, up and down must be placed in a 2-dimensional environment and use logical processes to gain information about the environment which must be stored in a KB. While adding knowledge to a KB, a KR must be simultaneously built up without understanding what the knowledge in the KB means. The context of the environment (a 2D grid with coordinates) must removed from the agent's design such that the solution can be implemented in a variety of environments where mapping is needed.  
+\section{Problem Statement and Scope}
+\label{sec:problem_statement}
+
+%For a problem to be properly defined, the following usually needs to be discussed:
+%- What is the aim? 
+%- What are the assumptions?
+%- To which scenarios/environments/cases are the problem restricted? (i.e. what is the scope?) 
+%- Is the solution limited to a certain approach?   
+
+%- What is the aim? 
+%The aim is quite "fuzzy", i.e. what it means to "gain information about the environment" is not very clear; since this is not clear, it is not clear how the solution would be evaluated.  It should be clear what it means to successfully "gain information about the environment" (e.g. it should be able to accurately predict the next time step's percepts).
+
+The aim of the project is for an agent to be placed in an environment and learn the structure of that environment. This can be done by letting the agent explore that environment to gain information about the environment and build a representation of the environment from information it acquired when moving through the environment. The information the agent acquires are states it experiences when moving through the environment as well as actions it executes. This information can be stored as logical sentences made from percepts the agent gets from sensor measurements if we assume no uncertainty in the agent's sensor measurements and therefore we can restrict the agent's learning process to a logic-based approach.
+For the solution to the problem to be successful, the agent must be able to accurately predict the next time step's state percepts from the information it gained  while moving through the environment by using the state percepts it perceives in its present time step.
+
+%If the agent has the ability to learn a representation of the map from the in, then the structure of the map is captured by the representation. The projected is restricted to a logic-based approach.
+
+
+%The environment the agent is placed in is two-dimensional. The agent can move left, right, up or down in the environment. It contains blocks the agent can and cannot move onto. We refer to blocks the agent can move onto as "open" blocks and blocks the agent cannot move onto as "closed" blocks. 
+
+%The agent gains information about the environment by storing different measurements as logical percepts in a knowledge base (KB) as it moves through the environment, namely the state of the blocks (open or close) immediately surrounding the agent at a certain time step in the environment as well as actions the agent executes to move to from perceiving one state of surrounding blocks at a certain time step to perceiving another state of surrounding blocks at the next time step. We refer to the state of surrounding blocks the agent experiences as "state percepts" and the actions agent executes as "action percepts". 
+%
+%The agent has access to state and action percepts it stored in a KB while moving through the environment, but has no meaning attached to the percepts in the KB. The agent can use its knowledge base to query a logical percept sentence it wants to know is true or false by using logical inference to make conclusions about the state and action percepts it experienced.
+
+
+
+
+%- What are the assumptions?
+Assumptions followed include that the agent does not experience uncertainty in its measurements to form logical percepts because its sensor measures only binary values (not values between one and zero) as the agent moves through the environment. 
+The second assumption made is that the agent moves randomly in its environment, where it receives action commands by randomly selecting an action to move left, right, up or down. The agent is not controlled through human input while moving through the environment because this could constitute prior knowledge that the agent can use from a human viewing the environment. 
+The third assumption followed is that the agent has no prior knowledge of the environment, but only has knowledge of what it experienced while moving through the environment. The fourth assumption made is that the agent has no reference of it's position in the environment, only that it perceives percepts when it moves through the environment. The last assumption made is that the agent should have no meaning of what it perceives when moving through the environment except that the measurements it perceives are inputs and outputs to and from the agent receptively. Due to the agent having no knowledge of the percepts it perceives, the agent learns the structure of the environment by itself. 
+
+%- It is not clear whether there are any sensor or action uncertainty
+%- It is unclear where the action commands come from, and whether this is important
+%- It is unclear what information the agent has access to, and what it knows about this information. 
+%- I don't quite see why you need to specify the KB and KR approach -- I think you can just specify that you restrict yourself to a logic-based approach; why you use a KB should be part of the solution design.  
+
+
+%- To which scenarios/environments/cases are the problem restricted? (i.e. what is the scope?) 
+The scope of the project refers to which scenarios the project does and does not address. The scope can be addressed by considering the agent and environment setup used in the project. When considering the agent scope, a single agent restricted to moving left, right, up and down is used. The use of multiple agents in an environment was not considered for the project since the project set out to design one agent that would be the foundation for other projects to use. The  agent is restricted to horizontal and vertical movement and cannot move diagonally.
+The scope of the environment is limited to contain blocks the agent can and cannot move onto. We refer to blocks the agent can move onto as "open" blocks and blocks the agent cannot move onto as "closed" blocks. The environments have boundaries made up of closed blocks that prevent the agent from moving outside of the environment. The environments are static and do not change while the agent moves through it. The environment the agent is placed in is two-dimensional, not three-dimensional since the project is restricted for the agent to move in a two-dimensional environment.
+The scenarios we consider are different environments for the agent to move through and try to map, i.e., we do not consider only one map. The environments contain different combinations of open and closed blocks that form the structure of the environment. The agent must try to map the structure of these different environments. The solution of this project is not limited to the approach we consider. The project could tried to be solved using probabilistic methods.
+
+%- Is the solution limited to a certain approach?  
+%The solution is not not limited to the approach we consider, although we do restrict the approach we use to a logic-based approach. 
+
+
+  
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\textit{learn}
-%\textsc{learn}
-%\textsf{learn}
-%\textsl{learn}
-%\texttt{learn}
 \section{Objectives}
-%If I meet the following things
-%Objective 1
-%	Sub-objectives
-%Objective 2
-%Objective 3
-%Which are observable, we should have achieved the objective / part thereof
-%In conclusion you must measure yourself against these
-\subsection{Logical Inference}
-The agent must use logical inference to determine which state it is in from percept and action propositions acquired over time (percept history) which are stored in a KB. It must be accomplished by using theorem proving, SAT or explicit model checking algorithms. The inference procedure must be efficient enough to be executed at least every second.
-\subsection{Knowledge Base Memory Management}
-The knowledge base size must be managed from one time step to the next in such a way that the amount of information in the KB is contextual enough for logical inference to be carried out efficiently without tending to the maximum time complexity.
-\subsection{Learning State Definitions}
-The state definitions learned throughout the simulation and represented as propositional logic in the knowledge base must be compared as to group and split the state definitions to differentiate experienced states with similar observations.
-\subsection{Representative Knowledge Graphing}
-The states and links between the states as stored in the knowledge based must be represented as a discrete mathematical graph for interpretability of the knowledge the agent acquires over time since the agent does not know its co-ordinates in the environment, we (the agent designers) have to have some way of knowing what the agent learns.
+
+%It is usually not a good idea to start a section with a subsection -- always have an introductory paragraph/sentence that explains the context of the section. 
+%
+%For this section, you assume that the reader knows what you mean by "objectives", but this might not be the case.  I would insert a short sentence saying that given the problem statement, you define the following four objectives that would allow you solve the problem.  
+
+From the problem statement and scope in Section \ref{sec:problem_statement}, the following objectives would allow an agent to be designed that would address the project statement.
+
+%What it is
+%What it requies as inputs and what 
+
+
+%I think it should be clearer for each objective what you assume is in place/not in place, and some more context.  E.g.:
+%(1) Do inference given a KB
+%(2) Since the KB will grow, it needs to be made expandable
+%(3) Learn the KB (using inference)
+%(4) Evaluate the solution
+
+
+\subsection{Ability to Perform Logical Inference}
+
+As mentioned in Section \ref{sec:problem_statement}, the information the agent acquires are states it experiences when moving through the environment as well as actions it executes. A state the agent experiences can be stored as a state definition in a logical sentence and the actions can also be stored as logical sentences. These logical sentences are stored in a knowledge base (KB). The agent has to be able to use this stored knowledge. The agent can make use of logical inference to query the knowledge in this knowledge base. The queries the agent can make using inference are queries used to infer which state the agent is in as well as the actions the agent executes. Logical inference can be performed by using inference algorithms.
+
+%The agent must use logical inference to determine which state it is in from percept and action propositions acquired over time (percept history) which are stored in a KB. It must be accomplished by using logical inference algorithms.
+
+\subsection{Ability to Manage Knowledge Base Size}
+
+As mentioned in Section \ref{sec:problem_statement}, the agent moves through the environment to gather information and stores that information as logical sentences. These logical sentences are stored in a KB as it gathers more and more logical sentences, the size of the KB increases. The size of the KB can determine the inference time of an inference algorithm the agent uses to query the KB. The more logical sentences stored in a KB, the longer the inference time is and the less logical sentences stored in a KB, the shorter the inference time is. Therefore, the KB that the agent queries must be managed from one time step to the next in such a way that the size of the KB results in a short inference time. The importance of a short inference time is that the agent can learn quicker using logical inference. 
+
+%\subsection{Representative Knowledge Graphing}
+%The states and links between the states as stored in the knowledge based must be represented as a discrete mathematical graph for interpretability of the knowledge the agent acquires over time since the agent does not know its co-ordinates in the environment, we (the agent designers) have to have some way of knowing what the agent learns.
+
+\subsection{Ability to Learn State Transitions Using Inference}
+
+The state definitions and actions stored as logical sentences in the agent's knowledge base can be used to learn state transitions that can be used to represent the structure of an an environment the agent is in. A state transition consists of information of the agent's previously inferred state, current inferred state and action required to transition from the previously inferred state to the current inferred state. The state transitions inferred can be used to evaluate the problem solution since all the state transitions possible in an environment can link the learnt state definitions in such a way that the resulting map of state transitions can form a representation of the environment. The representation of the environment is the learnt structure of the environment and can be compared with the actual structure of the environment to evaluate the designed solution.
+
+%The state definitions learned throughout the simulation and represented as propositional logic in the knowledge base must be compared as to group and split the state definitions to differentiate experienced states with similar observations. 
+%The states and links between the states as stored in the knowledge based must be represented as a discrete mathematical graph for interpretability of the knowledge the agent acquires over time since the agent does not know its co-ordinates in the environment, we (the agent designers) have to have some way of knowing what the agent learns.
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-% Write later \section{Summary of work}
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Summary of Work and Contribution}
+
+The agent designed in this project was able to map relatively small environments because the agent moves randomly and not intelligently through the environment. Due to the way the agent moves it cannot always learn all the states that define a large environments in a fixed time interval. The environments the agent can fully map consisted of states that only occurred once in the environment. It can accurately predict which state it will experience next for this type of environment. The agent can partially map an environment with repeated states and can predict the future state it could experience with high accuracy, even though the predicted state could be more than one state for this type of environment.
+
+The larger aim of projects that develop mapping agents is to map complex environments by using structural knowledge of previously mapped smaller environments. This project fits into that aim since the agent has the ability to form a representation of an environment that can be used by an agent to make predictions about what state the agent can experience in the future. This can be useful for agents that need to map large complex environments by using a system that collects map representations of small sections of a complex map and link these representations to form the entire complex map.
+
+%I think most of this should be part of the problem statement (see my comments there), and certainly before the objectives, since the objectives depend on the scope.  
+%
+%I also think that you do not have to limit yourself to these inference algorithms, since those options should naturally come out of the literature review.  
+%
+%What might be useful to explain around here is how your project might fit into a larger goal/aim/project.  If you end up focussing mostly on inference, this might also be a good place to explain why inference is important, and how it would fit into a larger project/aim/goal.  
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-\section{Scope}
-%The scope of this project is limited to a single agent in an environment.
-%The environment will be 2-dimensional. A 3-dimensional environment was not considered due to time-constraints of the project.
-%Theoreom proving not used, rather passible worlds
-The scope was limited to a single agent in an a 2-dimensional environment. A single agent was used to constrain what the agent perceives to only be blocks it sees around itself as open or closed spaces, i.e., not seeing another agent to reduce complexity. Theorem proving, SAT and explicit model checking  was considered for logical inference. PL is used instead of FOL because no propositions need quantification in this project.
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 \section{Report Structure}
+
+%Again: do not start a section with a list. 
+%
+%Also remove the overview of Chapter 1 -- the reader would know exactly what it contains by now.  Remember the purpose of this section: giving the reader an overview of the stuff that is still coming so that they will understand how things fit together.  
+
+The following chapters aim to provide the necessary knowledge for understanding the problem solution and how the agent was designed, implemented, tested and judged against the objectives set in Chapter \ref{chapter:Introduction}. 
+
 \begin{itemize}
-	\item \textbf{\textit{Chapter 1 - Introduction}}, explains the importance of the agent in the context of mapping environments. Objectives and scope for the project is also discussed. 
 	
 %	\item \textbf{\textit{Chapter 2 -  Literature}}, focuses on previous work based on the objectives of the project, but since this concept is fairly new there is no literature that puts the idea in definite context and perspective. Relevant knowledge for understanding the project is also stated here.
 
-	\item \textbf{\textit{Chapter 2 -  Literature}}, focuses on relevant logic and formulation knowledge forming the basis of the structure of the program architecture and the solution of the project.
+	\item \textbf{\textit{Chapter 2 -  Literature Review}}, focusses on relevant logical representation and logical inference techniques used to form the basis of the design and implementation of the agent in an environment.
 
-	\item \textbf{\textit{Chapter 3: System Design}}, focuses on the higher level architecture design and also the metrics used to measure the success of the project.
+	\item \textbf{\textit{Chapter 3: Agent Design}}, focusses on the design of the agent from a high-level and low-level point of view. The high-level design focusses on the functional operations of the agent while the low-level design focusses on the internal mechanisms of the functional operations of the high-level design.
 	
-	\item \textbf{\textit{Chapter 4: Detailed Design}}, explains the design behind the functional components in the environment mapping system and also focuses on designing experiments to test the validity of the solution.
+	\item \textbf{\textit{Chapter 4: Agent Implementation and Experimental Setup}}, explains the implementation of the agent design and goes into detail about how the design is made possible using code. This chapter also explains the experimental setup of code used for simulations to obtain results that we can draw conclusions from. 
 	
-	\item \textbf{\textit{Chapter 5: Results and Discussion}}, explains the observed outcomes in conjunction with the objective metrics of the designed experiments of unit testing and overall system testing.
+	\item \textbf{\textit{Chapter 5: Results and Discussion}}, shows the observed outcomes of experiments qualitatively and quantitatively. The discussion of the results compares the the results we record against the objectives mentioned in Chapter \ref{chapter:Introduction}.
 	
-	\item \textbf{\textit{Chapter 6: Conclusion}}, goes on to summarize if this idea is feasible based on found evidence and if the architecture is suitable enough for further implementation to other scenarios. Possible extensions and improvements are mentioned as well.
+	\item \textbf{\textit{Chapter 6: Conclusion}}, goes on to summarise if this idea is feasible based on found evidence from the results we obtain and if the agent design is suitable enough for further implementation to other mapping scenarios. Possible improvements and extensions are mentioned as well.
 \end{itemize}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

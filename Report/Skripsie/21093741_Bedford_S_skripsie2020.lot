@@ -3,18 +3,20 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {2.1}{\ignorespaces BNF (Backus-Naur Form) grammar of sentences in propositional logic along with operator precedences, from highest to lowest as in \citep {russell2016artificial}\relax }}{5}{table.caption.11}%
-\contentsline {table}{\numberline {2.2}{\ignorespaces Implication TT\relax }}{6}{table.caption.12}%
-\contentsline {table}{\numberline {2.3}{\ignorespaces Bi-conditional TT\relax }}{6}{table.caption.12}%
-\contentsline {table}{\numberline {2.4}{\ignorespaces CNF (Conjunctive Normal Form) grammar of sentences in propositional logic as in \citep {russell2016artificial}\relax }}{6}{table.caption.13}%
-\contentsline {table}{\numberline {2.5}{\ignorespaces TT enumerations for example propositions $p,q,r,s$ with corresponding truth or false KB outcomes.\relax }}{9}{table.caption.15}%
-\contentsline {table}{\numberline {2.6}{\ignorespaces Standard logical equivalences with symbols $\alpha ,\beta ,\gamma $ being sentences in PL\relax }}{11}{table.caption.16}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {2.1}{\ignorespaces Backus-Naur form grammar of sentences in propositional logic along with operator precedences, from highest to lowest.\relax }}{9}{table.caption.14}%
+\contentsline {table}{\numberline {2.2}{\ignorespaces Truth table (TT) of negation operator.\relax }}{9}{table.caption.15}%
+\contentsline {table}{\numberline {2.3}{\ignorespaces TT of conjunction operator.\relax }}{9}{table.caption.16}%
+\contentsline {table}{\numberline {2.4}{\ignorespaces TT of disjunction operator.\relax }}{10}{table.caption.17}%
+\contentsline {table}{\numberline {2.5}{\ignorespaces TT of the implication operator\relax }}{10}{table.caption.18}%
+\contentsline {table}{\numberline {2.6}{\ignorespaces TT of the bi-conditional operator\relax }}{10}{table.caption.19}%
+\contentsline {table}{\numberline {2.7}{\ignorespaces Conjunctive normal form grammar of sentences in propositional logic\relax }}{11}{table.caption.20}%
+\addvspace {10\p@ }
+\contentsline {table}{\numberline {3.1}{\ignorespaces Meanings of propositional symbols used for logical sentence design.\relax }}{25}{table.caption.27}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {4.1}{\ignorespaces Meanings of propositional symbols used for logical sentence design.\relax }}{21}{table.caption.22}%
 \addvspace {10\p@ }
 \addvspace {10\p@ }
+\contentsline {table}{\numberline {A.1}{\ignorespaces Breakdown of planning schedule per week\relax }}{33}{table.caption.32}%
 \addvspace {10\p@ }
-\contentsline {table}{\numberline {A.1}{\ignorespaces Breakdown of planning schedule per week\relax }}{29}{table.caption.27}%
-\addvspace {10\p@ }
-\contentsline {table}{\numberline {B.1}{\ignorespaces Description of outcomes compliance based on relevant chapters\relax }}{30}{table.caption.29}%
+\contentsline {table}{\numberline {B.1}{\ignorespaces Description of outcomes compliance based on relevant chapters\relax }}{34}{table.caption.34}%

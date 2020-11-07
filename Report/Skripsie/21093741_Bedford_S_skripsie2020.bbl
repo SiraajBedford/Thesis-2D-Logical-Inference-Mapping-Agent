@@ -19,13 +19,6 @@
 \newcommand{\capitalize}[1]{\expandafter\Capitalize#1}
 \providecommand{\eprint}[2][]{\url{#2}}
 
-\bibitem[{\citenamefont{Russell} \protect\BIBand{}
-  \citenamefont{Norvig}(2009)}]{russell2016artificial}
-\bibnamefont{Russell}, \bibfnamefont{S.J.} \protect\BIBand{}
-  \bibnamefont{Norvig}, \bibfnamefont{P.}: \emph{Artificial Intelligence: a
-  modern approach}.
-\newblock \bblthirdo{} \bbledn{}. Pearson, 2009.
-
 \bibitem[{\citenamefont{Bello} \protect\BIBand{}
   \citenamefont{De~Ita}(2019)}]{10.1007/978-3-030-21077-9_32}
 \bibnamefont{Bello}, \bibfnamefont{P.} \protect\BIBand{} \bibnamefont{De~Ita},
@@ -38,5 +31,12 @@
   \emph{Pattern Recognition}, \bblpp{} 347--356. Springer International
   Publishing, Cham, 2019.
 \newblock ISBN 978-3-030-21077-9.
+
+\bibitem[{\citenamefont{Russell} \protect\BIBand{}
+  \citenamefont{Norvig}(2009)}]{russell2016artificial}
+\bibnamefont{Russell}, \bibfnamefont{S.J.} \protect\BIBand{}
+  \bibnamefont{Norvig}, \bibfnamefont{P.}: \emph{Artificial Intelligence: a
+  modern approach}.
+\newblock \bblthirdo{} \bbledn{}. Pearson, 2009.
 
 \end{thebibliography}

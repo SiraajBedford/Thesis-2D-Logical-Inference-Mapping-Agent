@@ -3,14 +3,61 @@
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 % Planning for abstract
 %
+%Write the abstract at the very end, when you’ve completed the rest of the text. There are four things you need to include:
+%
+%Your research problem and objectives
+%Your methods
+%Your key results or arguments
+%Your conclusion
 %
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-This project is aimed at developing a new solution to map a 2-dimensional environment using an agent that works using propositional logic. The agent has no knowledge of its reference with respect to the environment and also has no knowledge of the meaning of observations (percepts or actions) it receives while moving through the environment, other than that they are inputs and outputs of the agent. This problem could tried to be solved using reinforcement learning, but that would require large sets of pre-recored data, is computationally expensive and for optimal results requires the use of relatively expensive Graphics Processing Units (GPUs).
+%This project is aimed at developing a new solution to map a 2-dimensional environment using an agent that works using logic. The agent has no knowledge of its reference with respect to the environment and also has no knowledge of the meaning of observations (percepts or actions) it receives while moving through the environment, other than that they are inputs and outputs to and from the agent respectively. This problem could tried to be solved using reinforcement learning, but that would require large sets of pre-recored data, is computationally expensive and for optimal results requires the use of relatively expensive graphics processing units.
+%
+%The method we propose is to let the agent roam in the 2-dimensional environment over discrete time and discover the environment for itself. The agent moves through the environment to collect groups of inputs that form state definitions and stores the state definition in a knowledge base. Once the agent has acquired state definitions, the agent again moves through the environment, infers which state it is in from the knowledge base and makes use of logical inference to query which actions (outputs of the agent) the agent did to move from inferred state to inferred state to build state transitions between acquired states using actions to link these states. The knowledge of state transitions collected is then used to build a representation of the environment the agent moved through.
+%
+%The initial part of the report focusses on necessary knowledge to understand the logical representation and logical inference techniques for solving this problem. The report goes onto explain the agent design for solving the problem. The agent implementation and  experimental setup is then explained. After the results are reported,  a discussion of the results then explains how the agent performs in relation to what is expected from the set objectives. A conclusion is then made from the discussion.
+%
+%The final results indicate that the agent has the ability to fully represent a map of an environment consisting of unique states that are not repeated in the environment, while the agent has the ability to partially represent a map of an environment consisting of repeated unique states.
 
-The method we propose is to let the agent roam in the 2-dimensional environment over discrete time and discover the environment for itself.
-The agent makes use of inputs and outputs it receives and adds them to a knowledge base which stores the information for the agent to query later. The agent moves through the environment to collect these inputs and outputs which together form state definitions. Once the agent has acquired state definitions, the agent again moves through the environment and makes use of logical inference to query the knowledge it collected to build a representation of the environment it moves through.
 
-The initial part of the report focusses on necessary knowledge to understand the logical representation, agent-environment interface and inference techniques for solving this problem. The report goes onto explain the high-level and low-level system design for solving the problem. The methodology for the experimental setup is then explained. Finally, a discussion of the results and conclusion were made from the findings.
+This project is aimed at developing a new solution to map a 2-dimensional environment using an agent that works using logic. The problem requires that the agent has no knowledge of its reference with respect to the environment and also has no knowledge of the meaning of the percepts it receives.
+
+The method we propose is to let the agent roam in the environment and discover the structure for itself. When roaming, the agent uses logical inference to form state transitions which can be used to represent the structure of the environment.
+
+The initial focus of the report is on necessary knowledge to understand the logic techniques for solving this problem. With this knowledge, the agent is designed, implemented and judged against the set objectives. The results indicate that the agent can map an environment having non-repeated unique states and can partially map an environment having repeated unique states.
+
+%The state definitions are then stored in a knowledge base, even if the knowledge base already contains that state definition. The agent again moves through the environment and uses logical inference to infer which state it is in from the state definitions stored in the knowledge base it acquired. The agent then adds the state definition to a new reduced knowledge base if the state definition is new, thereby only learning unique state definitions and adding them to a new reduced knowledge base. Once the agent has acquired and stored unique state definitions in a new reduced knowledge base, the agent again moves through the environment, infers which state it is in from the reduced knowledge base and makes use of logical inference to query which actions (outputs of the agent) the agent did to move from inferred state to inferred state to build state transitions between acquired unique states using actions to link these states. The knowledge of state transitions collected is then used to build a representation of the environment the agent moved through.
+
+
 
 % With this foundational knowledge....
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

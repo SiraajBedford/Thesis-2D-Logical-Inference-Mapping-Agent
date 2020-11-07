@@ -17,7 +17,8 @@
 \usepackage[normalem]{ulem}
 \usepackage[ruled,vlined,linesnumbered]{algorithm2e}
 \usepackage{soul}
-\setcounter{secnumdepth}{3}
+\setcounter{tocdepth}{4}
+\setcounter{secnumdepth}{4}
 \usepackage{subcaption}
 
 \usepackage{booktabs}% http://ctan.org/pkg/booktabs
@@ -121,7 +122,7 @@
 %     \includegraphics{Figures/logo.PNG}
 % \end{figure}
 
-\title{\textbf{\Huge{Learning the structure of an agent's environment from experience}}}
+\title{\textbf{\Huge{Learning the Structure of an Agent's Environment from Experience}}}
 
 \author{Siraaj Bedford}
        {Siraaj Bedford\\
@@ -162,17 +163,20 @@ Engineering at the University of Stellenbosch}
 \frontmatter%========================================================
 
 \TitlePage
+{\pagestyle{plain}
 \include{declaration}
-\include{Abstract}
-%  \include{Opsomming}
-% \include{Acknowledgements}
+\cleardoublepage}
+
+\include{Acknowledgements}
+\input{Abstract}
+\input{Opsomming}
 {\pagestyle{plain}
 \tableofcontents
 \cleardoublepage}
 \include{nomenclature}
 \listoffigures
-%\listofalgorithms
 \listoftables
+\listofalgorithms
 
 
 \mainmatter%=========================================================

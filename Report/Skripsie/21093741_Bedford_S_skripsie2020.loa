@@ -3,10 +3,14 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {algocf}{\numberline {1}{\ignorespaces Generic Knowledge-based Agent algorithm as in \citep {russell2016artificial}\relax }}{7}{algocf.1}%
 \addvspace {10\p@ }
+\contentsline {algocf}{\numberline {1}{\ignorespaces \textsc {Model-Checking} (adapted from Russel and Norvig \citep {russell2016artificial})\relax }}{14}{algocf.1}%
+\contentsline {algocf}{\numberline {2}{\ignorespaces \textsc {PL-Resolution} as in \citep {russell2016artificial}\relax }}{16}{algocf.2}%
+\contentsline {algocf}{\numberline {3}{\ignorespaces \textsc {DPLL-Satisfiable?} as in \citep {russell2016artificial}\relax }}{18}{algocf.3}%
+\contentsline {algocf}{\numberline {4}{\ignorespaces \textsc {DPLL} as in \citep {russell2016artificial}\relax }}{18}{algocf.4}%
 \addvspace {10\p@ }
-\contentsline {algocf}{\numberline {2}{\ignorespaces Agent Algorithm\relax }}{12}{algocf.2}%
+\contentsline {algocf}{\numberline {5}{\ignorespaces \textsc {Directed Graph Building Algorithm}\relax }}{27}{algocf.5}%
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

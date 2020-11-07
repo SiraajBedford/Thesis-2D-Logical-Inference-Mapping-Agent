@@ -29,61 +29,103 @@
 \chapter{Literature Review} 
 \label{chapter:Literature}
 
+%Start the chapter with an introductory paragraph that gives the context and properly leads in the material presented in this chapter.  
+
+The literature reviewed in this chapter is necessary to understand the design of the problem solution in Chapter \ref{chapter:Agent_Design} and implementation of the problem solution in Chapter \ref{chapter: implementation_and_setup}. The aim of the project is to place an agent in an environment and then the agent must learn the structure of that environment. The literature review first explores the interaction of the agent with the environment and how the interaction plays a role when considering the design of the agent. The literature review then goes on to explain how the agent will convey knowledge in the form of logic. The logic representation and techniques necessary for agent design is then explained. This chapter is largely based on the work by Russel and Norvig \citep{russell2016artificial}.
+
+
+
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Agents and Environments}
 \label{sec:agents_and_environments}
+
+The project contains an agent that should be able to learn, therefore this section reviews the literature of a general model of an agent that has the ability to learn in an environment with specific properties.
+
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=.5]{Figures/General_learning_agent.png}
-    \caption{A general learning agent as in \citep{russell2016artificial} to provide context}
+    \includegraphics[scale=.6]{Figures/General_learning_agent.png}
+    \caption{A general architecture for a learning agent interfacing with an environment with sensors and actuators.}
     \label{fig:agent_environment}
 \end{figure}
-\textit{An agent is anything that can be viewed as perceiving its environment through sensors and acting upon that environment through actions} \citep{russell2016artificial}. Agents in environments have a main purpose to \textit{learn} things about the environment or to \textit{formulate} plans that have certain objectives in the context of the environment. This can, to a large extent be influenced by the nature and complexity of the environment and internal processes of the agent. Figure \ref{fig:agent_environment} shows the relationship between the agent and the environment to provide context for the project. Section \ref{sec:kb_agents} puts this architecture into more perspective by introducing knowledge-based agents founded on this general architecture. 
 
+
+% Talk about the agents in environments generally
+An agent can be viewed as anything that perceives its environment through sensors and acts upon that environment using actions made by actuators. Agents in environments have a main purpose to learn things about the environment or to formulate plans that have certain objectives in the specific context or structure of the environment. This can, to a large extent be influenced by the nature and complexity of the environment and internal processes of the agent. Figure \ref{fig:agent_environment} shows the relationship between the agent and the environment to show how agents can interact with the environment by learning about the environment using its internal mechanisms for learning. 
+The general learning agent consists of four main conceptual components: a performance element, a learning element, a critic and a problem generator. The performance element takes in sensor information and decides on which action to taken (that may aim to make the agent learn its function in the environment or just to build a representation of the environment, with the latter being the aim of this project). The learning element uses feedback from the critic to see how good the agent performs in relation to the performance standard and decides whether the performance element should be changed to do better in the future. The critic tells the learning element how well the agent is doing with respect to a fixed performance standard. The critic is needed since the percepts do not provide an indication of the agent’s success. The performance standard should be static such that the agent does not try to change it to suit its own behavior. Lastly, the problem generator is responsible for suggesting actions that lead to new experiences for the agent in an environment. 
 % Talk about nauture of environments
-The properties of an environment can be classified as fully observable or partially observable, single agent or multi-agent, deterministic or stochastic, episodic or sequential, static or dynamic, discrete or continuous, known or unknown. A combination of these properties can determine the processes the agent goes through to learn about the environment. How we model the environment can affect learning, so we should keep that in mind while designing our agent so that the agent is not useless in similar environments.
 
-% Talk about the agents
-The general learning agent comprises of four main conceptual components: a performance element, a learning element, a critic and a problem generator. The most crucial difference is between the \textbf{learning element} and the \textbf{performance element}. The performance element takes in sensor information and decides on which action to taken (that may aim to make the agent learn its function in the environment or just to build a representation of the environment, with the latter being the aim of this project). The learning element uses feedback from the critic to see how good the agent performs in relation to the performance standard and decides whether the performance element should be changed to do better in the future. The critic tells the learning element how well the agent is doing with respect to a fixed performance standard. The critic is needed since the percepts do not provide an indication of the agent’s success. The performance standard should be static such that the agent does not try to change it to suit its own behavior. Lastly, the problem generator is responsible for suggesting actions that lead to new and informative experiences \citep{russell2016artificial}. 
+Not all the conceptual components components of the agent shown in Figure \ref{fig:agent_environment} are used in this project, but this figure helps us understand the role of knowledge base (KB) agents discussed in Section \ref{sec:kb_agents_and_logical_inference} where the architecture in Figure \ref{fig:agent_environment} brings into more perspective why KB agents are ideal for use in this project in combination with logic discussed in Section \ref{sec:logic} since all the information conveyed through the directional arrows in Figure \ref{fig:agent_environment} can be represented as a form of logic. The type of agent used in this project is a KB agent and from Figure \ref{fig:agent_environment}, the KB agent makes use of sensors, actuators and a learning element to address the aim of mapping the structure of an environment.
+
+The properties of an environment can be classified as fully observable or partially observable, single agent or multi-agent, deterministic or stochastic, episodic or sequential, static or dynamic, discrete or continuous, known or unknown. A combination of these properties can determine the processes the agent goes through to learn about the environment. 
+The way we design agents is mostly for an environment with a set of properties that are fixed. If we change the properties of environments, the designed agent might not behave the way we want it to because the properties of the environment were changed. Therefore we should be clear about the goals we want the agent to achieve before deciding on properties of the environment. The KB agent in this project has the main goal to learn the structure of the environment. 
+As such, the environment used in this project is partially observable since the agent cannot perceive the whole environment because the agent will then already know the structure of the environment. 
+The environment is further defined to be a single-agent environment as only one agent occupies the environment in this project. 
+The environment is deterministic since the agent can be in a specific state in the environment at a certain time and there is no uncertainty about the measurements the agent receives. 
+The environment is episodic since the single action the KB agent takes in a single episode of a simulation does not affect the action the agent takes in a future episode. The environment is static because the environment does not change as the agent moves through it. 
+The environment is discrete since the agent gathers information at fixed time steps and also because there are a finite number of states that make up the structure of the environment that the agent can perceive.
+The environment is unknown since the agent has no information about what it perceives, only that what it perceives are inputs to the agent and that the actions the agent take are outputs to the agent. The agent also has no knowledge of its reference with respect to its environment, i.e., it does not know where it is in the environment. 
+Finally, the environment is discrete since there are a finite number of actions that the agent can perform in the environment.
+
+%How we model the environment can therefore affect the learning process we design the agent with because the way the agent learns is determined by the properties of the environment, so we should keep that in mind while designing our agent so that the agent can use the same leaning process in similar environments, not envirnment with different properties.
+
+
+
+
+
 
 % Say the connections between subcomponents are related by logic (to lead into the next section)
-All the information conveyed through the directional arrows in Figure \ref{fig:agent_environment} can be represented as logic which is explained in section \ref{sec:prop_logic}.
+%All the information conveyed through the directional arrows in Figure \ref{fig:agent_environment} can be represented as logic which is explained in Section \ref{sec:logic}.
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 \section{Logic}
-\label{sec:prop_logic}
+\label{sec:logic}
 
-There are two common types of logic representations used for agents that use a knowledge base for inference, namely propositional logic (PL) and first-order logic (FOL). Propositional logic represents sentences made with propositions that can either be true or false and represents knowledge in a logical and mathematical format. First-order logic builds on propositional logic as it has the ability to articulate or quantify propositions. Quantifying propositions is not of any use in this project and thus PL is used. Logic, in any of its forms consists of syntax and semantics that help us understand and solve problems in a broad sense and is discussed in section \ref{syntax_semantics}.
+The aim of the project is to place an agent in an environment and let the agent learn the structure of the environment for itself. The numerical measurements the agent receives as input from the environment through sensors can determine how we implement learning in for the agent. In this project we assume that the measurements we take contain no uncertainty and therefore we can represent measurements the agent receives as logic, since logic is limited to binary states.  This section first explains the definitions, differences and similarities between the representations of logic that were considered for the agent design and implementation, then it goes on to specify the syntax of these representations which is used to explain and represent the logical techniques the agent in this project uses. The agent and the logic techniques the agent can use is described in Section \ref{sec:kb_agents_and_logical_inference} by using the information in Sections \ref{subsec: prop_logic} and \ref{subsec: fol_logic}. The majority of the work in Section \ref{sec:logic} is based on Russel and Norvig \cite{russell2016artificial}.   
 
 
-\subsection{Syntax, Semantics and Entailment}
-\label{syntax_semantics}
+\subsection{Definition, Differences and Similarities of Logic Representations Considered}
+\label{subsec: diff_sim_logic_reps}
 
-Logical \textit{syntax} specifies all logic sentences that are well-formed by rules of that syntax, without regard to any meaning given to the sentences.
-The \textit{semantics} define the truth of each logical sentence with respect to each possible world, where a possible world is a model of all propositions in that logical sentence. Sometimes, when precision is needed, we use the term \textit{model} instead of \textit{possible worlds}. Formally, possible models are just all possible assignments of \texttt{true} or \texttt{false} values to propositions in the logical sentence. PWs may be thought of as models that actually make sense in terms of the context of the environment, i.e, a change in the true or false value of a proposition might not make the possible model appropriate in context of what we expect to observe.
+There are two common types of logic representations used for agents that convey information as logic, namely propositional logic (PL) and first-order logic (FOL). 
+Both representations are used to build logical sentences, where a logical sentence is a combination of propositions using propositional symbols joined by logical operators of the different representations. 
 
-If a sentence $\alpha_n$ is true in model $m$, we say that $m$ satisfies $\alpha_n$ or sometimes $m$ is a \textbf{model} of $\alpha_n$. We use the expression $M(\alpha_n)$ to mean the set of all models of $\alpha_n$ . This allows us to express truth in logic, which is more commonly referred to as \textit{entailment}. Entailment means one logical sentence is captured by (or logically follows from) another sentence \citep{russell2016artificial}. Generally, entailment is shown as the following mathematical expression:
+Propositional logic represents logical sentences as a combination of propositional symbols, where a propositional symbol represents a proposition that can either be true or false, which means that it deals with simple declarative propositions and represents knowledge in a simple logical and mathematical format. 
+
+First-order logic builds on PL as it has also has the ability to represent logical sentences as a combination of propositional symbols but it can also articulate propositions using predicates or quantify propositions using qualifiers in a domain of discourse. A domain of discourse when considering logic, is a set of logical sentences that may or may not contain propositions that relate to each other. This means that that FOL can represent knowledge in a more complex, but more compact logical and mathematical format since it has the ability to quantify and articulate propositions in logical sentences. 
+
+Although the representations of PL and FOL are different, they both consist of the common building blocks that form logic techniques an agent can use. These are the syntax, semantics and entailment aspects of the logic representations.
+
+The logical syntax of a logical representation specifies which logical sentences are well-formed, with no regard to the meaning of the logical sentence.
+The semantics define the truth of each logical sentence with respect to each possible world (PW), where a PW is a model of all propositions in that logical sentence. Sometimes, when precision is needed, we use the term model instead of possible worlds. Formally, possible models are just all possible assignments of true and false values to propositions in the logical sentence. Possible worlds may be thought of as models that actually make sense in terms of the context of the environment, i.e, some combination of true and false propositions in a sentence do not contribute to a clearer understanding of the environment the agent perceives.
+If a logical sentence $\alpha_n$ is true in model $m$, we say that $m$ satisfies $\alpha_n$. 
+We use the expression $M(\alpha_n)$ to express the set of all models of $\alpha_n$, where $M$ is a collection of singular models $m$ that satisfies $\alpha_n$. This allows us to express the concept of the truth of a logical sentence in a model, which is more commonly referred to as entailment.  Entailment means one logical sentence, $\beta$, logically follows from another sentence of known truth,  $\alpha_n$,  of the same logical representation. Generally, entailment can shown as the following mathematical expression:
 
 \begin{equation}
-	\alpha_n \models \beta
+	\alpha_n \models \beta.
 	\label{eq:entailment}
 \end{equation}
 
-Equation \ref{eq:entailment} says $\alpha_n$ entails $\beta$. This is useful for formulating inference in section \ref{sec:logical_inference}.
+
+The two types of logic representations mentioned can each play a role in the design of the  agent in this project and therefore are both discussed in Section \ref{sec:logic}. Not all the information of PL and FOL are relevant to the design of the agent in this project and thus only the important parts of the syntaxes and semantics of the different logic representations relevant to the project are mentioned in Sections \ref{subsec: prop_logic} and \ref{subsec: fol_logic}.
+Their entailment aspects are discussed in Section \ref{sec:kb_agents_and_logical_inference} when reviewing an agent that can use these logic representations for techniques to address the aim of this project.
 
 
-\subsection{Propositional Logic}
+\subsection{Propositional Logic Syntax and Semantics}
+\label{subsec: prop_logic}
 
-As previously stated, PL will be used in this project. PL can be expressed in two different grammar types corresponding to a specific use-case in a problem, namely Backus-Naur Form and Conjunctive Normal Form. BNF is the seminal grammar contributing to CNF, as it introduces the designer to logical operations that structures CNF. As such, BNF is addressed first. 
+The role of propositional logic (PL) in this project is to form a representation of knowledge that can be used in the design of techniques the agent can use to address the aim of the project  which is to learn the structure of an environment the agent is placed in.
 
-\subsubsection{Backus-Naur Form}
+A grammar of a logic representation is the way we structure the propositions of the logic representation, i.e, the syntax of a logic representation, to be useful in certain situations.
+Propositional logic can be expressed in many grammar types, but only two different grammar types need to be used in this project.  The grammar types are named Backus-Naur form (BNF) and conjunctive normal form (CNF). Each of these two grammar types are used to build different techniques an agent can use to learn in this project. The techniques that use the properties of these grammar types are discussed in Section \ref{sec:kb_agents_and_logical_inference}.
+
+\subsubsection{Backus-Naur Form Grammar}
 \label{subsubsec:BNF}
 
-Sentences written in BNF grammar can be \textit{atomic}, i.e., consist of one logical variable or they can be \textit{complex} sentences which consist of atomic variables joined by logical connectives or operators as seen in shown in Table \ref{table: BNF_Syntax}. The precedence of operators are shown since  BNF grammar by itself is ambiguous; a sentence with
-several operators can be parsed by the grammar in multiple ways. To eliminate the ambiguity
-we define a precedence for each operator \citep{russell2016artificial}.
+The purpose of Backus-Naur form (BNF) is to formulate techniques the agent in this project can use to learn the structure of the environment. These techniques are  discussed in Section \ref{sec:kb_agents_and_logical_inference}.
+
+Logical sentences written in Backus-Naur form grammar can be atomic sentences, which means that they can consist of one propositional symbol or they can be complex sentences, which consist of many propositional symbols joined by operators as shown in Table \ref{table: BNF_Syntax}. A propositional symbol is any variable that represents a proposition which can be true or false. A sentence written in BNF grammar can be ambiguous because of the order of operators in the logical sentence. Therefore a precedence is needed for operators in a BNF sentence to remove ambiguity. This precedence is shown in Table \ref{table: BNF_Syntax}. 
 
 \begin{table}[H]
   \centering
@@ -106,43 +148,83 @@ we define a precedence for each operator \citep{russell2016artificial}.
 	Operator Precedence & $\neg,\wedge,\vee,\Rightarrow,\Leftrightarrow$   \\
     \bottomrule
   \end{tabular}
-  \caption{BNF (Backus-Naur Form) grammar of sentences in propositional logic along with operator precedences, from highest to lowest as in \citep{russell2016artificial}}
+  \caption{Backus-Naur form grammar of sentences in propositional logic along with operator precedences, from highest to lowest.}
   \label{table: BNF_Syntax}
 \end{table}
 
 
 
-
+Propositional symbols represent propositions that can be true or false. We can denote true as ``$T$'' and false propositions as ``$F$''. Propositional symbols can be indexed using the time variable $t$ to denote when the proposition is acquired or generated by an agent.
+The meanings and representation of the operators with reference to the logic values of true and false for example propositional symbols $P_t$ and $Q_t$ are as follows:
 
 %The five common connectives are described as:
 \begin{itemize}
-	\item Negation, refers to the common logical operation \texttt{NOT} and changes the current truth value of a sentence at time $t$ to the opposite of what it is, e.g, $\neg P_t$.
-	\item Conjunction, refers to the common logical operation \texttt{AND}. It joins the result of two true or false sentences together at time $t$ by bit-wise multiplication, e.g., $P_t \wedge Q_t$.
-	\item Disjunction, refers to the common logical operation \texttt{OR}. It joins the result of two true or false sentences together at time $t$ by bit-wise addition, e.g., $P_t \vee Q_t$.
-	\item Implication, compromises of a \textit{premise} on the LHS and a \textit{conclusion} on the RHS. An implication is a "if-then" rule, e.g, $(P_t \wedge Q_t) \Rightarrow \neg Q_t$ and is tabulated for a time $t$ in Table \ref{table:implication_TT}. Implication is only \texttt{False} when the premise is false and the conclusion is true.
-	
-	\item Bi-conditional, is used to conjoin two sentences. A bi-conditional is a "if and only if" rule meaning the sentence on the RHS must be logically equivalent to the sentence on the LHS, e.g, $\neg \text{ } (P_t \vee Q_t) \Leftrightarrow \neg Q_t$ and is tabulated for a time $t$ in Table \ref{table:biconditional_TT}.
-\end{itemize}
+	\item The negation operation is represented by the logical connective ``$\neg$''. The negation operations changes the logical value a propositional symbols represents to the opposite logical value. This is shown as a truth table (TT) in Table \ref{table:negation_TT}.
 
+\begin{table}[H]
+\begin{displaymath}  
+		  \begin{array}{|c|c|}\hline
+		    P_t & \neg P_t \\\hline\hline
+		    T & F  \\\hline
+		    F & T \\\hline
+		  \end{array}
+\end{displaymath}
+\caption{Truth table (TT) of negation operator.}
+\label{table:negation_TT}
+\end{table}
+
+\vspace{-1cm}
+		
+	\item The conjunction operator is denoted by the logical connective ``$\wedge$''. The conjunction operator takes two logical values and logically multiplies them together.  This is shown as a TT in Table \ref{table:conjunction_TT}.
+	
 	
 \begin{table}[H]
+\begin{displaymath}  
+		  \begin{array}{|c|c|c|}\hline
+		    P_t & Q_t &  P_t \wedge Q_t   \\\hline\hline
+		    T & T & T\\\hline
+		    T & F & F\\\hline
+		    F & T & F\\\hline
+		    F & F & F\\\hline
+		  \end{array}
+\end{displaymath}
+\caption{TT of conjunction operator.}
+\label{table:conjunction_TT}
+\end{table}
 
-\begin{center}
+\vspace{-1cm}	
+	
+	
 
+	\item The disjunction operator is denoted by the logical connective ``$\vee$''. The disjunction operator takes two logical values and logically adds them together.  This is shown as a TT in Table \ref{table: disjunction_TT}.
+	
+\begin{table}[H]
+\begin{displaymath}  
+		  \begin{array}{|c|c|c|}\hline
+		    P_t & Q_t &  P_t \vee Q_t   \\\hline\hline
+		    T & T & T\\\hline
+		    T & F & T\\\hline
+		    F & T & T\\\hline
+		    F & F & F\\\hline
+		  \end{array}
+\end{displaymath}
+\caption{TT of disjunction operator.}
+\label{table: disjunction_TT}
+\end{table}
 
-    
-    \begin{minipage}{.5\linewidth}
-      
+\vspace{-1cm}
+	
+	
+	
+	\item The implication operator is denoted by the logical connective ``$\Rightarrow$''.
+	 An implication statement consists of a premise and a conclusion. A premise is an argument that provides support for the conclusion. A conclusion is the possible result the premise can support. The premise is on the left-hand side (LHS) of an implication operator and the conclusion is on the right-hand side (RHS). Implication is shown as a TT in Table \ref{table:implication_TT}. Implication of a premise and a clause is only false when the conclusion is false, but the premise is true. Implication can therefore be translated from logic as an ``if-then'' statement.
+	
+\vspace{-0.4 cm}	
+	
+\begin{table}[H]
       \centering 
        \begin{displaymath}  % start unumbered math environment
 		  \begin{array}{|c|c|c|}\hline
-		    %
-		    % Each row of the table consists of data separated by "&" symbols.
-		    % Each row must end with "\\" to cause a newline.  A trailing
-		    % \hline will cause a line to be drawn under the row.  A double
-		    % \hline is often used to separate the table header from the rest
-		    % of the table. 
-		    %
 		    P_t & Q_t & P_t \Rightarrow Q_t \\\hline\hline
 		    T & T & T \\\hline
 		    T & F & F \\\hline
@@ -150,24 +232,19 @@ we define a precedence for each operator \citep{russell2016artificial}.
 		    F & F & T \\\hline
 		  \end{array}
 		\end{displaymath}
-		\caption{Implication TT}
+		\caption{TT of the implication operator}
 		\label{table:implication_TT}
-    \end{minipage}%
-    
-    
-    
-    \begin{minipage}{.5\linewidth}
-      \centering
-        
+\end{table}
+
+\vspace{-1 cm}
+	
+	\item The bi-conditional operator is denoted by the logical connective ``$\Leftrightarrow$''. This operator is used to conjoin two sentences and could be thought of as an ``if and only if'' statement. The LHS of a bi-conditional sentence is called the antecedent and the RHS of the statement is called the consequent. If the antecedent of the bi-conditional sentence is true, then the only way the bi-conditional sentence can be true is if the consequent of the bi-conditional sentence is also true. If the antecedent of the bi-conditional sentence is false, then the only way the bi-conditional sentence can be true is if the consequent of the bi-conditional sentence is also false. The bi-conditional operator logic is shown as a TT in Table \ref{table:biconditional_TT}. The bi-conditional operator is logically equivalent to the conjunction of two implications, where one implication is where the antecedent is on the LHS of the implication operator and the consequent is on the RHS and the other implication is where the consequent is on the LHS of the implication operator and the antecedent is on the RHS .
+
+
+\begin{table}[H]
+      \centering     
        \begin{displaymath}  % start unumbered math environment
 		  \begin{array}{|c|c|c|}\hline
-		    %
-		    % Each row of the table consists of data separated by "&" symbols.
-		    % Each row must end with "\\" to cause a newline.  A trailing
-		    % \hline will cause a line to be drawn under the row.  A double
-		    % \hline is often used to separate the table header from the rest
-		    % of the table. 
-		    %
 		    P_t & Q_t & P_t \Leftrightarrow Q_t \text{ or } (P_t \Rightarrow Q_t \wedge Q_t \Rightarrow P_t) \\\hline\hline
 		    T & T & T \\\hline
 		    T & F & F \\\hline
@@ -175,173 +252,163 @@ we define a precedence for each operator \citep{russell2016artificial}.
 		    F & F & T \\\hline
 		  \end{array}
 	  \end{displaymath}
-	  \caption{Bi-conditional TT}
+	  \caption{TT of the bi-conditional operator}
 	  \label{table:biconditional_TT}
-    \end{minipage}%
-
-\end{center}    
 \end{table}
 
 
+\end{itemize}
 
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsubsection{Conjunctive Normal Form}
+\subsubsection{Conjunctive Normal Form Grammar}
 \label{subsubsec:CNF}
 
-CNF uses clauses as its functional unit. Any BNF formula can be converted to CNF by means of logical equivalences since \textit{every sentence of propositional logic is logically equivalent to a conjunction of clauses} \citep{russell2016artificial}. Table \ref{table:CNF_Syntax} shows the syntax grammar for CNF sentences. A CNF sentence is a conjunction (logical \texttt{AND}) of clauses. A \textit{clause} is a disjunction (logical \texttt{OR}) of literals. A literal can either be positive or negative. A positive literal does not consist of a negation joined to a symbol, while a negative literal does.
+The purpose of conjunctive normal form (CNF) grammar in this project, as with BNF in Section \ref{subsubsec:BNF} is to formulate techniques the agent in this project can use to learn the structure of the environment. These techniques are  discussed in Section \ref{sec:kb_agents_and_logical_inference}.
+
+The CNF grammar of logical sentences can be seen in Table \ref{table:CNF_Syntax}. Conjunctive normal form uses clauses as its functional unit. A CNF sentence consists of a conjunction of clauses. A clause is made from the disjunction of many literals. A literal is a propositional symbol that does or does not have an attached negation operator mentioned in Section \ref{subsubsec:BNF}. A propositional symbol in CNF that has no negation operator attached to it is called a positive literal. A propositional symbol in CNF that has a negation operator attached to it is called a negative literal.
 
 
 \begin{table}[H]
   \centering
   \begin{tabular}{lc}
     \toprule
-
     \textbf{Propositional Logic}  \hspace{1cm}   & \textbf{Expression}  \\
     \toprule
-    
     $CNFSentence$ & $Clause_1$ $\wedge$ $\cdots$  $\wedge$ $Clause_n$ \\ \midrule
     $Clause$ & $Literal_1$  $\vee$ $\cdots$  $\vee$  $Literal_m$   \\ \midrule  
     $Literal$ & $Symbol$ | $\neg Symbol$    \\ \midrule
-    $Symbol$ & \textit{$P$} | \textit{$Q$} | \textit{$R$} | \textit{$\alpha$} | \textit{$\beta$} | ...  \\  \midrule
-	 $HornClauseForm$ & $DefiniteClauseForm$ | $GoalClauseForm$    \\ 
-	 $DefiniteClauseForm$ & ($Symbol_1$ $\wedge$ $\cdots$  $\wedge$ $Symbol_l$) $\Rightarrow$ $Symbol$   \\ 
-	 $GoalClauseForm$ & ($Symbol_1$ $\wedge$ $\cdots$  $\wedge$ $Symbol_l$) $\Rightarrow$ $False$    \\   
-   
+    $Symbol$ & \textit{$P$} | \textit{$Q$} | \textit{$R$} | \textit{$\alpha$} | \textit{$\beta$} | ...  \\ 
+%     \midrule
+%	 $HornClauseForm$ & $DefiniteClauseForm$ | $GoalClauseForm$    \\ 
+%	 $DefiniteClauseForm$ & ($Symbol_1$ $\wedge$ $\cdots$  $\wedge$ $Symbol_l$) $\Rightarrow$ $Symbol$   \\ 
+%	 $GoalClauseForm$ & ($Symbol_1$ $\wedge$ $\cdots$  $\wedge$ $Symbol_l$) $\Rightarrow$ $False$    \\   
     \bottomrule
   \end{tabular}
-  \caption{CNF (Conjunctive Normal Form) grammar of sentences in propositional logic as in \citep{russell2016artificial}}
+  \caption{Conjunctive normal form grammar of sentences in propositional logic}
   \label{table:CNF_Syntax}
 \end{table}
-The process to convert from BNF to CNF (using an arbitrary sentences $\alpha$ and $\beta$) can be viewed as:
+
+\vspace{-0.7 cm}
+
+Any logical sentence that can be written using BNF grammar can be converted to a sentence written in CNF by using logical equivalences since every sentence written using BNF grammar is logically equivalent to a conjunction of clauses. The process to convert from BNF to CNF using an example sentences $\alpha$ and $\beta$ can be done by:
 \begin{enumerate}
 
-	\item Eliminate bi-conditionals, by replacing it with a conjunction of implications $\alpha \Leftrightarrow \beta$ with $(\alpha \Rightarrow \beta) \wedge (\beta \Rightarrow \alpha)$
+	\item Eliminating bi-conditional operators by replacing them with a conjunction of implications which means that we replace $\alpha \Leftrightarrow \beta$ with $(\alpha \Rightarrow \beta) \wedge (\beta \Rightarrow \alpha)$, 
 	
-	\item Eliminate the bi-conditional, $\alpha \Rightarrow \beta$ with $\neg \alpha \vee \beta$ (The only false case for implication). The same operation can be done for $\beta \Rightarrow \alpha$.
+	\item Eliminating the implication sentences $\alpha \Rightarrow \beta$ and $\beta \Rightarrow \alpha$ by replacing them with $\neg \alpha \vee \beta$ and $\neg \beta \vee \alpha$ repectively (the only false case for implication). 
 	
-	\item CNF requires only symbols (not clauses or literals) to have negations, so we move the negation operators inwards by repeatedly applying double-negation elimination and De Morgan's rules.
+	\item CNF requires only symbols (not clauses or literals) to have negations, so we move the negation operators inwards by repeatedly applying double-negation elimination and De Morgan's rules shown in Equations \ref{eq:double_neg_elim}, \ref{eq:DeMorgan1} and \ref{eq:DeMorgan2}:
 \begin{subequations}
 \begin{align}
-    \neg (\neg \alpha) \equiv \alpha& \textbf{    (double-negation elimination)} \label{eq:double_neg_elim}\\
-       \neg(\alpha \wedge \beta) \equiv (\neg \alpha \vee \neg \beta)& \textbf{    (De Morgan)} \label{eq:DeMorgan1}\\
-       \neg(\alpha \vee \beta) \equiv (\neg \alpha \wedge \neg \beta)& \textbf{    (De Morgan)} \label{eq:DeMorgan2}
+    \neg (\neg \alpha) & \equiv \alpha \textbf{    (double-negation elimination)}, \label{eq:double_neg_elim}\\
+       \neg(\alpha \wedge \beta) & \equiv (\neg \alpha \vee \neg \beta) \textbf{    (De Morgan)}, \label{eq:DeMorgan1}\\
+       \neg(\alpha \vee \beta) &\equiv (\neg \alpha \wedge \neg \beta) \textbf{    (De Morgan)}. \label{eq:DeMorgan2}
 \end{align}
 \end{subequations}
 
-\item The sentence this far in the procedure has nested $\wedge$ and $\vee$ operators applied to literals. Therefore we have to apply the distributive law where possible to form the final useful CNF sentence structure which has the form $Clause_1$ $\wedge$ $\cdots$  $\wedge$ $Clause_n$.
+\item A sentence this far in the procedure has only nested $\wedge$ and $\vee$ operators applied to literals. Therefore we have to apply the distributive law shown in Equation \ref{eq:DibLaw} where possible to form the final useful sentence in CNF grammar which has the form $Clause_1$ $\wedge$ $\cdots$  $\wedge$ $Clause_n$:
 
 \begin{equation}
-       (\alpha \vee (\beta \wedge \gamma) ) \equiv  (\alpha \vee \beta)  \wedge (\alpha \vee \gamma)   \text{  }(\textbf{Distributive Law} \text{ of } \vee \text{ over } \wedge) \label{eq:DibLaw}
+       (\alpha \vee (\beta \wedge \gamma) ) \equiv  (\alpha \vee \beta)  \wedge (\alpha \vee \gamma)   \text{  }(\textbf{Distributive Law} \text{ of } \vee \text{ over } \wedge). \label{eq:DibLaw}
 \end{equation}
 \end{enumerate}
 
+This conversion process from BNF to CNF grammar described above is useful in this project since the way we implement the logic input to PL techniques for agent learning does not have to change for every learning techniques we formulate in Section \ref{sec:kb_agents_and_logical_inference}.
 
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%\textit{learn}
-%\textsc{learn}
-%\textsf{learn}
-%\textsl{learn}
-%\texttt{learn}
-
-\section{Knowledge-Based Agents}
-\label{sec:kb_agents}
-
-BNF and CNF represent syntax and semantics needed for conveying logic in knowledge-based agents and PL is the \textit{knowledge representation language}. Algorithm \ref{algorithm:general_KB_Agent} represents the general structure for a KB agent. The central component of this type of agent is a Knowledge Base which is a set of sentences acquired over time. The KB might contain initial information before the agent executes its function, but the aim is to get the KB agent to not need this background knowledge. A KB should be \textit{readable} to check sentence entailment and \textit{writable} to add sentences, which is represented by the methods \textsc{TELL} and \textsc{ASK} repectively in Algorithm \ref{algorithm:general_KB_Agent}.
-
-\vspace{0.5cm}
-\begin{algorithm}[H]
-\label{algorithm:general_KB_Agent}
-\caption{Generic Knowledge-based Agent algorithm as in \citep{russell2016artificial}}
-\SetAlgoLined
-\DontPrintSemicolon
-\KwIn{\textit{percepts}}
-\Parameter{\textit{KB} (Knowledge Base), \textit{t} (a counter, indicating time)}
-\KwOut{\textit{action}}
-\textbf{Begin} \\
-\Indp{
-	\textsc{TELL} (\textit{KB}, \textsc{Make-Percept-Sentence}(\textit{percept}, \textit{t}))\\
-	\textit{action} $\leftarrow$ \textsc{ASK} (\textit{KB}, \textsc{Make-Action-Query}(\textit{t})) \tcp*[h]{Logical inference} \\
-	\textsc{TELL} (\textit{KB}, \textsc{Make-Action-Sentence}(\textit{action}, \textit{t}))\\
-	\textit{t} $\leftarrow$ \textit{t} + 1\\
-	\textbf{return} \textit{action}\\
-	}
-\Indm 
-\textbf{End agent execution}   \\
-\end{algorithm}
-\vspace{0.5cm}
-
-The function \textsc{Make-Percept-Sentence} constructs a sentence containing the percents from sensors at the given time. \textsc{Make-Action-Query} constructs a sentence asking which action the agent should execute. \textsc{Make-Action-Sentence} constructs a sentence saying which action the agent has taken. The agent function is executed in a global loop and as such is not iterative in nature. It must be noted that this only provides the general structure for a KB Agent to give the reader the motivation for using KB agents in Chapter \ref{chapter:System_Design} as base for environment mapping agents.
-
-
+\subsection{First-Order Logic Syntax and Semantics}
+\label{subsec: fol_logic}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
+\newpage
 
+\section{Knowledge-Based Agents and Logical Inference}
+\label{sec:kb_agents_and_logical_inference}
 
-\section{Logical Inference}
-\label{sec:logical_inference}
-\textit{Inference} is the process of discovering by derivation; new information by referencing known information. The goal of inference in the context of KB agents is to prove entailment of a sentence in a knowledge base. Logical inference can be accomplished with different methods as expanded on in this section: enumeration, theorem proving or by CSP methods. From equation \ref{fig:entailment} it follows that for a sentence $\alpha_n$ to be entailed by a KB that:
-
-\begin{equation}
-	KB \models \alpha_n
-	\label{eq:KB_entailment}
-\end{equation}
-
-Figure \ref{fig:entailment} shows the general process of logical inference, where $\varphi$ refers to query sentences in the inference process, but we use $\alpha_n$ in equation \ref{eq:KB_entailment} to denote $\varphi$ in the diagram. As can be seen, the \textbf{inference algorithm} is the main functional process in inference. The way we design the inference algorithm can strongly affect how fast and efficiently inference can be carried out. 
+The aim of this project is to design an agent that can learn the structure of an environment it is placed in for itself. There are many types of agents that can be used for learning the structure of an environment in the field of artificial intelligence (AI). One type of these many agents is called a ``knowledge-based agent''. 
+Knowledge-based agents work using logic representations, such as the logic representations discussed in Section \ref{sec:logic}.
+A model of a knowledge-based agent in shown in Figure \ref{fig:kb_agent}. 
 
 \begin{figure}[H]
     \centering
-    \includegraphics[scale=.77]{Figures/Inference_Gears.png}
-    \caption{Logical inference in a use-case context using CNF grammar, with random symbols $p,q,r,s$. Adapted from \cite{10.1007/978-3-030-21077-9_32}}
-    \label{fig:entailment}
+    \includegraphics[scale=.57]{Figures/Inference_Gears.png}
+    \caption{Knowledge-based Agent that uses Logical Inference}
+    \label{fig:kb_agent}
 \end{figure}
 
+%\vspace{-0.6cm}
 
 
 
-\subsection{Model Checking}
-\label{subsubsec: Inference_model_checking}
-
-The first inference algorithm we consider is called the model-checking approach. It follows the definition of entailment, i.e, first enumerate all the models, then secondly see if $\alpha_n$ is true in every model in which KB is true. As mentioned before, models are all possible assignments of \textit{true} or \textit{false} to every proposition symbol \citep{russell2016artificial}. Model checking typically uses BNF grammar. With $n$ symbols, there are $2^n$ possible models, thus the time complexity of model checking scales with $\mathcal{O}(2^n)$. \textit{So every known inference algorithm for propositional logic has a worst-case complexity that is exponential in the size of the input} \citep{russell2016artificial}.\\
+Knowledge-based agents work by gathering measurements from the environments and storing them as propositional symbols in a knowledge base (KB) as shown by ``Sensor Measurements to Propositions'' in Figure \ref{fig:kb_agent}. As the agent moves through the environment it gains more and more information about the environment that it adds to its KB. This is shown by the arrow denoting ``Measurements as Propositional Symbols'' in Figure \ref{fig:kb_agent}. For the knowledge-based agent to make use of its knowledge base, it has to be able to query its knowledge base. This is shown as ``Query Sentence'' in Figure \ref{fig:kb_agent}. A query to the agent's KB and getting a true or false result for the query is called an inference. An inference engine gives the ability to an agent to perform logical inference. If a logical inference is true, it means that the query sentence is true from knowledge in the agent's KB. This equivalent to the definition of entailment in Equation \ref{eq:entailment}, where a KB represents a logical sentence that a query sentence in logical format, $\beta$, follows:
 
 
-Models are enumerated using truth tables. Example propositions $p,q,r,s$ and assigned facts $R_1 : \neg (p \wedge r)$ and $R_2  : \neg (q \wedge s)$ are used in Table \ref{table:TT_enumeration}. The KB has random true or false values per model to illustrate that a KB may either be true or false depending on a specific model. As can be seen, the model corresponding to $m_{example}=\{p:false,q:false,r:true,s:false,R_1:true,R_2:true\}$ in the third enumeration row means that sentences $R_1$ and $R_2$ are entailed by our KB because the KB (for illustrative purposes) is also true.
+\begin{equation}
+	KB \models \beta.
+	\label{eq:entailment_KB_query}
+\end{equation}
 
-\vspace{-0.4cm}
+Logical inference is the process of asking the agent a question in terms of logic, consulting the agent's knowledge base and returning whether that query is true or false based on the knowledge in the agent's KB. This means that logical inference can be viewed as a learning process for the agent. Logical inference gives a knowledge-based agent the ability to learn from past experience and thus this type of agent is suitable for this project.  The general process of logical inference a knowledge-base agent can use is conveyed in Figure \ref{fig:kb_agent}.
 
-\begin{table}[H]
-	\begin{center}
-		\begin{displaymath}  % start unumbered math environment
-			  \begin{array}{|c|c|c|c|c|c||c|}\hline
-			    p & q & r & s & R_1 : \neg (p \wedge r) & R_2  : \neg (q \wedge s) & KB \\\hline\hline
-			    F & F & F & F & T & T & F\\\hline
-			    F & F & F & T & T & T & F\\\hline
-			    F & F & T & F & T & T & T\\\hline
-			    \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\\hline
-			    T & T & T & T & F & F & F\\\hline
-			  \end{array}
-		  \end{displaymath}
-	\end{center}	
-	
-	\caption{TT enumerations for example propositions $p,q,r,s$ with corresponding truth or false KB outcomes.}
-\label{table:TT_enumeration}
-\end{table}
+The query sentence normally asks which action is the best for an agent to execute in its environment based on knowledge in its KB, but this aspect of a knowledge-based agent is not considered in the design of the agent in Chapter \ref{chapter:Agent_Design}. The link between the output of the inference engine and the actuator in Figure \ref{fig:kb_agent} is shown in this section to show how a knowledge-based agent is related to a general learning agent in Figure  \ref{fig:agent_environment} in Section \ref{sec:agents_and_environments}. When compared to a general learning agent, a knowledge-based agent uses a sensor, actuator and learning element. A knowledge-based agent is not limited to these components of a general learning agent though. In general, a knowledge-based agent queries its KB by inputting questions to an inference engine in the form of logic in a specific logic representation, which means the nature of the input queries to an inference engine does not have to specifically address the action an agent should take. 
+
+For an agent to perform logical inference, it has to make use of an inference algorithm. Many inference algorithms exist that can be used in this project, but only three suitable propositional logical inference algorithms are considered that can be used for learning, which can be compared when evaluating the design of an agent. These three inference algorithms are a model-checking algorithm in Section \ref{subsubsec:Inference_Model_Checking}, a resolution algorithm in Section \ref{subsubsec:Inference_Resolution} and the Davis, Putnam, Logemann, and Loveland (DPLL) algorithm in Section \ref{subsubsec:Inference_DPLL}. A first-order logic inference  algorithm is also considered in Section \ref{subsubsec: fol_inference} to represent an agent's learnt representation of its environment.
+
+%The two latter algorithms are based on theorem proving which is also reviewed in this section. One inference algorithm using first-order logic is also discussed for representing an agent's learnt knowledge.
+%\vspace{0.5cm}
+%\begin{algorithm}[H]
+%\label{algorithm:general_KB_Agent}
+%\caption{Generic Knowledge-based Agent algorithm as in \citep{russell2016artificial}}
+%\SetAlgoLined
+%\DontPrintSemicolon
+%\KwIn{\textit{percepts}}
+%\Parameter{\textit{KB} (Knowledge Base), \textit{t} (a counter, indicating time)}
+%\KwOut{\textit{action}}
+%\textbf{Begin} \\
+%\Indp{
+%	\textsc{TELL} (\textit{KB}, \textsc{Make-Percept-Sentence}(\textit{percept}, \textit{t}))\\
+%	\textit{action} $\leftarrow$ \textsc{ASK} (\textit{KB}, \textsc{Make-Action-Query}(\textit{t})) \tcp*[h]{Logical inference} \\
+%	\textsc{TELL} (\textit{KB}, \textsc{Make-Action-Sentence}(\textit{action}, \textit{t}))\\
+%	\textit{t} $\leftarrow$ \textit{t} + 1\\
+%	\textbf{return} \textit{action}\\
+%	}
+%\Indm 
+%\textbf{End agent execution}   \\
+%\end{algorithm}
+%\vspace{0.5cm}
+%Algorithm \ref{algorithm:general_KB_Agent} consists of three main functions. The first function called \textsc{Make-Percept-Sentence} constructs a sentence containing the percents from sensors at the given time. The second function called \textsc{Make-Action-Query} constructs a sentence asking which action the agent should execute. \textsc{Make-Action-Sentence} constructs a sentence saying which action the agent has taken. The agent function is executed in a global loop and as such is not iterative in nature. It must be noted that this only provides the general structure for a KB Agent to give the reader the motivation for using KB agents in Chapter \ref{chapter:System_Design} as base for environment mapping agents.
+%an representing the measurements as propositional symbols. The propositional symbols form the syntax and semantics the agent uses to convey logic as discussed in Section \ref{sec:logic} using propositional logic and first-order logic syntaxes. The logic the agent v
+%BNF and CNF represent syntax and semantics needed for conveying logic in knowledge-based agents and PL is the \textit{knowledge representation language}. Algorithm \ref{algorithm:general_KB_Agent} represents the general structure for a KB agent. The central component of this type of agent is a Knowledge Base which is a set of sentences acquired over time. The KB might contain initial information before the agent executes its function, but the aim is to get the KB agent to not need this background knowledge. A KB should be \textit{readable} to check sentence entailment and \textit{writable} to add sentences, which is represented by the methods \textsc{TELL} and \textsc{ASK} receptively in Algorithm \ref{algorithm:general_KB_Agent}.
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+%\textit{Inference} is the process of discovering by derivation; new information by referencing known information. The goal of inference in the context of KB agents is to prove entailment of a sentence in a knowledge base. Logical inference can be accomplished with different methods as expanded on in this section: enumeration, theorem proving or by CSP methods. From equation \ref{fig:entailment} it follows that for a sentence $\alpha_n$ to be entailed by a KB that:
+%
+%\begin{equation}
+%	KB \models \alpha_n
+%	\label{eq:KB_entailment}
+%\end{equation}
+%
+%Figure \ref{fig:entailment} shows the general process of logical inference, where $\varphi$ refers to query sentences in the inference process, but we use $\alpha_n$ in equation \ref{eq:KB_entailment} to denote $\varphi$ in the diagram. As can be seen, the \textbf{inference algorithm} is the main functional process in inference. The way we design the inference algorithm can strongly affect how fast and efficiently inference can be carried out. 
 
 
-\vspace{-0.6cm}
-This inference process is captured in Algorithms \ref{algorithm:tt_check_all} and \ref{algorithm:TT_entails}. The mechanism for model checking is encoded by \textsc{TT-Check-All}. \textsc{PL-True?} in Algorithm \ref{algorithm:tt_check_all} (line 3) computes the truth value of a PL sentence in a model. Algorithm \ref{algorithm:tt_check_all} takes as parameters a KB, a query sentence, symbols of that query sentence as well as a set for modeling where a symbol is true or false. The algorithm continues recursively until terminating in lines 3 or 4 when either the query sentence checked by executing \textsc{PL-True?} or if the KB is false, \textit{true} is just returned.
 
-\vspace{0.6cm}
+
+
+
+\subsection{Logical Inference by using a Model Checking Algorithm}
+\label{subsubsec:Inference_Model_Checking}
+
+The first logical inference algorithm we consider is called the model-checking approach. This algorithm is shown in Algorithm \ref{algorithm:tt_check_all}.
+
+\vspace{0.2cm}
 \begin{algorithm}[H]
 \label{algorithm:tt_check_all}
-\caption{\textsc{TT-Check-All} as in \citep{russell2016artificial}}
+\caption{\textsc{Model-Checking} (adapted from Russel and Norvig \citep{russell2016artificial})}
 \SetAlgoLined
 \DontPrintSemicolon
-\KwIn{\textit{KB} (Knowledge Base a sentence in PL), \newline $\alpha$ (the query sentence),\newline \textit{symbols} (which are all the sentence's symbols),\newline \{\} (an empty set)}
+\KwIn{\textit{KB} -- a knowledge base as a sentence written in propositional logic, \newline $\alpha$ -- a query sentence we want to know is entailed by the KB,\newline \textit{symbols} -- a list of all proposition symbols in $\alpha$ and \textit{KB},\newline \textit{model} - A partial model assigning true or false to only some symbols}
 %\Parameter{\textit{KB} (Knowledge Base, a sentence in PL), $\alpha$ (the query sentence)}
-\KwOut{\textbf{returns} \textit{true} or \textit{false}}
+\KwOut{\textbf{returns} true or false}
 \textbf{Begin} \\
 \Indp{
 	\textbf{if} \textsc{Empty?}(\textit{symbols}) \textbf{then}\\
@@ -354,7 +421,7 @@ This inference process is captured in Algorithms \ref{algorithm:tt_check_all} an
 	\Indp{ 
 	\textit{P} $\leftarrow$ \textsc{First}	(\textit{symbols})\\
 	\textit{rest} $\leftarrow$ \textsc{Rest} (\textit{symbols})\\
-	\textbf{return} ((\textsc{TT-Check-All} (\textit{KB}, $\alpha$, \textit{rest}, \textit{model} $\cup$ \{\textit{P}=\textit{true}\}) \textbf{and} \textsc{TT-Check-All} (\textit{KB}, $\alpha$, \textit{rest}, \textit{model} $\cup$ \{\textit{P}=\textit{false}\}))\\
+	\textbf{return} ((\textsc{Model-Checking} (\textit{KB}, $\alpha$, \textit{rest}, \textit{model} $\cup$ \{\textit{P}=\textit{true}\}) \textbf{and} \textsc{Model-Checking} (\textit{KB}, $\alpha$, \textit{rest}, \textit{model} $\cup$ \{\textit{P}=\textit{false}\}))\\
 	}
 	\Indm
 	}
@@ -363,142 +430,200 @@ This inference process is captured in Algorithms \ref{algorithm:tt_check_all} an
 \end{algorithm}
 \vspace{0.5cm}
 
-\textsc{TT-Entails?} (Algorithm \ref{algorithm:TT_entails}) gives us the ability to give as the input to the inference procedure, what we want to know is true or false, a sentence $\alpha$. We also have to include as an input the KB we are considering. It performs a recursive enumeration of a finite space of assignments to symbols using \textsc{TT-Check-All} \citep{russell2016artificial}. 
-The algorithm is \textbf{sound} because it directly implements entailment. An algorithm is sound if it only derives entailed sentences. The algorithm is \textbf{complete} because it works for any KB and query sentence $\alpha$ and always terminates since there are finitely many models to check. Completeness means that an inference algorithm can derive any sentence that is entailed. We aim for completeness in inference algorithm design.
 
-\vspace{0.5cm}
-\begin{algorithm}[H]
-\label{algorithm:TT_entails}
-\caption{\textsc{TT-Entails?} as in \citep{russell2016artificial}}
-\SetAlgoLined
-\DontPrintSemicolon
-\KwIn{\textit{KB} (Knowledge Base, a sentence in PL), $\alpha$ (the query sentence)}
-%\Parameter{\textit{KB} (Knowledge Base, a sentence in PL), $\alpha$ (the query sentence)}
-%\KwOut{\textit{action}}
-\textbf{Begin} \\
-\Indp{
-	\textit{symbols} $\leftarrow$ a list of the proposition symbols in \textit{KB} and $\alpha$\\
-	\textbf{return} \textsc{TT-Check-All} (\textit{KB}, $\alpha$, \textit{symbols}, \{ \} )\\
-	}
-\Indm 
-\textbf{End}   \\
-\end{algorithm}
-\vspace{0.5cm}
+The basic principle that Algorithm \ref{algorithm:tt_check_all} works on is the enumeration of all models of proposition symbols in both a query sentence and a KB. The query sentence and KB represented as a sentence is compared to each enumerated model. If a query sentence is true in a model that the KB is true, then the query sentence is entailed by the KB. This means that we can infer the query sentence is true from knowledge that a knowledge-based agent holds in its KB.
 
+The algorithm uses a function called ``\textsc{PL-True?}'' that returns true only if a sentence holds in a model, whether that sentence be a KB represented as a sentence in propositional logic, or a sentence that is a query.
+The description of Algorithm \ref{algorithm:tt_check_all} is as follows:
+\begin{enumerate}
+
+\item It takes as input a KB written as propositional logic sentence (logical conjunction of all logical expressions in the KB) so that assignment of logical values for expressions a KB is not tedious, a query sentence, a list of all symbols in the KB and query sentence and a partial model that assigns true or false to only some of the symbols in the list of symbols. When all the symbols in a model are assigned a true or false value, then the \textit{symbols} variable is empty because upon assignment of true or false to a symbol in \textit{symbols}, the symbols is removed from the list of symbols.
+
+\item It then checks the length of the list of given symbols by using the function ``\textsc{Empty?}''. The list of symbols will be empty when all propositional symbols in the list are given a true or false value. Upon a symbol being given a true or false value, they are removed from the variable \textit{symbols}. If the list of symbols is empty then Algorithm \ref{algorithm:tt_check_all} will terminate according to the following cases:
+
+\begin{enumerate}
+\item  The algorithm uses the \textsc{PL-True?} function to check if the KB is true from the variable \textit{model} being used, which will have assigned a true or false value to every symbol that was in \textit{symbols}. If the KB is true for the full model represented as \textit{model}, then the algorithm returns if the query sentence is true in the same full model the KB was checked against.
+\item If the KB is not true from the partial model being used, then we return true by default.
+
+\end{enumerate}
+
+If the list of given symbols is not empty, we then assign the first symbol in the list of symbols to a local variable \textit{P} and the rest of symbols in the list of symbols is assigned to a variable called \textit{rest}. The symbol represented by \textit{P} is then removed from \textit{symbols} since it is assigned a true or false value to fulfull the \textit{model} variable.- Algorithm \ref{algorithm:tt_check_all} then performs recursion to complete the assignment of symbols in the \textit{model} variable until the variable \textit{symbols} is empty, which will make the algorithm terminate according to case (a) or (b) previously mentioned.
+
+
+%\item It uses a function called ``\textsc{PL-True?}'' that returns true only if a sentence holds in a model, whether that sentence be a KB represented as a sentence, or a sentence that is a query.
+
+\end{enumerate}
+
+In cases with many propositional symbols, model-checking can be computationally expensive because model-checking enumerates all models consisting of all the symbols in a query sentence and a KB. After model enumeration, the algorithm still needs to check that a query sentence is entailed by a KB by evaluating true or false values for each proposition in that model. As such, the model-checking approach for inference may not always be reasonable to accomplish inference. With $n$ propositional symbols, there are $2^n$ possible models to evaluate. Thus the time complexity of model checking scales by $\mathcal{O}(2^n)$. This is not only the case for the model checking approach. It is known that every logical inference algorithm has a worst-case time complexity of $\mathcal{O}(2^n)$. Therefore, in Section \ref{subsec}, we discuss inference algorithms that use theorem proving which provides a better approach to logical inference.
+
+
+%It follows the definition of entailment, i.e, first enumerate all the models, then secondly see if $\alpha_n$ is true in every model in which KB is true. As mentioned before, models are all possible assignments of \textit{true} or \textit{false} to every proposition symbol \citep{russell2016artificial}. Model checking typically uses BNF grammar. With $n$ symbols, there are $2^n$ possible models, thus the time complexity of model checking scales with $\mathcal{O}(2^n)$. \textit{So every known inference algorithm for propositional logic has a worst-case complexity that is exponential in the size of the input} \citep{russell2016artificial}.\\
+%
+%
+%Models are enumerated using truth tables. Example propositions $p,q,r,s$ and assigned facts $R_1 : \neg (p \wedge r)$ and $R_2  : \neg (q \wedge s)$ are used in Table \ref{table:TT_enumeration}. The KB has random true or false values per model to illustrate that a KB may either be true or false depending on a specific model. As can be seen, the model corresponding to $m_{example}=\{p:false,q:false,r:true,s:false,R_1:true,R_2:true\}$ in the third enumeration row means that sentences $R_1$ and $R_2$ are entailed by our KB because the KB (for illustrative purposes) is also true.
+%
+%\vspace{-0.4cm}
+%
+%\begin{table}[H]
+%	\begin{center}
+%		\begin{displaymath}  % start unumbered math environment
+%			  \begin{array}{|c|c|c|c|c|c||c|}\hline
+%			    p & q & r & s & R_1 : \neg (p \wedge r) & R_2  : \neg (q \wedge s) & KB \\\hline\hline
+%			    F & F & F & F & T & T & F\\\hline
+%			    F & F & F & T & T & T & F\\\hline
+%			    F & F & T & F & T & T & T\\\hline
+%			    \vdots & \vdots & \vdots & \vdots & \vdots & \vdots & \vdots\\\hline
+%			    T & T & T & T & F & F & F\\\hline
+%			  \end{array}
+%		  \end{displaymath}
+%	\end{center}	
+%	
+%	\caption{TT enumerations for example propositions $p,q,r,s$ with corresponding truth or false KB outcomes.}
+%\label{table:TT_enumeration}
+%\end{table}
+%
+%
+%\vspace{-0.6cm}
+%This inference process is captured in Algorithms \ref{algorithm:tt_check_all} and \ref{algorithm:TT_entails}. The mechanism for model checking is encoded by \textsc{TT-Check-All}. \textsc{PL-True?} in Algorithm \ref{algorithm:tt_check_all} (line 3) computes the truth value of a PL sentence in a model. Algorithm \ref{algorithm:tt_check_all} takes as parameters a KB, a query sentence, symbols of that query sentence as well as a set for modeling where a symbol is true or false. The algorithm continues recursively until terminating in lines 3 or 4 when either the query sentence checked by executing \textsc{PL-True?} or if the KB is false, \textit{true} is just returned.
+%
+%
+%
+%\textsc{TT-Entails?} (Algorithm \ref{algorithm:TT_entails}) gives us the ability to give as the input to the inference procedure, what we want to know is true or false, a sentence $\alpha$. We also have to include as an input the KB we are considering. It performs a recursive enumeration of a finite space of assignments to symbols using \textsc{TT-Check-All} \citep{russell2016artificial}. 
+%The algorithm is \textbf{sound} because it directly implements entailment. An algorithm is sound if it only derives entailed sentences. The algorithm is \textbf{complete} because it works for any KB and query sentence $\alpha$ and always terminates since there are finitely many models to check. Completeness means that an inference algorithm can derive any sentence that is entailed. We aim for completeness in inference algorithm design.
+
+%\vspace{0.5cm}
+%\begin{algorithm}[H]
+%\label{algorithm:TT_entails}
+%\caption{\textsc{TT-Entails?} as in \citep{russell2016artificial}}
+%\SetAlgoLined
+%\DontPrintSemicolon
+%\KwIn{\textit{KB} (Knowledge Base, a sentence in PL), $\alpha$ (the query sentence)}
+%%\Parameter{\textit{KB} (Knowledge Base, a sentence in PL), $\alpha$ (the query sentence)}
+%%\KwOut{\textit{action}}
+%\textbf{Begin} \\
+%\Indp{
+%	\textit{symbols} $\leftarrow$ a list of the proposition symbols in \textit{KB} and $\alpha$\\
+%	\textbf{return} \textsc{TT-Check-All} (\textit{KB}, $\alpha$, \textit{symbols}, \{ \} )\\
+%	}
+%\Indm 
+%\textbf{End}   \\
+%\end{algorithm}
+%\vspace{0.5cm}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\subsection{Propositional Theorem Proving}
-\label{subsubsec: Inference_PL_theorem_proving}
-
-Now that we we have looked at the model checking approach, we would like to find some way to carry out inference more quickly and efficiently. In many practical cases, \textit{finding a proof can be more efficient because the proof can ignore irrelevant propositions, no matter how many of them there are} \citep{russell2016artificial}. In short, we apply inference rules directly to the sentences in our KB so that we can construct a proof for a query sentence without enumerating or even referencing models. The advantage of theorem proving that is even if the number of models for a KB is huge, the proof to derive a query sentence may be short to improve inference time compared to model checking. Theorem proving uses CNF grammar structured in \ref{subsubsec:CNF}.
-Three things to consider when using theorem for inference relating to entailment ais:
-
-\begin{itemize}
-	\item \textbf{Logical equivalence} - Arbitrary sentences $\alpha$ and $\beta$ are logically equivalent if they are true in the same set of models \citep{russell2016artificial}. \textit{Alternatively}, we can say that they are equivalent if they entail each other:
-	
-\begin{equation}
-\alpha \equiv \beta \text{  } \Leftrightarrow \text{  } (\alpha \models \beta) \wedge (\beta \models \alpha)
-\label{eq:logical_equiv}
-\end{equation}	
-	
-	\item \textbf{Validity} - A sentence is valid if it is true for all models. Valid sentences are known as \textit{tautologies}, for example $P \wedge \neg P$ is true in all models of enumeration. The \textbf{deduction theorem} is derived from validity. Using again two arbitrary sentences $\alpha$ and $\beta$:
-	
-\begin{equation}
-\alpha \models \beta \textit{ if and only if }(\alpha \Rightarrow \beta) \textit{ is valid}
-\label{eq:logical_validity}
-\end{equation}	
-	
-\textit{Conversely}, we can say that every valid implication sentence describes a proved inference.
-	
-	\item \textbf{Satisfiability} - A sentence is satisfiable if it is true by \textit{some} model. This refers to the \textbf{SAT} problem. It was the first problem proved to be NP-complete \citep{russell2016artificial}. In a general search context, satisfiability  is a CSP problem. We can prove $\beta$ from $\alpha$ by checking unsatisfiability. It is also called \textit{proof by refutation}. We assume $\beta$ to be false, then show that it leads to contradiction with known primary facts about  $\alpha$. 
-
-\begin{equation}
-\alpha \models \beta \textit{ if and only if }(\alpha \wedge \neg \beta) \textit{ is unsatisfiable}
-\label{eq:logical_satisfiability}
-\end{equation}	
-
-	\item \textbf{Monotonicity} - The number of entailed sentences can only increase while knowledge sentences that are added to the the KB \textit{increases}.
-	
-
-\begin{equation}
-\text{if } KB \models \alpha \hspace{0.5cm} \text{then} \hspace{0.5cm} KB \wedge \beta \models \alpha  
-\label{eq:logical_monotonicity}
-\end{equation}	
-
-
-\end{itemize}
-
-
-Two basic inference rules are needed for theorem proving, namely \textbf{Modus Ponens} and \textbf{And-Elimination}:
-
-\begin{itemize}
-
-
-\item \textit{Modus Ponens} is the the best-known rule. It is described in equation \ref{eq:modus_ponens}.
-
-\begin{equation}
-\dfrac{\alpha \Rightarrow \beta, \hspace{0.5cm} \alpha}{\beta}.
-\label{eq:modus_ponens}
-\end{equation}
-
-We can read the notation as: If a sentence in the form $\alpha \Rightarrow \beta$ is given, and we are also give $\alpha$, we can infer sentence $\beta$ (which is shown under the line). Not all inference rules work in both directions, for example, in equation \ref{eq:modus_ponens} we cannot use Modus Ponens to obtain $\alpha$ when given $\beta$ and sentence $\alpha \Rightarrow \beta$.
-
-\item \textit{And-Elimination} is another useful rule. It is described in equation \ref{eq:and_elimination}.
-
-
-\begin{equation}
-\dfrac{\alpha \wedge \beta}{\alpha}.
-\label{eq:and_elimination}
-\end{equation}
-
-We can read the notation as: If we are given a pair of sentences in conjunction (arbitrarily $\alpha$ and $\beta$), we can infer any of the conjuncts.
-
-
-\end{itemize}
-
-If we consider posible truth values of $\alpha$ and $\beta$, we can prove that  Modus Ponens and And-Elimination are sound. Therefore, these rules can be used in cases where applying and generating sound inferences is needed without needing to enumerate models.
-Common logical equivalences can also be used as inference rules, they are shown in Table \ref{table:logical_equivalences}. 
-
-
-\begin{table}[H]
-  \centering
-  \begin{tabular}{cl}
-    \toprule
-    \textbf{Equivalence rule}  \hspace{1cm}   & \textbf{Description}  \\
-    \toprule
-  
-%    $Sentence$ & $AtomicSentence$ | $ComplexSentence$ \\ \midrule
-%    $AtomicSentence$ & \textit{True} | \textit{False} | \textit{$P$} | \textit{$Q$} | \textit{$R$} | ... 
-%    \\  \midrule
-    
-    $(\alpha \wedge \beta) \equiv (\beta \wedge \alpha)$  & Commutativity of $\wedge$ \\
-    $(\alpha \vee \beta) \equiv (\beta \vee \alpha)$  & Commutativity of $\vee$ \\
-    $((\alpha \wedge \beta) \wedge \gamma) \equiv (\alpha \wedge (\beta \wedge \gamma)) $  & Associativity of $\wedge$ \\
-    $((\alpha \vee \beta) \vee \gamma) \equiv (\alpha \vee (\beta \vee \gamma)) $  & Associativity of $\vee$ \\
-    $\neg(\neg \alpha) \equiv \alpha$ & Double-negation elimination \\
-    $(\alpha \Rightarrow \beta) \equiv (\neg \beta \Rightarrow \neg \alpha)$ & Contraposition\\
-    $(\alpha \Rightarrow \beta) \equiv (\neg \alpha \vee \beta)$ & Implication elimination\\
-    $\neg(\alpha \wedge \beta) \equiv (\neg \alpha \vee \neg \beta)$ & De Morgan \\ 
-    $\neg(\alpha \vee \beta) \equiv (\neg \alpha \wedge \neg \beta)$& De Morgan\\
-	$(\alpha \wedge (\beta \vee \gamma)) \equiv ((\alpha \wedge \beta) \vee (\alpha \wedge \gamma)) $  & Distributivity of $\wedge$ over $\vee$ \\
-	$(\alpha \vee (\beta \wedge \gamma))  \equiv ((\alpha \vee \beta) \wedge (\alpha \vee \gamma)) $  & Distributivity of $\vee$ over $\wedge$ \\
-   	 
-   	 
-%   	 \midrule
-%	Operator Precedence & $\neg,\wedge,\vee,\Rightarrow,\Leftrightarrow$   \\
-    \bottomrule
-  \end{tabular}
-  \caption{Standard logical equivalences with symbols $\alpha,\beta,\gamma$ being sentences in PL}
-  \label{table:logical_equivalences}
-\end{table}
+%\subsection{Logical Inference using Propositional Theorem Proving}
+%\label{subsubsec: Inference_PL_theorem_proving}
+%
+%
+%Now that we we have looked at the model checking approach, we would like to find some way to carry out inference more quickly and efficiently. In many practical cases, \textit{finding a proof can be more efficient because the proof can ignore irrelevant propositions, no matter how many of them there are} \citep{russell2016artificial}. In short, we apply inference rules directly to the sentences in our KB so that we can construct a proof for a query sentence without enumerating or even referencing models. The advantage of theorem proving that is even if the number of models for a KB is huge, the proof to derive a query sentence may be short to improve inference time compared to model checking. Theorem proving uses CNF grammar structured in \ref{subsubsec:CNF}.
+%Three things to consider when using theorem for inference relating to entailment ais:
+%
+%\begin{itemize}
+%	\item \textbf{Logical equivalence} - Arbitrary sentences $\alpha$ and $\beta$ are logically equivalent if they are true in the same set of models \citep{russell2016artificial}. \textit{Alternatively}, we can say that they are equivalent if they entail each other:
+%	
+%\begin{equation}
+%\alpha \equiv \beta \text{  } \Leftrightarrow \text{  } (\alpha \models \beta) \wedge (\beta \models \alpha)
+%\label{eq:logical_equiv}
+%\end{equation}	
+%	
+%	\item \textbf{Validity} - A sentence is valid if it is true for all models. Valid sentences are known as \textit{tautologies}, for example $P \wedge \neg P$ is true in all models of enumeration. The \textbf{deduction theorem} is derived from validity. Using again two arbitrary sentences $\alpha$ and $\beta$:
+%	
+%\begin{equation}
+%\alpha \models \beta \textit{ if and only if }(\alpha \Rightarrow \beta) \textit{ is valid}
+%\label{eq:logical_validity}
+%\end{equation}	
+%	
+%\textit{Conversely}, we can say that every valid implication sentence describes a proved inference.
+%	
+%	\item \textbf{Satisfiability} - A sentence is satisfiable if it is true by \textit{some} model. This refers to the \textbf{SAT} problem. It was the first problem proved to be NP-complete \citep{russell2016artificial}. In a general search context, satisfiability  is a CSP problem. We can prove $\beta$ from $\alpha$ by checking unsatisfiability. It is also called \textit{proof by refutation}. We assume $\beta$ to be false, then show that it leads to contradiction with known primary facts about  $\alpha$. 
+%
+%\begin{equation}
+%\alpha \models \beta \textit{ if and only if }(\alpha \wedge \neg \beta) \textit{ is unsatisfiable}
+%\label{eq:logical_satisfiability}
+%\end{equation}	
+%
+%	\item \textbf{Monotonicity} - The number of entailed sentences can only increase while knowledge sentences that are added to the the KB \textit{increases}.
+%	
+%
+%\begin{equation}
+%\text{if } KB \models \alpha \hspace{0.5cm} \text{then} \hspace{0.5cm} KB \wedge \beta \models \alpha  
+%\label{eq:logical_monotonicity}
+%\end{equation}	
+%
+%
+%\end{itemize}
+%
+%
+%Two basic inference rules are needed for theorem proving, namely \textbf{Modus Ponens} and \textbf{And-Elimination}:
+%
+%\begin{itemize}
+%
+%
+%\item \textit{Modus Ponens} is the the best-known rule. It is described in equation \ref{eq:modus_ponens}.
+%
+%\begin{equation}
+%\dfrac{\alpha \Rightarrow \beta, \hspace{0.5cm} \alpha}{\beta}.
+%\label{eq:modus_ponens}
+%\end{equation}
+%
+%We can read the notation as: If a sentence in the form $\alpha \Rightarrow \beta$ is given, and we are also give $\alpha$, we can infer sentence $\beta$ (which is shown under the line). Not all inference rules work in both directions, for example, in equation \ref{eq:modus_ponens} we cannot use Modus Ponens to obtain $\alpha$ when given $\beta$ and sentence $\alpha \Rightarrow \beta$.
+%
+%\item \textit{And-Elimination} is another useful rule. It is described in equation \ref{eq:and_elimination}.
+%
+%
+%\begin{equation}
+%\dfrac{\alpha \wedge \beta}{\alpha}.
+%\label{eq:and_elimination}
+%\end{equation}
+%
+%We can read the notation as: If we are given a pair of sentences in conjunction (arbitrarily $\alpha$ and $\beta$), we can infer any of the conjuncts.
+%
+%
+%\end{itemize}
+%
+%If we consider posible truth values of $\alpha$ and $\beta$, we can prove that  Modus Ponens and And-Elimination are sound. Therefore, these rules can be used in cases where applying and generating sound inferences is needed without needing to enumerate models.
+%Common logical equivalences can also be used as inference rules, they are shown in Table \ref{table:logical_equivalences}. 
+%
+%
+%\begin{table}[H]
+%  \centering
+%  \begin{tabular}{cl}
+%    \toprule
+%    \textbf{Equivalence rule}  \hspace{1cm}   & \textbf{Description}  \\
+%    \toprule
+%  
+%%    $Sentence$ & $AtomicSentence$ | $ComplexSentence$ \\ \midrule
+%%    $AtomicSentence$ & \textit{True} | \textit{False} | \textit{$P$} | \textit{$Q$} | \textit{$R$} | ... 
+%%    \\  \midrule
+%    
+%    $(\alpha \wedge \beta) \equiv (\beta \wedge \alpha)$  & Commutativity of $\wedge$ \\
+%    $(\alpha \vee \beta) \equiv (\beta \vee \alpha)$  & Commutativity of $\vee$ \\
+%    $((\alpha \wedge \beta) \wedge \gamma) \equiv (\alpha \wedge (\beta \wedge \gamma)) $  & Associativity of $\wedge$ \\
+%    $((\alpha \vee \beta) \vee \gamma) \equiv (\alpha \vee (\beta \vee \gamma)) $  & Associativity of $\vee$ \\
+%    $\neg(\neg \alpha) \equiv \alpha$ & Double-negation elimination \\
+%    $(\alpha \Rightarrow \beta) \equiv (\neg \beta \Rightarrow \neg \alpha)$ & Contraposition\\
+%    $(\alpha \Rightarrow \beta) \equiv (\neg \alpha \vee \beta)$ & Implication elimination\\
+%    $\neg(\alpha \wedge \beta) \equiv (\neg \alpha \vee \neg \beta)$ & De Morgan \\ 
+%    $\neg(\alpha \vee \beta) \equiv (\neg \alpha \wedge \neg \beta)$& De Morgan\\
+%	$(\alpha \wedge (\beta \vee \gamma)) \equiv ((\alpha \wedge \beta) \vee (\alpha \wedge \gamma)) $  & Distributivity of $\wedge$ over $\vee$ \\
+%	$(\alpha \vee (\beta \wedge \gamma))  \equiv ((\alpha \vee \beta) \wedge (\alpha \vee \gamma)) $  & Distributivity of $\vee$ over $\wedge$ \\
+%   	 
+%   	 
+%%   	 \midrule
+%%	Operator Precedence & $\neg,\wedge,\vee,\Rightarrow,\Leftrightarrow$   \\
+%    \bottomrule
+%  \end{tabular}
+%  \caption{Standard logical equivalences with symbols $\alpha,\beta,\gamma$ being sentences in PL}
+%  \label{table:logical_equivalences}
+%\end{table}
 
 
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\subsubsection{Proof by Resolution}
-
+\subsection{Logical Inference by using a Resolution Algorithm}
+\label{sub:Inference_Resolution}
 
 The first procedure for logical inference by theorem proving we look at is \textit{proof by resolution}. This proof yields a complete inference algorithm when used in combination with any \textbf{complete search algorithm}. The idea of resolution is that we take the logical \textsc{OR} of two facts. One of the two facts consists of a positive literal and the other sentence the negation of that literal such that when the sentences are logically \textsc{OR}d together, they \textbf{resolve}.
 For example using example literals $l_1$ and $l_2$, with $l_1: \neg P$ and $l_2: Q \vee P \vee R$. Applying \textbf{unit resolution} on $l_1$ and $l_2$ yields $Q \vee R$, i.e., $P \vee \neg P$ is \textit{resolved} and $Q \vee R$ are called \textit{resolvents}.
@@ -566,8 +691,8 @@ contains the empty clause.}
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
-\subsubsection{The DPLL Algorithm: proof by refutation, the SAT problem, and a complete backtracking algorithm}
-\label{subsubsec:DPLLsec}
+\subsection{Logical Inference by using the DPLL Algorithm}
+\label{subsec:Inference_DPLL}
 
 The second procedure for logical inference by theorem proving we look at is \textit{proof by refutation} also known as \textit{proof by contradiction} in combination with the definition of satisfiability. As discussed, $\alpha \models \beta$ can be tested by seeing if $\alpha \wedge \neg \beta$ is \textit{unsatisfiable}. In the context of inference, we can deduce equation \ref{eq:sat}.
 
@@ -646,9 +771,5 @@ The DPLL algorithm is shown in Algorithm \ref{algorithm:DPLL}, provides the basi
 \vspace{0.5cm}
 
 
-%%%%%%%%%%%%%%%%%%%%%%%%%
-
-%%%%%%%%%%%%%%%%%%%%%%%%%%
-%\section{Graph Theory}
-%\subsection{Directed Graphs}
-%%%%%%%%%%%%%%%%%%%%%%%%%%
+\subsection{Logical Inference using a First-Order Logic}
+\label{subsubsec: fol_inference}
