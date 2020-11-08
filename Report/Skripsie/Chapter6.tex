@@ -22,20 +22,43 @@
 
 \chapter{Conclusion}
 \label{chapter: Conclusion and Recommendations} 
-Shows it is possible. Just one step to make the framework viable.
+
+
+%Restate your research topic.
+This project aimed to find a way to learn the structure of an agent's environment by using an agent's experience.
+An agent had to be placed in an environment, gather information about that environment form a structural representation of that environment.
+
+%Restate the thesis.
+% a long essay or dissertation involving personal research, written by a candidate for a university degree.
+
+%Summarize the main points.
+The agent designed and implemented in this project was able to form representations of environments using states that made up those environment as state definitions. The agent then was able to form state transitions from these state definitions to form a representation of the environment it was placed in. The size of the environments the agent was placed in to learn the structure of were relative small, but the agent was able to learn a representation of these environments. When the agent was placed in an environment that consisted of unique states, the agent was able to predict which state it could transition to with accuracy, but when the agent was placed in an environment with non-unique states, the agent could only partially predict which state it could transition in to. The agent had to perform logical inference to learn the structure of its environment and the only logical inference algorithm explored in this project that allowed the agent to perform reasonably efficient inference was the DPLL algorithm formulated in Section \ref{subsec:Inference_DPLL}.
+
+
+%State the significance or results.
+The significance of these findings are that an agent implemented using a logic-based approach can have the ability to learn a structural representation of its environment and additionally use that learnt representation to make predictions about what the future state of the agent could be.
+
+
+% Future work
+The agent designed in this project moved randomly and sometimes learned the structure of the environment in a very inefficient manner because it remained in one location of the environment for many time steps before transitioning to another. This is wasteful because those time steps could be used to further discover the structure of an environment. In future work, the agent should be able to use the knowledge it has to execute reasonable actions that could result in a faster learning of an agent's environment by moving through the environment intelligently.
+
+%Conclude your thoughts.
+This aim of this project was achieved by using a logic-based approach. This project can be used as a foundation to develop agents that can learn the structure of more complex environments.  
+
+
 
 
 % Expert systems
-\section{Results and Objectives Comparison}
-\section{Improvements and Project Extensions}
+%\section{Results and Objectives Comparison}
+%\section{Improvements and Future Work}
 
-\begin{itemize}
-	\item Multiple Agents for Faster Learning
-	\item Map Learning Agent for 3-Dimensional Environments
-	\item Karnaugh Map Solver for Minimum Logic Hardware
-	\item Improving the Inference Engine with First-Order Logic
-	\item Implementing predictions using Hopfield Networks
-\end{itemize}
+%\begin{itemize}
+%	\item Multiple Agents for Faster Learning
+%	\item Map Learning Agent for 3-Dimensional Environments
+%	\item Karnaugh Map Solver for Minimum Logic Hardware
+%	\item Improving the Inference Engine with First-Order Logic
+%	\item Implementing predictions using Hopfield Networks
+%\end{itemize}
 
 
 

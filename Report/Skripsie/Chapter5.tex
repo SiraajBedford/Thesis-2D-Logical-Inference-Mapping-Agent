@@ -15,55 +15,237 @@
 % What do you observe wrt to the what you expected.
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\chapter{Results and Discussion} 
-\label{chapter:Results_and_Discussion}
+\chapter{Results} 
+\label{chapter:Results}
 
-\section{Results}
+This chapter shows the results obtained using the experimental setup formulated in Section \ref{sec:exp_setup}.
+The results in this chapter focus on the agent's performance for two different environment in Sections \ref{subsec:env_1} and \ref{subsec:env_2}. When trying to simulate inference for an agent using the model-checking approach formulated in Section \ref{subsec:Inference_Model_Checking} and the resolution-based approach in Section \ref{subsec:Inference_Resolution}, the agent was not able to perform inference because the model-checking and resolution-based algorithms tended to the worst-case time-complexity of $\mathcal{O}(2^n)$.
 
+\vspace{-0.4cm}
 
-\subsection{Infernce Time for Percepts and Actions Acquisition}
+\section{Environment 1}
+\label{subsec:env_1}
 
+The first environment considered was a two-dimensional environment with four states.
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.5]{Figures/Environment_1.png}
+    \caption{Agent in Environment 1.}
+    \label{fig:env_1}
+\end{figure}
 
-
-\subsection{Knowledge Base and State Diagram Inspection}
-
-
-
-
-\subsection{Average Iterations to Fully Represent the Environment}
-
-
-\subsection{Inference Time for Identifying Agent State from Environment Representation for different Environment sizes} 
-
-
-
-\subsection{Agent State Prediction}
-
-
-
-\section{Discussion of Results}
+The agent is shown as a yellow block in Figure \ref{fig:env_1}. There are four states in the environment shown in Figure \ref{fig:env_1} that the agent can occupy. These four states are the black blocks in Figure \ref{fig:env_1} including the block the agent occupies.
+The results of one simulation of the agent in the environment is shown in Figure \ref{fig:env_1_sim}. The inference time for each iteration in the simulation is shown on the vertical axis. The iteration number is shown on the horizontal axis. The agent had to learn four unique state definitions to learn the structure of the environment and the figure shows four distinct spikes. This means that each distinct spike represents the time an agent took to learn a state in its environment. The last significant spike occurs around the $25^{th}$ iteration. After this iteration, the agent has learnt all the unique state definitions in the environment. After the agent has learnt the four state definitions, the agent can infer which state it is in based on it's learnt states.
+These four learnt states are in one KB. The agent has to perform an inference based on a knowledge base (KB) that contains only clauses of the four state definitions after the $25^{th}$ iteration. Thus, inference can be performed much quicker for iterations after the $25^{th}$ iteration.
 
 
 
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.65]{Figures/Environment_1_DPLL.png}
+    \caption{A simulation of 200 iteration for the agent using the DPLL algorithm for Environment 1.}
+    \label{fig:env_1_sim}
+\end{figure}
 
-%Ways to test: Numerically and Diagrammatically
-
-%\begin{enumerate}
-%\item Maze size vs total inference time to map entire map 
-%\item KB size vs inference time for different algorithms
-%\item Any others?
-%\end{enumerate}
+\vspace{-0.7cm}
 
 
-%\section{Results}
-%\begin{figure}[H]
-%    \centering
-%    \includegraphics[scale=.5]{Figures/results_example.png}
-%    \caption{Measuring runtime vs clause-to-symbol ratio}
-%    \label{fig:sysdiag}
-%\end{figure}
-%\section{Discussion}
+\begin{table}[H]
+\centering
+\begin{tabular}{ |c|p{5cm}|p{5cm}| }
+\hline
+	Simulation Number & Average Inference Time ($\mu_1$) & Number of iterations to learn all state definitions ($\gamma_1$) \\ \hline
+  1 & 0.0641 & 24 \\
+  2 & 0.1101 & 11 \\
+  3 & 0.0619 & 16  \\
+  4 & 0.1408 & 13 \\
+  5 & 0.0616 & 15\\
+  6 & 0.0544 & 16 \\
+  7 & 0.1939 & 18 \\
+  8 & 0.1010 & 16 \\
+  9 & 0.0751 & 20 \\
+  10 & 0.0767 & 12 \\
+  11 & 0.0782 & 13 \\
+  12 & 0.0603 & 18 \\
+  13 & 0.0812 & 14 \\
+  14 & 0.0703 & 11 \\
+  15 & 0.2377 & 19 \\
+  16 & 0.1766 & 12 \\
+  17 &  0.1078 & 13 \\
+  18 & 0.0718 & 13 \\
+  19 & 0.1090 & 18 \\
+  20 & 0.0647 & 18 \\
+  \hline
+  Mean & 0.0999 & 16\\
+	\hline  
+  
+\end{tabular}
+\caption{Results of twenty simulations of the agent in Environment 1.}
+\label{table:20_sim_env_1}
+\end{table}
 
+The simulation result in Figure \ref{fig:env_1_sim} only shows how the agent learns for one simulation. To validate that the agent can reproduce such a result for many simulations, twenty simulations of the agent in the environment were performed. The results of this experiment can be seen in Table \ref{table:20_sim_env_1}.
+The average inference time, $\mu_1$, is a measure of the how long the agent took to perform inference over 200 iterations in a single simulation of the twenty simulations of the experiment. The mean of all $\mu_1$'s over the twenty simulations is quite low which means the agent performs inference relatively quickly over all the simulations. The number of iterations to learn all four state definitions of Environment 1, $\gamma_1$, is a measure of how quick the agent can learn the structure of the Environment 1. The mean of all $\gamma_1$'s considered for the twenty simulations is 16, which is low compared to the 200 iterations for the agent to learn the environment. Therefore, the agent can learn the environment quickly.
+
+To evaluate if the agent learned the structure of the environment, we can inspect the agent's knowledge. This knowledge consists of the state definitions the agent learnt as well as the transitions between these states. The format of the state definitions shown in Figure \ref{fig:env_1_state_defs} was formulated in Section \ref{subsec:state_sentence_form}. The state definitions the agent learnt are shown as ``State\textunderscore 5'', ``State\textunderscore 6'', `State\textunderscore 4'' and ``State\textunderscore 1'' and the learnt state transitions are then shown in Figure \ref{fig:env_1_state_def_transitions}.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.7]{Figures/env_1_states.png}
+    \caption{Agent's learnt state definitions for Environment 1.}
+    \label{fig:env_1_state_defs}
+\end{figure}
+\vspace{-1cm}
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.7]{Figures/env_1_states_trans.png}
+    \caption{Agent's learnt state transitions for Environment 1.}
+    \label{fig:env_1_state_def_transitions}
+\end{figure}
+
+The state definitions and state transitions learnt by the agent can be validated by inspecting a directed graph they form (Figure \ref{fig:env_1_learnt}) and then that graph can be compared to an directed graph representing the actual structure of Environment 1 (Figure \ref{fig:env_1_actual}). The labels ``ML, MR, MD'' and ``MU'' represent which action the agent does to transition from state to state. States  are shown as the nodes or ``circles'' in Figures \ref{fig:env_1_learnt} and \ref{fig:env_1_actual}. The labels meanings are explained in Section \ref{subsec: sensor_prop_symbols}. Figures \ref{fig:env_1_learnt} and \ref{fig:env_1_actual} are identical and therefore the agent learnt the structure of Environment 1.
+
+\begin{figure}[H]
+\centering
+\begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[scale=.6]{Figures/env_1_state_inspection.png}
+    \caption{Agent's learnt structure of Environment 1.}
+    \label{fig:env_1_learnt}
+\end{subfigure}%
+\begin{subfigure}{.5\textwidth}
+    \centering
+    \includegraphics[scale=.6]{Figures/env_1_state_inspection_actual.png}
+    \caption{Actual structure of Environment 1.}
+    \label{fig:env_1_actual}
+\end{subfigure}
+\caption{Agent's learnt structure of Environment 1 and actual structure of Environment 1 represented as directed graphs.}
+\label{fig:test}
+\end{figure}
+
+The designed agent should also know which state transitions are possible from its learnt knowledge about the environment. Figure \ref{fig:env_1_predict} shows how the designed agent performs state predictions. The variable `x' in Figure \ref{fig:env_1_predict}, is a substitution variable which returns the result of an inference for which states the agent can transition to given a action and known state. Comparing Figures \ref{fig:env_1_learnt} and \ref{fig:env_1_predict}, we see the agent has the ability to predict which singular state it can transition.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{Figures/env_1_state_prediction.png}
+    \caption{Agent state predictions for Environment 1.}
+    \label{fig:env_1_predict}
+\end{figure}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+
+\section{Environment 2}
+\label{subsec:env_2}
+
+The second environment considered was a two-dimensional environment that had 8 states. The agent is shown as a yellow block in Figure \ref{fig:env_2}. There are eight states in the environment shown in Figure \ref{fig:env_2} that the agent can occupy. These eight states are the black blocks in Figure \ref{fig:env_2} including the block the agent occupies.
+The results of one simulation of the agent in the environment is shown in Figure \ref{fig:env_2_sim}. The inference time for each iteration in the simulation is shown on the vertical axis. The iteration number is shown on the horizontal axis. The agent had to learn eight state definitions to learn the structure of the environment, but Figure \ref{fig:env_2_sim} only shows six distinct spikes. This means the agent perceives the environment to only consist of six states. The last significant spike occurs around the $63^{rd}$ iteration. After this iteration, the agent has learnt all the state definitions in the environment. After the agent learnt the six state definitions, the agent can infer which state it is in based on it's learnt states.
+These six learnt states are in one KB. The agent has to perform an inference based on a knowledge base (KB) that contains only clauses of the six state definitions after the $63^{rd}$ iteration. Thus, inference can be performed much quicker for iterations after the $63^{rd}$ iteration.
+
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.7]{Figures/Environment_2.png}
+    \caption{Agent in Environment 2.}
+    \label{fig:env_2}
+\end{figure}
+
+\vspace{-0.7cm}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.7]{Figures/Environment_2_DPLL.png}
+    \caption{A simulation of 200 step for the agent using the DPLL algorithm for Environment 2.}
+    \label{fig:env_2_sim}
+\end{figure}
+
+\vspace{-0.6cm}
+
+The simulation result in Figure \ref{fig:env_2_sim} only shows how the agent learns for one simulation. To validate that the agent can reproduce such a result for many simulations, twenty simulations of the agent in the environment were performed. The results of this experiment can be seen in Table \ref{table:20_sim_env_2}.
+The average inference time, $\mu_2$, is a measure of the how long the agent took to perform inference over 200 iterations in a single simulation of the twenty simulations of the experiment. The mean of all $\mu_2$'s over the twenty simulations is quite low which means the agent performs inference relatively quickly over all the simulations. The number of iterations to learn all six state definitions of Environment 2, $\gamma_2$, is a measure of how quick the agent can learn the structure of the Environment 2. The mean of all $\gamma_2$'s considered for the twenty simulations is 49, which is low compared to the 200 iterations for the agent to learn the environment. Therefore, the agent can learn the environment reasonably quickly.
+
+
+
+\begin{table}[H]
+\begin{tabular}{ |c|p{5cm}|p{5cm}| }
+\hline
+	Simulation Number & Average Inference Time ($\mu_2$) & Number of iterations to learn all state definitions ($\gamma_2$) \\ \hline
+  1 & 0.4762 & 62 \\
+  2 & 0.2112 & 35 \\
+  3 & 0.1759 & 37 \\
+  4 & 0.2071 & 23 \\
+  5 & 0.1382 & 32 \\
+  6 & 0.2660 & 59 \\
+  7 & 0.2343 & 93 \\
+  8 & 0.2154 & 75 \\
+  9 & 0.2250 & 75 \\
+  10 & 0.2507 & 52 \\
+  11 & 0.1948 & 63 \\
+  12 & 0.2848 & 39 \\
+  13 & 0.4903 & 22 \\
+  14 & 0.4587 & 27 \\
+  15 & 0.2852 & 78 \\
+  16 & 0.1973 & 26 \\
+  17 & 0.3098 & 30 \\
+  18 & 0.2075 & 58 \\
+  19 & 0.2194 & 40 \\
+  20 & 0.2993 & 42 \\
+  \hline
+  Mean & 0.267355 & 49\\
+	\hline  
+\end{tabular}
+\caption{Results of twenty simulations of the agent in Environment 2.}
+\label{table:20_sim_env_2}
+\end{table}
+
+
+To evaluate if the agent learned the structure of the environment, we can inspect the agent's knowledge. This knowledge consists of the state definitions the agent learnt as well as the transitions between these states. The format of the state definitions shown in Figure \ref{fig:env_2_state_defs} was formulated in Section \ref{subsec:state_sentence_form}. The state definitions the agent learnt are shown as ``State\textunderscore 10'', ``State\textunderscore 2'', `State\textunderscore 7'', `State\textunderscore 16'', `State\textunderscore 1'' and ``State\textunderscore 4'' and the learnt state transitions are then shown in Figure \ref{fig:env_2_state_def_transitions}.
+
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.8]{Figures/env_2_states.png}
+    \caption{Agent's learnt state definitions for Environment 2.}
+    \label{fig:env_2_state_defs}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.7]{Figures/env_2_states_trans.png}
+    \caption{Agent's learnt state transitions for Environment 2.}
+    \label{fig:env_2_state_def_transitions}
+\end{figure}
+
+
+The state definitions and state transitions learnt by the agent can be validated by inspecting a directed graph they form (Figure \ref{fig:env_2_learnt}) and then that graph can be compared to an directed graph representing the actual structure of Environment 2 (Figure \ref{fig:env_2_actual}). The labels ``ML, MR, MD'' and ``MU'' represent which action the agent does to transition from state to state. States  are shown as the nodes or ``circles'' in Figures \ref{fig:env_2_learnt} and \ref{fig:env_2_actual}. The labels meanings are explained in Section \ref{subsec: sensor_prop_symbols}. Figures \ref{fig:env_2_learnt} and \ref{fig:env_2_actual} are not identical and therefore the agent partially learnt the structure of Environment 2.
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/env_2_state_inspection.png}
+    \caption{Agent's learnt structure of Environment 2 expressed as a directed graph.}
+    \label{fig:env_2_learnt}
+\end{figure}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/env_2_state_inspection_actual.png}
+    \caption{Actual structure of Environment 2 expressed as a directed graph.}
+    \label{fig:env_2_actual}
+\end{figure}
+
+The designed agent should also know which state transitions are possible from its learnt knowledge about the environment. Figure \ref{fig:env_2_predict} shows how the designed agent performs state predictions. The variable `x' in Figure \ref{fig:env_2_predict}, is a substitution variable which returns the result of an inference for which states the agent can transition to given a action and known state. Comparing Figures \ref{fig:env_2_learnt} and \ref{fig:env_2_predict}, we see the agent has the ability to predict which state(s) it can transition to. The prediction is not always singular when the agent is in ``State\textunderscore 2'' or ``State\textunderscore 7''. This is because the agent learns that the blocks that form the middle of Environment 2 are perceived to be the same and that when the agent is on of these middle blocks, if it moves left or right, it will either perceive that it is in the same state (agent sees same state percepts) or that it can move to the far most left or right boundaries of Environment 2. 
+This results in two state prediction when the agent is in ``State\textunderscore 2'' or ``State\textunderscore 7'' and moves left or right. 	
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=0.7]{Figures/env_2_state_prediction.png}
+    \caption{Agent state predictions for Environment 2.}
+    \label{fig:env_2_predict}
+\end{figure}
 
 

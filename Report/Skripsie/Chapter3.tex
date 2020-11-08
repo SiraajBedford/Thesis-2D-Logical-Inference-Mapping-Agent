@@ -98,19 +98,7 @@ The experiment steps can be considered as:
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
-\section{Metrics}
-%I want to measure whether I meet the of the objects.
-%This section says how and what I am going to measure.
-%List what you intend to measure and how do you intend to measure it.
-%You can match the metrics up to the objectives.
-Relating to the objectives defined in Chapter \ref{chapter:Introduction}, the following are the metrics to reach those objectives:
 
-\begin{itemize}
- \item Logical inference - The inference algorithm with fastest inference time will be chosen if it can perform that inference in less than 1 second.
- \item KB memory management - The KB size must be kept at some relatively constant size from one time step to the next so that inference time does not take longer than in the previous time step.
- \item Learning state definitions - The number of learnt state definition should be within 10\% of the number of open blocks that the agent can roam on.
- \item Representative knowledge graphing - If we can clearly see that the representative graph matches the way we (the designers) see the environment, this objective is met.
-\end{itemize}
 
 
 \section{Agent-Environment Interface}
@@ -198,6 +186,7 @@ The sensor measurements the agent takes consists of whether the the immediate bl
 
 
 \subsection{State Sentence Formulation and Generation}
+\label{subsec:state_sentence_form}
 
 The partial states of the environment the agent can experience can be expressed as logical sentence of ANDs of the surrounding blocks the agent perceives in the state as well as the action(s) the agent performed or did not perform to get to that state. The percepts sentence components can be summarised as a column vector as seen in Equation \ref{eq:percept_vector} and the action sentence can also be summarised this way as shown in Equation \ref{eq:action_vector}. The state sentence $\mathcal{S}_t$ can then be represented as the implication of logical ANDs of the percept and action sentences at time \textit{t} as seen in Equation \ref{eq:state_vector}.
 

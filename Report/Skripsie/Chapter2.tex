@@ -698,7 +698,7 @@ If the result of \textsc{Pl-Resolve} is not true, the iterative loop continues a
 \item When exiting the \textbf{for each} loop, if the list variable \textit{new} does contain unresolved clauses, the query is not entailed by the KB. The program then returns false.
 \end{enumerate}
 
-The resolution algorithm shown in Algorithm \ref{algorithm:resolution} provides an improvement over the model-checking approach discussed in Section \ref{subsec:Inference_Model_Checking} because it does not consider irrelevamt propositions for accomplishing inference. Although this is an improvement, it still has to compare all pairs of clauses in the expression shown in Equation \ref{eq:proof_refutation}. In Section \ref{subsec:Inference_DPLL}, we consider an algorithm that immediately terminates when it knows a query sentence is false for a given KB.
+The resolution algorithm shown in Algorithm \ref{algorithm:resolution} provides an improvement over the model-checking approach discussed in Section \ref{subsec:Inference_Model_Checking} because it does not consider irrelevamt propositions for accomplishing inference. Although this is an improvement, it still has to compare all pairs of clauses in the expression shown in Equation \ref{eq:proof_refutation}. In Section \ref{subsec:Inference_DPLL}, we consider an algorithm that models logical inference as a search procedure to reduce the time logical inference takes to be accomplished.
 
 %One of the two facts consists of a positive literal and the other sentence the negation of that literal such that when the sentences are logically \textsc{OR}d together, they \textbf{resolve}.
 %For example using example literals $l_1$ and $l_2$, with $l_1: \neg P$ and $l_2: Q \vee P \vee R$. Applying \textbf{unit resolution} on $l_1$ and $l_2$ yields $Q \vee R$, i.e., $P \vee \neg P$ is \textit{resolved} and $Q \vee R$ are called \textit{resolvents}.
@@ -733,19 +733,15 @@ The resolution algorithm shown in Algorithm \ref{algorithm:resolution} provides 
 %$\alpha$ and $\beta$ in propositional logic, decide whether $\alpha \models \beta$ \citep{russell2016artificial}. We introduce the \textbf{resolution closure} $RC(S)$ of a set of clauses, $S$, which is the set of all clauses derivable by repeated application of the resolution clauses in $S$ or their derivatives \citep{russell2016artificial}. Algorithm \ref{algorithm:resolution} uses  $RC(S)$ to calculate final value of the \textit{clauses}. We can see that $RC(S)$ must be finite because there are only finitely many distinct clauses that can be constructed out of the symplos $P_1, \cdots, P_k$ in $S$. Therefore \textsc{PL-Resolution} always terminates. The completeness theorem for resolution in PL is also known as the \textbf{ground resolution theorem}: \textit{If a set of clauses is unsatisfiable, then the resolution closure of those clauses
 %contains the empty clause.}
 
-
-
-
-
-
-
-
-
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
 
 \subsection{Logical Inference by using the DPLL Algorithm}
 \label{subsec:Inference_DPLL}
+
+The aim of the project is to place an agent in an environment and let the agent discover the structure of the environment for itself. The faster the agent can deduce where it is in the environment The Davis, Putnam, Logemann and Loveland (DPLL) algorithm w
+
+
 
 The second procedure for logical inference by theorem proving we look at is \textit{proof by refutation} also known as \textit{proof by contradiction} in combination with the definition of satisfiability. As discussed, $\alpha \models \beta$ can be tested by seeing if $\alpha \wedge \neg \beta$ is \textit{unsatisfiable}. In the context of inference, we can deduce equation \ref{eq:sat}.
 
@@ -777,7 +773,7 @@ The DPLL algorithm, i.e., Algorithm \ref{algorithm:DPLL} takes in a sentence in 
 
 \end{itemize}
 
-The DPLL algorithm is shown in Algorithm \ref{algorithm:DPLL}, provides the basis of the search process, while Algorithm \ref{algorithm:DPLL_satisfiable} allows us to pass a sentence and see if the sentence is satisfiable or not. If the sentence is unsatisfiable, we can conclude the sentence is entailed by the KB and inference is carried out. 
+The DPLL algorithm is shown in Algorithm \ref{algorithm:DPLL}ds, provides the basis of the search process, while Algorithm \ref{algorithm:DPLL_satisfiable} allows us to pass a sentence and see if the sentence is satisfiable or not. If the sentence is unsatisfiable, we can conclude the sentence is entailed by the KB and inference is carried out. 
 
 %\vspace{0.5cm}
 %\begin{algorithm}[H]
@@ -826,3 +822,10 @@ The DPLL algorithm is shown in Algorithm \ref{algorithm:DPLL}, provides the basi
 
 \subsection{Logical Inference using a First-Order Logic}
 \label{subsubsec: fol_inference}
+
+\begin{figure}[H]
+    \centering
+    \includegraphics[scale=.6]{Figures/fol_fc_ask.png}
+    \caption{Firs-Order Logic Inference}
+    \label{fig:fol_diag}
+\end{figure}
