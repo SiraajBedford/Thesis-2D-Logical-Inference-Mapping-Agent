@@ -119,12 +119,14 @@ From the problem statement and scope in Section \ref{sec:problem_statement}, the
 
 
 \subsection{Ability to Perform Logical Inference}
+\label{obj_1:log_inference}
 
 As mentioned in Section \ref{sec:problem_statement}, the information the agent acquires are states it experiences when moving through the environment as well as actions it executes. A state the agent experiences can be stored as a state definition in a logical sentence and the actions can also be stored as logical sentences. These logical sentences are stored in a knowledge base (KB). The agent has to be able to use this stored knowledge. The agent can make use of logical inference to query the knowledge in this knowledge base. The queries the agent can make using inference are queries used to infer which state the agent is in as well as the actions the agent executes. Logical inference can be performed by using inference algorithms.
 
 %The agent must use logical inference to determine which state it is in from percept and action propositions acquired over time (percept history) which are stored in a KB. It must be accomplished by using logical inference algorithms.
 
 \subsection{Ability to Manage Knowledge Base Size}
+\label{obj_2:knowledge_base_size}
 
 As mentioned in Section \ref{sec:problem_statement}, the agent moves through the environment to gather information and stores that information as logical sentences. These logical sentences are stored in a KB as it gathers more and more logical sentences, the size of the KB increases. The size of the KB can determine the inference time of an inference algorithm the agent uses to query the KB. The more logical sentences stored in a KB, the longer the inference time is and the less logical sentences stored in a KB, the shorter the inference time is. Therefore, the KB that the agent queries must be managed from one time step to the next in such a way that the size of the KB results in a short inference time. The importance of a short inference time is that the agent can learn quicker using logical inference. 
 
@@ -132,6 +134,7 @@ As mentioned in Section \ref{sec:problem_statement}, the agent moves through the
 %The states and links between the states as stored in the knowledge based must be represented as a discrete mathematical graph for interpretability of the knowledge the agent acquires over time since the agent does not know its co-ordinates in the environment, we (the agent designers) have to have some way of knowing what the agent learns.
 
 \subsection{Ability to Learn State Transitions Using Inference}
+\label{obj_3:state_transitions}
 
 The state definitions and actions stored as logical sentences in the agent's knowledge base can be used to learn state transitions that can be used to represent the structure of an an environment the agent is in. A state transition consists of information of the agent's previously inferred state, current inferred state and action required to transition from the previously inferred state to the current inferred state. The state transitions inferred can be used to evaluate the problem solution since all the state transitions possible in an environment can link the learnt state definitions in such a way that the resulting map of state transitions can form a representation of the environment. The representation of the environment is the learnt structure of the environment and can be compared with the actual structure of the environment to evaluate the designed solution.
 
@@ -178,7 +181,7 @@ The following chapters aim to provide the necessary knowledge for understanding 
 	
 	\item \textbf{\textit{Chapter 4: Agent Implementation and Experimental Setup}}, explains the implementation of the agent design and goes into detail about how the design is made possible using code. This chapter also explains the experimental setup of code used for simulations to obtain results that we can draw conclusions from. 
 	
-	\item \textbf{\textit{Chapter 5: Results}}, shows the observed outcomes of experiments qualitatively and quantitatively. 
+	\item \textbf{\textit{Chapter 5: Results}}, shows the observed outcomes of experiments qualitatively and quantitatively. A discussion of the results and objectives set in Chapter \ref{chapter:Introduction} is also done.
 	
 	\item \textbf{\textit{Chapter 6: Conclusion}}, concludes if the objectives set in Chapter \ref{chapter:Introduction} are met. Possible improvements and extensions are mentioned as well.
 \end{itemize}

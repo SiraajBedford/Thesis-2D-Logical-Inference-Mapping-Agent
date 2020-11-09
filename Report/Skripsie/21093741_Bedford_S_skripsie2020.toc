@@ -21,32 +21,24 @@
 \contentsline {subsection}{\numberline {2.2.2}Propositional Logic Syntax and Semantics}{8}{subsection.2.2.2}%
 \contentsline {subsubsection}{\numberline {2.2.2.1}Backus-Naur Form Grammar}{8}{subsubsection.2.2.2.1}%
 \contentsline {subsubsection}{\numberline {2.2.2.2}Conjunctive Normal Form Grammar}{11}{subsubsection.2.2.2.2}%
-\contentsline {subsection}{\numberline {2.2.3}First-Order Logic Syntax and Semantics}{12}{subsection.2.2.3}%
-\contentsline {section}{\numberline {2.3}Knowledge-Based Agents and Logical Inference}{13}{section.2.3}%
-\contentsline {subsection}{\numberline {2.3.1}Logical Inference by using a Model Checking Algorithm}{14}{subsection.2.3.1}%
-\contentsline {subsection}{\numberline {2.3.2}Logical Inference by using a Resolution Algorithm}{16}{subsection.2.3.2}%
-\contentsline {subsection}{\numberline {2.3.3}Logical Inference by using the DPLL Algorithm}{18}{subsection.2.3.3}%
-\contentsline {subsection}{\numberline {2.3.4}Logical Inference using a First-Order Logic}{20}{subsection.2.3.4}%
-\contentsline {chapter}{\numberline {3}Agent Design}{21}{chapter.3}%
-\contentsline {section}{\numberline {3.1}System Architecture}{21}{section.3.1}%
-\contentsline {section}{\numberline {3.2}Mapping Agent}{22}{section.3.2}%
-\contentsline {subsection}{\numberline {3.2.1}Logic Engine}{22}{subsection.3.2.1}%
-\contentsline {subsection}{\numberline {3.2.2}Inference Engine}{22}{subsection.3.2.2}%
-\contentsline {subsection}{\numberline {3.2.3}Knowledge Base}{22}{subsection.3.2.3}%
-\contentsline {subsection}{\numberline {3.2.4}Agent-Environment Boundary Rules}{23}{subsection.3.2.4}%
-\contentsline {section}{\numberline {3.3}Environment}{23}{section.3.3}%
-\contentsline {section}{\numberline {3.4}Methodology}{23}{section.3.4}%
-\contentsline {section}{\numberline {3.5}Agent-Environment Interface}{24}{section.3.5}%
-\contentsline {section}{\numberline {3.6}Knowledge Based Agent}{24}{section.3.6}%
-\contentsline {subsection}{\numberline {3.6.1}Sensor Input and Reference Propositional Symbols}{25}{subsection.3.6.1}%
-\contentsline {subsection}{\numberline {3.6.2}State Sentence Formulation and Generation}{26}{subsection.3.6.2}%
-\contentsline {section}{\numberline {3.7}Environment Representation Creation}{27}{section.3.7}%
-\contentsline {chapter}{\numberline {4}Agent Implementation and Experimental Setup}{30}{chapter.4}%
-\contentsline {section}{\numberline {4.1}Experimental Setup}{30}{section.4.1}%
-\contentsline {chapter}{\numberline {5}Results}{31}{chapter.5}%
-\contentsline {section}{\numberline {5.1}Environment 1}{31}{section.5.1}%
-\contentsline {section}{\numberline {5.2}Environment 2}{34}{section.5.2}%
-\contentsline {chapter}{\numberline {6}Conclusion}{39}{chapter.6}%
-\contentsline {chapter}{References}{40}{section*.47}%
-\contentsline {chapter}{Appendix A: Project Planning Schedule}{41}{appendix*.48}%
-\contentsline {chapter}{Appendix B: Outcomes Compliance}{42}{appendix*.50}%
+\contentsline {section}{\numberline {2.3}Knowledge-Based Agents and Logical Inference}{12}{section.2.3}%
+\contentsline {subsection}{\numberline {2.3.1}Logical Inference by using a Model Checking Algorithm}{13}{subsection.2.3.1}%
+\contentsline {subsection}{\numberline {2.3.2}Logical Inference by using a Resolution Algorithm}{15}{subsection.2.3.2}%
+\contentsline {subsection}{\numberline {2.3.3}Logical Inference by using the DPLL Algorithm}{17}{subsection.2.3.3}%
+\contentsline {chapter}{\numberline {3}Agent Design}{19}{chapter.3}%
+\contentsline {section}{\numberline {3.1}Agent-Environment Interface}{19}{section.3.1}%
+\contentsline {subsection}{\numberline {3.1.1}Sensor Input and Reference Propositional Symbols}{19}{subsection.3.1.1}%
+\contentsline {subsection}{\numberline {3.1.2}State Definitions and State Transitions}{21}{subsection.3.1.2}%
+\contentsline {section}{\numberline {3.2}Knowledge Based Agent}{21}{section.3.2}%
+\contentsline {chapter}{\numberline {4}Agent Implementation and Experimental Setup}{24}{chapter.4}%
+\contentsline {section}{\numberline {4.1}Agent Implementation in Code}{24}{section.4.1}%
+\contentsline {section}{\numberline {4.2}Experimental Setup}{24}{section.4.2}%
+\contentsline {chapter}{\numberline {5}Results}{25}{chapter.5}%
+\contentsline {section}{\numberline {5.1}Environment 1}{25}{section.5.1}%
+\contentsline {section}{\numberline {5.2}Environment 2}{28}{section.5.2}%
+\contentsline {section}{\numberline {5.3}Discussion of Results and Objectives}{33}{section.5.3}%
+\contentsline {chapter}{\numberline {6}Conclusion}{34}{chapter.6}%
+\contentsline {chapter}{References}{35}{section*.43}%
+\contentsline {chapter}{Appendix A: Project Planning Schedule}{36}{appendix*.44}%
+\contentsline {chapter}{Appendix B: Outcomes Compliance}{37}{appendix*.46}%
+\contentsline {chapter}{Appendix C: Code Extracts}{38}{appendix*.48}%

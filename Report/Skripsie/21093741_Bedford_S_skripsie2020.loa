@@ -4,11 +4,11 @@
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
-\contentsline {algocf}{\numberline {1}{\ignorespaces \textsc {Model-Checking} (adapted from Russel and Norvig \citep {russell2016artificial})\relax }}{14}{algocf.1}%
-\contentsline {algocf}{\numberline {2}{\ignorespaces \textsc {Resolution} (adapted from Russel and Norvig \citep {russell2016artificial}\relax }}{17}{algocf.2}%
-\contentsline {algocf}{\numberline {3}{\ignorespaces \textsc {DPLL} as in \citep {russell2016artificial}\relax }}{19}{algocf.3}%
+\contentsline {algocf}{\numberline {1}{\ignorespaces \textsc {Model-Checking} (adapted from Russel and Norvig \citep {russell2016artificial})\relax }}{13}{algocf.1}%
+\contentsline {algocf}{\numberline {2}{\ignorespaces \textsc {Resolution} (adapted from Russel and Norvig \citep {russell2016artificial}\relax }}{16}{algocf.2}%
+\contentsline {algocf}{\numberline {3}{\ignorespaces \textsc {DPLL} (adapted from Russel and Norvig \citep {russell2016artificial})\relax }}{17}{algocf.3}%
 \addvspace {10\p@ }
-\contentsline {algocf}{\numberline {4}{\ignorespaces \textsc {Directed Graph Building Algorithm}\relax }}{28}{algocf.4}%
+\addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }
 \addvspace {10\p@ }

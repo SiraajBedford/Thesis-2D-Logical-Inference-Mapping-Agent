@@ -20,14 +20,34 @@
 \chapter{Agent Implementation and Experimental Setup} 
 \label{chapter: implementation_and_setup}
 
+\vspace{-1cm}
+
+The design of the knowledge-based agent in Chapter \ref{chapter:Agent_Design} relies on the implementation of 3 crucial components for successful operation, namely the KB and the inference algorithm for the inference engine and the sensor implementation. The implementation of the KB and the inference algorithm come from Python libraries provided by \citep{aima}. All code in this project was implemented using Python. 
+
+\section{Agent Implementation in Code}
+\label{sec:imp_code}
+
+%Knowledge Base
+An implementation of a propositional logic KB is shown in Listing 1 in Appendix C. This knowledge base implementation was used for all knowledge bases shown in Figure \ref{fig:agent_design}. It allows us to add logic expression and converts then to clauses for theorem proving inference algorithms.
+%Inference Algorithms
+Implementations of the inference algorithms in Sections \ref{subsec:Inference_Model_Checking}, \ref{subsec:Inference_Resolution} and \ref{subsec:Inference_DPLL} is shown 2, 3 and 4 respectively in Appendix C. They were used by the logic engine in Figure \ref{fig:agent_design}. 
+%Sensor Implementations
+The sensor implementation is original work, but used classes from libraries provided by \citep{aima} to perform logic operations. The sensor implmentation converts the percepts of the state by conjunctions and the result of the conjunction is stored in a variable that is used to create P1 and P2 in Figure \ref{fig:agent_design}.
 
 
 
 \section{Experimental Setup}
 \label{sec:exp_setup}
 
-
-
+The agent designed in Chapter \ref{chapter:Agent_Design} was subjected to the following simulation:
+\begin{enumerate}
+\item Place the agent in the environment.
+\item Let the agent roam the environment to learn many state definitions (no matter of they are redundant) and store them in a KB.
+\item Let the agent roam the environment to make use of inference and the KB in the previous step to infer unique states.
+\item When the agent has learnt all the unique states of then environment, let the agent again roam the environment to learn state transitions by inferring which state it is in and which actions it executed.
+\item Whern the agent has learnt all state transitions in an environment, transfer the transitions as logical expressions into a KB so that the agent can predict states.
+ 
+\end{enumerate}
 
 
 

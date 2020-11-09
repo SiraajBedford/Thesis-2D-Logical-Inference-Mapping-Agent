@@ -53,6 +53,7 @@
 }
 
 \lstset{style=mystyle}
+%\renewcommand\lstlistlistingname{List of Listings}
 %
 % PLEASE read the USthesis documentation for the class options
 % and how to set line and paragraph spacing
@@ -164,6 +165,7 @@ Engineering at the University of Stellenbosch}
 
 \pagestyle{fancy}
 \renewcommand{\chaptermark}[1]{\markboth{#1}{#1}}
+
 \fancyhead[R]{}
 \fancyhead[L]{\chaptername\ \thechapter\ --\ \leftmark}
 \setlength{\headheight}{15pt}% ...at least 51.60004pt
@@ -185,6 +187,7 @@ Engineering at the University of Stellenbosch}
 \listoffigures
 \listoftables
 \listofalgorithms
+%\addcontentsline{toc}{chapter}{\lstlistlistingname}{\lstlistoflistings}
 
 
 \mainmatter%=========================================================
@@ -208,6 +211,6 @@ Engineering at the University of Stellenbosch}
 
 \include{App-A}
 \include{App-B}
-%\include{App-C}
+\include{App-C}
 \end{appendix}
 \end{document}

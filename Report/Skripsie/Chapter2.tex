@@ -82,7 +82,7 @@ Finally, the environment is discrete since there are a finite number of actions 
 \section{Logic}
 \label{sec:logic}
 
-The aim of the project is to place an agent in an environment and let the agent learn the structure of the environment for itself. The numerical measurements the agent receives as input from the environment through sensors can determine how we implement learning in for the agent. In this project we assume that the measurements we take contain no uncertainty and therefore we can represent measurements the agent receives as logic, since logic is limited to binary states.  This section first explains the definitions, differences and similarities between the representations of logic that were considered for the agent design and implementation, then it goes on to specify the syntax of these representations which is used to explain and represent the logical techniques the agent in this project uses. The agent and the logic techniques the agent can use is described in Section \ref{sec:kb_agents_and_logical_inference} by using the information in Sections \ref{subsec: prop_logic} and \ref{subsec: fol_logic}. The majority of the work in Section \ref{sec:logic} is based on Russel and Norvig \cite{russell2016artificial}.   
+The aim of the project is to place an agent in an environment and let the agent learn the structure of the environment for itself. The numerical measurements the agent receives as input from the environment through sensors can determine how we implement learning in for the agent. In this project we assume that the measurements we take contain no uncertainty and therefore we can represent measurements the agent receives as logic, since logic is limited to binary states.  This section first explains the definitions, differences and similarities between the representations of logic that were considered for the agent design and implementation, then it goes on to specify the syntax of these representations which is used to explain and represent the logical techniques the agent in this project uses. The agent and the logic techniques the agent can use is described in Section \ref{sec:kb_agents_and_logical_inference} by using the information in Section \ref{subsec: prop_logic}. The majority of the work in Section \ref{sec:logic} is based on Russel and Norvig \cite{russell2016artificial}.   
 
 
 \subsection{Definition, Differences and Similarities of Logic Representations Considered}
@@ -108,8 +108,8 @@ We use the expression $M(\alpha_n)$ to express the set of all models of $\alpha_
 \end{equation}
 
 
-The two types of logic representations mentioned can each play a role in the design of the  agent in this project and therefore are both discussed in Section \ref{sec:logic}. Not all the information of PL and FOL are relevant to the design of the agent in this project and thus only the important parts of the syntaxes and semantics of the different logic representations relevant to the project are mentioned in Sections \ref{subsec: prop_logic} and \ref{subsec: fol_logic}.
-Their entailment aspects are discussed in Section \ref{sec:kb_agents_and_logical_inference} when reviewing an agent that can use these logic representations for techniques to address the aim of this project.
+The two types of logic representations mentioned could each play a role in the design of the  agent in this, but this project will only consider propositional logic. Not all the information of PL is relevant to the design of the agent in this project and thus only the important parts of the syntax and semantics of the PL relevant to the project are mentioned in Section \ref{subsec: prop_logic}.
+The entailment aspects of propositional logic  is discussed in Section \ref{sec:kb_agents_and_logical_inference} when reviewing an agent that can use these logic representations for techniques to address the aim of this project.
 
 
 \subsection{Propositional Logic Syntax and Semantics}
@@ -316,8 +316,8 @@ Any logical sentence that can be written using BNF grammar can be converted to a
 
 This conversion process from BNF to CNF grammar described above is useful in this project since the way we implement the logic input to PL techniques for agent learning does not have to change for every learning techniques we formulate in Section \ref{sec:kb_agents_and_logical_inference}.
 
-\subsection{First-Order Logic Syntax and Semantics}
-\label{subsec: fol_logic}
+%\subsection{First-Order Logic Syntax and Semantics}
+%\label{subsec: fol_logic}
 
 %%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
 
@@ -353,8 +353,7 @@ Logical inference is the process of asking the agent a question in terms of logi
 
 The query sentence normally asks which action is the best for an agent to execute in its environment based on knowledge in its KB, but this aspect of a knowledge-based agent is not considered in the design of the agent in Chapter \ref{chapter:Agent_Design}. The link between the output of the inference engine and the actuator in Figure \ref{fig:kb_agent} is shown in this section to show how a knowledge-based agent is related to a general learning agent in Figure  \ref{fig:agent_environment} in Section \ref{sec:agents_and_environments}. When compared to a general learning agent, a knowledge-based agent uses a sensor, actuator and learning element. A knowledge-based agent is not limited to these components of a general learning agent though. In general, a knowledge-based agent queries its KB by inputting questions to an inference engine in the form of logic in a specific logic representation, which means the nature of the input queries to an inference engine does not have to specifically address the action an agent should take. 
 
-For an agent to perform logical inference, it has to make use of an inference algorithm. Many inference algorithms exist that can be used in this project, but only three suitable propositional logical inference algorithms are considered that can be used for learning, which can be compared when evaluating the design of an agent. These three inference algorithms are a model-checking algorithm in Section \ref{subsec:Inference_Model_Checking}, a resolution algorithm in Section \ref{subsec:Inference_Resolution} and the Davis, Putnam, Logemann, and Loveland (DPLL) algorithm in Section \ref{subsec:Inference_DPLL}. A first-order logic inference  algorithm is also considered in Section \ref{subsubsec: fol_inference} to represent an agent's learnt representation of its environment.
-
+For an agent to perform logical inference, it has to make use of an inference algorithm. Many inference algorithms exist that can be used in this project, but only three suitable propositional logical inference algorithms are considered that can be used for learning, which can be compared when evaluating the design of an agent. These three inference algorithms are a model-checking algorithm in Section \ref{subsec:Inference_Model_Checking}, a resolution algorithm in Section \ref{subsec:Inference_Resolution} and the Davis, Putnam, Logemann, and Loveland (DPLL) algorithm in Section \ref{subsec:Inference_DPLL}. 
 %The two latter algorithms are based on theorem proving which is also reviewed in this section. One inference algorithm using first-order logic is also discussed for representing an agent's learnt knowledge.
 %\vspace{0.5cm}
 %\begin{algorithm}[H]
@@ -739,11 +738,16 @@ The resolution algorithm shown in Algorithm \ref{algorithm:resolution} provides 
 \subsection{Logical Inference by using the DPLL Algorithm}
 \label{subsec:Inference_DPLL}
 
-The aim of the project is to place an agent in an environment and let the agent discover the structure of the environment for itself. The faster the agent can deduce where it is in the environment The Davis, Putnam, Logemann and Loveland (DPLL) algorithm w
+The aim of the project is to place an agent in an environment and let the agent discover the structure of the environment for itself. The Davis, Putnam, Logemann and Loveland (DPLL) algorithm helps us accomplish this.
+It uses ``proof by refutation'' as mentioned in Section \ref{subsec:Inference_Resolution} in combination with the definition of unsatisfiability: 
 
+\begin{equation}
+	\alpha \models \beta \text{ if and only if } (\alpha \wedge \neg \beta) \text{is unsatisfiable.}
+	\label{eq:dpll_sat}
+\end{equation}
 
+From Equation \ref{eq:dpll_sat}, it follows that:
 
-The second procedure for logical inference by theorem proving we look at is \textit{proof by refutation} also known as \textit{proof by contradiction} in combination with the definition of satisfiability. As discussed, $\alpha \models \beta$ can be tested by seeing if $\alpha \wedge \neg \beta$ is \textit{unsatisfiable}. In the context of inference, we can deduce equation \ref{eq:sat}.
 
 
 \begin{equation}
@@ -751,7 +755,11 @@ The second procedure for logical inference by theorem proving we look at is \tex
 \label{eq:sat}
 \end{equation}
 
-There is a connection for finding a satisfiable model and solving a CSP. The algorithm we use for testing satisfiability is called the \textbf{DPLL Algorithm} and resembles a backtracking algorithm. 
+
+%As discussed, $\alpha \models \beta$ can be tested by seeing if $\alpha \wedge \neg \beta$ is \textit{unsatisfiable}. In the context of inference, we can deduce equation \ref{eq:sat}.
+
+%
+%There is a connection for finding a satisfiable model and solving a CSP. The algorithm we use for testing satisfiability is called the \textbf{DPLL Algorithm} and resembles a backtracking algorithm. 
 
 %\begin{figure}[H]
 %    \centering
@@ -759,49 +767,20 @@ There is a connection for finding a satisfiable model and solving a CSP. The alg
 %    \caption{Knowledge-based agent design algorithm from \cite{russell2016artificial}}
 %    \label{fig:in}
 %\end{figure}
+%
+%The DPLL algorithm, i.e., Algorithm \ref{algorithm:DPLL} takes in a sentence in CNF that is a set of clauses. It is a recursive, depth-first enumeration of possible models and has the following improvements over the model checking approach in Algorithm \ref{algorithm:TT_entails}:
 
-The DPLL algorithm, i.e., Algorithm \ref{algorithm:DPLL} takes in a sentence in CNF that is a set of clauses. It is a recursive, depth-first enumeration of possible models and has the following improvements over the model checking approach in Algorithm \ref{algorithm:TT_entails}:
-
-\begin{itemize}
-	\item \textit{Early termination} - Even when a model is partially completed, the algorithm can detect whether the sentence must be true or false. A clause is true if a literal in the clause is true, even if the other literals do not have boolean values yet. This means the sentenced can be judged even before the model is completed. Consider the sentence $(A \vee B) \wedge (A \vee C)$, the sentence is true if $A$ is true, no matter the vales of $B$ and $C$. By that same logic, if a sentence is false if any clause is false which is when all if the literal in the sentence is false. The model again does not need to be completed. Early termination avoids examination of whole sub-trees in the search space.
-
-	
-	\item \textit{Pure symbol heuristic} - A pure symbol is a symbol appearing with the same signage in all clauses, whether positive or negative. Consider the sentences $(A \vee \neg B)$, $(\neg B \vee \neg C)$ and $(C \vee A)$. $A$ is pure since it only appears as a positive literal. Symbol $B$ is also a pure symbol, because it only appears as a negative literal across all clauses, while $C$ is not pure since it appears as a positive and negative literal across the clauses. Thus, the heuristic, ignores clauses that are already known to be true in the model constructed so far. As an example consider $(\neg B \vee \neg C)$, if we know $B$ is true, then the clause is true, and in the remaining clauses where $C$ appears only as a positive literal; $C$ becomes pure.
-	
-	\item \textit{Unit clause heuristic} - A unit clause is a clause with just one literal, but in the context of DPLL, the definition is extended  to a clause in which all symbols but one are assigned false by the model, i.e., in  $(\neg B \vee \neg C)$, if B is \textit{true}, the clause becomes $\neg C$ which is by definition a unit clause. This means $C$ must \textit{false}. This heuristics assigns symbols this way before branching further down a search tree. Any attempt to prove by refutation, a literal already in the KB will succeed immediately. One unit clause can cause \textit{unit propagation}, since a cascade of forced assignments cause literals to be proved further down in the search branch.
-
-
-\end{itemize}
-
-The DPLL algorithm is shown in Algorithm \ref{algorithm:DPLL}ds, provides the basis of the search process, while Algorithm \ref{algorithm:DPLL_satisfiable} allows us to pass a sentence and see if the sentence is satisfiable or not. If the sentence is unsatisfiable, we can conclude the sentence is entailed by the KB and inference is carried out. 
-
-%\vspace{0.5cm}
-%\begin{algorithm}[H]
-%\label{algorithm:DPLL_satisfiable}
-%\caption{\textsc{DPLL-Satisfiable?} as in \citep{russell2016artificial}}
-%\SetAlgoLined
-%\DontPrintSemicolon
-%\KwIn{\textit{s}, a sentence in propositional logic}
-%\KwOut{\textit{true} or \textit{false}}
-%\textbf{Begin} \\
-%\Indp{
-%	\textit{clauses} $\leftarrow$ the set of clauses in the CNF representation of $s$\\
-%	\textit{symbols} $\leftarrow$ a list of the proposition symbols in $s$\\
-%	\textbf{return} \textsc{DPLL}(\textit{clauses},\textit{symbols},\{ \})\\
-%	}
-%\Indm 
-%\textbf{End}   \\
-%\end{algorithm}
-%\vspace{0.5cm}
+The DPLL algorithm takes as input a set of clauses written using CNF grammar. It is similar to the model-checking approach shown in Section \ref{subsec:Inference_Model_Checking} because it is recursive. It recursively applies truth and false values to its input sentence's symbols in CNF and is viewed as a search tree problem because it applies truth and false values using heuristic methods until its input is proved true by unsatisfiability.
+The DPLL algorithm is shown as Algorithm \ref{algorithm:DPLL}.
 
 
 \vspace{0.5cm}
 \begin{algorithm}[H]
 \label{algorithm:DPLL}
-\caption{\textsc{DPLL} as in \citep{russell2016artificial}}
+\caption{\textsc{DPLL} (adapted from Russel and Norvig \citep{russell2016artificial})}
 \SetAlgoLined
 \DontPrintSemicolon
-\KwIn{\textit{clauses}, a set of clauses in the CNF representation \newline \textit{symbols}, a list of the proposition symbols \newline \textit{model}}
+\KwIn{\textit{clauses} -- a set of clauses in the CNF representation, \newline \textit{symbols} -- a list of the proposition symbols, \newline \textit{model} -- a partial model}
 \KwOut{\textit{true} or \textit{false}}
 \textbf{Begin} \\
 \Indp{
@@ -818,14 +797,77 @@ The DPLL algorithm is shown in Algorithm \ref{algorithm:DPLL}ds, provides the ba
 \textbf{End}   \\
 \end{algorithm}
 \vspace{0.5cm}
+  
+  
+  
+The description of Algorithm \ref{algorithm:DPLL} is as follows:
+\begin{enumerate}
+\item It evaluates all the clauses it is given as an input in CNF grammar. If they all evaluate to true based on the values the algorithm applies to the symbols making up the clauses of the input, then it means the query is entailed by the KB and the algorithm returns true.
+\item If some of the clause of the input CNF sentence do not evaluates to true, then the algorithm returns false.
+\item If neither of the first two cases apply, then the algorithm uses heuristic methods to try to find if the query is true.
+\end{enumerate}
+
+Chapter \ref{chapter:Literature} reviewed literature for agents in environments as well as techniques an agent can use to learn. With this knowledge, the next is aimed at designing an agent that can learn the structure of its environment.
 
 
-\subsection{Logical Inference using a First-Order Logic}
-\label{subsubsec: fol_inference}
+%\subsection{Logical Inference using a First-Order Logic}
+%\label{subsubsec: fol_inference}
+%
+%\begin{figure}[H]
+%    \centering
+%    \includegraphics[scale=.6]{Figures/fol_fc_ask.png}
+%    \caption{First-Order Logic Inference}
+%    \label{fig:fol_diag}
+%\end{figure}
+%
+%
+%
+%\vspace{0.5cm}
+%\begin{algorithm}[H]
+%\label{algorithm:fol_fc}
+%\caption{\textsc{FOL-FC-Ask} (adapted from Russel and Norvig \citep{russell2016artificial})}
+%\SetAlgoLined
+%\DontPrintSemicolon
+%\KwIn{\textit{clauses} -- a set of clauses in the CNF representation, \newline \textit{symbols} -- a list of the proposition symbols, \newline \textit{model} -- a partial model}
+%\KwOut{\textit{true} or \textit{false}}
+%\textbf{Begin} \\
+%\Indp{
+%	\textbf{if} every clause in \textit{clauses} is true in \textit{model} \textbf{then return} \textit{true}\\
+%	\textbf{if} some clause in \textit{clauses} is false in \textit{model} \textbf{then return} \textit{false}\\
+%	\textit{P},\textit{value} $\leftarrow$ \textsc{Find-Pure-Symbol}(\textit{symbols,clauses,model})\\
+%	\textbf{if} \textit{P} is non-null \textbf{then return} \textsc{DPLL}(\textit{clauses,symbols-P,model} $\cup$ \{\textit{P=value}\})\\
+%	\textit{P},\textit{value} $\leftarrow$ \textsc{Find-Unit-Clause}(\textit{clauses,model})\\
+%	\textbf{if} \textit{P} is non-null \textbf{then return} \textsc{DPLL}(\textit{clauses,symbols-P,model} $\cup$ \{\textit{P=value}\})\\
+%	\textit{P} $\leftarrow$ \textsc{First}(symbols); \textit{rest} $\leftarrow$ \textsc{Rest}(symbols)\\
+%	\textbf{return} \textsc{DPLL}(\textit{clauses,rest,model} $\cup$ \{\textit{P=true}\}) \textbf{or} \textsc{DPLL}(\textit{clauses,rest,model} $\cup$ \{\textit{P=false}\}) \\
+%	}
+%\Indm 
+%\textbf{End}   \\
+%\end{algorithm}
+%\vspace{0.5cm}
+%
+%
 
-\begin{figure}[H]
-    \centering
-    \includegraphics[scale=.6]{Figures/fol_fc_ask.png}
-    \caption{Firs-Order Logic Inference}
-    \label{fig:fol_diag}
-\end{figure}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

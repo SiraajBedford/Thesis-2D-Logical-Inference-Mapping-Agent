@@ -19,7 +19,7 @@
 \label{chapter:Results}
 
 This chapter shows the results obtained using the experimental setup formulated in Section \ref{sec:exp_setup}.
-The results in this chapter focus on the agent's performance for two different environment in Sections \ref{subsec:env_1} and \ref{subsec:env_2}. When trying to simulate inference for an agent using the model-checking approach formulated in Section \ref{subsec:Inference_Model_Checking} and the resolution-based approach in Section \ref{subsec:Inference_Resolution}, the agent was not able to perform inference because the model-checking and resolution-based algorithms tended to the worst-case time-complexity of $\mathcal{O}(2^n)$.
+The results in this chapter focus on the agent's performance for two different environment in Sections \ref{subsec:env_1} and \ref{subsec:env_2}. An objective comparison discussion is also give in this chapter. When trying to simulate inference for an agent using the model-checking approach formulated in Section \ref{subsec:Inference_Model_Checking} and the resolution-based approach in Section \ref{subsec:Inference_Resolution}, the agent was not able to perform inference because the model-checking and resolution-based algorithms tended to the worst-case time-complexity of $\mathcal{O}(2^n)$.
 
 \vspace{-0.4cm}
 
@@ -248,4 +248,17 @@ This results in two state prediction when the agent is in ``State\textunderscore
     \label{fig:env_2_predict}
 \end{figure}
 
+\section{Discussion of Results and Objectives}
 
+This section aims to compare the results obtained in Sections \ref{subsec:env_1} and \ref{subsec:env_2} against the set out objectives in Chapter \ref{chapter:Introduction} for an agent to be designed and implemented that would result in the aim of the project being met.  
+
+The comparison for each objective in Chapter \ref{chapter:Introduction} is as follows:
+
+\begin{enumerate}
+ \item The objective in Section \ref{obj_1:log_inference} deals with the ability of the agent to perform logical inference. The agent was able to use logical inference to learn state definitions. This is apparent in Figures \ref{fig:env_1_sim} and \ref{fig:env_2_sim} in Environment 1 and Environment 2 respectively, where the magnitude of each distinct spikes represent the time the agent took to perform inference. Therefore the objective set in Section \ref{obj_1:log_inference} was met.
+ \item The objective in Section \ref{obj_2:knowledge_base_size} deals with the ability of the agent to gradually decrease the size of a KB such that the agent can perform inference quickly. The agent designed in Section \label{sec:kb_agentz} moves learnt state definition of the agent into a separate KB so the agent only has to perform inference with a KB of a small size. This results in the average inference times in Tables \ref{table:20_sim_env_1} and \ref{table:20_sim_env_2} of Environment 1 and Environment 2 respectively, which show short average inference times. Therefore the objective set in Section \ref{obj_2:knowledge_base_size} was met.
+ 
+ \item The objective in Section \ref{obj_3:state_transitions} deals with the ability of the agent to learn state transitions so that it can form representation of the structure of the environment. The agent was able to learn a representation of the structure of its environment by using learnt state definitions. These structural representations are shown in Figures \ref{fig:env_1_learnt} and \ref{fig:env_2_learnt}. Therefore the objective set in Section \ref{obj_3:state_transitions} was met.
+\end{enumerate}
+
+All the objectives set out in Chapter \ref{chapter:Introduction} were met. This means the agent has the abilities we set out to achieve from the start and the aim of the project were met. The conclusion in the following chapter concludes how these met objectives gave the agent the ability to reach the project's aim.

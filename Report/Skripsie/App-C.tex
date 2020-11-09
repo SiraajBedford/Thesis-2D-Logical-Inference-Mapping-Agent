@@ -1,2 +1,203 @@
-\chapter{Appendix C: Environment}
+%\setcounter{table}{0}
+%\renewcommand{\thetable}{C.\arabic{table}}
+
+\chapter{Appendix C: Code Extracts}
+\label{chapter:code}
+
+\section*{Knowledge Base Implementation}
+
+\begin{lstlisting}[language=Python, caption=Knowledge Base Implementation.]
+#Agent
+
+class PropKB(KB):
+    """A KB for propositional logic. Inefficient, with no indexing."""
+
+    def __init__(self, sentence=None):
+        super().__init__(sentence)
+        self.clauses = []
+
+    def tell(self, sentence):
+        """Add the sentence's clauses to the KB."""
+        self.clauses.extend(conjuncts(to_cnf(sentence)))
+
+    def ask_generator(self, query):
+        """Yield the empty substitution {} if KB entails query; else no results."""
+        if tt_entails(Expr('&', *self.clauses), query):
+            yield {}
+
+    def ask_if_true(self, query):
+        """Return True if the KB entails query, else return False."""
+        for _ in self.ask_generator(query):
+            return True
+        return False
+
+    def retract(self, sentence):
+        """Remove the sentence's clauses from the KB."""
+        for c in conjuncts(to_cnf(sentence)):
+            if c in self.clauses:
+                self.clauses.remove(c)
+\end{lstlisting}
+\label{listing:KB_implemnt}
+
+
+\subsection*{Inference Algorithms Implementation}
+
+
+
+\begin{lstlisting}[language=Python, caption=Model Checking Algorithm]
+def tt_check_all(kb, alpha, symbols, model):
+    """Auxiliary routine to implement tt_entails."""
+    if not symbols:
+        if pl_true(kb, model):
+            result = pl_true(alpha, model)
+            assert result in (True, False)
+            return result
+        else:
+            return True
+    else:
+        P, rest = symbols[0], symbols[1:]
+        return (tt_check_all(kb, alpha, rest, extend(model, P, True)) and
+                tt_check_all(kb, alpha, rest, extend(model, P, False)))
+\end{lstlisting}
+\label{listing:m_checking}
+
+\newpage
+
+\begin{lstlisting}[language=Python, caption=Resolution Algorithm.]
+def pl_resolution(kb, alpha):
+    """
+    [Figure 7.12]
+    Propositional-logic resolution: say if alpha follows from KB.
+    >>> pl_resolution(horn_clauses_KB, A)
+    True
+    """
+    clauses = kb.clauses + conjuncts(to_cnf(~alpha))
+    new = set()
+    while True:
+        n = len(clauses)
+        pairs = [(clauses[i], clauses[j])
+                 for i in range(n) for j in range(i + 1, n)]
+        for (ci, cj) in pairs:
+            resolvents = pl_resolve(ci, cj)
+            if False in resolvents:
+                return True
+            new = new.union(set(resolvents))
+        if new.issubset(set(clauses)):
+            return False
+        for c in new:
+            if c not in clauses:
+                clauses.append(c)
+\end{lstlisting}
+\label{listing:resolution}
+
+
+\begin{lstlisting}[language=Python, caption=DPLL Algorithm,]
+def dpll(clauses, symbols, model, branching_heuristic=no_branching_heuristic):
+    """See if the clauses are true in a partial model."""
+    unknown_clauses = []  # clauses with an unknown truth value
+    for c in clauses:
+        val = pl_true(c, model)
+        if val is False:
+            return False
+        if val is None:
+            unknown_clauses.append(c)
+    if not unknown_clauses:
+        return model
+    P, value = find_pure_symbol(symbols, unknown_clauses)
+    if P:
+        return dpll(clauses, remove_all(P, symbols), extend(model, P, value), branching_heuristic)
+    P, value = find_unit_clause(clauses, model)
+    if P:
+        return dpll(clauses, remove_all(P, symbols), extend(model, P, value), branching_heuristic)
+    P, value = branching_heuristic(symbols, unknown_clauses)
+    return (dpll(clauses, remove_all(P, symbols), extend(model, P, value), branching_heuristic) or
+            dpll(clauses, remove_all(P, symbols), extend(model, P, not value), branching_heuristic))
+
+\end{lstlisting}
+\label{listing:DPLL}
+
+
+\subsection*{Sensor Implementation}
+
+
+\begin{lstlisting}[language=Python, caption=Agent Sensor Implmentation.]
+def make_percept_sentence(self, percept_matrix, time):
+
+        # Things perceived
+
+        # Chain start
+        #-------------------------------------------------
+        if percept_matrix[0] == open_block_1:
+            self.tell(percept_open_left_block(time))
+            chain=percept_open_left_block(time)
+            
+        if percept_matrix[0] == not_open_block_1:
+            self.tell(~percept_open_left_block(time))
+            chain=~percept_open_left_block(time)
+        #-------------------------------------------------
+
+        if percept_matrix[1] == open_block_1:
+            self.tell(percept_open_right_block(time))
+            chain=chain & percept_open_right_block(time)
+
+        if percept_matrix[2] == open_block_1:
+            self.tell(percept_open_up_block(time))
+            chain=chain & percept_open_up_block(time)
+            
+        if percept_matrix[3] == open_block_1:
+            self.tell(percept_open_upper_left_block(time))
+            chain=chain & percept_open_upper_left_block(time)
+        
+        if percept_matrix[4] == open_block_1:
+            self.tell(percept_open_upper_right_block(time))
+            chain=chain & percept_open_upper_right_block(time)
+
+            
+        if percept_matrix[5] == open_block_1:
+            self.tell(percept_open_bottom_block(time))
+            chain=chain & percept_open_bottom_block(time)
+            # instead of having res, we can set a flag called 'flag=percept_open_bottom_block(time)' and then chain on other percept sentences
+
+        if percept_matrix[6] == open_block_1:
+            self.tell(percept_open_bottom_left_block(time))
+            chain=chain & percept_open_bottom_left_block(time)
+            
+        if percept_matrix[7] == open_block_1:
+            self.tell(percept_open_bottom_right_block(time))
+            chain=chain & percept_open_bottom_right_block(time)
+            
+        # Things not perceived  
+
+        if percept_matrix[1] == not_open_block_1:
+            self.tell(~percept_open_right_block(time))
+            chain=chain & ~percept_open_right_block(time)
+
+        if percept_matrix[2] == not_open_block_1:
+            self.tell(~percept_open_up_block(time))
+            chain=chain & ~percept_open_up_block(time)
+            
+        if percept_matrix[3] == not_open_block_1:
+            self.tell(~percept_open_upper_left_block(time))
+            chain=chain & ~percept_open_upper_left_block(time)
+
+        if percept_matrix[4] == not_open_block_1:
+            self.tell(~percept_open_upper_right_block(time))
+            chain=chain & ~percept_open_upper_right_block(time)
+            
+        if percept_matrix[5] == not_open_block_1:
+            self.tell(~percept_open_bottom_block(time))
+            chain=chain & ~percept_open_bottom_block(time)
+
+        if percept_matrix[6] == not_open_block_1:
+            self.tell(~percept_open_bottom_left_block(time))
+            chain=chain & ~percept_open_bottom_left_block(time)
+
+        if percept_matrix[7] == not_open_block_1:
+            self.tell(~percept_open_bottom_right_block(time))
+            chain=chain & ~percept_open_bottom_right_block(time)
+            
+        return chain 
+\end{lstlisting}
+\label{listing:sensor}
+
 

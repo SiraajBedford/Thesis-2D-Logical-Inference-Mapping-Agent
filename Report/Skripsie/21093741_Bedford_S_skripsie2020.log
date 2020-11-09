@@ -1,4 +1,4 @@
-This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.25)  8 NOV 2020 23:59
+This is pdfTeX, Version 3.14159265-2.6-1.40.20 (TeX Live 2019/Debian) (preloaded format=pdflatex 2020.7.25)  9 NOV 2020 10:23
 entering extended mode
  restricted \write18 enabled.
  %&-line parsing enabled.
@@ -766,33 +766,32 @@ File: bkm-pdftex.def 2019/12/03 v1.28 bookmark driver for pdfTeX (HO)
 ))
 (./21093741_Bedford_S_skripsie2020.aux (./declaration.aux)
 (./Acknowledgements.aux) (./nomenclature.aux) (./Chapter1.aux) (./Chapter2.aux)
-(./Chapter3.aux
-
-LaTeX Warning: Label `fig:agent_in_env_low_level' multiply defined.
-
-) (./Chapter4.aux) (./Chapter5.aux
+(./Chapter3.aux) (./Chapter4.aux) (./Chapter5.aux
 
 LaTeX Warning: Label `fig:test' multiply defined.
 
-) (./Chapter6.aux) (./App-A.aux) (./App-B.aux))
+
+LaTeX Warning: Label `sec:kb_agentz' multiply defined.
+
+) (./Chapter6.aux) (./App-A.aux) (./App-B.aux) (./App-C.aux))
 \openout1 = `21093741_Bedford_S_skripsie2020.aux'.
 
-LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
-LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 163.
-LaTeX Font Info:    ... okay on input line 163.
+LaTeX Font Info:    Checking defaults for OML/cmm/m/it on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for OMS/cmsy/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for OT1/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for T1/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for TS1/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for OMX/cmex/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for U/cmr/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
+LaTeX Font Info:    Checking defaults for PD1/pdf/m/n on input line 164.
+LaTeX Font Info:    ... okay on input line 164.
 
 *geometry* driver: auto-detecting
 *geometry* detected driver: pdftex
@@ -870,7 +869,7 @@ Package: ltcaption 2018/08/26 v1.4a longtable captions (AR)
 Package caption Info: End \AtBeginDocument code.
 \c@lstlisting=\count344
 \AtBeginShipoutBox=\box125
-Package hyperref Info: Link coloring OFF on input line 163.
+Package hyperref Info: Link coloring OFF on input line 164.
 
 (/usr/share/texlive/texmf-dist/tex/latex/hyperref/nameref.sty
 Package: nameref 2019/09/16 v2.46 Cross-referencing by name of section
@@ -883,59 +882,59 @@ Package: gettitlestring 2019/12/15 v1.6 Cleanup title references (HO)
 )
 \c@section@level=\count345
 )
-LaTeX Info: Redefining \ref on input line 163.
-LaTeX Info: Redefining \pageref on input line 163.
-LaTeX Info: Redefining \nameref on input line 163.
+LaTeX Info: Redefining \ref on input line 164.
+LaTeX Info: Redefining \pageref on input line 164.
+LaTeX Info: Redefining \nameref on input line 164.
 LaTeX Font Info:    Trying to load font information for OT1+lmr on input line 1
-63.
+64.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmr.fd
 File: ot1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OML+lmm on input line 1
-63.
+64.
 
 (/usr/share/texmf/tex/latex/lm/omllmm.fd
 File: omllmm.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMS+lmsy on input line 
-163.
+164.
 
 (/usr/share/texmf/tex/latex/lm/omslmsy.fd
 File: omslmsy.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OMX+lmex on input line 
-163.
+164.
 
 (/usr/share/texmf/tex/latex/lm/omxlmex.fd
 File: omxlmex.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <12> on input line 163.
+(Font)              <12> on input line 164.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <8> on input line 163.
+(Font)              <8> on input line 164.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <6> on input line 163.
-LaTeX Font Info:    Trying to load font information for U+msa on input line 163
+(Font)              <6> on input line 164.
+LaTeX Font Info:    Trying to load font information for U+msa on input line 164
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsa.fd
 File: umsa.fd 2013/01/14 v3.01 AMS symbols A
 )
-LaTeX Font Info:    Trying to load font information for U+msb on input line 163
+LaTeX Font Info:    Trying to load font information for U+msb on input line 164
 .
 
 (/usr/share/texlive/texmf-dist/tex/latex/amsfonts/umsb.fd
 File: umsb.fd 2013/01/14 v3.01 AMS symbols B
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmss on input line 
-163.
+164.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmss.fd
 File: ot1lmss.fd 2009/10/30 v1.6 Font defs for Latin Modern
 )
 LaTeX Font Info:    Trying to load font information for OT1+lmtt on input line 
-163.
+164.
 
 (/usr/share/texmf/tex/latex/lm/ot1lmtt.fd
 File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
@@ -943,12 +942,12 @@ File: ot1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
 <USlogo-top.pdf, id=4, 560.0925pt x 183.68625pt>
 File: USlogo-top.pdf Graphic file (type pdf)
 <use USlogo-top.pdf>
-Package pdftex.def Info: USlogo-top.pdf  used on input line 173.
+Package pdftex.def Info: USlogo-top.pdf  used on input line 175.
 (pdftex.def)             Requested size: 284.52756pt x 93.31717pt.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <17.28> on input line 173.
+(Font)              <17.28> on input line 175.
 LaTeX Font Info:    External font `lmex10' loaded for size
-(Font)              <10> on input line 173.
+(Font)              <10> on input line 175.
  [1
 
 
@@ -967,7 +966,7 @@ Package pdftex.def Info: Figures/plaig_dec.pdf  used on input line 32.
  been already used, duplicate ignored
 <to be read again> 
                    \relax 
-l.175 \include{declaration}
+l.177 \include{declaration}
                             [1
 
  <./Figures/plaig_dec.pdf>]
@@ -1029,7 +1028,7 @@ Chapter 1.
 
 ] [2]
 LaTeX Font Info:    Trying to load font information for TS1+lmr on input line 1
-75.
+78.
  (/usr/share/texmf/tex/latex/lm/ts1lmr.fd
 File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 ) [3]) [4]
@@ -1037,7 +1036,7 @@ File: ts1lmr.fd 2009/10/30 v1.6 Font defs for Latin Modern
 
  (./Chapter2.tex
 Chapter 2.
-<Figures/General_learning_agent.png, id=294, 550.30594pt x 383.18156pt>
+<Figures/General_learning_agent.png, id=269, 550.30594pt x 383.18156pt>
 File: Figures/General_learning_agent.png Graphic file (type png)
 <use Figures/General_learning_agent.png>
 Package pdftex.def Info: Figures/General_learning_agent.png  used on input line
@@ -1047,140 +1046,81 @@ Package pdftex.def Info: Figures/General_learning_agent.png  used on input line
 
 
 
- <./Figures/General_learning_agent.PNG>] [6] [7] [8] [9] [10] [11] [12]
-<Figures/Inference_Gears.png, id=378, 794.97pt x 523.9575pt>
+ <./Figures/General_learning_agent.PNG>] [6] [7] [8] [9] [10] [11]
+<Figures/Inference_Gears.png, id=346, 794.97pt x 523.9575pt>
 File: Figures/Inference_Gears.png Graphic file (type png)
 <use Figures/Inference_Gears.png>
 Package pdftex.def Info: Figures/Inference_Gears.png  used on input line 335.
 (pdftex.def)             Requested size: 453.1376pt x 298.65887pt.
-
-[13 <./Figures/Inference_Gears.png>]
+ [12 <./Figures/Inference_Gears.png>]
 LaTeX Font Info:    Trying to load font information for T1+lmtt on input line 4
-17.
+16.
  (/usr/share/texmf/tex/latex/lm/t1lmtt.fd
 File: t1lmtt.fd 2009/10/30 v1.6 Font defs for Latin Modern
-)
-[14] [15]
-<Figures/resolution_diag.png, id=435, 473.77pt x 313.17pt>
+) [13]
+[14]
+<Figures/resolution_diag.png, id=400, 473.77pt x 313.17pt>
 File: Figures/resolution_diag.png Graphic file (type png)
 <use Figures/resolution_diag.png>
-Package pdftex.def Info: Figures/resolution_diag.png  used on input line 643.
+Package pdftex.def Info: Figures/resolution_diag.png  used on input line 642.
 (pdftex.def)             Requested size: 360.0617pt x 238.00688pt.
- [16 <./Figures/resolution_diag.png>]
+ [15 <./Figures/resolution_diag.png>]
 
 LaTeX Font Warning: Font shape `T1/lmr/m/scit' undefined
-(Font)              using `T1/lmr/m/scsl' instead on input line 669.
+(Font)              using `T1/lmr/m/scsl' instead on input line 668.
 
-[17]
-
-LaTeX Warning: Reference `algorithm:TT_entails' on page 18 undefined on input l
-ine 763.
-
-[18]
-
-LaTeX Warning: Reference `algorithm:DPLL_satisfiable' on page 19 undefined on i
-nput line 776.
-
-<Figures/fol_fc_ask.png, id=483, 712.6625pt x 533.995pt>
-File: Figures/fol_fc_ask.png Graphic file (type png)
-<use Figures/fol_fc_ask.png>
-Package pdftex.def Info: Figures/fol_fc_ask.png  used on input line 828.
-(pdftex.def)             Requested size: 427.6008pt x 320.39948pt.
-) [19] [20 <./Figures/fol_fc_ask.png>]
+[16] [17]) [18]
 \openout2 = `Chapter3.aux'.
 
  (./Chapter3.tex
 Chapter 3.
-<Figures/main_architecture.PNG, id=502, 1178.4025pt x 708.6475pt>
-File: Figures/main_architecture.PNG Graphic file (type png)
-<use Figures/main_architecture.PNG>
-Package pdftex.def Info: Figures/main_architecture.PNG  used on input line 25.
-(pdftex.def)             Requested size: 412.44705pt x 248.03033pt.
+<Figures/example_sim_chap3.png, id=472, 250.9375pt x 183.68625pt>
+File: Figures/example_sim_chap3.png Graphic file (type png)
+<use Figures/example_sim_chap3.png>
+Package pdftex.def Info: Figures/example_sim_chap3.png  used on input line 112.
 
-LaTeX Warning: Reference `sec:kb_agents' on page 21 undefined on input line 40.
-
-
-
-LaTeX Warning: Reference `sec:kb_agents' on page 21 undefined on input line 41.
-
-
-[21
+(pdftex.def)             Requested size: 183.18285pt x 134.08983pt.
+[19
 
 
 
- <./Figures/main_architecture.png>]
-
-LaTeX Warning: Reference `sec:logical_inference' on page 22 undefined on input 
-line 55.
-
-<Figures/Inference_HL.PNG, id=515, 606.265pt x 201.75375pt>
-File: Figures/Inference_HL.PNG Graphic file (type png)
-<use Figures/Inference_HL.PNG>
-Package pdftex.def Info: Figures/Inference_HL.PNG  used on input line 59.
-(pdftex.def)             Requested size: 363.76181pt x 121.05318pt.
-[22 <./Figures/Inference_HL.png>]
-<Figures/Goal2.png, id=525, 250.9375pt x 258.9675pt>
-File: Figures/Goal2.png Graphic file (type png)
-<use Figures/Goal2.png>
-Package pdftex.def Info: Figures/Goal2.png  used on input line 108.
-(pdftex.def)             Requested size: 183.18285pt x 189.04468pt.
- [23]
-
-LaTeX Warning: Reference `subsubsec: Inference_model_checking' on page 24 undef
-ined on input line 122.
-
-
-LaTeX Warning: Reference `subsubsec: Inference_PL_theorem_proving' on page 24 u
-ndefined on input line 122.
-
-<Figures/low_level_state_gen.png, id=539, 654.445pt x 498.86375pt>
-File: Figures/low_level_state_gen.png Graphic file (type png)
-<use Figures/low_level_state_gen.png>
-Package pdftex.def Info: Figures/low_level_state_gen.png  used on input line 12
-6.
-(pdftex.def)             Requested size: 405.75171pt x 309.29233pt.
-[24 <./Figures/Goal2.png>] [25 <./Figures/low_level_state_gen.png>]
-<Figures/Low_level_design_percepts.png, id=557, 241.90375pt x 241.90375pt>
+ <./Figures/example_sim_chap3.png>]
+<Figures/Low_level_design_percepts.png, id=485, 241.90375pt x 241.90375pt>
 File: Figures/Low_level_design_percepts.png Graphic file (type png)
 <use Figures/Low_level_design_percepts.png>
 Package pdftex.def Info: Figures/Low_level_design_percepts.png  used on input l
-ine 144.
+ine 133.
 (pdftex.def)             Requested size: 145.14336pt x 145.14336pt.
-<Figures/Low_level_design_actions.png, id=558, 392.46625pt x 392.46625pt>
+<Figures/Low_level_design_actions.png, id=486, 392.46625pt x 392.46625pt>
 File: Figures/Low_level_design_actions.png Graphic file (type png)
 <use Figures/Low_level_design_actions.png>
 Package pdftex.def Info: Figures/Low_level_design_actions.png  used on input li
-ne 150.
+ne 139.
 (pdftex.def)             Requested size: 145.21022pt x 145.21022pt.
 
-Overfull \hbox (42.36043pt too wide) in paragraph at lines 163--181
+Overfull \hbox (42.36043pt too wide) in paragraph at lines 152--169
  [] 
  []
 
-[26 <./Figures/Low_level_design_percepts.png> <./Figures/Low_level_design_actio
-ns.png>]
-Underfull \hbox (badness 10000) in paragraph at lines 207--208
+[20 <./Figures/Low_level_design_percepts.png> <./Figures/Low_level_design_actio
+ns.png>] [21]
+<Figures/low_level_state_gen.png, id=522, 844.15375pt x 740.7675pt>
+File: Figures/low_level_state_gen.png Graphic file (type png)
+<use Figures/low_level_state_gen.png>
+Package pdftex.def Info: Figures/low_level_state_gen.png  used on input line 23
+0.
+(pdftex.def)             Requested size: 506.49615pt x 444.46393pt.
 
+Overfull \hbox (51.25204pt too wide) in paragraph at lines 230--231
+ [][] 
  []
 
-
-Underfull \hbox (badness 10000) in paragraph at lines 207--208
-
- []
-
-[27]
-<Figures/Low_level_design_directed_graph.png, id=584, 522.95375pt x 180.675pt>
-File: Figures/Low_level_design_directed_graph.png Graphic file (type png)
-<use Figures/Low_level_design_directed_graph.png>
-Package pdftex.def Info: Figures/Low_level_design_directed_graph.png  used on i
-nput line 250.
-(pdftex.def)             Requested size: 313.77466pt x 108.40582pt.
- [28 <./Figures/Low_level_design_directed_graph.png>]) [29]
+[22 <./Figures/low_level_state_gen.png>]) [23]
 \openout2 = `Chapter4.aux'.
 
  (./Chapter4.tex
 Chapter 4.
-[30
+[24
 
 
 
@@ -1189,17 +1129,17 @@ Chapter 4.
 
  (./Chapter5.tex
 Chapter 5.
-<Figures/Environment_1.png, id=631, 250.9375pt x 258.9675pt>
+<Figures/Environment_1.png, id=564, 250.9375pt x 258.9675pt>
 File: Figures/Environment_1.png Graphic file (type png)
 <use Figures/Environment_1.png>
 Package pdftex.def Info: Figures/Environment_1.png  used on input line 33.
 (pdftex.def)             Requested size: 125.46843pt x 129.48341pt.
-[31
+[25
 
 
 
  <./Figures/Environment_1.png>]
-<Figures/Environment_1_DPLL.png, id=641, 412.54124pt x 323.2075pt>
+<Figures/Environment_1_DPLL.png, id=574, 412.54124pt x 323.2075pt>
 File: Figures/Environment_1_DPLL.png Graphic file (type png)
 <use Figures/Environment_1_DPLL.png>
 Package pdftex.def Info: Figures/Environment_1_DPLL.png  used on input line 46.
@@ -1215,19 +1155,19 @@ Underfull \hbox (badness 1609) in paragraph at lines 58--58
 \T1/lmr/m/n/12 learn all state def-i-ni-tions
  []
 
-[32 <./Figures/Environment_1_DPLL.png>]
-<Figures/env_1_states.png, id=652, 437.635pt x 68.255pt>
+[26 <./Figures/Environment_1_DPLL.png>]
+<Figures/env_1_states.png, id=585, 437.635pt x 68.255pt>
 File: Figures/env_1_states.png Graphic file (type png)
 <use Figures/env_1_states.png>
 Package pdftex.def Info: Figures/env_1_states.png  used on input line 97.
 (pdftex.def)             Requested size: 306.3424pt x 47.77815pt.
-<Figures/env_1_states_trans.png, id=653, 323.2075pt x 263.98625pt>
+<Figures/env_1_states_trans.png, id=586, 323.2075pt x 263.98625pt>
 File: Figures/env_1_states_trans.png Graphic file (type png)
 <use Figures/env_1_states_trans.png>
 Package pdftex.def Info: Figures/env_1_states_trans.png  used on input line 104
 .
 (pdftex.def)             Requested size: 226.2437pt x 184.78911pt.
-<Figures/env_1_state_inspection.png, id=661, 392.46625pt x 302.12875pt>
+<Figures/env_1_state_inspection.png, id=594, 392.46625pt x 302.12875pt>
 File: Figures/env_1_state_inspection.png Graphic file (type png)
 <use Figures/env_1_state_inspection.png>
 Package pdftex.def Info: Figures/env_1_state_inspection.png  used on input line
@@ -1238,7 +1178,7 @@ Overfull \hbox (7.8595pt too wide) in paragraph at lines 115--116
  [][] 
  []
 
-<Figures/env_1_state_inspection_actual.png, id=662, 392.46625pt x 302.12875pt>
+<Figures/env_1_state_inspection_actual.png, id=595, 392.46625pt x 302.12875pt>
 File: Figures/env_1_state_inspection_actual.png Graphic file (type png)
 <use Figures/env_1_state_inspection_actual.png>
 Package pdftex.def Info: Figures/env_1_state_inspection_actual.png  used on inp
@@ -1249,27 +1189,27 @@ Overfull \hbox (7.8595pt too wide) in paragraph at lines 121--122
  [][] 
  []
 
-[33 <./Figures/env_1_states.png> <./Figures/env_1_states_trans.png>]
-<Figures/env_1_state_prediction.png, id=672, 403.5075pt x 174.6525pt>
+[27 <./Figures/env_1_states.png> <./Figures/env_1_states_trans.png>]
+<Figures/env_1_state_prediction.png, id=605, 403.5075pt x 174.6525pt>
 File: Figures/env_1_state_prediction.png Graphic file (type png)
 <use Figures/env_1_state_prediction.png>
 Package pdftex.def Info: Figures/env_1_state_prediction.png  used on input line
  133.
 (pdftex.def)             Requested size: 282.45332pt x 122.2559pt.
- [34 <./Figures/env_1_state_inspection.png> <./Figures/env_1_state_inspection_a
+ [28 <./Figures/env_1_state_inspection.png> <./Figures/env_1_state_inspection_a
 ctual.png> <./Figures/env_1_state_prediction.png>]
-<Figures/Environment_2.png, id=684, 250.9375pt x 183.68625pt>
+<Figures/Environment_2.png, id=617, 250.9375pt x 183.68625pt>
 File: Figures/Environment_2.png Graphic file (type png)
 <use Figures/Environment_2.png>
 Package pdftex.def Info: Figures/Environment_2.png  used on input line 153.
 (pdftex.def)             Requested size: 175.65504pt x 128.57947pt.
-<Figures/Environment_2_DPLL.png, id=685, 409.53pt x 323.2075pt>
+<Figures/Environment_2_DPLL.png, id=618, 409.53pt x 323.2075pt>
 File: Figures/Environment_2_DPLL.png Graphic file (type png)
 <use Figures/Environment_2_DPLL.png>
 Package pdftex.def Info: Figures/Environment_2_DPLL.png  used on input line 162
 .
 (pdftex.def)             Requested size: 286.66904pt x 226.2437pt.
- [35 <./Figures/Environment_2.png> <./Figures/Environment_2_DPLL.png>]
+ [29 <./Figures/Environment_2.png> <./Figures/Environment_2_DPLL.png>]
 Underfull \hbox (badness 4416) in paragraph at lines 177--177
 []|\T1/lmr/m/n/12 Number of it-er-a-tions to
  []
@@ -1279,49 +1219,52 @@ Underfull \hbox (badness 1609) in paragraph at lines 177--177
 \T1/lmr/m/n/12 learn all state def-i-ni-tions
  []
 
-<Figures/env_2_states.png, id=697, 439.6425pt x 95.35625pt>
+<Figures/env_2_states.png, id=631, 439.6425pt x 95.35625pt>
 File: Figures/env_2_states.png Graphic file (type png)
 <use Figures/env_2_states.png>
 Package pdftex.def Info: Figures/env_2_states.png  used on input line 212.
 (pdftex.def)             Requested size: 351.71446pt x 76.28508pt.
-<Figures/env_2_states_trans.png, id=698, 331.2375pt x 439.6425pt>
+<Figures/env_2_states_trans.png, id=632, 331.2375pt x 439.6425pt>
 File: Figures/env_2_states_trans.png Graphic file (type png)
 <use Figures/env_2_states_trans.png>
 Package pdftex.def Info: Figures/env_2_states_trans.png  used on input line 219
 .
 (pdftex.def)             Requested size: 231.86465pt x 307.74765pt.
-[36 <./Figures/env_2_states.png>]
-<Figures/env_2_state_inspection.png, id=710, 575.14874pt x 312.16624pt>
+[30 <./Figures/env_2_states.png>]
+<Figures/env_2_state_inspection.png, id=644, 575.14874pt x 312.16624pt>
 File: Figures/env_2_state_inspection.png Graphic file (type png)
 <use Figures/env_2_state_inspection.png>
 Package pdftex.def Info: Figures/env_2_state_inspection.png  used on input line
  229.
 (pdftex.def)             Requested size: 345.0919pt x 187.3012pt.
-<Figures/env_2_state_inspection_actual.png, id=711, 723.70375pt x 322.20375pt>
+<Figures/env_2_state_inspection_actual.png, id=645, 723.70375pt x 322.20375pt>
 File: Figures/env_2_state_inspection_actual.png Graphic file (type png)
 <use Figures/env_2_state_inspection_actual.png>
 Package pdftex.def Info: Figures/env_2_state_inspection_actual.png  used on inp
 ut line 236.
 (pdftex.def)             Requested size: 434.2256pt x 193.32373pt.
- [37 <./Figures/env_2_states_trans.png> <./Figures/env_2_state_inspection.png>]
-<Figures/env_2_state_prediction.png, id=721, 413.545pt x 307.1475pt>
+ [31 <./Figures/env_2_states_trans.png> <./Figures/env_2_state_inspection.png>]
+<Figures/env_2_state_prediction.png, id=655, 413.545pt x 307.1475pt>
 File: Figures/env_2_state_prediction.png Graphic file (type png)
 <use Figures/env_2_state_prediction.png>
 Package pdftex.def Info: Figures/env_2_state_prediction.png  used on input line
  246.
 (pdftex.def)             Requested size: 289.4795pt x 215.00177pt.
-) [38 <./Figures/env_2_state_inspection_actual.png> <./Figures/env_2_state_pred
-iction.png>]
+ [32 <./Figures/env_2_state_inspection_actual.png> <./Figures/env_2_state_predi
+ction.png>]) [33]
 \openout2 = `Chapter6.aux'.
 
  (./Chapter6.tex
 Chapter 6.
-) [39
+) [34
 
 
 
 ] (./21093741_Bedford_S_skripsie2020.bbl
-(/usr/share/texlive/texmf-dist/tex/latex/stellenbosch/usbib.eng)) [40
+(/usr/share/texlive/texmf-dist/tex/latex/stellenbosch/usbib.eng)
+LaTeX Font Info:    External font `lmex10' loaded for size
+(Font)              <10.95> on input line 31.
+) [35
 
 
 
@@ -1334,7 +1277,7 @@ Underfull \hbox (badness 1859) in paragraph at lines 20--20
 []|\T1/lmr/m/n/12 Research agent-environment in-ter-face de-
  []
 
-) [41
+) [36
 
 
 ]
@@ -1395,61 +1338,64 @@ Overfull \hbox (46.35928pt too wide) in paragraph at lines 16--52
  [] 
  []
 
-) [42
+) [37
 
 
 
 ]
-Overfull \vbox (21.85445pt too high) has occurred while \output is active []
+\openout2 = `App-C.aux'.
+
+ (./App-C.tex
+(/usr/share/texlive/texmf-dist/tex/latex/listings/lstlang1.sty
+File: lstlang1.sty 2019/09/10 1.8c listings language file
+) [38
 
 
-[43]
-Package atveryend Info: Empty hook `BeforeClearDocument' on input line 213.
-Package atveryend Info: Empty hook `AfterLastShipout' on input line 213.
+
+] [39])
+[40]
+Package atveryend Info: Empty hook `BeforeClearDocument' on input line 216.
+Package atveryend Info: Empty hook `AfterLastShipout' on input line 216.
  (./21093741_Bedford_S_skripsie2020.aux (./declaration.aux)
 (./Acknowledgements.aux) (./nomenclature.aux) (./Chapter1.aux) (./Chapter2.aux)
 (./Chapter3.aux) (./Chapter4.aux) (./Chapter5.aux) (./Chapter6.aux)
-(./App-A.aux) (./App-B.aux))
-Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 213.
-Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 213.
-
-
-LaTeX Warning: There were undefined references.
+(./App-A.aux) (./App-B.aux) (./App-C.aux))
+Package atveryend Info: Executing hook `AtVeryEndDocument' on input line 216.
+Package atveryend Info: Empty hook `AtEndAfterFileList' on input line 216.
 
 
 LaTeX Warning: There were multiply-defined labels.
 
-Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 213.
+Package atveryend Info: Empty hook `AtVeryVeryEnd' on input line 216.
  ) 
 Here is how much of TeX's memory you used:
- 16675 strings out of 481239
- 288368 string characters out of 5920377
- 657873 words of memory out of 5000000
- 31243 multiletter control sequences out of 15000+600000
- 656695 words of font info for 102 fonts, out of 8000000 for 9000
+ 17300 strings out of 481239
+ 295447 string characters out of 5920377
+ 1075662 words of memory out of 5000000
+ 31719 multiletter control sequences out of 15000+600000
+ 668302 words of font info for 115 fonts, out of 8000000 for 9000
  1141 hyphenation exceptions out of 8191
- 48i,18n,46p,1516b,797s stack positions out of 5000i,500n,10000p,200000b,80000s
-{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/en
-c/dvips/lm/lm-mathex.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/s
-hare/texmf/fonts/enc/dvips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm
--ts1.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-mathit.enc}</usr/share/texmf/f
-onts/type1/public/lm/lmbx12.pfb></usr/share/texmf/fonts/type1/public/lm/lmbx8.p
-fb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.pfb></usr/share/texmf/fonts/
-type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts/type1/public/lm/lmcsco10.pf
-b></usr/share/texmf/fonts/type1/public/lm/lmex10.pfb></usr/share/texmf/fonts/ty
-pe1/public/lm/lmmi12.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></us
-r/share/texmf/fonts/type1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/pub
-lic/lm/lmr12.pfb></usr/share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/
-texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texmf/fonts/type1/public/lm/lm
-ri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri12.pfb></usr/share/texmf/f
-onts/type1/public/lm/lmro12.pfb></usr/share/texmf/fonts/type1/public/lm/lmsy10.
-pfb></usr/share/texmf/fonts/type1/public/lm/lmsy8.pfb></usr/share/texmf/fonts/t
-ype1/public/lm/lmtt10.pfb>
-Output written on 21093741_Bedford_S_skripsie2020.pdf (53 pages, 1086087 bytes)
+ 48i,12n,46p,1487b,2351s stack positions out of 5000i,500n,10000p,200000b,80000s
+{/usr/share/texmf/fonts/enc/dvips/lm/lm-ec.enc}{/usr/share/texmf/fonts/enc/dv
+ips/lm/lm-rm.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ts1.enc}{/usr/share/te
+xmf/fonts/enc/dvips/lm/lm-mathsy.enc}{/usr/share/texmf/fonts/enc/dvips/lm/lm-ma
+thit.enc}</usr/share/texmf/fonts/type1/public/lm/lmbx12.pfb></usr/share/texmf/f
+onts/type1/public/lm/lmbx8.pfb></usr/share/texmf/fonts/type1/public/lm/lmbxi10.
+pfb></usr/share/texmf/fonts/type1/public/lm/lmcsc10.pfb></usr/share/texmf/fonts
+/type1/public/lm/lmcsco10.pfb></usr/share/texmf/fonts/type1/public/lm/lmmi12.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmmi8.pfb></usr/share/texmf/fonts/typ
+e1/public/lm/lmr10.pfb></usr/share/texmf/fonts/type1/public/lm/lmr12.pfb></usr/
+share/texmf/fonts/type1/public/lm/lmr17.pfb></usr/share/texmf/fonts/type1/publi
+c/lm/lmr6.pfb></usr/share/texmf/fonts/type1/public/lm/lmr8.pfb></usr/share/texm
+f/fonts/type1/public/lm/lmri10.pfb></usr/share/texmf/fonts/type1/public/lm/lmri
+12.pfb></usr/share/texmf/fonts/type1/public/lm/lmro12.pfb></usr/share/texmf/fon
+ts/type1/public/lm/lmsy10.pfb></usr/share/texmf/fonts/type1/public/lm/lmtt10.pf
+b></usr/share/texmf/fonts/type1/public/lm/lmtt8.pfb>
+Output written on 21093741_Bedford_S_skripsie2020.pdf (50 pages, 1021905 bytes)
 .
 PDF statistics:
- 1029 PDF objects out of 1200 (max. 8388607)
- 899 compressed objects within 9 object streams
- 241 named destinations out of 1000 (max. 500000)
- 552 words of extra memory for PDF output out of 10000 (max. 10000000)
+ 1174 PDF objects out of 1200 (max. 8388607)
+ 1052 compressed objects within 11 object streams
+ 382 named destinations out of 1000 (max. 500000)
+ 468 words of extra memory for PDF output out of 10000 (max. 10000000)
 
