@@ -15,8 +15,8 @@ import numpy as np # For manipulating arrays
 import time as tm # To control simulation time
 
 # Import user defined libraries
-from environment import Environment
-from agent_physical import Agent_physical
+from environment_mapping import Environment
+from agent_physical_mapping import Agent_physical
 
 # Initial state
 t_global=0
